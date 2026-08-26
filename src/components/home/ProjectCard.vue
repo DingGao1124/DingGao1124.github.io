@@ -12,9 +12,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { useSiteLocale } from "@/composables/useSiteLocale"
 import type { Project } from "@/data/types"
 
 defineProps<{ project: Project }>()
+
+const { messages } = useSiteLocale()
 </script>
 
 <template>
@@ -22,7 +25,7 @@ defineProps<{ project: Project }>()
     <CardHeader>
       <CardTitle>{{ project.title }}</CardTitle>
       <CardDescription>
-        {{ [project.period, project.role].filter(Boolean).join(" · ") || "Portfolio 项目 · 待补充详情" }}
+        {{ [project.period, project.role].filter(Boolean).join(" · ") || messages.projectFallbackMeta }}
       </CardDescription>
       <CardAction>
         <Badge variant="secondary">{{ project.category }}</Badge>
@@ -53,4 +56,3 @@ defineProps<{ project: Project }>()
     </CardFooter>
   </Card>
 </template>
-

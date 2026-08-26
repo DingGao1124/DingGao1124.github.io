@@ -7,9 +7,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { useSiteLocale } from "@/composables/useSiteLocale"
 import type { ResearchArea } from "@/data/types"
 
 defineProps<{ area: ResearchArea }>()
+
+const { messages } = useSiteLocale()
 </script>
 
 <template>
@@ -19,8 +22,7 @@ defineProps<{ area: ResearchArea }>()
       <CardDescription>{{ area.description }}</CardDescription>
     </CardHeader>
     <CardContent>
-      <Badge variant="outline">Research Area</Badge>
+      <Badge variant="outline">{{ messages.researchAreaLabel }}</Badge>
     </CardContent>
   </Card>
 </template>
-

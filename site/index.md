@@ -1,6 +1,6 @@
 ---
-title: 高鼎 / Ding Gao
-description: 东华大学智能制造硕士，研究数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。
+title: Ding Gao
+description: Master's student in Intelligent Manufacturing at Donghua University, researching digital twins, LLM-based multi-agent systems, embodied AI robotics, and industrial software.
 layout: home
 ---
 

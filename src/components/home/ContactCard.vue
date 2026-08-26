@@ -10,17 +10,20 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { useSiteLocale } from "@/composables/useSiteLocale"
 import type { LinkItem } from "@/data/types"
 
 defineProps<{ links: LinkItem[] }>()
+
+const { messages } = useSiteLocale()
 </script>
 
 <template>
   <Card>
     <CardHeader>
-      <CardTitle>开放交流</CardTitle>
+      <CardTitle>{{ messages.contact.title }}</CardTitle>
       <CardDescription>
-        欢迎围绕数字孪生、具身智能、工业软件与智能制造研究进行交流。
+        {{ messages.contact.description }}
       </CardDescription>
     </CardHeader>
     <CardContent>
@@ -41,10 +44,9 @@ defineProps<{ links: LinkItem[] }>()
         </div>
         <Separator />
         <p class="text-sm text-muted-foreground">
-          隐私说明：首版页面仅公开邮箱与外链，不展示手机号、年龄或详细住址。
+          {{ messages.contact.privacy }}
         </p>
       </div>
     </CardContent>
   </Card>
 </template>
-

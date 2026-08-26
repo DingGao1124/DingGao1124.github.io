@@ -19,6 +19,11 @@ npm run preview
 
 构建产物位于 `.vitepress/dist`。
 
+## 项目文档
+
+- [国际化](docs/i18n.md)：语言路由、内容组织与新增语言方式
+- [变更日志](docs/changelog.md)：功能变更及其影响
+
 ## 目录结构
 
 ```text

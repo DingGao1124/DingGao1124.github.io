@@ -9,11 +9,21 @@ export type ResearchArea = {
   description: string
 }
 
+export type ProjectCategory =
+  | "Research"
+  | "Robotics"
+  | "Software"
+  | "Hardware"
+  | "研究"
+  | "机器人"
+  | "软件"
+  | "硬件"
+
 export type Project = {
   title: string
   period?: string
   role?: string
-  category: "研究" | "机器人" | "软件" | "硬件"
+  category: ProjectCategory
   description: string
   highlights: string[]
   tech: string[]
