@@ -6,14 +6,17 @@ export const profileLinks: LinkItem[] = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ding-gao-995147349/",
+    icon: "linkedin",
   },
   {
     label: "Yuque Portfolio",
     href: "https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer?singleDoc",
+    icon: "book",
   },
   {
     label: "GitHub",
     href: "https://github.com/DingGao1124",
+    icon: "github",
   },
 ]
 
