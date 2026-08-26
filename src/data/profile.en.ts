@@ -1,5 +1,7 @@
 import type { Experience, LinkItem, Project, Publication, ResearchArea } from "./types"
 
+export const email = "2231117@mail.dhu.edu.cn"
+
 export const profileLinks: LinkItem[] = [
   {
     label: "LinkedIn",
