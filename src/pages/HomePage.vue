@@ -28,7 +28,11 @@ function projectMeta(project: Project) {
     <Section :title="m.aboutTitle" class="mt-16">
       <div class="grid gap-10 lg:grid-cols-[1.35fr_1fr]">
         <div class="measure">
-          <p class="text-lg leading-8 text-card-foreground">{{ m.aboutBody }}</p>
+          <div class="space-y-4">
+            <p v-for="(paragraph, index) in m.aboutBody" :key="index" class="text-lg leading-8 text-card-foreground">
+              {{ paragraph }}
+            </p>
+          </div>
           <div class="mt-7 flex flex-wrap gap-2">
             <Tag v-for="tag in profile.summaryTags" :key="tag" :label="tag" />
           </div>

@@ -1,4 +1,4 @@
-import type { Experience, LinkItem, Project, Publication, ResearchArea } from "./types"
+import type { Education, Experience, LinkItem, Project, Publication, ResearchArea } from "./types"
 
 
 export const email = "2231117@mail.dhu.edu.cn"
@@ -74,9 +74,9 @@ export const projects: Project[] = [
     ],
     tech: ["LLM", "VLA", "FastSAM", "GraspNet", "LangGraph", "MCP"],
     links: [
-      { label: "Video", href: "https://www.bilibili.com/video/BV1sRj3zAEXG" },
-      { label: "GitCode", href: "https://gitcode.com/baomingcanjia/URgrasp_agent" },
-      { label: "GitHub", href: "https://github.com/SsspongeBob/Hackathon" },
+      { label: "视频", href: "https://www.bilibili.com/video/BV1sRj3zAEXG", icon: "video" },
+      { label: "GitCode", href: "https://gitcode.com/baomingcanjia/URgrasp_agent", icon: "code" },
+      { label: "GitHub", href: "https://github.com/SsspongeBob/Hackathon", icon: "github" },
     ],
   },
   {
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     ],
     tech: ["STM32", "C", "CAN Bus", "Mechanical Design", "Path Planning"],
     links: [
-      { label: "Video", href: "https://www.bilibili.com/video/BV1J2p6zXEnv/" },
+      { label: "视频", href: "https://www.bilibili.com/video/BV1J2p6zXEnv/", icon: "video" },
     ],
   },
   {
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     ],
     tech: ["LLM", "待补充"],
     links: [
-      { label: "Video", href: "https://www.bilibili.com/video/BV1eypCzQEhy/" },
+      { label: "视频", href: "https://www.bilibili.com/video/BV1eypCzQEhy/", icon: "video" },
     ],
   },
   {
@@ -174,30 +174,37 @@ export const publications: Publication[] = [
   {
     title:
       "Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration",
-    meta: "Journal of Manufacturing Systems, 2025. Co-author.",
+    meta: "Journal of Manufacturing Systems · 2025",
     note: "DOI: 10.1016/J.JMSY.2025.10.005",
+    type: "journal",
+    links: [{ label: "DOI", href: "https://doi.org/10.1016/J.JMSY.2025.10.005", icon: "doi" }],
   },
   {
     title:
       "Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly",
-    meta: "Robotics and Computer-Integrated Manufacturing, 2026. Co-author.",
+    meta: "Robotics and Computer-Integrated Manufacturing · 2026",
     note: "DOI: 10.1016/J.RCIM.2025.103207",
+    type: "journal",
+    links: [{ label: "DOI", href: "https://doi.org/10.1016/J.RCIM.2025.103207", icon: "doi" }],
   },
   {
     title:
       "Self-Evolving Digital Twins in Flexible Manufacturing: A Large Language Model-Powered Multi-Agent Approach",
-    meta: "Digital Engineering. First author.",
+    meta: "Digital Engineering · First author",
     note: "Status: Major Revision.",
+    type: "journal",
   },
   {
     title: "一种基于导电混凝土的预制构件系统",
-    meta: "实用新型专利，共同发明人。",
+    meta: "实用新型专利 · 共同发明人",
     note: "Patent No. ZL 12601087.",
+    type: "patent",
   },
   {
     title: "一种角度可调节舞台及其使用方法",
-    meta: "发明专利，共同发明人。",
+    meta: "发明专利 · 共同发明人",
     note: "Publication No. CN113702385A.",
+    type: "patent",
   },
 ]
 
@@ -239,9 +246,19 @@ export const experiences: Experience[] = [
   },
 ]
 
-export const education = [
-  "东华大学，智能制造，硕士，2023.09 - 至今（预计 2026.06）",
-  "南京工程学院，机械工程，本科，2019.09 - 2023.06",
+export const education: Education[] = [
+  {
+    school: "东华大学",
+    degree: "智能制造 · 硕士",
+    period: "2023.09 - 至今",
+    location: "上海",
+  },
+  {
+    school: "南京工程学院",
+    degree: "机械工程 · 本科",
+    period: "2019.09 - 2023.06",
+    location: "南京",
+  },
 ]
 
 export const honors = [

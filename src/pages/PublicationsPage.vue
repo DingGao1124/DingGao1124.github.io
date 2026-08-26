@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue"
 
+import ContentEntry from "@/components/site/ContentEntry.vue"
 import PageHeader from "@/components/site/PageHeader.vue"
 import Section from "@/components/site/Section.vue"
+import type { PublicationType } from "@/data/types"
 import { useProfileData } from "@/hooks/useProfileData"
 import { useSiteLocale } from "@/hooks/useSiteLocale"
 
@@ -10,6 +12,10 @@ const { messages } = useSiteLocale()
 const { profile } = useProfileData()
 
 const m = computed(() => messages.value.publications)
+
+function badge(type?: PublicationType) {
+  return type === "patent" ? m.value.patentLabel : m.value.journalLabel
+}
 </script>
 
 <template>
@@ -18,19 +24,16 @@ const m = computed(() => messages.value.publications)
 
     <Section class="mt-16">
       <ol class="divide-y divide-border border-y border-border">
-        <li
-          v-for="(publication, index) in profile.publications"
-          :key="publication.title"
-          class="grid grid-cols-1 gap-2 py-6 sm:grid-cols-[3rem_1fr] sm:gap-6"
-        >
-          <span class="font-mono text-xs leading-7 text-muted-foreground">{{ index + 1 }}</span>
-          <div>
-            <h3 class="font-serif text-lg font-medium leading-snug">{{ publication.title }}</h3>
-            <p class="mt-2 font-mono text-xs text-muted-foreground">{{ publication.meta }}</p>
-            <p v-if="publication.note" class="mt-2 measure text-sm text-muted-foreground">
-              {{ publication.note }}
-            </p>
-          </div>
+        <li v-for="(publication, index) in profile.publications" :key="publication.title">
+          <ContentEntry
+            :number="index + 1"
+            :title="publication.title"
+            :badge="badge(publication.type)"
+            :meta="publication.meta"
+            :content="publication.note"
+            :links="publication.links"
+            :images="publication.images"
+          />
         </li>
       </ol>
     </Section>

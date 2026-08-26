@@ -1,6 +1,10 @@
 export type LinkItem = {
   label: string
   href: string
+  /** Optional key used to map to a Lucide icon in the content cards. */
+  icon?: string
+  /** Optional short description shown next to the label. */
+  description?: string
 }
 
 
@@ -28,6 +32,7 @@ export type Project = {
   highlights: string[]
   tech: string[]
   links?: LinkItem[]
+  images?: string[]
 }
 
 export type Experience = {
@@ -37,8 +42,20 @@ export type Experience = {
   summary: string
 }
 
+export type Education = {
+  school: string
+  degree: string
+  period: string
+  location?: string
+}
+
+export type PublicationType = "journal" | "patent"
+
 export type Publication = {
   title: string
   meta: string
   note?: string
+  type?: PublicationType
+  links?: LinkItem[]
+  images?: string[]
 }

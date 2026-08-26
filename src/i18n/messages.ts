@@ -24,14 +24,17 @@ export const siteMessages = {
     notFoundTitle: "Page not found",
     notFoundDescription: "The page you requested could not be found.",
     backHomeLabel: "Back to home",
-    footer: "© 2026 Ding Gao · Academic profile and selected portfolio.",
+    footer: "© Copyright Ding Gao 2026. All rights reserved.",
     home: {
       eyebrow: "Personal academic profile",
       name: "Ding Gao",
       lede: "Master's student in Intelligent Manufacturing at Donghua University, researching digital twins, LLM-based multi-agent systems, embodied AI robotics, and industrial software.",
       aboutTitle: "About",
-      aboutBody:
-        "With an interdisciplinary background in mechanical engineering and full-stack development, I research intelligent systems for flexible manufacturing and human-robot collaboration. My recent work focuses on physical-virtual production-line synchronization, LLM-driven multi-agent modeling, robot task planning, retrieval-augmented generation, and voice interaction.",
+      aboutBody: [
+        "Hi, I'm Ding Gao 👋 — a master's student in Intelligent Manufacturing at Donghua University. I work where the physical and virtual meet: digital twins 🏭, LLM-driven multi-agent systems 🤖, embodied AI, and robotics.",
+        "My background is interdisciplinary 🌐. I started in mechanical engineering and picked up full-stack development along the way, which lets me carry an idea from a paper sketch all the way to a working system.",
+        "These days I focus on physical-virtual production-line synchronization, LLM-driven multi-agent modeling, robot task planning, retrieval-augmented generation, and voice interaction 🎤 — all in service of flexible manufacturing and human-robot collaboration 🤝.",
+      ],
       factsTitle: "At a glance",
       facts: [
         { term: "Degree", detail: "M.S. Intelligent Manufacturing · Donghua University" },
@@ -78,6 +81,8 @@ export const siteMessages = {
       title: "Publications & Patents",
       lede: "Journal papers and patents on digital twins, LLM-driven multi-agent systems, and human-robot collaboration.",
       statusLabel: "Status",
+      journalLabel: "Journal Article",
+      patentLabel: "Patent",
     },
     experience: {
       eyebrow: "Experience",
@@ -98,6 +103,10 @@ export const siteMessages = {
     },
     researchAreaLabel: "Research Area",
     projectFallbackMeta: "Portfolio project · details to be added",
+    contentCard: {
+      showMore: "Show more",
+      showLess: "Show less",
+    },
   },
 
   zh: {
@@ -117,14 +126,17 @@ export const siteMessages = {
     notFoundTitle: "页面不存在",
     notFoundDescription: "你请求的页面不存在。",
     backHomeLabel: "返回首页",
-    footer: "© 2026 高鼎 · 学术主页与精选作品集。",
+    footer: "© 2026 高鼎 · 个人博客。",
     home: {
       eyebrow: "个人学术主页",
       name: "高鼎",
       lede: "东华大学智能制造硕士，关注数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
       aboutTitle: "关于",
-      aboutBody:
-        "我拥有机械工程与全栈开发的交叉背景，目前主要研究面向柔性制造和人机协作场景的智能系统。近期工作集中在虚实产线同步、LLM 驱动的多智能体建模、机器人任务规划、RAG 检索增强和语音交互等方向。",
+      aboutBody: [
+        "Hi，你好，我是高鼎 👋，东华大学智能制造专业的硕士研究生。我在物理与虚拟的交界处做研究——数字孪生 🏭、LLM 多智能体系统 🤖、具身智能和机器人。",
+        "我的背景是跨学科的 🌐。我从机械工程出发，后来补上了全栈开发的能力，这让我能把一个想法从论文草图一路带到能跑起来的系统。",
+        "最近我在做虚实产线同步、LLM 驱动的多智能体建模、机器人任务规划、RAG 检索增强和语音交互 🎤，目标都是柔性制造与人机协作 🤝。",
+      ],
       factsTitle: "概览",
       facts: [
         { term: "学位", detail: "硕士 · 东华大学 · 智能制造" },
@@ -170,6 +182,8 @@ export const siteMessages = {
       title: "论文与专利",
       lede: "关于数字孪生、LLM 驱动的多智能体系统与人机协作的期刊论文和专利。",
       statusLabel: "状态",
+      journalLabel: "期刊论文",
+      patentLabel: "专利",
     },
     experience: {
       eyebrow: "经历",
@@ -189,6 +203,10 @@ export const siteMessages = {
     },
     researchAreaLabel: "研究方向",
     projectFallbackMeta: "Portfolio 项目 · 待补充详情",
+    contentCard: {
+      showMore: "展开更多",
+      showLess: "收起",
+    },
   },
 } as const
 
