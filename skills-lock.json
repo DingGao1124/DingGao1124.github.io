@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "anti-ui-slop": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/anti-ui-slop/SKILL.md",
+      "computedHash": "b077eb8beaea0d913edef177c5e8d1dbdc10ad113b5703a35b0413fdd6fadac5"
+    },
+    "arxiv": {
+      "source": "nousresearch/hermes-agent",
+      "sourceType": "github",
+      "skillPath": "skills/research/arxiv/SKILL.md",
+      "computedHash": "f168047b120ef101f622b52be76c8fd4b3ee7c7b7f4ce1e2665d6940393fa54b"
+    },
+    "blog-writing-guide": {
+      "source": "getsentry/skills",
+      "sourceType": "github",
+      "skillPath": "skills/blog-writing-guide/SKILL.md",
+      "computedHash": "f885b9890d8a1c43e8ed0386e2ef2c17e941a403aa354513d6b844e99229ffb7"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
+    },
+    "vue-best-practices": {
+      "source": "antfu/skills",
+      "sourceType": "github",
+      "skillPath": "skills/vue-best-practices/SKILL.md",
+      "computedHash": "d7d22c8cb343583c3904692c4d1d7b50382945e433e4f6e053f4aabb9846cbc3"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "a6a44d5498f7e8f68289902f3dedfc6f38ae0cee1e96527c80724cf27f727c2a"
+    },
+    "web-typography": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "skillPath": "web-typography/SKILL.md",
+      "computedHash": "c17dc754c870e6de1bed62c972291f56c5b7752b921c2273886a6f6380d16596"
+    },
+    "writing-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/writing-guidelines/SKILL.md",
+      "computedHash": "e90462d4f801d823603b12c345ad0ff91a7489415274432681d21c7129123c26"
+    }
+  }
+}
