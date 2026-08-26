@@ -1,4 +1,4 @@
-# Personal Profile
+# Ding Gao's Website
 
 基于 VitePress、Vue 3、Tailwind CSS 和 shadcn-vue 构建的个人学术主页。VitePress 在构建阶段将页面预渲染为静态 HTML，并通过 GitHub Actions 部署到 GitHub Pages。
 
