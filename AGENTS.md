@@ -111,7 +111,7 @@ Motion should be minimal and functional only.
 
 **Every functional change should leave a trace in `docs/`.**
 
-- When you change an external contract (API request/response, data models/types, configuration, environment variables), **you MUST update the corresponding doc in `docs/`** and append an entry to the project's change log in `docs/` (date + change + location/impact).
+- When you change an external contract (API request/response, data models/types, configuration, environment variables), **you MUST update the corresponding doc in `docs/`** and append a concise, summary-only entry to the project's change log in `docs/` (date + change + location/impact).
 - Each change-log entry must stay short: one or two sentences covering what changed, where, and the impact — no debugging process, reproduction details, or implementation write-ups.
 - When adding a new endpoint or capability, create or extend a `docs/` doc and update the Docs index in `README.md`.
 - Architecture and design decisions live in a dedicated architecture doc; operational knowledge (e.g., token/cookie expiry, setup quirks) lives in its own doc.

@@ -6,7 +6,7 @@ export type NavigationItem = {
   href: string
 }
 
-export const siteMessages = {
+export const siteInfos = {
   en: {
     siteName: "Ding Gao",
     primaryNavigationLabel: "Primary navigation",
@@ -210,4 +210,4 @@ export const siteMessages = {
   },
 } as const
 
-export type SiteMessages = (typeof siteMessages)["en"]
+export type SiteInfo = (typeof siteInfos)["en"]
