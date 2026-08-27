@@ -2,7 +2,7 @@
 import { computed } from "vue"
 
 import ContentEntry from "@/components/site/ContentEntry.vue"
-import type { Project } from "@/data/types"
+import type { Project } from "@/data/projects"
 
 const props = defineProps<{ project: Project }>()
 
@@ -13,7 +13,9 @@ const meta = computed(() =>
 const content = computed(() => {
   const parts = [props.project.description]
   if (props.project.highlights.length) {
-    parts.push(props.project.highlights.map((highlight) => `- ${highlight}`).join("\n"))
+    parts.push(
+      props.project.highlights.map((highlight) => `- ${highlight}`).join("\n"),
+    )
   }
   if (props.project.tech.length) {
     parts.push(`**Stack:** ${props.project.tech.join(" · ")}`)

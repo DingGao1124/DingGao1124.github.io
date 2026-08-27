@@ -4,7 +4,7 @@ import { computed } from "vue"
 import ContentEntry from "@/components/site/ContentEntry.vue"
 import PageHeader from "@/components/site/PageHeader.vue"
 import Section from "@/components/site/Section.vue"
-import type { PublicationType } from "@/data/types"
+import type { PublicationType } from "@/data/publications"
 import { useProfileData } from "@/hooks/useProfileData"
 import { useSiteLocale } from "@/hooks/useSiteLocale"
 
@@ -24,7 +24,10 @@ function badge(type?: PublicationType) {
 
     <Section class="mt-16">
       <ol class="divide-y divide-border border-y border-border">
-        <li v-for="(publication, index) in profile.publications" :key="publication.title">
+        <li
+          v-for="(publication, index) in profile.publications"
+          :key="publication.title"
+        >
           <ContentEntry
             :number="index + 1"
             :title="publication.title"

@@ -32,14 +32,20 @@ const alternate = computed(() => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 md:px-8">
+  <header
+    class="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur"
+  >
+    <div
+      class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 md:px-8"
+    >
       <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
         {{ messages.siteName }}
       </a>
 
       <nav class="ml-auto" :aria-label="messages.primaryNavigationLabel">
-        <ul class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted-foreground">
+        <ul
+          class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted-foreground"
+        >
           <li v-for="item in messages.navigation" :key="item.id">
             <a
               :href="path(item.href)"
@@ -57,7 +63,9 @@ const alternate = computed(() => {
       <button
         type="button"
         class="text-muted-foreground transition-colors hover:text-foreground"
-        :aria-label="isDark ? messages.switchToLightLabel : messages.switchToDarkLabel"
+        :aria-label="
+          isDark ? messages.switchToLightLabel : messages.switchToDarkLabel
+        "
         @click="toggle"
       >
         <Sun v-if="isDark" class="size-4" aria-hidden="true" />

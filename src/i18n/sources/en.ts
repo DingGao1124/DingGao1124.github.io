@@ -1,0 +1,98 @@
+export default {
+  siteName: "Ding Gao",
+  primaryNavigationLabel: "Primary navigation",
+  switchLanguageLabel: "Switch language",
+  switchToDarkLabel: "Switch to dark theme",
+  switchToLightLabel: "Switch to light theme",
+  navigation: [
+    { id: "profile", label: "Profile", href: "/" },
+    { id: "research", label: "Research", href: "/research/" },
+    { id: "projects", label: "Projects", href: "/projects/" },
+    { id: "publications", label: "Publications", href: "/publications/" },
+    { id: "experience", label: "Experience", href: "/experience/" },
+    { id: "contact", label: "Contact", href: "/contact/" },
+  ] satisfies NavigationItem[],
+  notFoundTitle: "Page not found",
+  notFoundDescription: "The page you requested could not be found.",
+  backHomeLabel: "Back to home",
+  footer: "© Copyright Ding Gao 2026. All rights reserved.",
+  home: {
+    role: "Master's student",
+    organization: "Donghua University",
+    researchLine:
+      "Digital twins · LLM multi-agent systems · Embodied AI robotics · Industrial software",
+    name: "Ding Gao",
+    aboutTitle: "About me",
+    aboutBody: [
+      "Hi, I'm Ding Gao 👋 — a master's student in Intelligent Manufacturing at Donghua University. I work where the physical and virtual meet: digital twins 🏭, LLM-driven multi-agent systems 🤖, embodied AI, and robotics.",
+      "My background is interdisciplinary 🌐. I started in mechanical engineering and picked up full-stack development along the way, which lets me carry an idea from a paper sketch all the way to a working system.",
+      "These days I focus on physical-virtual production-line synchronization, LLM-driven multi-agent modeling, robot task planning, retrieval-augmented generation, and voice interaction 🎤 — all in service of flexible manufacturing and human-robot collaboration 🤝.",
+    ],
+    interestsTitle: "Interests",
+    interests: ["Digital Twins", "LLM Agents", "Embodied AI", "Robotics"],
+    educationTitle: "Education",
+    location: "Shanghai, China",
+    researchTitle: "Research",
+    researchDescription:
+      "Interpretable modeling, agent collaboration, robot execution, and practical deployment in intelligent manufacturing.",
+    selectedWorkTitle: "Selected work",
+    selectedWorkDescription:
+      "A short index of representative projects; the full portfolio is on the Projects page.",
+    recentTitle: "Recent",
+    recentDescription: "Current position and latest engagements.",
+    viewAll: "View all",
+  },
+  research: {
+    eyebrow: "Research",
+    title: "Research",
+    lede: "Digital twins, LLM-based multi-agent systems, embodied AI, and human-robot collaboration — grounded in intelligent manufacturing and closed-loop physical-virtual systems.",
+    areasTitle: "Areas",
+    areasDescription:
+      "Four intertwined threads. Each area pairs a modelling or control question with a concrete deployment scenario.",
+    approachTitle: "Approach",
+    approachDescription:
+      "I build systems that close the perception-to-action loop: model the physical world, let agents reason over it, then act and verify.",
+    approachBody:
+      "I treat a production system as something that can be modeled, observed, and controlled. First I represent it digitally — geometry, behavior, and knowledge. Then I let LLM-driven agents reason over that representation, and finally act through robot or software interfaces, verifying each step against the physical state. The result is a closed loop where the virtual and physical systems stay in sync.",
+    tagsLabel: "Keywords",
+  },
+  projects: {
+    eyebrow: "Projects",
+    title: "Projects",
+    lede: "Selected work across research, robotics, hardware, and software — from production-line digital twins to embodied robot systems and developer tools.",
+    note: "Entries with limited source material are retained for later completion.",
+    categoryLabel: "Category",
+    order: ["Research", "Robotics", "Hardware", "Software"],
+  },
+  publications: {
+    eyebrow: "Publications",
+    title: "Publications & Patents",
+    lede: "Journal papers and patents on digital twins, LLM-driven multi-agent systems, and human-robot collaboration.",
+    statusLabel: "Status",
+    journalLabel: "Journal Article",
+    patentLabel: "Patent",
+  },
+  experience: {
+    eyebrow: "Experience",
+    title: "Experience",
+    lede: "Research and industry experience, education, and selected honors — organized by organization and responsibility.",
+    experienceTitle: "Experience",
+    educationTitle: "Education",
+    honorsTitle: "Honors & competitions",
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Contact",
+    lede: "I welcome conversations about digital twins, embodied AI, industrial software, and intelligent manufacturing research.",
+    description: "Reach out by email or connect via any of the profiles below.",
+    privacy:
+      "This site publishes only my email address and external links — no phone number, age, or detailed address.",
+    emailLabel: "Email",
+  },
+  researchAreaLabel: "Research Area",
+  projectFallbackMeta: "Portfolio project · details to be added",
+  contentCard: {
+    showMore: "Show more",
+    showLess: "Show less",
+  },
+}

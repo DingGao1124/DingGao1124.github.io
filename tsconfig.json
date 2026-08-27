@@ -14,5 +14,10 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [".vitepress/**/*.ts", ".vitepress/**/*.vue", "src/**/*.ts", "src/**/*.vue"]
+  "include": [
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ]
 }

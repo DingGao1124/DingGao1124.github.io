@@ -16,7 +16,9 @@ defineProps<{
       :key="item.term"
       class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-[11rem_1fr] sm:gap-4"
     >
-      <dt class="font-mono text-xs uppercase tracking-wide text-muted-foreground">
+      <dt
+        class="font-mono text-xs uppercase tracking-wide text-muted-foreground"
+      >
         {{ item.term }}
       </dt>
       <dd class="text-card-foreground">{{ item.detail }}</dd>

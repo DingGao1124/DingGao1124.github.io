@@ -13,7 +13,8 @@
   --font-heading: var(--font-serif);
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Newsreader Variable", Georgia, "Times New Roman", serif;
-  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --font-mono:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   --color-link: var(--link);
   --color-link-soft: var(--link-soft);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -143,7 +144,9 @@
     font-family: var(--font-sans);
     font-size: 1.0625rem;
     line-height: 1.65;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
   }
 
   h1,

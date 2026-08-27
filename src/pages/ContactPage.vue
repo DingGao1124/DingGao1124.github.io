@@ -17,7 +17,9 @@ const m = computed(() => messages.value.contact)
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
     <Section class="mt-16">
-      <p class="measure text-lg leading-8 text-card-foreground">{{ m.description }}</p>
+      <p class="measure text-lg leading-8 text-card-foreground">
+        {{ m.description }}
+      </p>
 
       <div class="mt-8 flex flex-col gap-6">
         <div class="flex flex-wrap items-center gap-x-6 gap-y-3">

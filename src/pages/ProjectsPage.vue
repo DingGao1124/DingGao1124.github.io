@@ -15,7 +15,9 @@ const groups = computed(() =>
   m.value.order
     .map((category) => ({
       category,
-      projects: profile.value.projects.filter((project) => project.category === category),
+      projects: profile.value.projects.filter(
+        (project) => project.category === category,
+      ),
     }))
     .filter((group) => group.projects.length > 0),
 )
@@ -25,7 +27,9 @@ const groups = computed(() =>
   <div class="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
-    <p v-if="m.note" class="mt-5 measure text-sm text-muted-foreground">{{ m.note }}</p>
+    <p v-if="m.note" class="mt-5 measure text-sm text-muted-foreground">
+      {{ m.note }}
+    </p>
 
     <Section
       v-for="group in groups"
@@ -34,7 +38,11 @@ const groups = computed(() =>
       class="mt-16"
     >
       <div class="divide-y divide-border border-y border-border">
-        <ProjectEntry v-for="project in group.projects" :key="project.title" :project="project" />
+        <ProjectEntry
+          v-for="project in group.projects"
+          :key="project.title"
+          :project="project"
+        />
       </div>
     </Section>
   </div>

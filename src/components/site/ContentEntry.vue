@@ -46,7 +46,9 @@ const props = defineProps<{
 
 const { messages } = useSiteLocale()
 const labels = computed(() => messages.value.contentCard)
-const cols = computed(() => props.numberColumnClass ?? "sm:grid-cols-[3rem_1fr]")
+const cols = computed(
+  () => props.numberColumnClass ?? "sm:grid-cols-[3rem_1fr]",
+)
 
 const html = computed(() => renderMarkdown(props.content))
 
@@ -101,25 +103,32 @@ onBeforeUnmount(() => {
 <template>
   <article
     :class="
-      cn(
-        'grid grid-cols-1 py-6',
-        number ? cn('gap-2 sm:gap-6', cols) : '',
-      )
+      cn('grid grid-cols-1 py-6', number ? cn('gap-2 sm:gap-6', cols) : '')
     "
   >
-    <span v-if="number" class="font-mono text-xs leading-7 text-muted-foreground">
+    <span
+      v-if="number"
+      class="font-mono text-xs leading-7 text-muted-foreground"
+    >
       {{ number }}
     </span>
 
     <div>
       <h3 class="font-serif text-xl font-medium leading-snug">{{ title }}</h3>
 
-      <div v-if="badge || meta" class="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+      <div
+        v-if="badge || meta"
+        class="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1.5"
+      >
         <Tag v-if="badge" :label="badge" />
-        <span v-if="meta" class="text-sm text-muted-foreground">{{ meta }}</span>
+        <span v-if="meta" class="text-sm text-muted-foreground">{{
+          meta
+        }}</span>
       </div>
 
-      <p v-if="summary" class="mt-1.5 text-sm text-muted-foreground">{{ summary }}</p>
+      <p v-if="summary" class="mt-1.5 text-sm text-muted-foreground">
+        {{ summary }}
+      </p>
 
       <div v-if="html" class="mt-3">
         <div

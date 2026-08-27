@@ -45,14 +45,16 @@ export default defineConfig({
       label: "简体中文",
       lang: "zh-CN",
       title: "高鼎 / Ding Gao",
-      description: "高鼎的学术主页：数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
+      description:
+        "高鼎的学术主页：数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
       head: [
         ["meta", { property: "og:title", content: "高鼎 / Ding Gao" }],
         [
           "meta",
           {
             property: "og:description",
-            content: "高鼎的学术主页：数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
+            content:
+              "高鼎的学术主页：数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
           },
         ],
       ],

@@ -26,19 +26,24 @@ npm run preview
 
 ## 项目文档
 
+- [变更日志](CHANGELOG.md)：精简记录变更内容（位于项目根目录）
 - [国际化](docs/i18n.md)：语言路由、内容组织与新增语言方式
-- [变更日志](docs/changelog.md)：功能变更及其影响
+- [代码检查与格式化](docs/tooling.md)：oxlint / oxfmt 的配置与使用
+
+`docs/` 仅在新技术实现或重大更新时写完整技术文档；功能变更精简记录在根目录的 `CHANGELOG.md`。
 
 ## 目录结构
 
 ```text
 .
+├── CHANGELOG.md              # 功能变更记录
+├── docs/                     # 重要的技术实现文档（如国际化、架构设计）
 ├── .vitepress/              # VitePress 配置与全局布局
 ├── site/                    # Markdown 页面入口（按语言/路由组织）
 ├── src/api/                 # 预留的 API 层
 ├── src/components/          # 业务组件（site/ 复用原语，projects/ 等按功能拆分）
 ├── src/components/ui/       # shadcn-vue 组件源码
-├── src/data/                # 结构化内容与类型（中英文履历）
+├── src/data/                # 按分类组织的结构化内容与类型（中英文在同一文件）
 ├── src/hooks/               # 组合式函数（语言、内容选择）
 ├── src/i18n/                # 界面文案资源
 ├── src/lib/                 # 通用工具

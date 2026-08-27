@@ -19,7 +19,10 @@ const m = computed(() => messages.value.experience)
 
     <Section :title="m.experienceTitle" class="mt-16">
       <ul class="divide-y divide-border border-y border-border">
-        <li v-for="experience in profile.experiences" :key="experience.organization">
+        <li
+          v-for="experience in profile.experiences"
+          :key="experience.organization"
+        >
           <ContentEntry
             :number="experience.period"
             :title="experience.organization"
@@ -46,7 +49,11 @@ const m = computed(() => messages.value.experience)
 
     <Section :title="m.honorsTitle" class="mt-16">
       <ul class="divide-y divide-border border-y border-border">
-        <li v-for="item in profile.honors" :key="item" class="flex gap-3 py-4 text-muted-foreground">
+        <li
+          v-for="item in profile.honors"
+          :key="item"
+          class="flex gap-3 py-4 text-muted-foreground"
+        >
           <span class="mt-2.5 h-px w-3 shrink-0 bg-border" />
           <span class="measure">{{ item }}</span>
         </li>

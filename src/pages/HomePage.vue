@@ -6,7 +6,7 @@ import Section from "@/components/site/Section.vue"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { useProfileData } from "@/hooks/useProfileData"
 import { useSiteLocale } from "@/hooks/useSiteLocale"
-import type { Project } from "@/data/types"
+import type { Project } from "@/data/projects"
 
 const { messages, path } = useSiteLocale()
 const { profile } = useProfileData()
@@ -34,26 +34,40 @@ function contactIcon(href: string) {
       <div class="order-2 lg:order-1">
         <h1 class="text-4xl font-medium md:text-5xl">{{ m.aboutTitle }}</h1>
         <div class="mt-6 flex flex-col gap-4">
-          <p v-for="(paragraph, index) in m.aboutBody" :key="index" class="text-lg leading-8 text-card-foreground">
+          <p
+            v-for="(paragraph, index) in m.aboutBody"
+            :key="index"
+            class="text-lg leading-8 text-card-foreground"
+          >
             {{ paragraph }}
           </p>
         </div>
 
         <div class="mt-10 grid gap-8 sm:grid-cols-2">
           <div>
-            <h2 class="font-serif text-xl font-medium">{{ m.interestsTitle }}</h2>
+            <h2 class="font-serif text-xl font-medium">
+              {{ m.interestsTitle }}
+            </h2>
             <ul class="mt-3 flex flex-col gap-1.5">
-              <li v-for="interest in m.interests" :key="interest" class="text-muted-foreground">
+              <li
+                v-for="interest in m.interests"
+                :key="interest"
+                class="text-muted-foreground"
+              >
                 {{ interest }}
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="font-serif text-xl font-medium">{{ m.educationTitle }}</h2>
+            <h2 class="font-serif text-xl font-medium">
+              {{ m.educationTitle }}
+            </h2>
             <ul class="mt-3 flex flex-col gap-3">
               <li v-for="item in profile.education" :key="item.school">
                 <p class="font-medium">{{ item.degree }}</p>
-                <p class="text-sm text-muted-foreground">{{ item.school }} · {{ item.period }}</p>
+                <p class="text-sm text-muted-foreground">
+                  {{ item.school }} · {{ item.period }}
+                </p>
               </li>
             </ul>
           </div>
@@ -64,11 +78,13 @@ function contactIcon(href: string) {
       <aside class="order-1 lg:order-2 lg:sticky lg:top-24 lg:self-start">
         <div class="flex flex-col items-center text-center">
           <Avatar class="size-32 shadow-sm md:size-56">
-            <AvatarImage src="/avatar.webp" :alt="m.name"/>
+            <AvatarImage src="/avatar.webp" :alt="m.name" />
           </Avatar>
           <h1 class="mt-5 font-serif text-3xl font-medium">{{ m.name }}</h1>
           <p class="mt-2 text-muted-foreground">{{ m.role }}</p>
-          <a class="mt-1 text-link hover:underline" :href="path('/contact/')">{{ m.organization }}</a>
+          <a class="mt-1 text-link hover:underline" :href="path('/contact/')">{{
+            m.organization
+          }}</a>
 
           <div class="mt-5 flex flex-wrap justify-center gap-4">
             <a
@@ -94,13 +110,23 @@ function contactIcon(href: string) {
       </aside>
     </div>
 
-    <Section :title="m.researchTitle" :description="m.researchDescription" class="mt-16">
+    <Section
+      :title="m.researchTitle"
+      :description="m.researchDescription"
+      class="mt-16"
+    >
       <ul class="divide-y divide-border border-y border-border">
-        <li v-for="area in profile.researchAreas" :key="area.title" class="py-5">
+        <li
+          v-for="area in profile.researchAreas"
+          :key="area.title"
+          class="py-5"
+        >
           <div class="grid gap-2 sm:grid-cols-[1fr_auto] sm:gap-6">
             <div>
               <h3 class="font-serif text-xl font-medium">{{ area.title }}</h3>
-              <p class="mt-2 measure text-muted-foreground">{{ area.description }}</p>
+              <p class="mt-2 measure text-muted-foreground">
+                {{ area.description }}
+              </p>
             </div>
           </div>
         </li>
@@ -110,18 +136,28 @@ function contactIcon(href: string) {
       </div>
     </Section>
 
-    <Section :title="m.selectedWorkTitle" :description="m.selectedWorkDescription" class="mt-16">
+    <Section
+      :title="m.selectedWorkTitle"
+      :description="m.selectedWorkDescription"
+      class="mt-16"
+    >
       <ol class="divide-y divide-border border-y border-border">
         <li
           v-for="(project, index) in selectedProjects"
           :key="project.title"
           class="grid grid-cols-1 gap-2 py-5 sm:grid-cols-[3rem_1fr] sm:gap-6"
         >
-          <span class="font-mono text-xs leading-7 text-muted-foreground">{{ index + 1 }}</span>
+          <span class="font-mono text-xs leading-7 text-muted-foreground">{{
+            index + 1
+          }}</span>
           <div>
             <h3 class="font-serif text-lg font-medium">{{ project.title }}</h3>
-            <p class="mt-1 font-mono text-xs text-muted-foreground">{{ projectMeta(project) }}</p>
-            <p class="mt-3 measure text-muted-foreground">{{ project.description }}</p>
+            <p class="mt-1 font-mono text-xs text-muted-foreground">
+              {{ projectMeta(project) }}
+            </p>
+            <p class="mt-3 measure text-muted-foreground">
+              {{ project.description }}
+            </p>
           </div>
         </li>
       </ol>
@@ -130,23 +166,33 @@ function contactIcon(href: string) {
       </div>
     </Section>
 
-    <Section :title="m.recentTitle" :description="m.recentDescription" class="mt-16">
+    <Section
+      :title="m.recentTitle"
+      :description="m.recentDescription"
+      class="mt-16"
+    >
       <ul class="divide-y divide-border border-y border-border">
         <li
           v-for="experience in recentExperiences"
           :key="experience.organization"
           class="grid grid-cols-1 gap-1 py-5 sm:grid-cols-[12rem_1fr] sm:gap-6"
         >
-          <span class="font-mono text-xs leading-7 text-muted-foreground">{{ experience.period }}</span>
+          <span class="font-mono text-xs leading-7 text-muted-foreground">{{
+            experience.period
+          }}</span>
           <div>
             <h3 class="font-medium">{{ experience.organization }}</h3>
             <p class="text-sm text-muted-foreground">{{ experience.role }}</p>
-            <p class="mt-2 measure text-sm text-muted-foreground">{{ experience.summary }}</p>
+            <p class="mt-2 measure text-sm text-muted-foreground">
+              {{ experience.summary }}
+            </p>
           </div>
         </li>
       </ul>
       <div class="mt-6">
-        <a class="link text-sm" :href="path('/experience/')">{{ m.viewAll }} →</a>
+        <a class="link text-sm" :href="path('/experience/')"
+          >{{ m.viewAll }} →</a
+        >
       </div>
     </Section>
   </div>
