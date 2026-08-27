@@ -1,14 +1,17 @@
-import { onMounted, readonly, ref } from "vue"
+import { onMounted, readonly, shallowRef } from "vue"
 
 const STORAGE_KEY = "theme"
 
-const isDark = ref(false)
+const isDark = shallowRef(false)
 let initialized = false
 
 function apply(dark: boolean) {
   isDark.value = dark
   if (typeof document !== "undefined") {
     document.documentElement.classList.toggle("dark", dark)
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", dark ? "#11161a" : "#f6f7f8")
   }
 }
 

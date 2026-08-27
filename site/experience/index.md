@@ -1,6 +1,6 @@
 ---
 title: Experience
-description: Research and industry experience, education, and selected honors.
+description: Professional experience, education, technical skills, and selected honors across software and robotics.
 ---
 
 <script setup lang="ts">

@@ -1,6 +1,6 @@
 ---
 title: 高鼎 / Ding Gao
-description: 东华大学智能制造硕士，研究数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。
+description: 全栈工程师与机器人研究者，关注智能制造、数字孪生、具身智能与工业软件。
 ---
 
 <script setup lang="ts">

@@ -2,24 +2,40 @@ import { computed } from "vue"
 
 import { education } from "@/data/education"
 import { experiences } from "@/data/experiences"
-import { email, honors, profileLinks, summaryTags } from "@/data/profile"
+import {
+  avatarSrc,
+  cvHref,
+  email,
+  honors,
+  identity,
+  profileLinks,
+  skillLevels,
+  summaryTags,
+} from "@/data/profile"
 import { projects } from "@/data/projects"
 import { publications } from "@/data/publications"
-import { researchAreas } from "@/data/research"
+import { researchAreas, researchExperiences } from "@/data/research"
+import { skillGroups } from "@/data/skills"
 import { useSiteLocale } from "@/hooks/useSiteLocale"
 
 export function useProfileData() {
   const { locale } = useSiteLocale()
   const profile = computed(() => ({
+    cvHref,
     email,
+    avatarSrc,
     profileLinks,
-    summaryTags,
+    skillLevels,
+    identity: identity[locale.value],
+    summaryTags: summaryTags[locale.value],
     honors: honors[locale.value],
     researchAreas: researchAreas[locale.value],
+    researchExperiences: researchExperiences[locale.value],
     projects: projects[locale.value],
     publications: publications[locale.value],
     experiences: experiences[locale.value],
     education: education[locale.value],
+    skillGroups: skillGroups[locale.value],
   }))
 
   return { profile }

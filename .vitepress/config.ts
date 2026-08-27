@@ -9,17 +9,17 @@ export default defineConfig({
   appearance: false,
   title: "Ding Gao",
   description:
-    "Academic profile of Ding Gao — digital twins, LLM multi-agent systems, embodied AI robotics, and industrial software.",
+    "Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.",
   head: [
     ["link", { rel: "icon", href: "/human.svg", type: "image/svg+xml" }],
-    ["meta", { name: "theme-color", content: "#fafaf8" }],
+    ["meta", { name: "theme-color", content: "#f6f7f8" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:site_name", content: "Ding Gao" }],
     ["meta", { name: "twitter:card", content: "summary" }],
     [
       "script",
       {},
-      `(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}})()`,
+      `(function(){try{var s=localStorage.getItem("theme");var d=s?s==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#11161a":"#f6f7f8")}catch(e){}})()`,
     ],
   ],
   locales: {
@@ -28,7 +28,7 @@ export default defineConfig({
       lang: "en",
       title: "Ding Gao",
       description:
-        "Academic profile of Ding Gao — digital twins, LLM multi-agent systems, embodied AI robotics, and industrial software.",
+        "Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.",
       head: [
         ["meta", { property: "og:title", content: "Ding Gao" }],
         [
@@ -36,7 +36,7 @@ export default defineConfig({
           {
             property: "og:description",
             content:
-              "Academic profile of Ding Gao — digital twins, LLM multi-agent systems, embodied AI robotics, and industrial software.",
+              "Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.",
           },
         ],
       ],
@@ -45,8 +45,7 @@ export default defineConfig({
       label: "简体中文",
       lang: "zh-CN",
       title: "高鼎 / Ding Gao",
-      description:
-        "高鼎的学术主页：数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
+      description: "高鼎的个人主页：全栈工程、机器人研究、数字孪生与智能系统。",
       head: [
         ["meta", { property: "og:title", content: "高鼎 / Ding Gao" }],
         [
@@ -54,7 +53,7 @@ export default defineConfig({
           {
             property: "og:description",
             content:
-              "高鼎的学术主页：数字孪生、LLM 多智能体系统、具身智能机器人与工业软件。",
+              "高鼎的个人主页：全栈工程、机器人研究、数字孪生与智能系统。",
           },
         ],
       ],

@@ -3,8 +3,16 @@ import { computed } from "vue"
 import { Moon, Sun } from "@lucide/vue"
 import { useData } from "vitepress"
 
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { useSiteLocale } from "@/hooks/useSiteLocale"
 import { useTheme } from "@/hooks/useTheme"
+import { cn } from "@/lib/utils"
 
 const { page } = useData()
 const { locale, messages, path } = useSiteLocale()
@@ -32,25 +40,30 @@ const alternate = computed(() => {
 </script>
 
 <template>
-  <header
-    class="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur"
-  >
+  <header class="sticky top-0 z-10 bg-background/92 backdrop-blur-md">
     <div
-      class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 md:px-8"
+      class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-8 md:py-4"
     >
       <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
         {{ messages.siteName }}
       </a>
 
-      <nav class="ml-auto" :aria-label="messages.primaryNavigationLabel">
+      <nav
+        class="order-3 w-full overflow-x-auto md:order-2 md:ml-auto md:w-auto"
+        :aria-label="messages.primaryNavigationLabel"
+      >
         <ul
-          class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted-foreground"
+          class="flex min-w-max items-center gap-5 pb-1 text-sm text-muted-foreground md:pb-0"
         >
           <li v-for="item in messages.navigation" :key="item.id">
             <a
               :href="path(item.href)"
-              class="transition-colors hover:text-foreground"
-              :class="activeId === item.id ? 'font-medium text-foreground' : ''"
+              :class="
+                cn(
+                  'transition-colors hover:text-foreground',
+                  activeId === item.id && 'font-medium text-foreground',
+                )
+              "
               :aria-current="activeId === item.id ? 'page' : undefined"
             >
               {{ item.label }}
@@ -59,26 +72,44 @@ const alternate = computed(() => {
         </ul>
       </nav>
 
-      <div class="hidden h-4 w-px bg-border md:block" />
-      <button
-        type="button"
-        class="text-muted-foreground transition-colors hover:text-foreground"
-        :aria-label="
-          isDark ? messages.switchToLightLabel : messages.switchToDarkLabel
-        "
-        @click="toggle"
-      >
-        <Sun v-if="isDark" class="size-4" aria-hidden="true" />
-        <Moon v-else class="size-4" aria-hidden="true" />
-      </button>
-      <a
-        class="font-mono text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
-        :aria-label="`${messages.switchLanguageLabel}: ${alternate.name}`"
-        :href="alternate.href"
-        :lang="locale === 'zh' ? 'en' : 'zh-CN'"
-      >
-        {{ alternate.label }}
-      </a>
+      <div class="order-2 ml-auto flex items-center gap-2 md:order-3 md:ml-0">
+        <Separator orientation="vertical" class="hidden h-4 md:block" />
+        <Tooltip>
+          <TooltipTrigger as-child>
+            <Button
+              variant="ghost"
+              size="icon-xs"
+              :aria-label="
+                isDark
+                  ? messages.switchToLightLabel
+                  : messages.switchToDarkLabel
+              "
+              @click="toggle"
+            >
+              <Sun v-if="isDark" aria-hidden="true" />
+              <Moon v-else aria-hidden="true" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>
+              {{
+                isDark
+                  ? messages.switchToLightLabel
+                  : messages.switchToDarkLabel
+              }}
+            </p>
+          </TooltipContent>
+        </Tooltip>
+        <a
+          class="font-mono text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+          :aria-label="`${messages.switchLanguageLabel}: ${alternate.name}`"
+          :href="alternate.href"
+          :lang="locale === 'zh' ? 'en' : 'zh-CN'"
+        >
+          {{ alternate.label }}
+        </a>
+      </div>
     </div>
+    <Separator />
   </header>
 </template>

@@ -1,6 +1,6 @@
 ---
 title: 联系
-description: 欢迎围绕数字孪生、具身智能、工业软件与智能制造研究进行交流。
+description: 欢迎围绕机器人、智能体系统、全栈工程与智能制造进行交流。
 ---
 
 <script setup lang="ts">

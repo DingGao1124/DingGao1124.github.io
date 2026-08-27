@@ -1,6 +1,6 @@
 ---
 title: 经历
-description: 研究与产业经历、教育背景与部分荣誉。
+description: 软件与机器人方向的行业经历、教育背景、专业技能与代表性荣誉。
 ---
 
 <script setup lang="ts">

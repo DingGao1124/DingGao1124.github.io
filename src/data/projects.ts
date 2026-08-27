@@ -1,335 +1,278 @@
-type LinkItem = {
+export type ProjectLink = {
   label: string
   href: string
-  /** Optional key used to map to a Lucide icon in the content cards. */
-  icon?: string
-  /** Optional short description shown next to the label. */
-  description?: string
 }
 
-export type ProjectCategory =
-  | "Research"
-  | "Robotics"
-  | "Software"
-  | "Hardware"
-  | "研究"
-  | "机器人"
-  | "软件"
-  | "硬件"
+export type ProjectMedia = {
+  src?: string
+  alt: string
+  label: string
+}
 
 export type Project = {
+  id: string
   title: string
-  period?: string
-  role?: string
-  category: ProjectCategory
+  period: string
+  role: string
+  category: string
   description: string
   highlights: string[]
   tech: string[]
-  links?: LinkItem[]
-  images?: string[]
+  featured?: boolean
+  links?: ProjectLink[]
+  media: ProjectMedia[]
 }
 
 export const projects: Record<SiteLocale, Project[]> = {
   zh: [
     {
-      title: "基于 LLM 多智能体的数字孪生产线监控平台",
-      period: "2024.09 - 至今",
+      id: "digital-twin-production-line",
+      title: "基于 LLM 多智能体的数字孪生产线",
+      period: "2024.09–2026.06",
       role: "项目负责人",
       category: "研究",
       description:
-        "构建物理生产流水线的虚拟三维模型，为产线单元配置 LLM 驱动智能体，使其感知自身状态并与相邻智能体交互，持续更新虚拟产线状态并辅助控制物理产线。",
+        "为物理生产线建立实时同步的三维数字模型，并为各产线单元配置 LLM 智能体，使其感知状态、协作推理并辅助控制物理系统。",
       highlights: [
-        "使用 React、Next.js、Supabase、ReactFlow 与 ThreeJS/R3F 构建前后端与三维展示。",
-        "通过 Socket / WebSocket 同步真实产线位置位姿与前端 ThreeJS 模型状态。",
-        "集成 STT/TTS 与语音大语言模型，支持自然语言交互与生产知识 RAG 检索。",
+        "使用 React、Next.js、Supabase、React Flow 与 Three.js / R3F 构建完整应用。",
+        "通过 Socket / WebSocket 同步真实产线与前端三维模型的状态和位姿。",
+        "集成 STT/TTS、流式多智能体对话、工具调用与生产知识 RAG。",
       ],
-      tech: [
-        "React",
-        "Next.js",
-        "ThreeJS",
-        "Supabase",
-        "LangChain",
-        "LangGraph",
+      tech: ["React", "Next.js", "Three.js", "Supabase", "LangGraph", "RAG"],
+      featured: true,
+      media: [
+        { alt: "数字孪生产线三维界面占位图", label: "三维产线界面" },
+        { alt: "数字孪生多智能体工作流占位图", label: "智能体工作流" },
+        { alt: "物理产线同步实验占位图", label: "虚实同步实验" },
       ],
     },
     {
-      title: "NVIDIA Sky Hackathon 工业拆卸工具推荐机器人",
-      period: "2025.04 - 2025.06",
+      id: "industrial-disassembly-robot",
+      title: "工业拆卸工具推荐机器人",
+      period: "2025.04–2025.06",
       role: "核心开发者",
       category: "机器人",
       description:
-        "针对退役汽车动力电池拆卸场景，开发多模态感知-决策-执行系统，通过语音指令和场景理解驱动 LLM 生成拆卸策略并控制机械臂夹取工具。",
+        "针对退役汽车动力电池拆卸，构建多模态感知—决策—执行系统，通过语音指令和场景理解驱动机械臂取送工具。",
       highlights: [
-        "融合 YOLO-World、FastSAM、VLLM 与 SoM prompting，提升细粒度视觉识别能力。",
-        "使用 GraspNet 从点云生成抗碰撞抓取位姿，并通过 MCP / Socket 与 UR 机械臂通信。",
-        "获得第十二届 NVIDIA Sky Hackathon 全国二等奖。",
+        "融合 FastSAM、视觉语言模型与 Set-of-Mark prompting 进行场景理解。",
+        "使用 GraspNet 从点云生成抗碰撞抓取位姿，并通过 MCP 控制 UR 机械臂。",
+        "获得第十二届 NVIDIA Sky Hackathon 卓越奖（全国第二名）。",
       ],
-      tech: ["LLM", "VLA", "FastSAM", "GraspNet", "LangGraph", "MCP"],
+      tech: ["LangGraph", "VLA", "FastSAM", "GraspNet", "MCP", "UR Robot"],
+      featured: true,
       links: [
-        {
-          label: "视频",
-          href: "https://www.bilibili.com/video/BV1sRj3zAEXG",
-          icon: "video",
-        },
+        { label: "视频", href: "https://www.bilibili.com/video/BV1sRj3zAEXG" },
         {
           label: "GitCode",
           href: "https://gitcode.com/baomingcanjia/URgrasp_agent",
-          icon: "code",
         },
-        {
-          label: "GitHub",
-          href: "https://github.com/SsspongeBob/Hackathon",
-          icon: "github",
-        },
+        { label: "GitHub", href: "https://github.com/SsspongeBob/Hackathon" },
+      ],
+      media: [
+        { alt: "工业拆卸机器人实验占位图", label: "机器人实验" },
+        { alt: "工业拆卸视觉理解占位图", label: "视觉理解" },
+        { alt: "工业拆卸抓取规划占位图", label: "抓取规划" },
       ],
     },
     {
-      title: "LLM-based Agent for ABB GoFa Robot",
-      period: "2025.07 - 2025.09",
-      role: "应用软件开发-机器人",
+      id: "abb-gofa-agent",
+      title: "ABB GoFa 机器人任务规划智能体",
+      period: "2025.07–2025.09",
+      role: "机器人应用软件开发实习生",
       category: "机器人",
       description:
-        "在 ABB 机器人与离散自动化 R&D 部门，围绕 GoFa 协作机器人构建基于 Azure OpenAI 的任务规划智能体，并与 RWS、RAPID 和上位机软件集成。",
+        "在 ABB 机器人研发团队中构建基于 Azure OpenAI 的任务规划智能体，将自然语言任务转换为可执行的 RAPID 指令。",
       highlights: [
-        "通过 LangGraph 构建多任务节点，支持长序列任务拆解、串并行执行与异常处理。",
-        "封装 RWS 服务以动态读取和修改 RAPID 变量，降低重复修改机器人代码的成本。",
-        "待补充：Project Description / README / workflow 摘要。",
+        "通过 RWS 服务支持任务拆解、串并行执行和失败处理。",
+        "构建 App Studio 内的 RAG 编程助手，帮助工程师生成机器人功能并检索技术资料。",
       ],
-      tech: ["Azure OpenAI", "LangGraph", "RAPID", "RWS", "Vue", "MCP"],
+      tech: ["Azure OpenAI", "LangGraph", "RAPID", "RWS", "MCP"],
+      media: [
+        { alt: "ABB GoFa 机器人占位图", label: "GoFa 机器人" },
+        { alt: "ABB 任务规划界面占位图", label: "任务规划" },
+      ],
     },
     {
-      title: "第六届中国大学生起重机创意大赛",
-      period: "2022.02 - 2022.11",
-      role: "队长 & 核心开发员",
+      id: "crane-robot",
+      title: "全国大学生起重机创意大赛机器人",
+      period: "2022.02–2022.11",
+      role: "队长与核心开发者",
       category: "硬件",
       description:
-        "设计 STM32 驱动的自主起重机器人，在限定时间内沿指定路线搬运多种货物，并通过机械结构、驱动程序和路径规划算法提升效率。",
+        "设计 STM32 驱动的自主起重机器人，通过机械结构、嵌入式控制和路径规划完成限定路线上的多货物搬运。",
       highlights: [
-        "设计移动底盘与 3D 打印扇形机构，改善接口限制下的取放定位问题。",
-        "使用 C 语言驱动直流电机、编码器电机、舵机和机械臂，并通过 CAN 总线协调模块。",
-        "作品获全国一等奖，整体工作时间由 4min32s 缩短至 3min15s。",
+        "使用 C 语言控制电机、舵机和机械臂，并通过 CAN 总线协调各模块。",
+        "将总运行时间从 4 分 32 秒缩短至 3 分 15 秒，并获得全国一等奖。",
       ],
       tech: ["STM32", "C", "CAN Bus", "Mechanical Design", "Path Planning"],
       links: [
-        {
-          label: "视频",
-          href: "https://www.bilibili.com/video/BV1J2p6zXEnv/",
-          icon: "video",
-        },
+        { label: "视频", href: "https://www.bilibili.com/video/BV1J2p6zXEnv/" },
+      ],
+      media: [
+        { alt: "起重机器人整机占位图", label: "机器人整机" },
+        { alt: "起重机器人机构占位图", label: "机械机构" },
       ],
     },
     {
+      id: "ai-agents-town",
       title: "AI Agents Town",
-      period: "2024.12 - 2025.04",
-      role: "全栈开发工程师",
+      period: "2024.12–2025.04",
+      role: "全栈开发实习生",
       category: "软件",
       description:
-        "将游戏引擎与前端结合，实现 LLM 驱动的 AI 智能体小镇，玩家行动会影响小镇剧情走向。",
+        "在浏览器虚拟世界中构建具备长期记忆和上下文交互能力的 LLM 智能体，玩家行为会持续影响角色关系和剧情状态。",
       highlights: [
-        "通过 Phaser 构建游戏场景、NPC、玩家和游戏世界，并用 Event Bus 与 React 交互。",
-        "NPC 具备长短期记忆和经历总结能力，使用 RAG 增强上下文交互。",
-        "使用图数据库维护角色关系，并通过 tool calling 推动剧情状态变化。",
+        "使用 Phaser 构建游戏世界，并通过 Event Bus 与 React 交互。",
+        "使用 RAG、Postgres 与 Neo4j 管理角色记忆、经历和关系。",
       ],
-      tech: ["React", "Vite", "Phaser", "LangChain", "Postgres", "Neo4J"],
-    },
-    {
-      title: "WhatsApp 智能体客服",
-      category: "软件",
-      description:
-        "面向租房客户需求，构建可监听 WhatsApp 消息并调用智能体进行自动回复的客服系统。",
-      highlights: [
-        "通过 Twilio WebHook 监听客户消息，并同步至后台聊天界面。",
-        "后台基于 WebSocket 同时展示用户消息与智能体回复。",
-        "支持工单、问答和配送等请求类型；待补充：业务规则与评估方式。",
+      tech: ["React", "Phaser", "LangChain", "RAG", "Postgres", "Neo4j"],
+      media: [
+        { alt: "AI Agents Town 游戏世界占位图", label: "游戏世界" },
+        { alt: "AI Agents Town 智能体对话占位图", label: "智能体对话" },
       ],
-      tech: ["Twilio", "WebHook", "WebSocket", "LLM Agent"],
-    },
-    {
-      title: "LLM Work Station",
-      category: "软件",
-      description: "待补充：功能说明。",
-      highlights: ["已保留作品视频链接，后续补充功能边界、技术栈和演示说明。"],
-      tech: ["LLM", "待补充"],
-      links: [
-        {
-          label: "视频",
-          href: "https://www.bilibili.com/video/BV1eypCzQEhy/",
-          icon: "video",
-        },
-      ],
-    },
-    {
-      title: "The Three Stooges Website",
-      category: "软件",
-      description:
-        "面向研究交流设计的网站，支持管理 Top 100 论文、发布观点、评论讨论，并与面向数字孪生研究微调的 LLM 对话。",
-      highlights: [
-        "支持论文管理、观点发布、评论互动和研究问答。",
-        "待补充：系统截图、部署地址与模型微调说明。",
-      ],
-      tech: ["Web", "LLM", "Digital Twin", "待补充"],
-    },
-    {
-      title: "LLM Chrome Extension",
-      category: "软件",
-      description: "待补充：Chrome Extension 的目标、功能与技术栈。",
-      highlights: [
-        "语雀 Portfolio 已列出该项目标题，首版保留位置以便后续完善。",
-      ],
-      tech: ["Chrome Extension", "LLM", "待补充"],
     },
   ],
   en: [
     {
-      title: "LLM Multi-Agent Digital-Twin Production Line Monitoring Platform",
-      period: "Sep 2024 - Present",
+      id: "digital-twin-production-line",
+      title: "LLM Multi-Agent Digital-Twin Production Line",
+      period: "Sep 2024–Jun 2026",
       role: "Project Lead",
       category: "Research",
       description:
-        "Built a virtual 3D model of a physical production line and assigned an LLM-driven agent to each unit. The agents perceive their own state, communicate with adjacent agents, continuously update the virtual line, and assist with control of the physical system.",
+        "Built a real-time 3D model of a physical production line and assigned an LLM agent to each unit so they could perceive state, coordinate decisions, and assist with physical-system control.",
       highlights: [
-        "Built the full-stack application and 3D visualization with React, Next.js, Supabase, React Flow, and Three.js / React Three Fiber.",
-        "Synchronized position and pose data from the physical line with the Three.js scene through Socket and WebSocket connections.",
-        "Integrated STT, TTS, and a voice-enabled LLM for natural-language interaction and RAG over production knowledge.",
+        "Built the complete application with React, Next.js, Supabase, React Flow, and Three.js / R3F.",
+        "Synchronized physical and virtual state and pose data through Socket and WebSocket connections.",
+        "Integrated STT/TTS, streaming multi-agent dialogue, tool calls, and RAG over production knowledge.",
       ],
-      tech: [
-        "React",
-        "Next.js",
-        "Three.js",
-        "Supabase",
-        "LangChain",
-        "LangGraph",
+      tech: ["React", "Next.js", "Three.js", "Supabase", "LangGraph", "RAG"],
+      featured: true,
+      media: [
+        {
+          alt: "Placeholder for the digital-twin 3D interface",
+          label: "3D production line",
+        },
+        {
+          alt: "Placeholder for the multi-agent workflow",
+          label: "Agent workflow",
+        },
+        {
+          alt: "Placeholder for the physical–virtual synchronization experiment",
+          label: "Synchronization experiment",
+        },
       ],
     },
     {
-      title:
-        "Industrial Disassembly Tool-Recommendation Robot — NVIDIA Sky Hackathon",
-      period: "Apr 2025 - Jun 2025",
+      id: "industrial-disassembly-robot",
+      title: "Industrial Disassembly Tool-Recommendation Robot",
+      period: "Apr 2025–Jun 2025",
       role: "Core Developer",
       category: "Robotics",
       description:
-        "Developed a multimodal perception-decision-action system for dismantling retired EV batteries. Voice commands and scene understanding guide an LLM in generating a disassembly strategy and controlling a robot arm to retrieve tools.",
+        "Built a multimodal perception–decision–action system for retired EV-battery disassembly, using voice commands and scene understanding to direct a robot arm in delivering tools.",
       highlights: [
-        "Combined YOLO-World, FastSAM, VLLM, and Set-of-Mark prompting to improve fine-grained visual recognition.",
-        "Used GraspNet to generate collision-aware grasp poses from point clouds and connected to a UR robot through MCP and Socket interfaces.",
-        "Won second prize nationally in the 12th NVIDIA Sky Hackathon.",
+        "Combined FastSAM, vision-language models, and Set-of-Mark prompting for scene understanding.",
+        "Generated collision-aware grasp poses from point clouds with GraspNet and controlled a UR robot through MCP.",
+        "Won an Excellence Award (2nd place) at the 12th NVIDIA Sky Hackathon.",
       ],
-      tech: ["LLM", "VLA", "FastSAM", "GraspNet", "LangGraph", "MCP"],
+      tech: ["LangGraph", "VLA", "FastSAM", "GraspNet", "MCP", "UR Robot"],
+      featured: true,
       links: [
-        {
-          label: "Video",
-          href: "https://www.bilibili.com/video/BV1sRj3zAEXG",
-          icon: "video",
-        },
+        { label: "Video", href: "https://www.bilibili.com/video/BV1sRj3zAEXG" },
         {
           label: "GitCode",
           href: "https://gitcode.com/baomingcanjia/URgrasp_agent",
-          icon: "code",
+        },
+        { label: "GitHub", href: "https://github.com/SsspongeBob/Hackathon" },
+      ],
+      media: [
+        {
+          alt: "Placeholder for the industrial disassembly robot experiment",
+          label: "Robot experiment",
         },
         {
-          label: "GitHub",
-          href: "https://github.com/SsspongeBob/Hackathon",
-          icon: "github",
+          alt: "Placeholder for visual scene understanding",
+          label: "Visual understanding",
+        },
+        { alt: "Placeholder for grasp planning", label: "Grasp planning" },
+      ],
+    },
+    {
+      id: "abb-gofa-agent",
+      title: "Task-Planning Agent for the ABB GoFa Robot",
+      period: "Jul 2025–Sep 2025",
+      role: "Robotics Application Software Developer Intern",
+      category: "Robotics",
+      description:
+        "Built an Azure OpenAI task-planning agent in ABB Robotics R&D that translated natural-language tasks into executable RAPID commands.",
+      highlights: [
+        "Used RWS services for task decomposition, serial and parallel execution, and failure handling.",
+        "Built a RAG coding assistant in App Studio for robot-function generation and technical retrieval.",
+      ],
+      tech: ["Azure OpenAI", "LangGraph", "RAPID", "RWS", "MCP"],
+      media: [
+        { alt: "Placeholder for the ABB GoFa robot", label: "GoFa robot" },
+        {
+          alt: "Placeholder for the ABB task-planning interface",
+          label: "Task planning",
         },
       ],
     },
     {
-      title: "LLM-based Agent for ABB GoFa Robot",
-      period: "Jul 2025 - Sep 2025",
-      role: "Robotics Application Software Developer",
-      category: "Robotics",
-      description:
-        "Built an Azure OpenAI-based task-planning agent for the GoFa collaborative robot in ABB's Robotics and Discrete Automation R&D team, integrating it with RWS, RAPID, and supervisory software.",
-      highlights: [
-        "Built a multi-node LangGraph workflow for long-horizon task decomposition, serial and parallel execution, and exception handling.",
-        "Wrapped RWS services to read and update RAPID variables dynamically, reducing repeated changes to robot code.",
-        "To be added: project description, README, and workflow summary.",
-      ],
-      tech: ["Azure OpenAI", "LangGraph", "RAPID", "RWS", "Vue", "MCP"],
-    },
-    {
-      title: "6th China University Student Crane Innovation Competition",
-      period: "Feb 2022 - Nov 2022",
+      id: "crane-robot",
+      title: "National Crane Creativity Competition Robot",
+      period: "Feb 2022–Nov 2022",
       role: "Team Lead & Core Developer",
       category: "Hardware",
       description:
-        "Designed an STM32-powered autonomous crane robot that transported multiple payloads along a specified route within a time limit, improving efficiency through mechanical design, embedded control, and path-planning algorithms.",
+        "Designed an STM32-powered autonomous crane robot that moved multiple payloads along a specified route using mechanical design, embedded control, and path planning.",
       highlights: [
-        "Designed the mobile chassis and a 3D-printed sector mechanism to improve pick-and-place positioning under interface constraints.",
-        "Programmed DC motors, encoder motors, servos, and the robot arm in C, coordinating modules over CAN bus.",
-        "Won first prize nationally and reduced total operating time from 4m32s to 3m15s.",
+        "Programmed motors, servos, and the robot arm in C and coordinated modules over CAN bus.",
+        "Reduced total operating time from 4m32s to 3m15s and won national first prize.",
       ],
       tech: ["STM32", "C", "CAN Bus", "Mechanical Design", "Path Planning"],
       links: [
         {
           label: "Video",
           href: "https://www.bilibili.com/video/BV1J2p6zXEnv/",
-          icon: "video",
         },
       ],
-    },
-    {
-      title: "AI Agents Town",
-      period: "Dec 2024 - Apr 2025",
-      role: "Full-Stack Developer",
-      category: "Software",
-      description:
-        "Combined a game engine with a web interface to create a town populated by LLM-driven agents, where player actions influence how the story develops.",
-      highlights: [
-        "Built the game scene, NPCs, player, and world in Phaser, using an event bus to communicate with React.",
-        "Gave NPCs short- and long-term memory with experience summarization, using RAG to enrich contextual interactions.",
-        "Maintained character relationships in a graph database and advanced story state through tool calling.",
-      ],
-      tech: ["React", "Vite", "Phaser", "LangChain", "Postgres", "Neo4j"],
-    },
-    {
-      title: "WhatsApp Customer-Service Agent",
-      category: "Software",
-      description:
-        "Built a customer-service system for rental inquiries that listens for WhatsApp messages and invokes an agent to respond automatically.",
-      highlights: [
-        "Received customer messages through a Twilio webhook and synchronized them with an administrative chat interface.",
-        "Displayed customer messages and agent responses together in real time over WebSocket.",
-        "Supported ticketing, Q&A, and delivery requests; to be added: business rules and evaluation methodology.",
-      ],
-      tech: ["Twilio", "Webhook", "WebSocket", "LLM Agent"],
-    },
-    {
-      title: "LLM Work Station",
-      category: "Software",
-      description: "To be added: feature overview.",
-      highlights: [
-        "The project video is available; scope, technology stack, and demonstration notes will be added later.",
-      ],
-      tech: ["LLM", "To be added"],
-      links: [
+      media: [
         {
-          label: "Video",
-          href: "https://www.bilibili.com/video/BV1eypCzQEhy/",
-          icon: "video",
+          alt: "Placeholder for the complete crane robot",
+          label: "Complete robot",
+        },
+        {
+          alt: "Placeholder for the crane robot mechanism",
+          label: "Mechanical system",
         },
       ],
     },
     {
-      title: "The Three Stooges Website",
+      id: "ai-agents-town",
+      title: "AI Agents Town",
+      period: "Dec 2024–Apr 2025",
+      role: "Full-Stack Developer Intern",
       category: "Software",
       description:
-        "Designed a research community website for managing a Top 100 paper collection, publishing viewpoints, discussing comments, and chatting with an LLM fine-tuned for digital-twin research.",
+        "Built LLM-driven characters with long-term memory and contextual interaction inside a browser-based virtual world where player actions changed relationships and story state.",
       highlights: [
-        "Supported paper management, viewpoint publishing, comment discussions, and research Q&A.",
-        "To be added: system screenshots, deployment URL, and model fine-tuning details.",
+        "Built the game world in Phaser and connected it to React through an event bus.",
+        "Used RAG, Postgres, and Neo4j to manage character memory, experience, and relationships.",
       ],
-      tech: ["Web", "LLM", "Digital Twin", "To be added"],
-    },
-    {
-      title: "LLM Chrome Extension",
-      category: "Software",
-      description:
-        "To be added: the extension's goals, features, and technology stack.",
-      highlights: [
-        "The Yuque portfolio lists this project title; this initial entry is retained for future completion.",
+      tech: ["React", "Phaser", "LangChain", "RAG", "Postgres", "Neo4j"],
+      media: [
+        {
+          alt: "Placeholder for the AI Agents Town game world",
+          label: "Game world",
+        },
+        {
+          alt: "Placeholder for an AI Agents Town character conversation",
+          label: "Agent conversation",
+        },
       ],
-      tech: ["Chrome Extension", "LLM", "To be added"],
     },
   ],
 }

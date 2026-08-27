@@ -3,20 +3,17 @@ import type { HTMLAttributes } from "vue"
 import { cn } from "@/lib/utils"
 
 const props = defineProps<{
-  label: string
   class?: HTMLAttributes["class"]
 }>()
 </script>
 
 <template>
-  <span
+  <div
+    data-slot="empty-header"
     :class="
-      cn(
-        'inline-flex items-center rounded-sm border border-border px-1.5 py-0.5 font-mono text-xs text-muted-foreground',
-        props.class,
-      )
+      cn('flex max-w-sm flex-col items-center gap-2 text-center', props.class)
     "
   >
-    {{ label }}
-  </span>
+    <slot />
+  </div>
 </template>

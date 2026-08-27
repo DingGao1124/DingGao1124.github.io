@@ -1,7 +1,15 @@
 # Changelog
 
+## 2026-08-28
+
+- Navigation: added a fading desktop section rail and an animated return-to-top action.
+- Layout: narrowed page content and moved the profile sidebar before the introduction on mobile.
+- Homepage: restored a circular profile avatar with identity details and language proficiency bars.
+- Components: expanded shadcn-vue composition for media, empty states, actions, and theme guidance.
+
 ## 2026-08-27
 
+- Site: redesigned the bilingual portfolio around a profile hero, timelines, selected work, and complete résumé content.
 - Data: reorganized profile data by category instead of by language.
 - Tooling: added oxlint and oxfmt for linting and formatting.
 

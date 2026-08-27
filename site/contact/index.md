@@ -1,6 +1,6 @@
 ---
 title: Contact
-description: Get in touch about digital twins, embodied AI, industrial software, and intelligent manufacturing research.
+description: Contact Ding Gao about robotics, agent systems, full-stack engineering, and intelligent manufacturing.
 ---
 
 <script setup lang="ts">

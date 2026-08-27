@@ -28,3 +28,6 @@ output/playwright/
 *.njsproj
 *.sln
 *.sw?
+
+# User
+/tmp

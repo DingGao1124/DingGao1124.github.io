@@ -1,120 +1,156 @@
-type LinkItem = {
-  label: string
-  href: string
-  /** Optional key used to map to a Lucide icon in the content cards. */
-  icon?: string
-  /** Optional short description shown next to the label. */
-  description?: string
-}
-
 export type PublicationType = "journal" | "patent"
 
+export type PublicationLink = {
+  label: string
+  href: string
+}
+
 export type Publication = {
+  id: string
+  type: PublicationType
   title: string
-  meta: string
-  note?: string
-  type?: PublicationType
-  links?: LinkItem[]
-  images?: string[]
+  authors?: string[]
+  venue: string
+  year?: string
+  volume?: string
+  pages?: string
+  contribution: string
+  status?: string
+  identifier?: string
+  links?: PublicationLink[]
 }
 
 export const publications: Record<SiteLocale, Publication[]> = {
   zh: [
     {
-      title:
-        "Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration",
-      meta: "Journal of Manufacturing Systems · 2025",
-      note: "DOI: 10.1016/J.JMSY.2025.10.005",
+      id: "historical-vqa",
       type: "journal",
+      title:
+        "Historical visual question answering with large language model for Augmented Reality-assisted Human–Robot Collaboration",
+      authors: ["Lv J", "Si J", "Gao D", "et al."],
+      venue: "Journal of Manufacturing Systems",
+      year: "2025",
+      volume: "83",
+      pages: "546–556",
+      contribution: "共同作者",
+      identifier: "10.1016/J.JMSY.2025.10.005",
       links: [
         {
           label: "DOI",
           href: "https://doi.org/10.1016/J.JMSY.2025.10.005",
-          icon: "doi",
         },
       ],
     },
     {
-      title:
-        "Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly",
-      meta: "Robotics and Computer-Integrated Manufacturing · 2026",
-      note: "DOI: 10.1016/J.RCIM.2025.103207",
+      id: "multi-cognitive-agent",
       type: "journal",
+      title:
+        "Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human–robot collaborative disassembly",
+      authors: ["Lv J", "Si J", "Li W", "Gao D", "et al."],
+      venue: "Robotics and Computer-Integrated Manufacturing",
+      year: "2026",
+      volume: "99",
+      pages: "103207",
+      contribution: "共同作者",
+      identifier: "10.1016/J.RCIM.2025.103207",
       links: [
         {
           label: "DOI",
           href: "https://doi.org/10.1016/J.RCIM.2025.103207",
-          icon: "doi",
         },
       ],
     },
     {
+      id: "self-evolving-digital-twins",
+      type: "journal",
       title:
         "Self-Evolving Digital Twins in Flexible Manufacturing: A Large Language Model-Powered Multi-Agent Approach",
-      meta: "Digital Engineering · First author",
-      note: "Status: Major Revision.",
-      type: "journal",
+      authors: ["Ding Gao", "et al."],
+      venue: "Digital Engineering",
+      contribution: "第一作者",
+      status: "Major revision",
     },
     {
+      id: "conductive-concrete",
+      type: "patent",
       title: "一种基于导电混凝土的预制构件系统",
-      meta: "实用新型专利 · 共同发明人",
-      note: "Patent No. ZL 12601087.",
-      type: "patent",
+      venue: "实用新型专利",
+      contribution: "共同发明人",
+      identifier: "ZL 12601087",
     },
     {
-      title: "一种角度可调节舞台及其使用方法",
-      meta: "发明专利 · 共同发明人",
-      note: "Publication No. CN113702385A.",
+      id: "adjustable-stage",
       type: "patent",
+      title: "一种角度可调节舞台及其使用方法",
+      venue: "发明专利",
+      contribution: "共同发明人",
+      identifier: "CN113702385A",
     },
   ],
   en: [
     {
-      title:
-        "Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration",
-      meta: "Journal of Manufacturing Systems · 2025",
-      note: "DOI: 10.1016/J.JMSY.2025.10.005",
+      id: "historical-vqa",
       type: "journal",
+      title:
+        "Historical visual question answering with large language model for Augmented Reality-assisted Human–Robot Collaboration",
+      authors: ["Lv J", "Si J", "Gao D", "et al."],
+      venue: "Journal of Manufacturing Systems",
+      year: "2025",
+      volume: "83",
+      pages: "546–556",
+      contribution: "Co-author",
+      identifier: "10.1016/J.JMSY.2025.10.005",
       links: [
         {
           label: "DOI",
           href: "https://doi.org/10.1016/J.JMSY.2025.10.005",
-          icon: "doi",
         },
       ],
     },
     {
-      title:
-        "Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly",
-      meta: "Robotics and Computer-Integrated Manufacturing · 2026",
-      note: "DOI: 10.1016/J.RCIM.2025.103207",
+      id: "multi-cognitive-agent",
       type: "journal",
+      title:
+        "Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human–robot collaborative disassembly",
+      authors: ["Lv J", "Si J", "Li W", "Gao D", "et al."],
+      venue: "Robotics and Computer-Integrated Manufacturing",
+      year: "2026",
+      volume: "99",
+      pages: "103207",
+      contribution: "Co-author",
+      identifier: "10.1016/J.RCIM.2025.103207",
       links: [
         {
           label: "DOI",
           href: "https://doi.org/10.1016/J.RCIM.2025.103207",
-          icon: "doi",
         },
       ],
     },
     {
+      id: "self-evolving-digital-twins",
+      type: "journal",
       title:
         "Self-Evolving Digital Twins in Flexible Manufacturing: A Large Language Model-Powered Multi-Agent Approach",
-      meta: "Digital Engineering · First author",
-      note: "Status: Major Revision.",
-      type: "journal",
+      authors: ["Ding Gao", "et al."],
+      venue: "Digital Engineering",
+      contribution: "First author",
+      status: "Major revision",
     },
     {
+      id: "conductive-concrete",
+      type: "patent",
       title: "Precast Component System Based on Conductive Concrete",
-      meta: "Utility model patent · Co-inventor",
-      note: "Patent No. ZL 12601087.",
-      type: "patent",
+      venue: "Utility model patent",
+      contribution: "Co-inventor",
+      identifier: "ZL 12601087",
     },
     {
-      title: "Angle-Adjustable Stage and Method of Use",
-      meta: "Invention patent · Co-inventor",
-      note: "Publication No. CN113702385A.",
+      id: "adjustable-stage",
       type: "patent",
+      title: "Angle-Adjustable Stage and Method of Use",
+      venue: "Invention patent",
+      contribution: "Co-inventor",
+      identifier: "CN113702385A",
     },
   ],
 }

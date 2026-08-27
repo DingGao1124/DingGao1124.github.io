@@ -33,7 +33,7 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 
 ## 3. Reuse Components
 
-**Prefer shadcn-vue components when building pages and UI, reusing them instead of hand-writing native markup. Favor component reuse to keep code minimal and consistent; do not re-invent components that already exist unless there's a clear reason.**
+**Build pages with shadcn-vue components. Prefer composing existing components to hand-writing native markup; keep code minimal and consistent, and do not re-invent components that already exist. Fall back to native HTML tags only when no component satisfies the need, or when using a component would be more complex than the native tag.**
 
 ## 4. Surgical Changes
 

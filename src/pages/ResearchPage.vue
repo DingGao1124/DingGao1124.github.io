@@ -2,8 +2,9 @@
 import { computed } from "vue"
 
 import PageHeader from "@/components/site/PageHeader.vue"
+import PageShell from "@/components/site/PageShell.vue"
 import Section from "@/components/site/Section.vue"
-import Tag from "@/components/site/Tag.vue"
+import TimelineEntry from "@/components/site/TimelineEntry.vue"
 import { useProfileData } from "@/hooks/useProfileData"
 import { useSiteLocale } from "@/hooks/useSiteLocale"
 
@@ -11,47 +12,47 @@ const { messages } = useSiteLocale()
 const { profile } = useProfileData()
 
 const m = computed(() => messages.value.research)
+const tocItems = computed(() => [
+  { id: "research-areas", label: m.value.areasTitle },
+  { id: "research-experience", label: m.value.experienceTitle },
+])
 </script>
 
 <template>
-  <div class="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
     <Section
+      id="research-areas"
       :title="m.areasTitle"
       :description="m.areasDescription"
-      class="mt-16"
+      class="mt-16 md:mt-20"
     >
-      <ul class="divide-y divide-border border-y border-border">
-        <li
-          v-for="area in profile.researchAreas"
-          :key="area.title"
-          class="py-6"
-        >
-          <div class="grid gap-2 lg:grid-cols-[16rem_1fr] lg:gap-8">
-            <h3 class="font-serif text-xl font-medium">{{ area.title }}</h3>
-            <p class="measure text-muted-foreground">{{ area.description }}</p>
-          </div>
-        </li>
-      </ul>
+      <div class="grid gap-x-12 gap-y-9 md:grid-cols-2">
+        <article v-for="area in profile.researchAreas" :key="area.title">
+          <h3 class="text-xl font-medium">{{ area.title }}</h3>
+          <p class="mt-2 max-w-xl leading-7 text-muted-foreground">
+            {{ area.description }}
+          </p>
+        </article>
+      </div>
     </Section>
 
     <Section
-      :title="m.approachTitle"
-      :description="m.approachDescription"
-      class="mt-16"
+      id="research-experience"
+      :title="m.experienceTitle"
+      :description="m.experienceDescription"
+      class="mt-20"
     >
-      <div class="flex flex-col gap-6">
-        <p class="measure text-lg leading-8 text-card-foreground">
-          {{ m.approachBody }}
-        </p>
-        <div class="flex flex-col gap-2.5">
-          <p class="eyebrow">{{ m.tagsLabel }}</p>
-          <div class="flex flex-wrap gap-2">
-            <Tag v-for="tag in profile.summaryTags" :key="tag" :label="tag" />
-          </div>
-        </div>
-      </div>
+      <TimelineEntry
+        v-for="experience in profile.researchExperiences"
+        :key="experience.id"
+        :period="experience.period"
+        :title="experience.role"
+        :meta="`${experience.organization} · ${experience.location} · ${m.advisorLabel}: ${experience.advisor}`"
+        :summary="experience.summary"
+        :highlights="experience.highlights"
+      />
     </Section>
-  </div>
+  </PageShell>
 </template>
