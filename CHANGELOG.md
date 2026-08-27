@@ -2,6 +2,7 @@
 
 ## 2026-08-28
 
+- Deployment: aligned GitHub Pages CI with Node.js 24 and reproducible quality-checked builds.
 - Navigation: added a fading desktop section rail and an animated return-to-top action.
 - Layout: narrowed page content and moved the profile sidebar before the introduction on mobile.
 - Homepage: restored a circular profile avatar with identity details and language proficiency bars.
