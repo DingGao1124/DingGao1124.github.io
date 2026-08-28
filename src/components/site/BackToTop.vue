@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { computed } from "vue"
-import { ArrowUp } from "@lucide/vue"
-import { useWindowScroll } from "@vueuse/core"
+import { computed } from 'vue'
+import { ArrowUp } from '@lucide/vue'
+import { useWindowScroll } from '@vueuse/core'
 
-import { Button } from "@/components/ui/button"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Button } from '@/components/ui/button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 defineProps<{
   label: string
@@ -18,15 +14,9 @@ const { y } = useWindowScroll()
 const isVisible = computed(() => y.value > 480)
 
 function returnToTop() {
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches
-  window.history.replaceState(
-    null,
-    "",
-    `${window.location.pathname}${window.location.search}`,
-  )
-  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" })
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`)
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
 }
 </script>
 
@@ -45,12 +35,7 @@ function returnToTop() {
     >
       <Tooltip>
         <TooltipTrigger as-child>
-          <Button
-            variant="outline"
-            size="icon"
-            :aria-label="label"
-            @click="returnToTop"
-          >
+          <Button variant="outline" size="icon" :aria-label="label" @click="returnToTop">
             <ArrowUp aria-hidden="true" />
           </Button>
         </TooltipTrigger>

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-29
+
+- Blog: added a bilingual blog section (en/zh) rendering Markdown posts with Tailwind Typography prose.
+- Theme: registered the Tailwind Typography plugin and distinguished blog post pages from regular pages.
+
 ## 2026-08-28
 
 - Deployment: aligned GitHub Pages CI with Node.js 24 and reproducible quality-checked builds.

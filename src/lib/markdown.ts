@@ -1,4 +1,4 @@
-import MarkdownIt from "markdown-it"
+import MarkdownIt from 'markdown-it'
 
 /**
  * Shared markdown renderer for content cards.
@@ -13,6 +13,6 @@ export const md = new MarkdownIt({
 })
 
 export function renderMarkdown(source?: string): string {
-  if (!source) return ""
+  if (!source) return ''
   return md.render(source)
 }

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed } from 'vue'
 
-import PublicationEntry from "@/components/publications/PublicationEntry.vue"
-import PageHeader from "@/components/site/PageHeader.vue"
-import PageShell from "@/components/site/PageShell.vue"
-import Section from "@/components/site/Section.vue"
-import type { PublicationType } from "@/data/publications"
-import { useProfileData } from "@/hooks/useProfileData"
-import { useSiteLocale } from "@/hooks/useSiteLocale"
+import PublicationEntry from '@/components/publications/PublicationEntry.vue'
+import PageHeader from '@/components/site/PageHeader.vue'
+import PageShell from '@/components/site/PageShell.vue'
+import Section from '@/components/site/Section.vue'
+import type { PublicationType } from '@/data/publications'
+import { usePersonalData } from '@/hooks/usePersonalData'
+import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = useProfileData()
+const { profile } = usePersonalData()
 
 const m = computed(() => messages.value.publications)
 const tocItems = computed(() =>
@@ -21,7 +21,7 @@ const tocItems = computed(() =>
 )
 
 function typeLabel(type: PublicationType) {
-  return type === "patent" ? m.value.patentLabel : m.value.journalLabel
+  return type === 'patent' ? m.value.patentLabel : m.value.journalLabel
 }
 </script>
 

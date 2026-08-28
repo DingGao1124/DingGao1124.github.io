@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed } from 'vue'
 
-import PageHeader from "@/components/site/PageHeader.vue"
-import PageShell from "@/components/site/PageShell.vue"
-import Section from "@/components/site/Section.vue"
-import TimelineEntry from "@/components/site/TimelineEntry.vue"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { useProfileData } from "@/hooks/useProfileData"
-import { useSiteLocale } from "@/hooks/useSiteLocale"
+import PageHeader from '@/components/site/PageHeader.vue'
+import PageShell from '@/components/site/PageShell.vue'
+import Section from '@/components/site/Section.vue'
+import TimelineEntry from '@/components/site/TimelineEntry.vue'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+import { usePersonalData } from '@/hooks/usePersonalData'
+import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = useProfileData()
+const { profile } = usePersonalData()
 
 const m = computed(() => messages.value.experience)
 const tocItems = computed(() => [
-  { id: "professional-experience", label: m.value.professionalTitle },
-  { id: "education", label: m.value.educationTitle },
-  { id: "skills", label: m.value.skillsTitle },
-  { id: "honors", label: m.value.honorsTitle },
+  { id: 'professional-experience', label: m.value.professionalTitle },
+  { id: 'education', label: m.value.educationTitle },
+  { id: 'skills', label: m.value.skillsTitle },
+  { id: 'honors', label: m.value.honorsTitle },
 ])
 
 function educationSummary(item: (typeof profile.value.education)[number]) {
@@ -27,15 +27,13 @@ function educationSummary(item: (typeof profile.value.education)[number]) {
     item.rank ? `${m.value.rankLabel}: ${item.rank}` : undefined,
   ]
     .filter(Boolean)
-    .join(" · ")
+    .join(' · ')
 }
 
 function educationDetails(item: (typeof profile.value.education)[number]) {
   return [
     ...item.awards.map((award) => `${m.value.awardsLabel}: ${award}`),
-    ...item.competitions.map(
-      (competition) => `${m.value.competitionsLabel}: ${competition}`,
-    ),
+    ...item.competitions.map((competition) => `${m.value.competitionsLabel}: ${competition}`),
     ...(item.thesis ? [`${m.value.thesisLabel}: ${item.thesis}`] : []),
   ]
 }
@@ -81,12 +79,7 @@ function educationDetails(item: (typeof profile.value.education)[number]) {
           <section class="py-6">
             <h3 class="text-lg font-medium">{{ group.label }}</h3>
             <div class="mt-4 flex flex-wrap gap-2">
-              <Badge
-                v-for="item in group.items"
-                :key="item"
-                variant="outline"
-                >{{ item }}</Badge
-              >
+              <Badge v-for="item in group.items" :key="item" variant="outline">{{ item }}</Badge>
             </div>
           </section>
         </div>

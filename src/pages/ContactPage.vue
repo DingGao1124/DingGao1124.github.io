@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { computed } from "vue"
-import { Download, Mail, MapPin } from "@lucide/vue"
+import { computed } from 'vue'
+import { Download, Mail, MapPin } from '@lucide/vue'
 
-import PageHeader from "@/components/site/PageHeader.vue"
-import PageShell from "@/components/site/PageShell.vue"
-import Section from "@/components/site/Section.vue"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { useProfileData } from "@/hooks/useProfileData"
-import { useSiteLocale } from "@/hooks/useSiteLocale"
+import PageHeader from '@/components/site/PageHeader.vue'
+import PageShell from '@/components/site/PageShell.vue'
+import Section from '@/components/site/Section.vue'
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
+import { usePersonalData } from '@/hooks/usePersonalData'
+import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = useProfileData()
+const { profile } = usePersonalData()
 
 const m = computed(() => messages.value.contact)
 const tocItems = computed(() => [
-  { id: "contact-details", label: m.value.title },
-  { id: "cv-download", label: m.value.cvTitle },
+  { id: 'contact-details', label: m.value.title },
+  { id: 'cv-download', label: m.value.cvTitle },
 ])
 </script>
 
@@ -25,9 +25,7 @@ const tocItems = computed(() => [
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
     <Section class="mt-16 md:mt-20">
-      <div
-        class="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.65fr)] md:gap-20"
-      >
+      <div class="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.65fr)] md:gap-20">
         <div id="contact-details" class="scroll-mt-28">
           <p class="measure text-lg leading-8 text-card-foreground">
             {{ m.description }}
@@ -38,9 +36,7 @@ const tocItems = computed(() => [
               <Mail data-icon="inline-start" aria-hidden="true" />
               {{ profile.email }}
             </Button>
-            <p
-              class="inline-flex items-center gap-2 text-sm text-muted-foreground"
-            >
+            <p class="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin class="size-4" aria-hidden="true" />
               {{ profile.identity.location }}
             </p>
@@ -63,14 +59,7 @@ const tocItems = computed(() => [
             <p class="mt-3 text-sm leading-6 text-muted-foreground">
               {{ m.cvDescription }}
             </p>
-            <Button
-              as="a"
-              variant="outline"
-              size="sm"
-              class="mt-5"
-              :href="profile.cvHref"
-              download
-            >
+            <Button as="a" variant="outline" size="sm" class="mt-5" :href="profile.cvHref" download>
               <Download data-icon="inline-start" aria-hidden="true" />
               {{ messages.downloadCvLabel }}
             </Button>

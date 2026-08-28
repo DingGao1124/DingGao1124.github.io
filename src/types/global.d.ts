@@ -1,5 +1,5 @@
 // Language
-type SiteLocale = "zh" | "en"
+type SiteLocale = 'zh' | 'en'
 
 // Navigation Bar
 type NavigationItem = {

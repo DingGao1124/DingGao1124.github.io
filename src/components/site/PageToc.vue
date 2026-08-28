@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, shallowRef } from "vue"
+import { computed, onBeforeUnmount, onMounted, shallowRef } from 'vue'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 export type PageTocItem = {
   id: string
@@ -13,7 +13,7 @@ const props = defineProps<{
   label: string
 }>()
 
-const activeId = shallowRef(props.items[0]?.id ?? "")
+const activeId = shallowRef(props.items[0]?.id ?? '')
 const activeIndex = computed(() =>
   Math.max(
     0,
@@ -24,10 +24,10 @@ let observer: IntersectionObserver | undefined
 
 function labelVisibility(index: number) {
   const distance = Math.abs(index - activeIndex.value)
-  if (distance === 0) return "opacity-100"
-  if (distance === 1) return "opacity-70"
-  if (distance === 2) return "opacity-20"
-  return "opacity-0"
+  if (distance === 0) return 'opacity-100'
+  if (distance === 1) return 'opacity-70'
+  if (distance === 2) return 'opacity-20'
+  return 'opacity-0'
 }
 
 onMounted(() => {
@@ -37,20 +37,15 @@ onMounted(() => {
 
   observer = new IntersectionObserver(
     (entries) => {
-      const current = entries.reduce<IntersectionObserverEntry | undefined>(
-        (nearest, entry) => {
-          if (!entry.isIntersecting) return nearest
-          if (!nearest) return entry
-          return entry.boundingClientRect.top < nearest.boundingClientRect.top
-            ? entry
-            : nearest
-        },
-        undefined,
-      )
+      const current = entries.reduce<IntersectionObserverEntry | undefined>((nearest, entry) => {
+        if (!entry.isIntersecting) return nearest
+        if (!nearest) return entry
+        return entry.boundingClientRect.top < nearest.boundingClientRect.top ? entry : nearest
+      }, undefined)
 
       if (current?.target.id) activeId.value = current.target.id
     },
-    { rootMargin: "-18% 0px -68% 0px" },
+    { rootMargin: '-18% 0px -68% 0px' },
   )
 
   targets.forEach((target) => observer?.observe(target))
@@ -62,14 +57,8 @@ onBeforeUnmount(() => observer?.disconnect())
 <template>
   <aside class="xl:block ml-12">
     <nav class="page-toc group sticky top-28" :aria-label="label">
-      <ol
-        class="page-toc-list page-toc-list--faded relative flex flex-col gap-3 py-3"
-      >
-        <li
-          v-for="(item, index) in items"
-          :key="item.id"
-          class="relative min-w-0"
-        >
+      <ol class="page-toc-list page-toc-list--faded relative flex flex-col gap-3 py-3">
+        <li v-for="(item, index) in items" :key="item.id" class="relative min-w-0">
           <a
             :href="`#${item.id}`"
             :class="
@@ -113,24 +102,12 @@ onBeforeUnmount(() => observer?.disconnect())
   inset-inline-start: 0.21875rem;
   width: 1px;
   background: var(--border);
-  content: "";
+  content: '';
 }
 
 .page-toc-list--faded {
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 12%,
-    black 88%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    black 12%,
-    black 88%,
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
 }
 
 .page-toc:hover .page-toc-list--faded,

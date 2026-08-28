@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Download, Mail, MapPin } from "@lucide/vue"
+import { Download, Mail, MapPin } from '@lucide/vue'
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
-import { Separator } from "@/components/ui/separator"
-import type { ProfileLink, SkillLevel } from "@/data/profile"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Progress } from '@/components/ui/progress'
+import { Separator } from '@/components/ui/separator'
+import type { ProfileLink, SkillLevel } from '@/data/profile'
 
 defineProps<{
   name: string
@@ -32,21 +32,15 @@ defineProps<{
     <div class="order-2 flex flex-col gap-7 lg:order-1 lg:pt-8">
       <div class="flex flex-col gap-4">
         <p class="eyebrow">{{ credential }}</p>
-        <h1
-          class="text-[clamp(3rem,8vw,6.5rem)] leading-[0.9] font-medium tracking-[-0.045em]"
-        >
+        <h1 class="text-[clamp(3rem,8vw,6.5rem)] leading-[0.9] font-medium tracking-[-0.045em]">
           {{ name }}
         </h1>
-        <p
-          class="max-w-2xl text-xl leading-snug text-muted-foreground md:text-2xl"
-        >
+        <p class="max-w-2xl text-xl leading-snug text-muted-foreground md:text-2xl">
           {{ headline }}
         </p>
       </div>
 
-      <div
-        class="measure flex flex-col gap-4 text-lg leading-8 text-card-foreground"
-      >
+      <div class="measure flex flex-col gap-4 text-lg leading-8 text-card-foreground">
         <p v-for="paragraph in intro" :key="paragraph">{{ paragraph }}</p>
       </div>
 
@@ -107,9 +101,7 @@ defineProps<{
           <li v-for="skill in skills" :key="skill.label">
             <div class="mb-2 flex items-center justify-between gap-4 text-sm">
               <span class="font-medium">{{ skill.label }}</span>
-              <span class="font-mono text-xs text-muted-foreground">
-                {{ skill.value }}/100
-              </span>
+              <span class="font-mono text-xs text-muted-foreground"> {{ skill.value }}/100 </span>
             </div>
             <Progress
               :model-value="skill.value"

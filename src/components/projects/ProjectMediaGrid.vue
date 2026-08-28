@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Image as ImageIcon } from "@lucide/vue"
+import { Image as ImageIcon } from '@lucide/vue'
 
-import { AspectRatio } from "@/components/ui/aspect-ratio"
-import { Empty, EmptyDescription, EmptyMedia } from "@/components/ui/empty"
-import type { ProjectMedia } from "@/data/projects"
-import { cn } from "@/lib/utils"
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { Empty, EmptyDescription, EmptyMedia } from '@/components/ui/empty'
+import type { ProjectMedia } from '@/data/projects'
+import { cn } from '@/lib/utils'
 
 defineProps<{
   items: readonly ProjectMedia[]
@@ -14,19 +14,12 @@ defineProps<{
 </script>
 
 <template>
-  <div
-    class="grid grid-cols-2 gap-2"
-    role="group"
-    :aria-label="placeholderLabel"
-  >
+  <div class="grid grid-cols-2 gap-2" role="group" :aria-label="placeholderLabel">
     <figure
       v-for="(item, index) in items"
       :key="`${item.label}-${index}`"
       :class="
-        cn(
-          'overflow-hidden rounded-sm bg-secondary',
-          featured && index === 0 && 'col-span-2',
-        )
+        cn('overflow-hidden rounded-sm bg-secondary', featured && index === 0 && 'col-span-2')
       "
     >
       <AspectRatio :ratio="4 / 3" class="relative">

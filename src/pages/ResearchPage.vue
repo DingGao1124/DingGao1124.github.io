@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed } from 'vue'
 
-import PageHeader from "@/components/site/PageHeader.vue"
-import PageShell from "@/components/site/PageShell.vue"
-import Section from "@/components/site/Section.vue"
-import TimelineEntry from "@/components/site/TimelineEntry.vue"
-import { useProfileData } from "@/hooks/useProfileData"
-import { useSiteLocale } from "@/hooks/useSiteLocale"
+import PageHeader from '@/components/site/PageHeader.vue'
+import PageShell from '@/components/site/PageShell.vue'
+import Section from '@/components/site/Section.vue'
+import TimelineEntry from '@/components/site/TimelineEntry.vue'
+import { usePersonalData } from '@/hooks/usePersonalData'
+import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = useProfileData()
+const { profile } = usePersonalData()
 
 const m = computed(() => messages.value.research)
 const tocItems = computed(() => [
-  { id: "research-areas", label: m.value.areasTitle },
-  { id: "research-experience", label: m.value.experienceTitle },
+  { id: 'research-areas', label: m.value.areasTitle },
+  { id: 'research-experience', label: m.value.experienceTitle },
 ])
 </script>
 

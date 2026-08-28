@@ -1,7 +1,7 @@
-import type { Theme } from "vitepress"
+import type { Theme } from 'vitepress'
 
-import Layout from "./Layout.vue"
-import "@/styles/globals.css"
+import Layout from './Layout.vue'
+import '@/styles/globals.css'
 
 export default {
   Layout,

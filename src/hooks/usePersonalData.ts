@@ -1,7 +1,7 @@
-import { computed } from "vue"
+import { computed } from 'vue'
 
-import { education } from "@/data/education"
-import { experiences } from "@/data/experiences"
+import { education } from '@/data/education'
+import { experiences } from '@/data/experiences'
 import {
   avatarSrc,
   cvHref,
@@ -11,14 +11,14 @@ import {
   profileLinks,
   skillLevels,
   summaryTags,
-} from "@/data/profile"
-import { projects } from "@/data/projects"
-import { publications } from "@/data/publications"
-import { researchAreas, researchExperiences } from "@/data/research"
-import { skillGroups } from "@/data/skills"
-import { useSiteLocale } from "@/hooks/useSiteLocale"
+} from '@/data/profile'
+import { projects } from '@/data/projects'
+import { publications } from '@/data/publications'
+import { researchAreas, researchExperiences } from '@/data/research'
+import { skillGroups } from '@/data/skills'
+import { useSiteLocale } from '@/hooks/useSiteLocale'
 
-export function useProfileData() {
+export function usePersonalData() {
   const { locale } = useSiteLocale()
   const profile = computed(() => ({
     cvHref,

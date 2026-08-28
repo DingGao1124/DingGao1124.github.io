@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Separator } from "@/components/ui/separator"
-import { useSiteLocale } from "@/hooks/useSiteLocale"
+import { Separator } from '@/components/ui/separator'
+import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
 </script>
