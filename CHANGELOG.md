@@ -6,6 +6,7 @@
 - Theme: registered the Tailwind Typography plugin and distinguished blog post pages from regular pages.
 - Navigation: added a top route-loading progress bar for lazy-loaded page transitions.
 - Docs: documented the client route-loading timing and progress indicator.
+- Theme: switched the global background to a warm beige eye-friendly palette and a VS Code-style gray dark theme.
 
 ## 2026-08-28
 

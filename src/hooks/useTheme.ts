@@ -11,7 +11,7 @@ function apply(dark: boolean) {
     document.documentElement.classList.toggle('dark', dark)
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', dark ? '#11161a' : '#f6f7f8')
+      ?.setAttribute('content', dark ? '#1e1e1e' : '#f6f1e7')
   }
 }
 

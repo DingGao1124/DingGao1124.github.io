@@ -11,7 +11,7 @@ const setUpThemeScript = `(function () {
       : window.matchMedia("(prefers-color-scheme: dark)").matches
     document.documentElement.classList.toggle("dark", dark)
     var meta = document.querySelector('meta[name="theme-color"]')
-    if (meta) meta.setAttribute("content", dark ? "#11161a" : "#f6f7f8")
+    if (meta) meta.setAttribute("content", dark ? "#1e1e1e" : "#f6f1e7")
   } catch (e) {
     // no-op
   }
@@ -25,8 +25,8 @@ export default defineConfig({
   description:
     'Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.',
   head: [
-    ['link', { rel: 'icon', href: '/human.svg', type: 'image/svg+xml' }],
-    ['meta', { name: 'theme-color', content: '#f6f7f8' }],
+    ['link', { rel: 'icon', href: '/Overwatch.svg', type: 'image/svg+xml' }],
+    ['meta', { name: 'theme-color', content: '#f6f1e7' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'Ding Gao' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],

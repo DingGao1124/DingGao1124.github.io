@@ -2,10 +2,10 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 
-import PageHeader from '@/components/site/PageHeader.vue'
-import PageShell from '@/components/site/PageShell.vue'
-import Section from '@/components/site/Section.vue'
-import TimelineEntry from '@/components/site/TimelineEntry.vue'
+import PageHeader from '@/components/common/PageHeader.vue'
+import PageShell from '@/components/common/PageShell.vue'
+import Section from '@/components/common/Section.vue'
+import TimelineEntry from '@/components/common/TimelineEntry.vue'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 type BlogPost = {

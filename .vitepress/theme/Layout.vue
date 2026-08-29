@@ -2,9 +2,9 @@
 import { computed, ref } from 'vue'
 import { Content, useData, useRouter } from 'vitepress'
 
-import SiteFooter from '@/components/site/SiteFooter.vue'
-import SiteHeader from '@/components/site/SiteHeader.vue'
-import BackToTop from '@/components/site/BackToTop.vue'
+import SiteFooter from '@/components/common/SiteFooter.vue'
+import SiteHeader from '@/components/common/SiteHeader.vue'
+import BackToTop from '@/components/common/BackToTop.vue'
 import { Button } from '@/components/ui/button'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { ArrowLeft } from '@lucide/vue'

@@ -23,11 +23,14 @@ const activeIndex = computed(() =>
 let observer: IntersectionObserver | undefined
 
 function labelVisibility(index: number) {
-  const distance = Math.abs(index - activeIndex.value)
-  if (distance === 0) return 'opacity-100'
-  if (distance === 1) return 'opacity-70'
-  if (distance === 2) return 'opacity-20'
-  return 'opacity-0'
+  return 'opacity-100'
+
+  // disable sequential opacity transition
+  // const distance = Math.abs(index - activeIndex.value)
+  // if (distance === 0) return 'opacity-100'
+  // if (distance === 1) return 'opacity-70'
+  // if (distance === 2) return 'opacity-20'
+  // return 'opacity-0'
 }
 
 onMounted(() => {
@@ -55,7 +58,7 @@ onBeforeUnmount(() => observer?.disconnect())
 </script>
 
 <template>
-  <aside class="xl:block ml-12">
+  <aside class="hidden xl:block ml-6 w-48">
     <nav class="page-toc group sticky top-28" :aria-label="label">
       <ol class="page-toc-list page-toc-list--faded relative flex flex-col gap-3 py-3">
         <li v-for="(item, index) in items" :key="item.id" class="relative min-w-0">
@@ -105,14 +108,14 @@ onBeforeUnmount(() => observer?.disconnect())
   content: '';
 }
 
-.page-toc-list--faded {
+/* .page-toc-list--faded {
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
   mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
-}
+} */
 
-.page-toc:hover .page-toc-list--faded,
+/* .page-toc:hover .page-toc-list--faded,
 .page-toc:focus-within .page-toc-list--faded {
   -webkit-mask-image: linear-gradient(to bottom, black, black);
   mask-image: linear-gradient(to bottom, black, black);
-}
+} */
 </style>
