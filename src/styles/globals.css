@@ -134,6 +134,16 @@
   --sidebar-ring: #8cb6cc;
 }
 
+/* Thin top progress bar that sweeps across while a page chunk loads. */
+@keyframes route-loading {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(400%);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

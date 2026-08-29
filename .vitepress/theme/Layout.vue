@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { Content, useData } from 'vitepress'
+import { computed, ref } from 'vue'
+import { Content, useData, useRouter } from 'vitepress'
 
 import SiteFooter from '@/components/site/SiteFooter.vue'
 import SiteHeader from '@/components/site/SiteHeader.vue'
@@ -13,6 +13,27 @@ import { useSiteLocale } from '@/hooks/useSiteLocale'
 const { page } = useData()
 const { messages, path } = useSiteLocale()
 const homePath = computed(() => path('/'))
+
+// Show a thin top progress bar while the destination page is loading.
+const router = useRouter()
+const isRouteLoading = ref(false)
+
+router.onBeforePageLoad = (to) => {
+  const toPath = pathOnly(to)
+  const currentPath = pathOnly(router.route.path)
+  if (toPath !== currentPath) isRouteLoading.value = true
+}
+router.onAfterRouteChange = () => {
+  isRouteLoading.value = false
+}
+
+function pathOnly(href: string) {
+  return href
+    .split('#')[0]
+    .split('?')[0]
+    .replace(/\.html$/, '')
+    .replace(/\/$/, '')
+}
 
 // Distinguish individual blog posts (markdown content) from the blog index and
 // other section pages, so only post content gets the prose typography.
@@ -40,6 +61,13 @@ function formatDate(value: unknown) {
 <template>
   <TooltipProvider :delay-duration="300">
     <div class="min-h-screen bg-background text-foreground">
+      <div
+        v-show="isRouteLoading"
+        aria-hidden="true"
+        class="pointer-events-none fixed inset-x-0 top-0 z-100 h-0.5 overflow-hidden"
+      >
+        <div class="h-full w-1/3 animate-[route-loading_1.1s_linear_infinite] bg-link" />
+      </div>
       <a
         class="fixed top-3 left-3 z-50 -translate-y-20 rounded-sm bg-background px-3 py-2 text-sm shadow-sm transition-transform focus-visible:translate-y-0"
         href="#main-content"

@@ -4,6 +4,8 @@
 
 - Blog: added a bilingual blog section (en/zh) rendering Markdown posts with Tailwind Typography prose.
 - Theme: registered the Tailwind Typography plugin and distinguished blog post pages from regular pages.
+- Navigation: added a top route-loading progress bar for lazy-loaded page transitions.
+- Docs: documented the client route-loading timing and progress indicator.
 
 ## 2026-08-28
 

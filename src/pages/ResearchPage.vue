@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 
 import PageHeader from '@/components/site/PageHeader.vue'
 import PageShell from '@/components/site/PageShell.vue'
