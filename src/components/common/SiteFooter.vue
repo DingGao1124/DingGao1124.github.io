@@ -8,7 +8,7 @@ const { messages } = useSiteLocale()
 <template>
   <footer>
     <Separator />
-    <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-8 md:px-8">
+    <div class="mx-auto flex max-w-content flex-col gap-1 px-5 py-8 md:px-8">
       <p class="text-sm text-muted-foreground">{{ messages.footer }}</p>
     </div>
   </footer>

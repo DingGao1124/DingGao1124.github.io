@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { Construction } from '@lucide/vue'
 
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/common/PageShell.vue'
@@ -18,7 +19,7 @@ type BlogPost = {
 const { page } = useData()
 const { messages, path } = useSiteLocale()
 
-const m = computed(() => messages.value.blogs)
+const blogs = computed(() => messages.value.blogs)
 const posts = computed(() => (page.value.frontmatter.posts ?? []) as BlogPost[])
 const tocItems = computed(() =>
   posts.value.map((post, index) => ({ id: `post-${index}`, label: post.title })),
@@ -27,10 +28,15 @@ const tocItems = computed(() =>
 
 <template>
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
-    <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
+    <PageHeader :eyebrow="blogs.eyebrow" :title="blogs.title" :lede="blogs.lede" />
 
-    <Section class="mt-16 md:mt-20">
-      <p v-if="posts.length === 0" class="measure text-muted-foreground">{{ m.emptyLabel }}</p>
+    <Section class="mt-8 md:mt-10">
+      <p v-if="posts.length === 0" class="measure text-muted-foreground">
+        <span class="inline-flex items-center gap-2">
+          <Construction class="size-5" />
+          {{ blogs.emptyLabel }}
+        </span>
+      </p>
       <TimelineEntry
         v-for="(post, index) in posts"
         :key="post.href"
@@ -38,7 +44,7 @@ const tocItems = computed(() =>
         :period="post.date"
         :title="post.title"
         :summary="post.description"
-        :links="[{ label: m.readMoreLabel, href: path(post.href) }]"
+        :links="[{ label: blogs.readMoreLabel, href: path(post.href) }]"
       />
     </Section>
   </PageShell>

@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-  <section :id="id" class="scroll-mt-28">
+  <section :id="id" class="scroll-mt-20">
     <Separator />
     <div class="pt-8">
       <div v-if="title" class="flex flex-col gap-2">

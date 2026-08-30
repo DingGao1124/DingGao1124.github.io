@@ -29,7 +29,7 @@ function typeLabel(type: PublicationType) {
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
-    <Section class="mt-16 md:mt-20">
+    <Section class="mt-8 md:mt-10">
       <ol>
         <PublicationEntry
           v-for="publication in profile.publications"

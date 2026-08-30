@@ -40,7 +40,7 @@ const alternate = computed(() => {
 <template>
   <header class="sticky top-0 z-10 bg-background/92 backdrop-blur-md">
     <div
-      class="mx-auto flex max-w-7xl flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-8 md:py-4"
+      class="mx-auto flex max-w-content flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-8 md:py-4"
     >
       <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
         {{ messages.siteName }}
@@ -88,7 +88,9 @@ const alternate = computed(() => {
             </p>
           </TooltipContent>
         </Tooltip>
+        <!-- #TODO: Hide chinese translation for now, translation need to be refined. -->
         <a
+          v-show="locale === 'zh'"
           class="font-mono text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
           :aria-label="`${messages.switchLanguageLabel}: ${alternate.name}`"
           :href="alternate.href"

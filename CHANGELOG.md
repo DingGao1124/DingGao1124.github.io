@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-08-30
+
+- Contact: added a "View CV" action that opens the CV PDF in a new tab.
+- Contact: removed the location line from contact details and dropped the privacy note.
+
 ## 2026-08-29
 
 - Blog: added a bilingual blog section (en/zh) rendering Markdown posts with Tailwind Typography prose.

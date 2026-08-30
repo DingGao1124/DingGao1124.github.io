@@ -1,6 +1,6 @@
 ---
 title: Blog
-description: Notes and essays on robotics, agent systems, and full-stack engineering.
+description: Notes and comments on Robotics and Multi-Agent Systems.
 # Register posts here. Each entry points to a markdown file in this folder.
 # posts:
 #   - title: "Post title"

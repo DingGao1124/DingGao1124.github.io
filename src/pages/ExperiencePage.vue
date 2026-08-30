@@ -47,7 +47,7 @@ function educationDetails(item: (typeof profile.value.education)[number]) {
       id="professional-experience"
       :title="m.professionalTitle"
       :description="m.professionalDescription"
-      class="mt-16 md:mt-20"
+      class="mt-8 md:mt-10"
     >
       <TimelineEntry
         v-for="experience in profile.experiences"

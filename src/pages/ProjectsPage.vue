@@ -25,7 +25,7 @@ const tocItems = computed(() =>
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
-    <Section class="mt-16 md:mt-20">
+    <Section class="mt-8 md:mt-10">
       <TimelineEntry
         v-for="project in profile.projects"
         :key="project.id"

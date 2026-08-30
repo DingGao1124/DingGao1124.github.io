@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
+  <div class="mx-auto max-w-content px-5 py-12 md:px-8 md:py-16">
     <div class="xl:grid xl:grid-cols-[minmax(0,1fr)_10rem] xl:gap-12">
       <div class="min-w-0">
         <slot />

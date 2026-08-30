@@ -21,7 +21,7 @@ export default {
   notFoundTitle: '页面不存在',
   notFoundDescription: '你请求的页面不存在。',
   backHomeLabel: '返回首页',
-  footer: '© 高鼎 · 全栈工程师与机器人研究者 · 2026',
+  footer: '© 高鼎 · 2026',
   home: {
     intro: [
       '我构建连接智能体与物理系统的软件。我的经历横跨机械工程、智能制造、全栈开发与机器人应用。',
@@ -90,6 +90,7 @@ export default {
     profilesTitle: '其他主页',
     cvTitle: '个人简历',
     cvDescription: '下载最新版本的个人简历 PDF。',
-    privacy: '本页面公开个人邮箱、所在城市与外部主页；可下载的简历以原始版本单独提供。',
+    viewCvLabel: '预览简历',
+    downloadCvLabel: '下载简历',
   },
 }

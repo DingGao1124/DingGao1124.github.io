@@ -21,7 +21,7 @@ export default {
   notFoundTitle: 'Page not found',
   notFoundDescription: 'The page you requested could not be found.',
   backHomeLabel: 'Back to home',
-  footer: '© Ding Gao · Full-Stack Engineer & Robotics Researcher · 2026',
+  footer: '©Ding Gao 2026. All rights reserved.',
   home: {
     intro: [
       'I build software that connects intelligent agents with physical systems. My background spans mechanical engineering, intelligent manufacturing, full-stack development, and robot applications.',
@@ -68,9 +68,9 @@ export default {
   blogs: {
     eyebrow: 'Blog',
     title: 'Blog',
-    lede: 'Notes and essays on robotics, agent systems, and full-stack engineering.',
+    lede: 'Notes and comments on Robotics and Multi-Agent Systems.',
     readMoreLabel: 'Read more',
-    emptyLabel: 'Nothing here yet.',
+    emptyLabel: 'Coming soon...',
   },
   experience: {
     eyebrow: 'Experience',
@@ -96,8 +96,8 @@ export default {
       'I am based in Shanghai and welcome thoughtful research and engineering conversations.',
     profilesTitle: 'Elsewhere',
     cvTitle: 'Curriculum vitae',
-    cvDescription: 'Download the latest PDF version of my curriculum vitae.',
-    privacy:
-      'This page publishes a personal email address, city, and external profiles. The downloadable CV is provided separately in its original form.',
+    cvDescription: 'You can view and download my latest CV here.',
+    viewCvLabel: 'View CV',
+    downloadCvLabel: 'Download CV',
   },
 }

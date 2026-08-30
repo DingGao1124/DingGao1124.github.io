@@ -23,7 +23,7 @@ export default defineConfig({
   appearance: false,
   title: 'Ding Gao',
   description:
-    'Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.',
+    "Ding Gao's personal website: full-stack development, embodied intelligence, digital twins, and intelligent manufacturing.",
   head: [
     ['link', { rel: 'icon', href: '/Overwatch.svg', type: 'image/svg+xml' }],
     ['meta', { name: 'theme-color', content: '#f6f1e7' }],
@@ -38,7 +38,7 @@ export default defineConfig({
       lang: 'en',
       title: 'Ding Gao',
       description:
-        'Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.',
+        "Ding Gao's personal website: full-stack development, embodied intelligence, digital twins, and intelligent manufacturing.",
       head: [
         ['meta', { property: 'og:title', content: 'Ding Gao' }],
         [
@@ -46,7 +46,7 @@ export default defineConfig({
           {
             property: 'og:description',
             content:
-              'Personal portfolio of Ding Gao — full-stack engineering, robotics research, digital twins, and intelligent systems.',
+              "Ding Gao's personal website: full-stack development, embodied intelligence, digital twins, and intelligent manufacturing.",
           },
         ],
       ],
@@ -55,14 +55,14 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       title: '高鼎 / Ding Gao',
-      description: '高鼎的个人主页：全栈工程、机器人研究、数字孪生与智能系统。',
+      description: '高鼎的个人网站：全栈开发、具身智能、数字孪生与智能制造。',
       head: [
         ['meta', { property: 'og:title', content: '高鼎 / Ding Gao' }],
         [
           'meta',
           {
             property: 'og:description',
-            content: '高鼎的个人主页：全栈工程、机器人研究、数字孪生与智能系统。',
+            content: '高鼎的个人网站：全栈开发、具身智能、数字孪生与智能制造。',
           },
         ],
       ],

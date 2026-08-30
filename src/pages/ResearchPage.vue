@@ -26,7 +26,7 @@ const tocItems = computed(() => [
       id="research-areas"
       :title="m.areasTitle"
       :description="m.areasDescription"
-      class="mt-16 md:mt-20"
+      class="mt-8 md:mt-10"
     >
       <div class="grid gap-x-12 gap-y-9 md:grid-cols-2">
         <article v-for="area in profile.researchAreas" :key="area.title">
