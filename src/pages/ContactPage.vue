@@ -34,6 +34,10 @@ const tocItems = computed(() => [
           <div class="mt-8">
             <Button as="a" :href="`mailto:${profile.email}`">
               <Mail data-icon="inline-start" aria-hidden="true" />
+              Phone
+            </Button>
+            <Button as="a" :href="`mailto:${profile.email}`">
+              <Mail data-icon="inline-start" aria-hidden="true" />
               {{ profile.email }}
             </Button>
           </div>
@@ -64,7 +68,7 @@ const tocItems = computed(() => [
                 target="_blank"
                 rel="noreferrer"
               >
-                <ScanSearch />
+                <ScanSearch data-icon="inline-start" aria-hidden="true" />
                 {{ contact.viewCvLabel }}
               </Button>
               <Button as="a" variant="outline" size="sm" :href="profile.cvHref" download>

@@ -1,4 +1,7 @@
 {
+  "oxc.enable": true,
+  "oxc.enable.oxfmt": true,
+  "oxc.enable.oxlint": true,
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "file"

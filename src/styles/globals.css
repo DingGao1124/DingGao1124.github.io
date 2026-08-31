@@ -12,6 +12,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
+  --container-content: 80rem;
   --font-heading: var(--font-serif);
   --font-sans:
     'Geist Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', ui-sans-serif,
@@ -58,7 +59,6 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  --container-content: 80rem;
 }
 
 :root {
