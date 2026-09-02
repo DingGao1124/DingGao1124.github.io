@@ -37,7 +37,7 @@ The repository intentionally ships with explicit placeholders instead of fabrica
 
 1. Replace `public/avatar.webp` with a new square profile image while keeping the same path, or update `avatarSrc` in `src/data/profile.ts`.
 2. Add project images under `public/projects/<project-id>/` and populate the corresponding `src` fields in `src/data/projects.ts`. Each image must include accurate localized alternative text.
-3. Replace `public/cv/Ding-Gao-CV.pdf` whenever a newer public CV is available. The existing buttons already point to this stable path.
+3. Replace `public/cv/Ding_Gao_CV.pdf` whenever a newer public CV is available. The existing buttons already point to this stable path.
 
 Confirm the CV's contact details are appropriate for public distribution before deployment.
 
