@@ -24,7 +24,7 @@ export type SkillLevel = {
 
 export const email = 'gaodings@163.com'
 export const cvHref = '/cv/Ding-Gao-CV.pdf'
-export const avatarSrc = '/Avatar.webp'
+export const avatarSrc = '/Avatar.png'
 
 export const skillLevels: SkillLevel[] = [
   { label: 'Python', value: 85 },
