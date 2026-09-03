@@ -6,13 +6,13 @@ import { useData } from 'vitepress'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { useAnimatedThemeToggler } from '@/hooks/useThemeToggler'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
-import { useTheme } from '@/hooks/useTheme'
 import { cn } from '@/lib/utils'
 
 const { page } = useData()
 const { locale, messages, path } = useSiteLocale()
-const { isDark, toggle } = useTheme()
+const { isDark, toggle } = useAnimatedThemeToggler()
 
 const homePath = computed(() => path('/'))
 const relativePath = computed(() => page.value.relativePath ?? '')
@@ -76,7 +76,7 @@ const alternate = computed(() => {
               variant="ghost"
               size="icon-xs"
               :aria-label="isDark ? messages.switchToLightLabel : messages.switchToDarkLabel"
-              @click="toggle"
+              @click="toggle($event)"
             >
               <Sun v-if="isDark" aria-hidden="true" />
               <Moon v-else aria-hidden="true" />

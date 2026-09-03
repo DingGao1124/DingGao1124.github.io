@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-03
+
+- Theme: added an animated theme toggle that reveals the light/dark switch with a clip-path view transition.
+- Theme: made the toggle directional so switching to light expands from the button and switching to dark collapses toward it.
+- Theme: made the theme icon update immediately in both transition directions.
+
 ## 2026-08-30
 
 - Contact: added a "View CV" action that opens the CV PDF in a new tab.
