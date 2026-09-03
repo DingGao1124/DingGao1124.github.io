@@ -60,7 +60,9 @@ function formatDate(value: unknown) {
 
 <template>
   <TooltipProvider :delay-duration="300">
-    <div class="min-h-screen bg-background text-foreground">
+    <div
+      class="min-h-screen bg-background text-foreground transition-[background-color] duration-300"
+    >
       <div
         v-show="isRouteLoading"
         aria-hidden="true"

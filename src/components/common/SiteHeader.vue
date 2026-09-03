@@ -38,7 +38,7 @@ const alternate = computed(() => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-10 bg-background/92 backdrop-blur-md">
+  <header class="sticky top-0 z-10 backdrop-blur-md">
     <div
       class="mx-auto flex max-w-content flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-8 md:py-4"
     >
