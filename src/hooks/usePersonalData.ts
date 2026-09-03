@@ -2,14 +2,16 @@ import { computed } from 'vue'
 
 import { education } from '@/data/education'
 import { experiences } from '@/data/experiences'
+import { news } from '@/data/news'
 import {
   avatarSrc,
   cvHref,
   email,
   honors,
   identity,
+  phone,
+  phoneHref,
   profileLinks,
-  skillLevels,
   summaryTags,
 } from '@/data/profile'
 import { projects } from '@/data/projects'
@@ -23,10 +25,12 @@ export function usePersonalData() {
   const profile = computed(() => ({
     cvHref,
     email,
+    phone,
+    phoneHref,
     avatarSrc,
     profileLinks,
-    skillLevels,
     identity: identity[locale.value],
+    news: news[locale.value],
     summaryTags: summaryTags[locale.value],
     honors: honors[locale.value],
     researchAreas: researchAreas[locale.value],

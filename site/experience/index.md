@@ -1,6 +1,6 @@
 ---
 title: Experience
-description: Professional experience, education, technical skills, and selected honors across software and robotics.
+description: Ding Gao's research-oriented software experience, education, technical skills, and selected honors.
 ---
 
 <script setup lang="ts">

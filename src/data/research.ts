@@ -3,6 +3,12 @@ export type ResearchArea = {
   description: string
 }
 
+export type ResearchMedia = {
+  src?: string
+  alt: string
+  label: string
+}
+
 export type ResearchExperience = {
   id: string
   organization: string
@@ -12,49 +18,48 @@ export type ResearchExperience = {
   advisor: string
   summary: string
   highlights: string[]
+  media: ResearchMedia
 }
 
 export const researchAreas: Record<SiteLocale, ResearchArea[]> = {
   zh: [
     {
-      title: '数字孪生',
-      description:
-        '面向柔性制造与产线监控，研究知识、行为、几何三类模型及物理系统与虚拟模型的实时同步。',
+      title: '机器人与具身智能',
+      description: '让智能体通过可靠的感知、推理与执行连接真实物理系统。',
     },
     {
-      title: 'LLM 多智能体系统',
-      description:
-        '使用 LangChain 与 LangGraph 构建智能体工作流、流式对话、工具调用和检索增强生成。',
-    },
-    {
-      title: '具身智能与 VLA',
-      description: '结合视觉语言模型、图像分割、点云抓取与机械臂控制，构建感知—决策—执行闭环。',
+      title: '机器人感知、规划与控制',
+      description: '结合视觉语言模型、图像分割、点云抓取和任务规划构建机器人闭环系统。',
     },
     {
       title: '人机协作',
-      description: '关注增强现实辅助、工业拆卸、语音交互和机器人任务规划中的协作效率与可靠性。',
+      description: '研究语音交互、增强现实和工业拆卸场景中的协作效率与执行可靠性。',
+    },
+    {
+      title: '数字孪生与信息物理制造系统',
+      description: '使用知识、行为与几何模型表达柔性产线，并将智能体推理连接到生产状态。',
     },
   ],
   en: [
     {
-      title: 'Digital Twins',
+      title: 'Robotics & Embodied AI',
       description:
-        'Modeling knowledge, behavior, and geometry for flexible manufacturing while synchronizing physical production systems with their virtual counterparts.',
+        'I build intelligent systems that connect perception and reasoning to reliable action in the physical world.',
     },
     {
-      title: 'LLM Multi-Agent Systems',
+      title: 'Robot Perception, Planning & Control',
       description:
-        'Building agent workflows, streaming dialogue, tool use, and retrieval-augmented generation with LangChain and LangGraph.',
+        'I combine vision-language models, segmentation, point-cloud grasping, and task planning in closed-loop robot systems.',
     },
     {
-      title: 'Embodied AI & VLA',
+      title: 'Human-Robot Collaboration',
       description:
-        'Combining vision-language models, segmentation, point-cloud grasping, and robot control into a perception–decision–action loop.',
+        'I study voice interaction, augmented reality, and industrial disassembly as settings for safer and more effective collaboration.',
     },
     {
-      title: 'Human–Robot Collaboration',
+      title: 'Digital Twins & Cyber-Physical Manufacturing',
       description:
-        'Studying collaboration reliability and efficiency in AR assistance, industrial disassembly, voice interaction, and robot task planning.',
+        'I model the knowledge, behavior, and geometry of flexible production systems and connect agent reasoning to live production state.',
     },
   ],
 }
@@ -64,94 +69,129 @@ export const researchExperiences: Record<SiteLocale, ResearchExperience[]> = {
     {
       id: 'digital-twin-agents',
       organization: '东华大学',
-      role: '研究助理 — 数字孪生与 LLM 多智能体系统',
-      period: '2023.09–2026.06',
+      role: '基于 LLM 的柔性制造自动化数字孪生研究',
+      period: '2023.09-2026.06',
       location: '上海',
       advisor: '包劲松 教授',
-      summary: '设计并实现融合数字孪生、生产线实时同步和 LLM 多智能体协作的完整系统架构。',
+      summary: '提出并验证了一个由 LLM 智能体生成、协同与重构数字孪生模型的知识-行为-几何框架。',
       highlights: [
-        '使用 React、Next.js、Three.js / R3F 与 Supabase 构建前端、三维场景和数据服务。',
-        '通过 Socket / WebSocket 同步物理产线单元与虚拟模型的状态和位姿。',
-        '提出知识、行为、几何三模型框架，并实现流式智能体对话、事件驱动工具调用和 STT/TTS 语音交互。',
-        '通过 RAG 支持以自然语言检索生产知识。',
+        '开发了集成交互式三维模型、实时虚实同步、事件驱动工具调用、制造知识 RAG 与自然语言交互的数字孪生平台。',
+        '在零件缺陷监测与分拣产线上完成实验，换线与恢复时间降低 47%，误报率低于传统方法。',
       ],
+      media: { alt: '数字孪生产线平台占位图', label: 'Digital-twin platform' },
     },
     {
       id: 'industrial-disassembly',
       organization: '东华大学',
-      role: '研究助理 — 工业拆卸嵌入式 AI 工具推荐机器人',
-      period: '2025.04–2025.06',
+      role: '工业拆卸具身智能机器人系统',
+      period: '2025.04-2025.06',
       location: '上海',
       advisor: '司家辉 博士',
-      summary:
-        '面向退役电动汽车电池拆卸，开发多模态感知—决策—执行系统，通过语音指令驱动策略生成和机械臂取送工具。',
+      summary: '开发了面向退役电动汽车电池拆卸的多模态感知-决策-执行系统。',
       highlights: [
-        '使用 LangGraph 与通义千问语音模型构建实时任务规划与语音交互智能体。',
-        '结合 FastSAM、视觉语言模型与 Set-of-Mark prompting 提升抓取规划的场景理解准确性。',
-        '使用 GraspNet 从点云生成抗碰撞抓取位姿，并通过 MCP 控制 UR 机械臂。',
+        '使用 LangGraph 与语音专用大模型构建实时任务规划、工具选择和人机交互智能体。',
+        '结合 FastSAM、VLM、Strategy of Mind prompting、GraspNet 与 MCP，控制 UR 机器人完成无碰撞工具取送。',
       ],
+      media: { alt: '工业拆卸机器人实验占位图', label: 'Embodied disassembly system' },
     },
     {
       id: 'ball-screw-platform',
       organization: '南京工程学院',
-      role: '本科毕业设计 — 三自由度滚珠丝杠缺陷检测平台',
-      period: '2023.01–2023.06',
+      role: '三自由度滚珠丝杠缺陷检测平台',
+      period: '2023.01-2023.06',
       location: '南京',
       advisor: '郝飞 副教授',
-      summary: '完成缺陷检测平台的机械选型、三维建模、运动仿真、嵌入式控制和电路验证。',
+      summary: '设计了包含机械分析、三维建模、运动仿真、嵌入式控制与电路验证的三自由度机电平台。',
       highlights: [
-        '完成轴向/径向载荷与电机扭矩计算，并使用 CAD 与 UG NX 进行二维工程图和三维建模。',
-        '使用 8051 单片机和 C 语言生成 PWM 信号，控制步进电机完成直线与圆弧运动。',
-        '在 Proteus 中设计电路原理图并验证控制系统行为。',
+        '完成载荷与电机扭矩计算、零部件选型、二维工程图和 CAD/UG 三维模型。',
+        '开发了基于 8051 的步进电机控制器，并在 Proteus 中验证直线与圆弧运动。',
       ],
+      media: { alt: '三自由度缺陷检测平台占位图', label: '3-DOF inspection platform' },
+    },
+    {
+      id: 'mobile-crane-robot',
+      organization: '南京工程学院',
+      role: '全国大学生移动起重机器人竞赛',
+      period: '2022.02-2022.11',
+      location: '南京',
+      advisor: '郝飞 副教授',
+      summary: '带领团队开发了一台沿指定路线运输并放置不同物体的移动起重机器人。',
+      highlights: [
+        '负责机械设计、运动分析与系统集成，并使用 STM32、CAN 总线协调电机、舵机和机械臂。',
+        '开发动态最短路径算法并将执行机构由单电机升级为三电机，总运行时间由 4 分 32 秒降至 3 分 15 秒。',
+      ],
+      media: { alt: '移动起重机器人占位图', label: 'Mobile crane robot' },
     },
   ],
   en: [
     {
       id: 'digital-twin-agents',
       organization: 'Donghua University',
-      role: 'Research Assistant — Digital Twins & LLM Multi-Agent Systems',
-      period: 'Sep 2023–Jun 2026',
-      location: 'Shanghai',
+      role: 'Graduate Research - LLM-Enabled Digital Twins for Flexible Manufacturing Automation',
+      period: 'Sep 2023-Jun 2026',
+      location: 'Shanghai, China',
       advisor: 'Prof. Jinsong Bao',
       summary:
-        'Designed and implemented a complete architecture combining digital twins, real-time production-line synchronization, and LLM multi-agent coordination.',
+        'Proposed a knowledge-behavior-geometry framework that used LLM-based agents to generate, coordinate, and reconfigure digital twin models in response to changing production tasks and system states.',
       highlights: [
-        'Built the interface, 3D scene, and data services with React, Next.js, Three.js / R3F, and Supabase.',
-        'Synchronized physical production units with virtual models over Socket and WebSocket connections.',
-        'Proposed a knowledge–behavior–geometry model and implemented streaming agent dialogue, event-driven tool calls, and STT/TTS voice interaction.',
-        'Added RAG-based natural-language access to production knowledge.',
+        'Developed a digital twin platform integrating interactive 3D models, real-time physical-virtual synchronization, event-driven agent tool calls, RAG-based manufacturing knowledge retrieval, and natural-language interaction.',
+        'Evaluated the framework on a parts defect-monitoring and sorting line; experiments reported a 47% reduction in changeover and recovery time and a lower false-positive rate than conventional methods.',
       ],
+      media: {
+        alt: 'Placeholder for the digital-twin production-line platform',
+        label: 'Digital-twin platform',
+      },
     },
     {
       id: 'industrial-disassembly',
       organization: 'Donghua University',
-      role: 'Research Assistant — Embedded-AI Tool Recommendation Robot',
-      period: 'Apr 2025–Jun 2025',
-      location: 'Shanghai',
+      role: 'Research Assistant - Embodied AI Robotic System for Industrial Disassembly',
+      period: 'Apr 2025-Jun 2025',
+      location: 'Shanghai, China',
       advisor: 'Dr. Jiahui Si',
       summary:
-        'Developed a multimodal perception–decision–action system for retired EV-battery disassembly, using voice commands to drive strategy generation and robotic tool delivery.',
+        'Developed a multimodal perception-decision-action system for retired EV-battery disassembly, enabling voice-guided task planning and robotic tool-handling operations.',
       highlights: [
-        "Built real-time task planning and voice interaction with LangGraph and Alibaba's Tongyi Qianwen voice model.",
-        'Combined FastSAM, vision-language models, and Set-of-Mark prompting to improve scene understanding for grasp planning.',
-        'Generated collision-aware poses from point clouds with GraspNet and controlled a UR robot through MCP.',
+        'Constructed a LangGraph-based agent integrated with a voice-specialized LLM for real-time task planning, tool selection, and human-robot interaction.',
+        'Combined FastSAM and VLMs for scene understanding, Strategy of Mind prompting for grasp planning, and GraspNet with MCP tool calling to control a UR robot for collision-free tool pickup and delivery.',
       ],
+      media: {
+        alt: 'Placeholder for the embodied industrial disassembly system',
+        label: 'Embodied disassembly system',
+      },
     },
     {
       id: 'ball-screw-platform',
       organization: 'Nanjing Institute of Technology',
-      role: 'Undergraduate Thesis — 3-DOF Ball Screw Defect Detection Platform',
-      period: 'Jan 2023–Jun 2023',
-      location: 'Nanjing',
+      role: 'Undergraduate Thesis - 3-DOF Ball Screw Defect Detection Platform',
+      period: 'Jan 2023-Jun 2023',
+      location: 'Nanjing, China',
       advisor: 'A/Prof. Fei Hao',
       summary:
-        "Completed the platform's mechanical selection, 3D modeling, motion simulation, embedded control, and circuit validation.",
+        'Designed a 3-DOF mechatronic platform for ball-screw defect detection, including load analysis, motor-torque calculations, and component selection.',
       highlights: [
-        'Calculated axial and radial loads and motor torque, then produced engineering drawings and 3D models in CAD and UG NX.',
-        'Programmed an 8051 microcontroller in C to generate PWM signals for linear and arc motion.',
-        'Designed the circuit schematic and validated controller behavior in Proteus.',
+        'Produced 2D engineering drawings and 3D CAD/UG models, and conducted kinematic simulations of the platform.',
+        'Developed an 8051-based controller for stepper-driven linear and arc motion and validated its circuit and control behavior through Proteus simulations.',
       ],
+      media: {
+        alt: 'Placeholder for the 3-DOF ball screw defect detection platform',
+        label: '3-DOF inspection platform',
+      },
+    },
+    {
+      id: 'mobile-crane-robot',
+      organization: 'Nanjing Institute of Technology',
+      role: 'Robotics Competition - National University Students Mobile Crane Robot Competition',
+      period: 'Feb 2022-Nov 2022',
+      location: 'Nanjing, China',
+      advisor: 'A/Prof. Fei Hao',
+      summary:
+        'Led the development of a mobile crane robot for transporting and placing different objects along designated routes, including mechanical design, motion analysis, and system integration.',
+      highlights: [
+        'Programmed an STM32-based control system for DC motors, encoder motors, servos, and robotic arms, coordinating multiple actuators through CAN bus communication for precise movement and manipulation.',
+        'Developed a dynamic shortest-path algorithm and upgraded the actuation mechanism from a single- to triple-motor configuration, reducing total operation time from 4 min 32 sec to 3 min 15 sec.',
+      ],
+      media: { alt: 'Placeholder for the mobile crane robot', label: 'Mobile crane robot' },
     },
   ],
 }

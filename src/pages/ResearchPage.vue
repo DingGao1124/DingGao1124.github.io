@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 
+import AcademicMedia from '@/components/common/AcademicMedia.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/common/PageShell.vue'
 import Section from '@/components/common/Section.vue'
@@ -22,13 +23,8 @@ const tocItems = computed(() => [
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
-    <Section
-      id="research-areas"
-      :title="m.areasTitle"
-      :description="m.areasDescription"
-      class="mt-8 md:mt-10"
-    >
-      <div class="grid gap-x-12 gap-y-9 md:grid-cols-2">
+    <Section id="research-areas" :title="m.areasTitle" class="mt-8 md:mt-10">
+      <div class="grid gap-x-10 gap-y-6 md:grid-cols-2">
         <article v-for="area in profile.researchAreas" :key="area.title">
           <h3 class="text-xl font-medium">{{ area.title }}</h3>
           <p class="mt-2 max-w-xl leading-7 text-muted-foreground">
@@ -38,12 +34,7 @@ const tocItems = computed(() => [
       </div>
     </Section>
 
-    <Section
-      id="research-experience"
-      :title="m.experienceTitle"
-      :description="m.experienceDescription"
-      class="mt-20"
-    >
+    <Section id="research-experience" :title="m.experienceTitle" class="mt-10">
       <TimelineEntry
         v-for="experience in profile.researchExperiences"
         :key="experience.id"
@@ -52,7 +43,14 @@ const tocItems = computed(() => [
         :meta="`${experience.organization} · ${experience.location} · ${m.advisorLabel}: ${experience.advisor}`"
         :summary="experience.summary"
         :highlights="experience.highlights"
-      />
+        collapsible
+        :show-more-label="messages.showMoreLabel"
+        :show-less-label="messages.showLessLabel"
+      >
+        <template #media>
+          <AcademicMedia :media="experience.media" />
+        </template>
+      </TimelineEntry>
     </Section>
   </PageShell>
 </template>

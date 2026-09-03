@@ -1,6 +1,6 @@
 ---
 title: Projects
-description: Selected work across research, robotics, hardware, and software, from production-line digital twins to embodied robot systems.
+description: Systems built by Ding Gao across digital twins, embodied robotics, robot automation, embedded control, and multi-agent software.
 ---
 
 <script setup lang="ts">

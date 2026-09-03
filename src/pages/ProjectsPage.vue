@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import ProjectMediaGrid from '@/components/projects/ProjectMediaGrid.vue'
+import AcademicMedia from '@/components/common/AcademicMedia.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/common/PageShell.vue'
 import Section from '@/components/common/Section.vue'
@@ -25,7 +25,7 @@ const tocItems = computed(() =>
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
-    <Section class="mt-8 md:mt-10">
+    <Section :title="m.systemsTitle" class="mt-8 md:mt-10">
       <TimelineEntry
         v-for="project in profile.projects"
         :key="project.id"
@@ -37,13 +37,12 @@ const tocItems = computed(() =>
         :highlights="project.highlights"
         :tags="project.tech"
         :links="project.links"
+        collapsible
+        :show-more-label="messages.showMoreLabel"
+        :show-less-label="messages.showLessLabel"
       >
         <template #media>
-          <ProjectMediaGrid
-            :items="project.media"
-            :featured="project.featured"
-            :placeholder-label="m.placeholderLabel"
-          />
+          <AcademicMedia :media="project.media" />
         </template>
       </TimelineEntry>
     </Section>

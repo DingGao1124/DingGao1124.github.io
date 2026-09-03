@@ -40,7 +40,7 @@ const alternate = computed(() => {
 <template>
   <header class="sticky top-0 z-10 backdrop-blur-md">
     <div
-      class="mx-auto flex max-w-content flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-8 md:py-4"
+      class="mx-auto flex max-w-content flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-6 md:py-4"
     >
       <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
         {{ messages.siteName }}

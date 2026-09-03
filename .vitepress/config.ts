@@ -23,7 +23,7 @@ export default defineConfig({
   appearance: false,
   title: 'Ding Gao',
   description:
-    "Ding Gao's personal website: full-stack development, embodied intelligence, digital twins, and intelligent manufacturing.",
+    "Ding Gao's academic website: robotics and automation, embodied AI, human-robot collaboration, and digital twins.",
   head: [
     ['link', { rel: 'icon', href: '/Overwatch.svg', type: 'image/svg+xml' }],
     ['meta', { name: 'theme-color', content: '#f6f1e7' }],
@@ -38,7 +38,7 @@ export default defineConfig({
       lang: 'en',
       title: 'Ding Gao',
       description:
-        "Ding Gao's personal website: full-stack development, embodied intelligence, digital twins, and intelligent manufacturing.",
+        "Ding Gao's academic website: robotics and automation, embodied AI, human-robot collaboration, and digital twins.",
       head: [
         ['meta', { property: 'og:title', content: 'Ding Gao' }],
         [
@@ -46,7 +46,7 @@ export default defineConfig({
           {
             property: 'og:description',
             content:
-              "Ding Gao's personal website: full-stack development, embodied intelligence, digital twins, and intelligent manufacturing.",
+              "Ding Gao's academic website: robotics and automation, embodied AI, human-robot collaboration, and digital twins.",
           },
         ],
       ],

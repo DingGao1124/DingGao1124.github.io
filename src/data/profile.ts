@@ -1,6 +1,7 @@
 export type ProfileLink = {
   label: string
   href: string
+  iconSrc?: string
 }
 
 export type Honor = {
@@ -12,38 +13,33 @@ export type Honor = {
 export type Identity = {
   name: string
   headline: string
-  credential: string
+  currentPosition: string
+  employer: ProfileLink
   location: string
   avatarAlt: string
 }
 
-export type SkillLevel = {
-  label: string
-  value: number
-}
-
 export const email = 'gaodings@163.com'
+export const phone = '+86 159 6295 6251'
+export const phoneHref = 'tel:+8615962956251'
 export const cvHref = '/cv/Ding_Gao_CV.pdf'
 export const avatarSrc = '/Avatar.png'
 
-export const skillLevels: SkillLevel[] = [
-  { label: 'Python', value: 85 },
-  { label: 'TypeScript', value: 82 },
-  { label: 'C++', value: 70 },
-]
-
 export const profileLinks: ProfileLink[] = [
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-  },
-  {
-    label: 'Yuque Portfolio',
-    href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer?singleDoc',
-  },
   {
     label: 'GitHub',
     href: 'https://github.com/DingGao1124',
+    iconSrc: '/media/GitHub.svg',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/ding-gao-995147349/',
+    iconSrc: '/media/Linkin.svg',
+  },
+  {
+    label: 'Portfolio',
+    href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
+    iconSrc: '/media/Yuque.svg',
   },
 ]
 
@@ -51,14 +47,24 @@ export const identity: Record<SiteLocale, Identity> = {
   zh: {
     name: '高鼎',
     headline: '全栈工程师与机器人研究者',
-    credential: '东华大学智能制造工程硕士',
+    currentPosition: '软件工程师，就职于',
+    employer: {
+      label: '@哔哩哔哩',
+      href: 'https://github.com/bilibili',
+      iconSrc: '/company/BILIBILI.svg',
+    },
     location: '中国上海',
     avatarAlt: '高鼎的个人头像',
   },
   en: {
     name: 'Ding Gao',
     headline: 'Full-Stack Engineer & Robotics Researcher',
-    credential: 'M.Eng. in Intelligent Manufacturing, Donghua University',
+    currentPosition: 'Software Engineer at',
+    employer: {
+      label: '@bilibili',
+      href: 'https://github.com/bilibili',
+      iconSrc: '/company/BILIBILI.svg',
+    },
     location: 'Shanghai, China',
     avatarAlt: 'Profile avatar of Ding Gao',
   },
@@ -85,9 +91,10 @@ export const honors: Record<SiteLocale, Honor[]> = {
       title: '第六届中国大学生起重机创意大赛全国一等奖',
     },
     {
-      year: '2020–2024',
+      year: '2020–2026',
       title: '校级一等奖学金、二等奖学金与学业奖学金',
-      detail: '本科阶段五次获奖；硕士阶段各获一次一等奖学金与二等奖学金',
+      detail:
+        '东华大学一等奖学金 2 次、二等奖学金 1 次；南京工程学院一等奖学金 1 次、二等奖学金 4 次',
     },
     {
       year: '2022–2023',
@@ -98,26 +105,28 @@ export const honors: Record<SiteLocale, Honor[]> = {
   en: [
     {
       year: '2025',
-      title: 'Excellence Award, 12th NVIDIA Sky Hackathon (2nd place)',
-      detail: 'Embodied-AI tool recommendation robot for battery disassembly',
+      title: 'Excellence Award (National Second Place), 12th NVIDIA Sky Hackathon',
+      detail: 'Embodied AI Robot based on LLM Multi-Agent Systems',
     },
     {
       year: '2023',
-      title: 'National First Prize, National College Students Mathematics Competition',
+      title: 'National First Prize, National University Students Mathematics Competition',
+      detail: 'Provincial First Prize, 2022; Provincial Third Prize, 2020',
     },
     {
       year: '2022',
-      title: 'National First Prize, 6th National College Students Crane Creativity Competition',
+      title:
+        'National First Prize, 6th National University Students Mobile Crane Robot Competition',
     },
     {
-      year: '2020–2024',
-      title: 'First-class, second-class, and academic scholarships',
-      detail: 'Five undergraduate awards and two graduate awards',
+      year: '2020–2026',
+      title: 'University scholarships',
+      detail:
+        'Donghua University First-Class (Top 5%) (2x) and Second-Class (1x), 2023-2026; Nanjing Institute of Technology First-Class (Top 5%) (1x) and Second-Class (4x), 2020-2023',
     },
     {
       year: '2022–2023',
-      title: 'University Merit Student and Outstanding Graduate',
-      detail: 'Nanjing Institute of Technology',
+      title: 'University Merit Student, 2022 and 2023; Outstanding Graduate Award, 2023',
     },
   ],
 }

@@ -18,259 +18,185 @@ export type Project = {
   description: string
   highlights: string[]
   tech: string[]
-  featured?: boolean
   links?: ProjectLink[]
-  media: ProjectMedia[]
+  media: ProjectMedia
 }
 
 export const projects: Record<SiteLocale, Project[]> = {
   zh: [
     {
       id: 'digital-twin-production-line',
-      title: '基于 LLM 多智能体的数字孪生产线',
-      period: '2024.09–2026.06',
-      role: '项目负责人',
-      category: '研究',
-      description:
-        '为物理生产线建立实时同步的三维数字模型，并为各产线单元配置 LLM 智能体，使其感知状态、协作推理并辅助控制物理系统。',
+      title: '基于 LLM 多智能体的柔性产线数字孪生平台',
+      period: '2023.09-2026.06',
+      role: '研究生研究',
+      category: '数字孪生',
+      description: '构建了连接实时生产状态、三维模型、制造知识与 LLM 智能体的数字孪生平台。',
       highlights: [
-        '使用 React、Next.js、Supabase、React Flow 与 Three.js / R3F 构建完整应用。',
-        '通过 Socket / WebSocket 同步真实产线与前端三维模型的状态和位姿。',
-        '集成 STT/TTS、流式多智能体对话、工具调用与生产知识 RAG。',
+        '提出知识-行为-几何框架，使智能体能够随生产任务与系统状态变化生成、协同和重构模型。',
+        '集成交互式三维模型、虚实同步、事件驱动工具调用、制造知识 RAG 与自然语言交互。',
+        '在零件缺陷监测与分拣产线上完成验证，将换线与恢复时间降低 47%。',
       ],
-      tech: ['React', 'Next.js', 'Three.js', 'Supabase', 'LangGraph', 'RAG'],
-      featured: true,
-      media: [
-        { alt: '数字孪生产线三维界面占位图', label: '三维产线界面' },
-        { alt: '数字孪生多智能体工作流占位图', label: '智能体工作流' },
-        { alt: '物理产线同步实验占位图', label: '虚实同步实验' },
-      ],
+      tech: ['LLM Agents', 'RAG', 'Three.js', 'React', 'Next.js', 'WebSocket'],
+      media: { alt: '数字孪生产线界面占位图', label: 'Production-line interface' },
     },
     {
       id: 'industrial-disassembly-robot',
-      title: '工业拆卸工具推荐机器人',
-      period: '2025.04–2025.06',
-      role: '核心开发者',
-      category: '机器人',
-      description:
-        '针对退役汽车动力电池拆卸，构建多模态感知—决策—执行系统，通过语音指令和场景理解驱动机械臂取送工具。',
+      title: '工业拆卸具身智能机器人',
+      period: '2025.04-2025.06',
+      role: '研究助理',
+      category: '具身智能',
+      description: '开发了面向退役电动汽车电池拆卸的语音引导感知-决策-执行系统。',
       highlights: [
-        '融合 FastSAM、视觉语言模型与 Set-of-Mark prompting 进行场景理解。',
-        '使用 GraspNet 从点云生成抗碰撞抓取位姿，并通过 MCP 控制 UR 机械臂。',
-        '获得第十二届 NVIDIA Sky Hackathon 卓越奖（全国第二名）。',
+        '使用 LangGraph 和语音专用大模型完成实时任务规划、工具选择与人机交互。',
+        '结合 FastSAM、VLM 与 Strategy of Mind prompting 理解场景并规划抓取。',
+        '通过 GraspNet 与 MCP 控制 UR 机器人完成无碰撞工具取送。',
       ],
-      tech: ['LangGraph', 'VLA', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
-      featured: true,
+      tech: ['LangGraph', 'VLM', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
       links: [
-        { label: '视频', href: 'https://www.bilibili.com/video/BV1sRj3zAEXG' },
-        {
-          label: 'GitCode',
-          href: 'https://gitcode.com/baomingcanjia/URgrasp_agent',
-        },
+        { label: 'Video', href: 'https://www.bilibili.com/video/BV1sRj3zAEXG' },
+        { label: 'GitCode', href: 'https://gitcode.com/baomingcanjia/URgrasp_agent' },
         { label: 'GitHub', href: 'https://github.com/SsspongeBob/Hackathon' },
       ],
-      media: [
-        { alt: '工业拆卸机器人实验占位图', label: '机器人实验' },
-        { alt: '工业拆卸视觉理解占位图', label: '视觉理解' },
-        { alt: '工业拆卸抓取规划占位图', label: '抓取规划' },
-      ],
+      media: { alt: '工业拆卸机器人实验占位图', label: 'Robot experiment' },
     },
     {
       id: 'abb-gofa-agent',
       title: 'ABB GoFa 机器人任务规划智能体',
-      period: '2025.07–2025.09',
+      period: '2025.07-2025.09',
       role: '机器人应用软件开发实习生',
-      category: '机器人',
-      description:
-        '在 ABB 机器人研发团队中构建基于 Azure OpenAI 的任务规划智能体，将自然语言任务转换为可执行的 RAPID 指令。',
+      category: '机器人自动化',
+      description: '在 ABB 机器人研发部门开发了将自然语言任务转换为 RAPID 指令的任务规划智能体。',
       highlights: [
-        '通过 RWS 服务支持任务拆解、串并行执行和失败处理。',
-        '构建 App Studio 内的 RAG 编程助手，帮助工程师生成机器人功能并检索技术资料。',
+        '使用 Azure OpenAI、MCP 与 Robot Web Services 拆解并执行多步骤机器人任务。',
+        '实现并行任务协调和执行失败处理。',
+        '改进了变化光照下的七巧板识别，并开发 AppStudio RAG 编程助手。',
       ],
-      tech: ['Azure OpenAI', 'LangGraph', 'RAPID', 'RWS', 'MCP'],
-      media: [
-        { alt: 'ABB GoFa 机器人占位图', label: 'GoFa 机器人' },
-        { alt: 'ABB 任务规划界面占位图', label: '任务规划' },
-      ],
+      tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'RAG'],
+      media: { alt: 'ABB GoFa 机器人占位图', label: 'GoFa robot' },
     },
     {
-      id: 'crane-robot',
-      title: '全国大学生起重机创意大赛机器人',
-      period: '2022.02–2022.11',
-      role: '队长与核心开发者',
-      category: '硬件',
-      description:
-        '设计 STM32 驱动的自主起重机器人，通过机械结构、嵌入式控制和路径规划完成限定路线上的多货物搬运。',
+      id: 'mobile-crane-robot',
+      title: '移动起重机器人',
+      period: '2022.02-2022.11',
+      role: '队长',
+      category: '机器人与嵌入式',
+      description: '带领团队设计并集成了一台沿指定路线运输和放置多类物体的移动起重机器人。',
       highlights: [
-        '使用 C 语言控制电机、舵机和机械臂，并通过 CAN 总线协调各模块。',
-        '将总运行时间从 4 分 32 秒缩短至 3 分 15 秒，并获得全国一等奖。',
+        '负责机械设计、运动分析、STM32 控制与 CAN 总线多执行器协调。',
+        '开发动态最短路径算法，并将执行机构由单电机升级为三电机。',
+        '将总运行时间从 4 分 32 秒降至 3 分 15 秒，项目获得全国一等奖。',
       ],
-      tech: ['STM32', 'C', 'CAN Bus', 'Mechanical Design', 'Path Planning'],
-      links: [{ label: '视频', href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/' }],
-      media: [
-        { alt: '起重机器人整机占位图', label: '机器人整机' },
-        { alt: '起重机器人机构占位图', label: '机械机构' },
-      ],
+      tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical Design'],
+      links: [{ label: 'Video', href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/' }],
+      media: { alt: '移动起重机器人整机占位图', label: 'Complete robot' },
     },
     {
-      id: 'ai-agents-town',
-      title: 'AI Agents Town',
-      period: '2024.12–2025.04',
+      id: 'multi-agent-virtual-world',
+      title: '交互式多智能体虚拟世界',
+      period: '2024.12-2025.04',
       role: '全栈开发实习生',
-      category: '软件',
-      description:
-        '在浏览器虚拟世界中构建具备长期记忆和上下文交互能力的 LLM 智能体，玩家行为会持续影响角色关系和剧情状态。',
+      category: '智能体系统',
+      description: '为浏览器虚拟世界构建了具备长期记忆与检索增强上下文推理能力的多智能体系统。',
       highlights: [
-        '使用 Phaser 构建游戏世界，并通过 Event Bus 与 React 交互。',
-        '使用 RAG、Postgres 与 Neo4j 管理角色记忆、经历和关系。',
+        '使用 LangChain 设计记忆增强智能体和 RAG 上下文流程。',
+        '将智能体系统集成到 Phaser 环境中，使角色能够维持更连贯的上下文交互。',
       ],
-      tech: ['React', 'Phaser', 'LangChain', 'RAG', 'Postgres', 'Neo4j'],
-      media: [
-        { alt: 'AI Agents Town 游戏世界占位图', label: '游戏世界' },
-        { alt: 'AI Agents Town 智能体对话占位图', label: '智能体对话' },
-      ],
+      tech: ['LangChain', 'RAG', 'Phaser', 'React'],
+      media: { alt: '多智能体虚拟世界占位图', label: 'Virtual world' },
     },
   ],
   en: [
     {
       id: 'digital-twin-production-line',
-      title: 'LLM Multi-Agent Digital-Twin Production Line',
-      period: 'Sep 2024–Jun 2026',
-      role: 'Project Lead',
-      category: 'Research',
+      title: 'LLM Multi-Agent Digital Twin for Flexible Production Lines',
+      period: 'Sep 2023-Jun 2026',
+      role: 'Graduate Researcher',
+      category: 'Digital Twins',
       description:
-        'Built a real-time 3D model of a physical production line and assigned an LLM agent to each unit so they could perceive state, coordinate decisions, and assist with physical-system control.',
+        'Proposed a knowledge-behavior-geometry framework that used LLM-based agents to generate, coordinate, and reconfigure digital twin models in response to changing production tasks and system states.',
       highlights: [
-        'Built the complete application with React, Next.js, Supabase, React Flow, and Three.js / R3F.',
-        'Synchronized physical and virtual state and pose data through Socket and WebSocket connections.',
-        'Integrated STT/TTS, streaming multi-agent dialogue, tool calls, and RAG over production knowledge.',
+        'Developed a digital twin platform integrating interactive 3D models, real-time physical-virtual synchronization, event-driven agent tool calls, RAG-based manufacturing knowledge retrieval, and natural-language interaction.',
+        'Evaluated the framework on a parts defect-monitoring and sorting line; experiments reported a 47% reduction in changeover and recovery time and a lower false-positive rate than conventional methods.',
       ],
-      tech: ['React', 'Next.js', 'Three.js', 'Supabase', 'LangGraph', 'RAG'],
-      featured: true,
-      media: [
-        {
-          alt: 'Placeholder for the digital-twin 3D interface',
-          label: '3D production line',
-        },
-        {
-          alt: 'Placeholder for the multi-agent workflow',
-          label: 'Agent workflow',
-        },
-        {
-          alt: 'Placeholder for the physical–virtual synchronization experiment',
-          label: 'Synchronization experiment',
-        },
-      ],
+      tech: ['LLM Agents', 'RAG', 'Three.js', 'React', 'Next.js', 'WebSocket'],
+      media: {
+        alt: 'Placeholder for the digital-twin production-line interface',
+        label: 'Production-line interface',
+      },
     },
     {
       id: 'industrial-disassembly-robot',
-      title: 'Industrial Disassembly Tool-Recommendation Robot',
-      period: 'Apr 2025–Jun 2025',
-      role: 'Core Developer',
-      category: 'Robotics',
+      title: 'Embodied AI Robot for Industrial Disassembly',
+      period: 'Apr 2025-Jun 2025',
+      role: 'Research Assistant',
+      category: 'Embodied AI',
       description:
-        'Built a multimodal perception–decision–action system for retired EV-battery disassembly, using voice commands and scene understanding to direct a robot arm in delivering tools.',
+        'Developed a multimodal perception-decision-action system for retired EV-battery disassembly, enabling voice-guided task planning and robotic tool-handling operations.',
       highlights: [
-        'Combined FastSAM, vision-language models, and Set-of-Mark prompting for scene understanding.',
-        'Generated collision-aware grasp poses from point clouds with GraspNet and controlled a UR robot through MCP.',
-        'Won an Excellence Award (2nd place) at the 12th NVIDIA Sky Hackathon.',
+        'Constructed a LangGraph-based agent integrated with a voice-specialized LLM for real-time task planning, tool selection, and human-robot interaction.',
+        'Combined FastSAM and VLMs for scene understanding, Strategy of Mind prompting for grasp planning, and GraspNet with MCP tool calling to control a UR robot for collision-free tool pickup and delivery.',
       ],
-      tech: ['LangGraph', 'VLA', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
-      featured: true,
+      tech: ['LangGraph', 'VLM', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
       links: [
         { label: 'Video', href: 'https://www.bilibili.com/video/BV1sRj3zAEXG' },
-        {
-          label: 'GitCode',
-          href: 'https://gitcode.com/baomingcanjia/URgrasp_agent',
-        },
+        { label: 'GitCode', href: 'https://gitcode.com/baomingcanjia/URgrasp_agent' },
         { label: 'GitHub', href: 'https://github.com/SsspongeBob/Hackathon' },
       ],
-      media: [
-        {
-          alt: 'Placeholder for the industrial disassembly robot experiment',
-          label: 'Robot experiment',
-        },
-        {
-          alt: 'Placeholder for visual scene understanding',
-          label: 'Visual understanding',
-        },
-        { alt: 'Placeholder for grasp planning', label: 'Grasp planning' },
-      ],
+      media: {
+        alt: 'Placeholder for the industrial disassembly robot experiment',
+        label: 'Robot experiment',
+      },
     },
     {
       id: 'abb-gofa-agent',
       title: 'Task-Planning Agent for the ABB GoFa Robot',
-      period: 'Jul 2025–Sep 2025',
-      role: 'Robotics Application Software Developer Intern',
-      category: 'Robotics',
+      period: 'Jul 2025-Sep 2025',
+      role: 'Robotics Application Software Intern',
+      category: 'Robot Automation',
       description:
-        'Built an Azure OpenAI task-planning agent in ABB Robotics R&D that translated natural-language tasks into executable RAPID commands.',
+        'Developed an LLM-driven robotic task planner using Azure OpenAI and MCP, decomposing complex natural-language instructions into executable RAPID commands through Robot Web Services.',
       highlights: [
-        'Used RWS services for task decomposition, serial and parallel execution, and failure handling.',
-        'Built a RAG coding assistant in App Studio for robot-function generation and technical retrieval.',
+        'Implemented parallel task coordination and execution-failure handling, enabling the planner to manage multi-step robot operations and respond to unsuccessful actions.',
+        'Improved Tangram recognition under variable lighting through dynamic HSV parameter adjustment and developed a RAG-based AppStudio assistant for robot-function generation and technical knowledge retrieval.',
       ],
-      tech: ['Azure OpenAI', 'LangGraph', 'RAPID', 'RWS', 'MCP'],
-      media: [
-        { alt: 'Placeholder for the ABB GoFa robot', label: 'GoFa robot' },
-        {
-          alt: 'Placeholder for the ABB task-planning interface',
-          label: 'Task planning',
-        },
-      ],
+      tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'RAG'],
+      media: { alt: 'Placeholder for the ABB GoFa robot', label: 'GoFa robot' },
     },
     {
-      id: 'crane-robot',
-      title: 'National Crane Creativity Competition Robot',
-      period: 'Feb 2022–Nov 2022',
-      role: 'Team Lead & Core Developer',
-      category: 'Hardware',
+      id: 'mobile-crane-robot',
+      title: 'Mobile Crane Robot',
+      period: 'Feb 2022-Nov 2022',
+      role: 'Team Lead',
+      category: 'Robotics & Embedded Systems',
       description:
-        'Designed an STM32-powered autonomous crane robot that moved multiple payloads along a specified route using mechanical design, embedded control, and path planning.',
+        'Led the development of a mobile crane robot for transporting and placing different objects along designated routes, including mechanical design, motion analysis, and system integration.',
       highlights: [
-        'Programmed motors, servos, and the robot arm in C and coordinated modules over CAN bus.',
-        'Reduced total operating time from 4m32s to 3m15s and won national first prize.',
+        'Programmed an STM32-based control system for DC motors, encoder motors, servos, and robotic arms, coordinating multiple actuators through CAN bus communication for precise movement and manipulation.',
+        'Developed a dynamic shortest-path algorithm and upgraded the actuation mechanism from a single- to triple-motor configuration, reducing total operation time from 4 min 32 sec to 3 min 15 sec.',
       ],
-      tech: ['STM32', 'C', 'CAN Bus', 'Mechanical Design', 'Path Planning'],
-      links: [
-        {
-          label: 'Video',
-          href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/',
-        },
-      ],
-      media: [
-        {
-          alt: 'Placeholder for the complete crane robot',
-          label: 'Complete robot',
-        },
-        {
-          alt: 'Placeholder for the crane robot mechanism',
-          label: 'Mechanical system',
-        },
-      ],
+      tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical Design'],
+      links: [{ label: 'Video', href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/' }],
+      media: {
+        alt: 'Placeholder for the complete mobile crane robot',
+        label: 'Complete robot',
+      },
     },
     {
-      id: 'ai-agents-town',
-      title: 'AI Agents Town',
-      period: 'Dec 2024–Apr 2025',
+      id: 'multi-agent-virtual-world',
+      title: 'Interactive Multi-Agent Virtual World',
+      period: 'Dec 2024-Apr 2025',
       role: 'Full-Stack Developer Intern',
-      category: 'Software',
+      category: 'Agent Systems',
       description:
-        'Built LLM-driven characters with long-term memory and contextual interaction inside a browser-based virtual world where player actions changed relationships and story state.',
+        'Architected a LangChain-based multi-agent system for an interactive virtual world, incorporating memory-augmented agents and RAG-enhanced contextual reasoning.',
       highlights: [
-        'Built the game world in Phaser and connected it to React through an event bus.',
-        'Used RAG, Postgres, and Neo4j to manage character memory, experience, and relationships.',
+        'Integrated the agent system into a browser-based Phaser environment, enabling agents to maintain contextual memory and support more coherent user-agent interactions.',
       ],
-      tech: ['React', 'Phaser', 'LangChain', 'RAG', 'Postgres', 'Neo4j'],
-      media: [
-        {
-          alt: 'Placeholder for the AI Agents Town game world',
-          label: 'Game world',
-        },
-        {
-          alt: 'Placeholder for an AI Agents Town character conversation',
-          label: 'Agent conversation',
-        },
-      ],
+      tech: ['LangChain', 'RAG', 'Phaser', 'React'],
+      media: {
+        alt: 'Placeholder for the interactive multi-agent virtual world',
+        label: 'Virtual world',
+      },
     },
   ],
 }

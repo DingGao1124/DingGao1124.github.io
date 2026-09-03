@@ -2,6 +2,7 @@
 import { computed, useSlots } from 'vue'
 import { ArrowUpRight } from '@lucide/vue'
 
+import ExpandableBulletList from '@/components/common/ExpandableBulletList.vue'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
@@ -11,16 +12,26 @@ export type TimelineLink = {
   href: string
 }
 
-const props = defineProps<{
-  id?: string
-  period: string
-  title: string
-  meta?: string
-  summary?: string
-  highlights?: readonly string[]
-  tags?: readonly string[]
-  links?: readonly TimelineLink[]
-}>()
+const props = withDefaults(
+  defineProps<{
+    id?: string
+    period: string
+    title: string
+    meta?: string
+    summary?: string
+    highlights?: readonly string[]
+    tags?: readonly string[]
+    links?: readonly TimelineLink[]
+    collapsible?: boolean
+    showMoreLabel?: string
+    showLessLabel?: string
+  }>(),
+  {
+    collapsible: false,
+    showMoreLabel: 'Show more',
+    showLessLabel: 'Show less',
+  },
+)
 
 function isExternal(href: string) {
   return /^https?:\/\//.test(href)
@@ -28,10 +39,12 @@ function isExternal(href: string) {
 
 const slots = useSlots()
 const hasMedia = computed(() => Boolean(slots.media))
+const hasMark = computed(() => Boolean(slots.mark))
 const gridClass = computed(() =>
   cn(
-    'grid gap-6 py-8 md:grid-cols-[9rem_minmax(0,1fr)] md:gap-8',
-    hasMedia.value && 'lg:grid-cols-[9rem_minmax(0,1fr)_minmax(17rem,0.72fr)] lg:gap-10',
+    'grid gap-3 py-4 md:grid-cols-[6rem_minmax(0,1fr)] md:gap-5',
+    hasMedia.value &&
+      'lg:grid-cols-[6rem_minmax(0,1fr)_20rem] lg:gap-6 xl:grid-cols-[6rem_minmax(0,1fr)_22rem] xl:gap-7',
   ),
 )
 </script>
@@ -44,33 +57,32 @@ const gridClass = computed(() =>
     </div>
 
     <div class="min-w-0">
-      <h3 class="text-xl leading-snug font-medium md:text-2xl">
-        {{ title }}
-      </h3>
-      <p v-if="meta" class="mt-2 text-sm text-muted-foreground">{{ meta }}</p>
-      <p v-if="summary" class="measure mt-4 leading-7 text-card-foreground">
-        {{ summary }}
+      <div class="flex items-start justify-between gap-5">
+        <h3 class="text-base leading-snug font-medium md:text-lg">
+          {{ title }}
+        </h3>
+        <div v-if="hasMark" class="flex h-8 w-16 shrink-0 items-center justify-end">
+          <slot name="mark" />
+        </div>
+      </div>
+      <p v-if="meta" class="mt-1 text-xs leading-5 text-muted-foreground">
+        {{ meta }}
       </p>
+      <ExpandableBulletList
+        v-if="summary || highlights?.length"
+        class="mt-2.5"
+        :summary="summary"
+        :items="highlights ?? []"
+        :collapsible="collapsible"
+        :show-more-label="showMoreLabel"
+        :show-less-label="showLessLabel"
+      />
 
-      <ul
-        v-if="highlights?.length"
-        class="mt-4 flex flex-col gap-2 text-sm leading-6 text-muted-foreground"
-      >
-        <li
-          v-for="highlight in highlights"
-          :key="highlight"
-          class="grid grid-cols-[0.75rem_1fr] gap-2"
-        >
-          <span class="mt-[0.7rem] h-px bg-border" aria-hidden="true" />
-          <span>{{ highlight }}</span>
-        </li>
-      </ul>
-
-      <div v-if="tags?.length" class="mt-5 flex flex-wrap gap-2">
+      <div v-if="tags?.length" class="mt-2.5 flex flex-wrap gap-1.5">
         <Badge v-for="tag in tags" :key="tag" variant="outline">{{ tag }}</Badge>
       </div>
 
-      <ul v-if="links?.length" class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      <ul v-if="links?.length" class="mt-2.5 flex flex-wrap gap-x-4 gap-y-2 text-xs">
         <li v-for="link in links" :key="link.href">
           <a
             class="link inline-flex items-center gap-1.5"
@@ -85,7 +97,7 @@ const gridClass = computed(() =>
       </ul>
     </div>
 
-    <div v-if="hasMedia" class="min-w-0 md:col-start-2 lg:col-start-3 lg:row-start-1">
+    <div v-if="hasMedia" class="min-w-0 self-start md:col-start-2 lg:col-start-3 lg:row-start-1">
       <slot name="media" />
     </div>
   </article>

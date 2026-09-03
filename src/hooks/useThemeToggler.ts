@@ -44,7 +44,7 @@ export function useThemeToggler() {
   return { isDark: readonly(isDark), toggle, setTheme }
 }
 
-export type TransitionVariant =
+type TransitionVariant =
   | 'circle'
   | 'square'
   | 'triangle'
@@ -237,7 +237,7 @@ export function useAnimatedThemeToggler(options: UseAnimatedThemeTogglerOptions 
     // reverses it by collapsing the old (light) theme toward the button.
     const reverse = next
     const root = document.documentElement
-    root.dataset.magicuiThemeVt = reverse ? 'reverse' : 'active'
+    root.dataset.magicuiThemeVt = reverse ? 'collapse' : 'expand'
     root.style.setProperty('--magicui-theme-toggle-vt-duration', `${duration}ms`)
     // Pin the starting clip-path so the theme is not painted unclipped between
     // the snapshot and the ready.then() animation.
@@ -262,7 +262,7 @@ export function useAnimatedThemeToggler(options: UseAnimatedThemeTogglerOptions 
     })
 
     if (typeof transition?.finished?.finally === 'function') {
-      transition.finished.finally(cleanup).catch(() => { })
+      transition.finished.finally(cleanup).catch(() => {})
     } else {
       cleanup()
     }
@@ -279,7 +279,7 @@ export function useAnimatedThemeToggler(options: UseAnimatedThemeTogglerOptions 
           })
           activeAnim = anim
         })
-        .catch(() => { })
+        .catch(() => {})
     }
   }
 

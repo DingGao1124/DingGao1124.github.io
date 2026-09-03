@@ -1,10 +1,21 @@
 # Changelog
 
+## 2026-09-04
+
+- Portfolio: reframed the English site around the latest CV with a first-person introduction and verbatim résumé records.
+- Profile: added a categorized technology proficiency carousel beneath the avatar.
+- Layout: tightened academic records with expandable details and figure-led publication entries.
+- Profile: linked the Bilibili affiliation with its existing company mark.
+- Media: standardized core academic and professional records on single 16:9 placeholders.
+- Interaction: removed the background hover treatment from expandable record controls.
+- Layout: widened academic figure columns and removed stretched media whitespace.
+
 ## 2026-09-03
 
 - Theme: added an animated theme toggle that reveals the light/dark switch with a clip-path view transition.
 - Theme: made the toggle directional so switching to light expands from the button and switching to dark collapses toward it.
 - Theme: made the theme icon update immediately in both transition directions.
+- Theme: renamed the toggle's direction flags to collapse/expand for clarity.
 
 ## 2026-08-30
 

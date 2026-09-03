@@ -84,7 +84,7 @@ onBeforeUnmount(() => observer?.disconnect())
             <span
               :class="
                 cn(
-                  'line-clamp-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100',
+                  'line-clamp-3 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100',
                   labelVisibility(index),
                 )
               "

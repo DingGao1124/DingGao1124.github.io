@@ -30,7 +30,7 @@ const tocItems = computed(() =>
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="blogs.eyebrow" :title="blogs.title" :lede="blogs.lede" />
 
-    <Section class="mt-8 md:mt-10">
+    <Section :title="blogs.postsTitle" class="mt-8 md:mt-10">
       <p v-if="posts.length === 0" class="measure text-muted-foreground">
         <span class="inline-flex items-center gap-2">
           <Construction class="size-5" />

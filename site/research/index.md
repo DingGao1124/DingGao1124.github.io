@@ -1,6 +1,6 @@
 ---
 title: Research
-description: Research on digital twins, LLM-based multi-agent systems, embodied AI, and human-robot collaboration for intelligent manufacturing.
+description: Ding Gao's research in robotics and automation, embodied AI, robot perception and control, human-robot collaboration, and digital twins.
 ---
 
 <script setup lang="ts">

@@ -1,65 +1,74 @@
-# Site redesign
+# Academic portfolio design
 
 ## Purpose
 
-The site presents a complete bilingual personal résumé rather than targeting only academic applications or only industry recruitment. Its six routes remain Profile, Research, Projects, Publications, Experience, and Contact, with English at `/` and Simplified Chinese at `/zh/`.
+The site is an English-first academic portfolio for prospective PhD supervisors, research laboratories, and technical collaborators. Its content is derived from the current public CV and presents research before industry experience. The existing Simplified Chinese routes remain available at `/zh/`, but their navigation entry stays hidden while the translation is being refined.
 
-The visual system uses a GitHub-style profile sidebar with a circular avatar, concise identity metadata, and language proficiency bars, alongside one shared chronological rail across research, projects, professional experience, education, and honors. Project entries are deliberately borderless and place time at the left, text in the center, and media at the right on large screens.
+The personal introduction uses first person. Research, project, professional, education, and honors records preserve the CV wording instead of rewriting it as personal narrative. Page copy should describe work and results directly; it should not explain what a page or section contains.
 
-## Content organization
+## Information architecture
 
-- **Profile** introduces Ding Gao as a Full-Stack Engineer & Robotics Researcher, then previews research areas, two selected projects, and recent industry experience.
-- **Research** contains four research areas and three complete research experiences.
-- **Projects** contains five selected projects. The first two have larger media grids; the other three use compact media grids.
-- **Publications** uses structured citation fields for journal articles, work under revision, and patents.
-- **Experience** contains professional roles, education details, skills, and honors.
-- **Contact** publishes the personal email, city, external profiles, and a secondary CV download action. The downloadable CV is provided separately in its original form.
+- **Profile** introduces the research focus, provides dated news, and links to research and selected publications.
+- **Research** groups four research directions and four chronological research experiences.
+- **Publications** separates journal publications from patents and preserves equal-contribution and corresponding-author markers.
+- **Projects** presents five implemented systems with personal contributions, evidence, technology, and replaceable media.
+- **Experience** contains professional roles, education, factual technical skills, and selected honors.
+- **Blog** contains long-form notes on robotics, agent systems, and engineering.
+- **Contact** publishes the email, phone number, external profiles, and latest CV.
 
-All résumé content is stored in `src/data/` by category. Each category keeps its own types and contains matching `en` and `zh` records. Page-specific interface copy remains in `src/i18n/sources/`.
+CV-derived content lives in `src/data/`. Interface labels remain in `src/i18n/sources/`. `usePersonalData` selects the active locale and is the single source passed into route-level components.
 
-## Shared components
+## Component responsibilities
 
-- `ProfileHero` owns identity, avatar, introduction, email, CV, external profiles, and language proficiency presentation.
-- `PageShell` keeps route content narrow and reserves a desktop column for in-page navigation.
-- `PageToc` renders the fading vertical chapter rail and tracks the visible section.
-- `BackToTop` reveals a fixed return action after meaningful scrolling.
-- `TimelineEntry` owns the responsive date rail and typed text/link inputs. It accepts an optional media slot.
-- `ProjectMediaGrid` renders project images or explicit neutral placeholders without creating inactive detail links.
-- `PublicationEntry` renders one structured citation and highlights Ding Gao in the author list.
+- `ProfileHero` renders identity, first-person introduction, the linked Bilibili affiliation, the systems thread, avatar, primary links, and a compact technology carousel.
+- `TechCarousel` compares CV-supported technologies with unlabeled percentage bars; the numerical values stay in data for future motion work.
+- `NewsList` renders short dated updates and optional source links.
+- `PageShell` reserves the desktop column for in-page navigation.
+- `PageToc` tracks the active section while keeping every section label at equal opacity.
+- `TimelineEntry` renders chronological research, projects, education, and professional experience. When the complete summary and bullet list exceeds the fixed preview height, the lower text fades toward a ruled Show more / Show less control.
+- `CompactRecordList` renders honors as dense year-and-record rows.
+- `ExpandableBulletList` provides the shared disclosure behavior for CV-derived bullet lists.
+- `AcademicMedia` renders the single 16:9 figure or labeled placeholder shared by research, publication, project, and professional-experience entries.
+- `PublicationEntry` renders journal papers as compact figure-and-citation rows and patents as single-column records. Missing paper figures use labeled placeholders.
 
-Route-level page components only select localized data and compose these components.
+Route-level pages remain composition surfaces. No global state or client-side content fetching is required.
 
-The interface uses shadcn-vue components wherever a matching responsibility exists: `Avatar` for the profile image, `Progress` for language proficiency, `Button` for actions, `Badge` for technologies and publication types, `Separator` for structural rules, `AspectRatio` for media sizing, `Empty` for missing project media, and `Tooltip` for icon-only controls. Semantic page structure—including navigation, headings, articles, lists, figures, and time elements—remains native HTML because shadcn-vue does not replace those elements.
+## Visual system
+
+The interface keeps the existing warm editorial palette and the local Newsreader/Geist pairing. Newsreader carries restrained display hierarchy; Geist carries body text and interface labels. The compact base text is 16px with a reading measure of approximately 66 characters. The shared desktop container is wide enough for a date rail, readable text column, 16:9 academic figure, and page contents rail without creating unused side margins.
+
+The signature element is the profile's research systems thread: physical systems, digital models, intelligent agents, and robot action. It summarizes the site's subject without introducing decorative motion. Structural rules, date rails, figure labels, and monospaced metadata provide hierarchy; gradients, glows, marketing cards, and scroll-triggered effects are excluded.
 
 ## Asset contract
 
-The repository intentionally ships with explicit placeholders instead of fabricated imagery.
+- Replace `public/Avatar.png` in place to update the portrait.
+- Add one project image under `public/projects/<project-id>/` and set the corresponding `media.src` value in `src/data/projects.ts`.
+- Add one research image under `public/research/<research-id>/` and set the corresponding `media.src` value in `src/data/research.ts`.
+- Add publication and professional-experience images under their matching public asset folders and set the corresponding `media.src` values in their data files.
+- Existing Tesla, ABB, and Bilibili marks are referenced from `public/company/`. Missing organization marks intentionally fall back to text.
+- Existing LinkedIn and GitHub marks are referenced from `public/media/`. Assets without a confirmed destination are not rendered.
+- Replace `public/cv/Ding_Gao_CV.pdf` in place for future CV revisions.
 
-1. Replace `public/avatar.webp` with a new square profile image while keeping the same path, or update `avatarSrc` in `src/data/profile.ts`.
-2. Add project images under `public/projects/<project-id>/` and populate the corresponding `src` fields in `src/data/projects.ts`. Each image must include accurate localized alternative text.
-3. Replace `public/cv/Ding_Gao_CV.pdf` whenever a newer public CV is available. The existing buttons already point to this stable path.
-
-Confirm the CV's contact details are appropriate for public distribution before deployment.
+Every content image must include explicit dimensions and accurate alternative text. Decorative organization and social marks use empty alternative text because adjacent text already provides the name.
 
 ## Responsive and accessibility behavior
 
-- At large widths, timeline entries use a date/content/media grid. At tablet widths, media moves below the content. At mobile widths, date, content, and media stack vertically.
-- The profile sidebar appears before the introduction on mobile and to its right on desktop.
-- At desktop widths, a vertical in-page navigation rail occupies the reserved right column. It shows the current title and its immediate neighbors, fades more distant entries, and reveals every title on hover or keyboard focus.
-- The header navigation scrolls horizontally on narrow screens rather than wrapping into an unpredictable multi-line menu.
-- The return-to-top action fades and moves into view after 480px of scrolling, and respects reduced-motion preferences.
-- Text remains at least 17px with a 66-character reading measure. Newsreader is used for display text and Geist for body/interface text, with explicit Chinese system-font fallbacks.
-- Keyboard focus, reduced-motion preferences, semantic headings, figure alternative text, and light/dark theme contrast must remain intact.
+- The profile stacks portrait before copy on mobile and uses a compact two-column layout on large screens.
+- Timeline media moves below the text at tablet widths and into a 20–22rem third column on large screens. Media wrappers remain self-sized at 16:9 instead of stretching to the height of the text row.
+- The header remains horizontally scrollable on narrow screens.
+- The desktop section rail is hidden below the extra-large breakpoint.
+- Keyboard focus, semantic heading order, reduced-motion preferences, dark mode, and 200% zoom must remain usable.
 
 ## Verification
 
-Run the following before deployment:
+Run before deployment:
 
 ```bash
 npm run typecheck
 npm run lint
 npm run format:check
 npm run build
+git diff --check
 ```
 
-Review Profile, Projects, Publications, and Experience at 375px, 768px, 1280px, and at 200% browser zoom in both languages and both themes. Confirm that the real CV downloads successfully and that every external link is current.
+Review Profile, Research, Publications, Projects, Experience, and Contact at 375px, 768px, 1280px, and 1440px, plus 200% browser zoom. Check both themes, keyboard navigation, image placeholders, long publication titles, organization marks, DOI links, phone and email links, and the CV view/download actions.

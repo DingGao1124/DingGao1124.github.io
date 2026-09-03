@@ -13,7 +13,7 @@ To create the "expand from the button" effect:
 3. Generate a `clip-path` pair `[start, end]` for the chosen shape (all coordinates in percentages of the snapshot reference box, so it stays correct on fractional display scales).
 4. Animate the root view-transition pseudo-element with the clip-path pair.
 
-The `<html>` element carries a `data-magicui-theme-vt="active"` (or `"reverse"`) flag and CSS variables only while a toggle is in flight, scoping the rules so other root view transitions (e.g. route loading) are unaffected.
+The `<html>` element carries a `data-magicui-theme-vt="expand"` (or `"collapse"`) flag and CSS variables only while a toggle is in flight, scoping the rules so other root view transitions (e.g. route loading) are unaffected.
 
 ## Direction
 
@@ -61,21 +61,21 @@ The following rules must exist in `src/styles/globals.css` so the reveal is pinn
   mix-blend-mode: normal;
 }
 
-html[data-magicui-theme-vt='active']::view-transition-group(root),
-html[data-magicui-theme-vt='reverse']::view-transition-group(root) {
+html[data-magicui-theme-vt='expand']::view-transition-group(root),
+html[data-magicui-theme-vt='collapse']::view-transition-group(root) {
   animation-duration: var(--magicui-theme-toggle-vt-duration);
 }
 
-html[data-magicui-theme-vt='active']::view-transition-new(root) {
+html[data-magicui-theme-vt='expand']::view-transition-new(root) {
   clip-path: var(--magicui-theme-vt-clip-from);
 }
 
-html[data-magicui-theme-vt='reverse']::view-transition-old(root) {
+html[data-magicui-theme-vt='collapse']::view-transition-old(root) {
   clip-path: var(--magicui-theme-vt-clip-from);
   z-index: 2;
 }
 
-html[data-magicui-theme-vt='reverse']::view-transition-new(root) {
+html[data-magicui-theme-vt='collapse']::view-transition-new(root) {
   z-index: 1;
 }
 ```

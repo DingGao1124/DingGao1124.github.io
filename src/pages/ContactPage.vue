@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Download, Mail, ScanSearch } from '@lucide/vue'
+import { Download, Mail, Phone, ScanSearch } from '@lucide/vue'
 
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/common/PageShell.vue'
@@ -31,12 +31,16 @@ const tocItems = computed(() => [
             {{ contact.description }}
           </p>
 
-          <div class="mt-8">
-            <Button as="a" :href="`mailto:${profile.email}`">
-              <Mail data-icon="inline-start" aria-hidden="true" />
-              Phone
+          <div class="mt-8 flex flex-wrap gap-3">
+            <Button
+              as="a"
+              :href="profile.phoneHref"
+              :aria-label="`${contact.phoneLabel}: ${profile.phone}`"
+            >
+              <Phone data-icon="inline-start" aria-hidden="true" />
+              {{ profile.phone }}
             </Button>
-            <Button as="a" :href="`mailto:${profile.email}`">
+            <Button as="a" variant="outline" :href="`mailto:${profile.email}`">
               <Mail data-icon="inline-start" aria-hidden="true" />
               {{ profile.email }}
             </Button>
@@ -45,9 +49,22 @@ const tocItems = computed(() => [
           <h2 class="mt-12 text-xl font-medium">{{ contact.profilesTitle }}</h2>
           <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <li v-for="link in profile.profileLinks" :key="link.href">
-              <a class="link" :href="link.href" target="_blank" rel="noreferrer"
-                >{{ link.label }} ↗</a
+              <a
+                class="link inline-flex items-center gap-2"
+                :href="link.href"
+                target="_blank"
+                rel="noreferrer"
               >
+                <img
+                  v-if="link.iconSrc"
+                  class="size-4 object-contain"
+                  :src="link.iconSrc"
+                  alt=""
+                  width="16"
+                  height="16"
+                />
+                {{ link.label }} ↗
+              </a>
             </li>
           </ul>
         </div>

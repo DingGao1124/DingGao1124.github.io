@@ -7,12 +7,12 @@ defineProps<{
 </script>
 
 <template>
-  <header class="flex max-w-4xl flex-col gap-4">
+  <header class="flex max-w-4xl flex-col gap-2.5">
     <p class="eyebrow">{{ eyebrow }}</p>
-    <h1 class="text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.95] font-medium tracking-[-0.035em]">
+    <h1 class="text-[clamp(2.25rem,5vw,3.5rem)] leading-[0.98] font-medium tracking-[-0.03em]">
       {{ title }}
     </h1>
-    <p v-if="lede" class="measure mt-2 text-lg leading-8 text-muted-foreground md:text-xl">
+    <p v-if="lede" class="measure mt-1 text-sm leading-6 text-muted-foreground md:text-base">
       {{ lede }}
     </p>
     <slot />

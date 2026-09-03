@@ -147,8 +147,8 @@
   body {
     @apply m-0 bg-background text-foreground antialiased;
     font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.65;
+    font-size: 1rem;
+    line-height: 1.55;
     font-feature-settings:
       'kern' 1,
       'liga' 1;
@@ -163,7 +163,7 @@
     font-weight: 560;
     letter-spacing: -0.012em;
     line-height: 1.12;
-    text-wrap: balance;
+    text-wrap: wrap;
   }
 
   a {
@@ -238,23 +238,23 @@
 }
 
 /* Scoped to the toggler so other root view transitions stay unaffected. */
-html[data-magicui-theme-vt='active']::view-transition-group(root),
-html[data-magicui-theme-vt='reverse']::view-transition-group(root) {
+html[data-magicui-theme-vt='expand']::view-transition-group(root),
+html[data-magicui-theme-vt='collapse']::view-transition-group(root) {
   animation-duration: var(--magicui-theme-toggle-vt-duration);
 }
 
 /* dark -> light: the new (light) theme expands from the button. */
-html[data-magicui-theme-vt='active']::view-transition-new(root) {
+html[data-magicui-theme-vt='expand']::view-transition-new(root) {
   clip-path: var(--magicui-theme-vt-clip-from);
 }
 
 /* light -> dark: the old (light) theme collapses toward the button. */
-html[data-magicui-theme-vt='reverse']::view-transition-old(root) {
+html[data-magicui-theme-vt='collapse']::view-transition-old(root) {
   clip-path: var(--magicui-theme-vt-clip-from);
   z-index: 2;
 }
 
-html[data-magicui-theme-vt='reverse']::view-transition-new(root) {
+html[data-magicui-theme-vt='collapse']::view-transition-new(root) {
   z-index: 1;
 }
 

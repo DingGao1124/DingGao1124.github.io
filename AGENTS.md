@@ -31,9 +31,9 @@ Before implementing:
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-## 3. Reuse Components
+## 3. Use shadcn-vue Components
 
-**Build pages with shadcn-vue components. Prefer composing existing components to hand-writing native markup; keep code minimal and consistent, and do not re-invent components that already exist. Fall back to native HTML tags only when no component satisfies the need, or when using a component would be more complex than the native tag.**
+**Build pages with shadcn-vue components first; use the ones already in the project, or search for one via the shadcn-vue CLI. Prefer composing existing components to hand-writing native markup; keep code minimal and consistent, and do not re-invent components that already exist. Fall back to native HTML tags only when no component satisfies the need, or when using a component would be more complex than the native tag.**
 
 ## 4. Surgical Changes
 

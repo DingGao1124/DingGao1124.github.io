@@ -1,6 +1,6 @@
 ---
 title: Ding Gao
-description: Full-stack engineer and robotics researcher working across intelligent manufacturing, digital twins, embodied AI, and industrial software.
+description: Robotics and automation researcher working on embodied AI, robot perception and control, human-robot collaboration, and digital twins.
 ---
 
 <script setup lang="ts">
