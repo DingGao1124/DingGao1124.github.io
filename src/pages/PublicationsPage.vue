@@ -29,7 +29,9 @@ const tocItems = computed(() => [
     <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
 
     <Section id="journal-publications" :title="m.journalSectionTitle" class="mt-8 md:mt-10">
-      <p class="mb-3 font-mono text-xs text-muted-foreground">{{ m.authorNotes }}</p>
+      <p class="mb-3 font-mono text-xs text-muted-foreground">
+        {{ m.authorNotes }}
+      </p>
       <ol>
         <PublicationEntry
           v-for="publication in journalPublications"

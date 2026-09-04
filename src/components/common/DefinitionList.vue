@@ -19,7 +19,9 @@ defineProps<{
       <dt class="font-mono text-xs uppercase tracking-wide text-muted-foreground">
         {{ item.term }}
       </dt>
-      <dd class="max-w-3xl text-sm leading-6 text-card-foreground">{{ item.detail }}</dd>
+      <dd class="max-w-3xl text-sm leading-6 text-card-foreground">
+        {{ item.detail }}
+      </dd>
     </div>
   </dl>
 </template>

@@ -133,7 +133,10 @@ export const researchExperiences: Record<SiteLocale, ResearchExperience[]> = {
         'Programmed an STM32-based control system for DC motors, encoder motors, servos, and robotic arms, coordinating multiple actuators through CAN bus communication for precise movement and manipulation.',
         'Developed a dynamic shortest-path algorithm and upgraded the actuation mechanism from a single- to triple-motor configuration, reducing total operation time from 4 min 32 sec to 3 min 15 sec.',
       ],
-      media: { alt: 'Placeholder for the mobile crane robot', label: 'Mobile crane robot' },
+      media: {
+        alt: 'Placeholder for the mobile crane robot',
+        label: 'Mobile crane robot',
+      },
     },
   ],
   zh: [

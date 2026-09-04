@@ -57,7 +57,10 @@ export const projects: Record<SiteLocale, Project[]> = {
       tech: ['LangGraph', 'VLM', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
       links: [
         { label: 'Video', href: 'https://www.bilibili.com/video/BV1sRj3zAEXG' },
-        { label: 'GitCode', href: 'https://gitcode.com/baomingcanjia/URgrasp_agent' },
+        {
+          label: 'GitCode',
+          href: 'https://gitcode.com/baomingcanjia/URgrasp_agent',
+        },
         { label: 'GitHub', href: 'https://github.com/SsspongeBob/Hackathon' },
       ],
       media: {
@@ -93,7 +96,12 @@ export const projects: Record<SiteLocale, Project[]> = {
         'Developed a dynamic shortest-path algorithm and upgraded the actuation mechanism from a single- to triple-motor configuration, reducing total operation time from 4 min 32 sec to 3 min 15 sec.',
       ],
       tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical Design'],
-      links: [{ label: 'Video', href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/' }],
+      links: [
+        {
+          label: 'Video',
+          href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/',
+        },
+      ],
       media: {
         alt: 'Placeholder for the complete mobile crane robot',
         label: 'Complete robot',

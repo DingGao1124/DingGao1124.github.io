@@ -25,7 +25,7 @@ export default defineConfig({
   description:
     "Ding Gao's academic website: robotics and automation, embodied AI, human-robot collaboration, and digital twins.",
   head: [
-    ['link', { rel: 'icon', href: '/Overwatch.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['meta', { name: 'theme-color', content: '#f6f1e7' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'Ding Gao' }],

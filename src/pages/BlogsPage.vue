@@ -22,7 +22,10 @@ const { messages, path } = useSiteLocale()
 const blogs = computed(() => messages.value.blogs)
 const posts = computed(() => (page.value.frontmatter.posts ?? []) as BlogPost[])
 const tocItems = computed(() =>
-  posts.value.map((post, index) => ({ id: `post-${index}`, label: post.title })),
+  posts.value.map((post, index) => ({
+    id: `post-${index}`,
+    label: post.title,
+  })),
 )
 </script>
 

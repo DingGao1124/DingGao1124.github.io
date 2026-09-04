@@ -3,6 +3,7 @@ import { ArrowRight, Download, Mail, MapPin } from '@lucide/vue'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+import { Spinner } from '@/components/ui/spinner'
 import type { ProfileLink } from '@/data/profile'
 import type { SkillGroup } from '@/data/skills'
 import TechCarousel from '@/components/home/TechCarousel.vue'
@@ -106,7 +107,14 @@ defineProps<{
     >
       <Avatar class="size-40 ring-1 ring-border md:size-44 lg:size-52">
         <AvatarImage :src="avatarSrc" :alt="avatarAlt" />
-        <AvatarFallback class="text-2xl">DG</AvatarFallback>
+        <AvatarFallback>
+          <div class="flex flex-col items-center justify-center mt-2">
+            <span class="text-xl">DG</span>
+            <span class="flex items-center gap-1 text-xs text-muted-foreground">
+              <Spinner class="size-3" /> Image Loading...
+            </span>
+          </div>
+        </AvatarFallback>
       </Avatar>
       <div class="mt-4 flex flex-col items-center gap-1">
         <p class="font-serif text-2xl font-medium">{{ name }}</p>
@@ -138,7 +146,7 @@ defineProps<{
       <TechCarousel
         :title="techTitle"
         :groups="techGroups"
-        class="mt-5 border-t border-border pt-5"
+        class="lg:block hidden mt-5 border-t border-border pt-5"
       />
     </aside>
   </section>

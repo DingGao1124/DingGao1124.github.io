@@ -26,11 +26,6 @@ export default {
   footer: '©Ding Gao 2026. All rights reserved.',
   home: {
     aboutTitle: 'About Me',
-    intro: [
-      'Hi, my name is Ding Gao. I am a full-stack engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
-      'I am interested in how robots can perceive, reason, and act reliably in real-world environments. My recent work explores LLM-enabled flexible manufacturing, multimodal industrial disassembly, and task-planning agents for robot automation.',
-    ],
-    systemsThread: ['Physical systems', 'Digital models', 'Intelligent agents', 'Robot action'],
     techTitle: 'Tech proficiency',
     newsTitle: 'News',
     focusTitle: 'Research focus',
