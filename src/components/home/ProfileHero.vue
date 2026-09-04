@@ -9,9 +9,10 @@ import type { SkillGroup } from '@/data/skills'
 import TechCarousel from '@/components/home/TechCarousel.vue'
 
 defineProps<{
+  eyebrow: string
+  title: string
   name: string
   headline: string
-  eyebrow: string
   currentPosition: string
   employer: ProfileLink
   location: string
@@ -30,14 +31,14 @@ defineProps<{
 </script>
 
 <template>
-  <section class="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-16">
-    <div class="order-2 flex flex-col gap-5 lg:order-1 lg:pt-2">
+  <section class="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+    <div class="order-2 flex flex-col gap-5 max-w-2xl lg:order-1 lg:pt-2">
       <div class="flex flex-col gap-4">
         <p class="eyebrow">{{ eyebrow }}</p>
         <h1
           class="text-[clamp(2.75rem,6.5vw,4.4rem)] leading-[0.94] font-medium tracking-[-0.035em]"
         >
-          {{ name }}
+          {{ title }}
         </h1>
       </div>
 
@@ -146,7 +147,7 @@ defineProps<{
       <TechCarousel
         :title="techTitle"
         :groups="techGroups"
-        class="lg:block hidden mt-5 border-t border-border pt-5"
+        class="lg:block hidden max-w-80 mt-5 pt-5 border-t border-border"
       />
     </aside>
   </section>

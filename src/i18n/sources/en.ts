@@ -25,8 +25,10 @@ export default {
   backHomeLabel: 'Back to home',
   footer: '©Ding Gao 2026. All rights reserved.',
   home: {
-    aboutTitle: 'About Me',
+    eyebrow: 'About Me',
+    title: 'About Me',
     techTitle: 'Tech proficiency',
+    aboutTitle: 'About Me',
     newsTitle: 'News',
     focusTitle: 'Research focus',
     publicationsTitle: 'Selected publications',

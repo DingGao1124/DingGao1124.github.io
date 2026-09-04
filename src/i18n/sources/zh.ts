@@ -25,8 +25,10 @@ export default {
   backHomeLabel: '返回首页',
   footer: '©高鼎 · 2026',
   home: {
-    aboutTitle: '关于我',
+    eyebrow: '关于我',
+    title: '关于我',
     techTitle: '技术熟练度',
+    aboutTitle: '关于我',
     newsTitle: '动态',
     focusTitle: '研究方向',
     publicationsTitle: '代表论文',

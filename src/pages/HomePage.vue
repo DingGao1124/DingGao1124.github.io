@@ -14,7 +14,7 @@ import { useSiteLocale } from '@/hooks/useSiteLocale'
 const { messages, path } = useSiteLocale()
 const { profile } = usePersonalData()
 
-const m = computed(() => messages.value.home)
+const home = computed(() => messages.value.home)
 const selectedPublications = computed(() =>
   profile.value.publications.filter((publication) => publication.type === 'journal').slice(0, 3),
 )
@@ -22,10 +22,10 @@ const profileTechGroups = computed(() =>
   profile.value.skillGroups.filter((group) => group.showInProfile),
 )
 const tocItems = computed(() => [
-  { id: 'profile', label: m.value.aboutTitle },
-  { id: 'news', label: m.value.newsTitle },
-  { id: 'research-focus', label: m.value.focusTitle },
-  { id: 'selected-publications', label: m.value.publicationsTitle },
+  { id: 'profile', label: home.value.aboutTitle },
+  { id: 'news', label: home.value.newsTitle },
+  { id: 'research-focus', label: home.value.focusTitle },
+  { id: 'selected-publications', label: home.value.publicationsTitle },
 ])
 </script>
 
@@ -35,7 +35,8 @@ const tocItems = computed(() => [
       id="profile"
       :name="profile.identity.name"
       :headline="profile.identity.headline"
-      :eyebrow="m.aboutTitle"
+      :eyebrow="home.eyebrow"
+      :title="messages.home.title"
       :current-position="profile.identity.currentPosition"
       :employer="profile.identity.employer"
       :location="profile.identity.location"
@@ -48,15 +49,15 @@ const tocItems = computed(() => [
       :avatar-alt="profile.identity.avatarAlt"
       :systems-thread="profile.identity.systemsThread"
       :links="profile.profileLinks"
-      :tech-title="m.techTitle"
+      :tech-title="home.techTitle"
       :tech-groups="profileTechGroups"
     />
 
-    <Section id="news" :title="m.newsTitle" class="mt-10 md:mt-12">
+    <Section id="news" :title="home.newsTitle" class="mt-10 md:mt-12">
       <NewsList :items="profile.news" />
     </Section>
 
-    <Section id="research-focus" :title="m.focusTitle" class="mt-10">
+    <Section id="research-focus" :title="home.focusTitle" class="mt-10">
       <div class="grid gap-x-12 gap-y-8 md:grid-cols-2">
         <article v-for="area in profile.researchAreas" :key="area.title" class="max-w-xl">
           <h3 class="text-xl font-medium">{{ area.title }}</h3>
@@ -66,12 +67,12 @@ const tocItems = computed(() => [
         </article>
       </div>
       <Button as="a" variant="link" size="sm" class="mt-6" :href="path('/research/')">
-        {{ m.viewAll }}
+        {{ home.viewAll }}
         <ArrowRight data-icon="inline-end" aria-hidden="true" />
       </Button>
     </Section>
 
-    <Section id="selected-publications" :title="m.publicationsTitle" class="mt-10">
+    <Section id="selected-publications" :title="home.publicationsTitle" class="mt-10">
       <ol>
         <PublicationEntry
           v-for="publication in selectedPublications"
@@ -81,7 +82,7 @@ const tocItems = computed(() => [
         />
       </ol>
       <Button as="a" variant="link" size="sm" class="mt-5" :href="path('/publications/')">
-        {{ m.viewAll }}
+        {{ home.viewAll }}
         <ArrowRight data-icon="inline-end" aria-hidden="true" />
       </Button>
     </Section>
