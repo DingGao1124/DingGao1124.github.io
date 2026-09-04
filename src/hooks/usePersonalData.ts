@@ -1,8 +1,5 @@
 import { computed } from 'vue'
 
-import { education } from '@/data/education'
-import { experiences } from '@/data/experiences'
-import { news } from '@/data/news'
 import {
   avatarSrc,
   cvHref,
@@ -14,9 +11,12 @@ import {
   profileLinks,
   summaryTags,
 } from '@/data/profile'
-import { projects } from '@/data/projects'
-import { publications } from '@/data/publications'
+import { news } from '@/data/news'
 import { researchAreas, researchExperiences } from '@/data/research'
+import { publications } from '@/data/publications'
+import { projects } from '@/data/projects'
+import { experiences } from '@/data/experiences'
+import { education } from '@/data/education'
 import { skillGroups } from '@/data/skills'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 

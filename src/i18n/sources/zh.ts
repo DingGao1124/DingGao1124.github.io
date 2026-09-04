@@ -14,16 +14,16 @@ export default {
   navigation: [
     { id: 'profile', label: '简介', href: '/' },
     { id: 'research', label: '研究', href: '/research/' },
-    { id: 'projects', label: '项目', href: '/projects/' },
     { id: 'publications', label: '成果', href: '/publications/' },
     { id: 'experience', label: '经历', href: '/experience/' },
+    { id: 'projects', label: '项目', href: '/projects/' },
     { id: 'blogs', label: '博客', href: '/blogs/' },
     { id: 'contact', label: '联系', href: '/contact/' },
   ] satisfies NavigationItem[],
   notFoundTitle: '页面不存在',
   notFoundDescription: '你请求的页面不存在。',
   backHomeLabel: '返回首页',
-  footer: '© 高鼎 · 2026',
+  footer: '©高鼎 · 2026',
   home: {
     aboutTitle: '关于我',
     intro: [
@@ -45,13 +45,6 @@ export default {
     experienceTitle: '研究经历',
     advisorLabel: '导师',
   },
-  projects: {
-    eyebrow: '项目',
-    title: '精选项目',
-    lede: '五个具备明确技术范围、个人贡献与成果证据的项目，涵盖数字孪生产线、机器人系统和智能体软件。',
-    systemsTitle: '精选系统',
-    placeholderLabel: '项目图片占位',
-  },
   publications: {
     eyebrow: '成果',
     title: '论文与专利',
@@ -59,14 +52,6 @@ export default {
     journalSectionTitle: '期刊论文',
     patentSectionTitle: '专利',
     authorNotes: '* 共同贡献 · † 通讯作者',
-  },
-  blogs: {
-    eyebrow: '博客',
-    title: '博客',
-    lede: '关于机器人、智能体系统与全栈工程的笔记与文章。',
-    postsTitle: '文章',
-    readMoreLabel: '阅读全文',
-    emptyLabel: '还没有内容。',
   },
   experience: {
     eyebrow: '经历',
@@ -81,6 +66,21 @@ export default {
     awardsLabel: '奖项',
     competitionsLabel: '竞赛',
     thesisLabel: '毕业设计',
+  },
+  projects: {
+    eyebrow: '项目',
+    title: '精选项目',
+    lede: '五个具备明确技术范围、个人贡献与成果证据的项目，涵盖数字孪生产线、机器人系统和智能体软件。',
+    systemsTitle: '精选系统',
+    placeholderLabel: '项目图片占位',
+  },
+  blogs: {
+    eyebrow: '博客',
+    title: '博客',
+    lede: '关于机器人、智能体系统与全栈工程的笔记与文章。',
+    postsTitle: '文章',
+    readMoreLabel: '阅读全文',
+    emptyLabel: '还没有内容。',
   },
   contact: {
     eyebrow: '联系',

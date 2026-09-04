@@ -15,15 +15,15 @@ export default {
     { id: 'profile', label: 'Profile', href: '/' },
     { id: 'research', label: 'Research', href: '/research/' },
     { id: 'publications', label: 'Publications', href: '/publications/' },
-    { id: 'projects', label: 'Projects', href: '/projects/' },
     { id: 'experience', label: 'Experience', href: '/experience/' },
+    { id: 'projects', label: 'Projects', href: '/projects/' },
     { id: 'blogs', label: 'Blogs', href: '/blogs/' },
     { id: 'contact', label: 'Contact', href: '/contact/' },
   ] satisfies NavigationItem[],
   notFoundTitle: 'Page not found',
   notFoundDescription: 'The page you requested could not be found.',
   backHomeLabel: 'Back to home',
-  footer: '© Ding Gao 2026. All rights reserved.',
+  footer: '©Ding Gao 2026. All rights reserved.',
   home: {
     aboutTitle: 'About Me',
     intro: [
@@ -45,13 +45,6 @@ export default {
     experienceTitle: 'Research experience',
     advisorLabel: 'Advisor',
   },
-  projects: {
-    eyebrow: 'Projects',
-    title: 'Projects',
-    lede: 'I build systems across digital twins, embodied robotics, robot automation, embedded control, and multi-agent software.',
-    systemsTitle: 'Selected systems',
-    placeholderLabel: 'Project media placeholders',
-  },
   publications: {
     eyebrow: 'Publications',
     title: 'Publications & patents',
@@ -59,14 +52,6 @@ export default {
     journalSectionTitle: 'Journal publications',
     patentSectionTitle: 'Patents',
     authorNotes: '* Equal contribution · † Corresponding author',
-  },
-  blogs: {
-    eyebrow: 'Blog',
-    title: 'Blog',
-    lede: 'I write about robotics, agent systems, and the engineering work behind them.',
-    postsTitle: 'Posts',
-    readMoreLabel: 'Read more',
-    emptyLabel: 'Coming soon...',
   },
   experience: {
     eyebrow: 'Experience',
@@ -81,6 +66,21 @@ export default {
     awardsLabel: 'Awards',
     competitionsLabel: 'Competitions',
     thesisLabel: 'Thesis',
+  },
+  projects: {
+    eyebrow: 'Projects',
+    title: 'Projects',
+    lede: 'I build systems across digital twins, embodied robotics, robot automation, embedded control, and multi-agent software.',
+    systemsTitle: 'Selected systems',
+    placeholderLabel: 'Project media placeholders',
+  },
+  blogs: {
+    eyebrow: 'Blog',
+    title: 'Blog',
+    lede: 'I write about robotics, agent systems, and the engineering work behind them.',
+    postsTitle: 'Posts',
+    readMoreLabel: 'Read more',
+    emptyLabel: 'Coming soon...',
   },
   contact: {
     eyebrow: 'Contact',

@@ -22,24 +22,6 @@ export type ResearchExperience = {
 }
 
 export const researchAreas: Record<SiteLocale, ResearchArea[]> = {
-  zh: [
-    {
-      title: '机器人与具身智能',
-      description: '让智能体通过可靠的感知、推理与执行连接真实物理系统。',
-    },
-    {
-      title: '机器人感知、规划与控制',
-      description: '结合视觉语言模型、图像分割、点云抓取和任务规划构建机器人闭环系统。',
-    },
-    {
-      title: '人机协作',
-      description: '研究语音交互、增强现实和工业拆卸场景中的协作效率与执行可靠性。',
-    },
-    {
-      title: '数字孪生与信息物理制造系统',
-      description: '使用知识、行为与几何模型表达柔性产线，并将智能体推理连接到生产状态。',
-    },
-  ],
   en: [
     {
       title: 'Robotics & Embodied AI',
@@ -62,67 +44,27 @@ export const researchAreas: Record<SiteLocale, ResearchArea[]> = {
         'I model the knowledge, behavior, and geometry of flexible production systems and connect agent reasoning to live production state.',
     },
   ],
+  zh: [
+    {
+      title: '机器人与具身智能',
+      description: '让智能体通过可靠的感知、推理与执行连接真实物理系统。',
+    },
+    {
+      title: '机器人感知、规划与控制',
+      description: '结合视觉语言模型、图像分割、点云抓取和任务规划构建机器人闭环系统。',
+    },
+    {
+      title: '人机协作',
+      description: '研究语音交互、增强现实和工业拆卸场景中的协作效率与执行可靠性。',
+    },
+    {
+      title: '数字孪生与信息物理制造系统',
+      description: '使用知识、行为与几何模型表达柔性产线，并将智能体推理连接到生产状态。',
+    },
+  ],
 }
 
 export const researchExperiences: Record<SiteLocale, ResearchExperience[]> = {
-  zh: [
-    {
-      id: 'digital-twin-agents',
-      organization: '东华大学',
-      role: '基于 LLM 的柔性制造自动化数字孪生研究',
-      period: '2023.09-2026.06',
-      location: '上海',
-      advisor: '包劲松 教授',
-      summary: '提出并验证了一个由 LLM 智能体生成、协同与重构数字孪生模型的知识-行为-几何框架。',
-      highlights: [
-        '开发了集成交互式三维模型、实时虚实同步、事件驱动工具调用、制造知识 RAG 与自然语言交互的数字孪生平台。',
-        '在零件缺陷监测与分拣产线上完成实验，换线与恢复时间降低 47%，误报率低于传统方法。',
-      ],
-      media: { alt: '数字孪生产线平台占位图', label: 'Digital-twin platform' },
-    },
-    {
-      id: 'industrial-disassembly',
-      organization: '东华大学',
-      role: '工业拆卸具身智能机器人系统',
-      period: '2025.04-2025.06',
-      location: '上海',
-      advisor: '司家辉 博士',
-      summary: '开发了面向退役电动汽车电池拆卸的多模态感知-决策-执行系统。',
-      highlights: [
-        '使用 LangGraph 与语音专用大模型构建实时任务规划、工具选择和人机交互智能体。',
-        '结合 FastSAM、VLM、Strategy of Mind prompting、GraspNet 与 MCP，控制 UR 机器人完成无碰撞工具取送。',
-      ],
-      media: { alt: '工业拆卸机器人实验占位图', label: 'Embodied disassembly system' },
-    },
-    {
-      id: 'ball-screw-platform',
-      organization: '南京工程学院',
-      role: '三自由度滚珠丝杠缺陷检测平台',
-      period: '2023.01-2023.06',
-      location: '南京',
-      advisor: '郝飞 副教授',
-      summary: '设计了包含机械分析、三维建模、运动仿真、嵌入式控制与电路验证的三自由度机电平台。',
-      highlights: [
-        '完成载荷与电机扭矩计算、零部件选型、二维工程图和 CAD/UG 三维模型。',
-        '开发了基于 8051 的步进电机控制器，并在 Proteus 中验证直线与圆弧运动。',
-      ],
-      media: { alt: '三自由度缺陷检测平台占位图', label: '3-DOF inspection platform' },
-    },
-    {
-      id: 'mobile-crane-robot',
-      organization: '南京工程学院',
-      role: '全国大学生移动起重机器人竞赛',
-      period: '2022.02-2022.11',
-      location: '南京',
-      advisor: '郝飞 副教授',
-      summary: '带领团队开发了一台沿指定路线运输并放置不同物体的移动起重机器人。',
-      highlights: [
-        '负责机械设计、运动分析与系统集成，并使用 STM32、CAN 总线协调电机、舵机和机械臂。',
-        '开发动态最短路径算法并将执行机构由单电机升级为三电机，总运行时间由 4 分 32 秒降至 3 分 15 秒。',
-      ],
-      media: { alt: '移动起重机器人占位图', label: 'Mobile crane robot' },
-    },
-  ],
   en: [
     {
       id: 'digital-twin-agents',
@@ -192,6 +134,64 @@ export const researchExperiences: Record<SiteLocale, ResearchExperience[]> = {
         'Developed a dynamic shortest-path algorithm and upgraded the actuation mechanism from a single- to triple-motor configuration, reducing total operation time from 4 min 32 sec to 3 min 15 sec.',
       ],
       media: { alt: 'Placeholder for the mobile crane robot', label: 'Mobile crane robot' },
+    },
+  ],
+  zh: [
+    {
+      id: 'digital-twin-agents',
+      organization: '东华大学',
+      role: '基于 LLM 的柔性制造自动化数字孪生研究',
+      period: '2023.09-2026.06',
+      location: '上海',
+      advisor: '包劲松 教授',
+      summary: '提出并验证了一个由 LLM 智能体生成、协同与重构数字孪生模型的知识-行为-几何框架。',
+      highlights: [
+        '开发了集成交互式三维模型、实时虚实同步、事件驱动工具调用、制造知识 RAG 与自然语言交互的数字孪生平台。',
+        '在零件缺陷监测与分拣产线上完成实验，换线与恢复时间降低 47%，误报率低于传统方法。',
+      ],
+      media: { alt: '数字孪生产线平台占位图', label: 'Digital-twin platform' },
+    },
+    {
+      id: 'industrial-disassembly',
+      organization: '东华大学',
+      role: '工业拆卸具身智能机器人系统',
+      period: '2025.04-2025.06',
+      location: '上海',
+      advisor: '司家辉 博士',
+      summary: '开发了面向退役电动汽车电池拆卸的多模态感知-决策-执行系统。',
+      highlights: [
+        '使用 LangGraph 与语音专用大模型构建实时任务规划、工具选择和人机交互智能体。',
+        '结合 FastSAM、VLM、Strategy of Mind prompting、GraspNet 与 MCP，控制 UR 机器人完成无碰撞工具取送。',
+      ],
+      media: { alt: '工业拆卸机器人实验占位图', label: 'Embodied disassembly system' },
+    },
+    {
+      id: 'ball-screw-platform',
+      organization: '南京工程学院',
+      role: '三自由度滚珠丝杠缺陷检测平台',
+      period: '2023.01-2023.06',
+      location: '南京',
+      advisor: '郝飞 副教授',
+      summary: '设计了包含机械分析、三维建模、运动仿真、嵌入式控制与电路验证的三自由度机电平台。',
+      highlights: [
+        '完成载荷与电机扭矩计算、零部件选型、二维工程图和 CAD/UG 三维模型。',
+        '开发了基于 8051 的步进电机控制器，并在 Proteus 中验证直线与圆弧运动。',
+      ],
+      media: { alt: '三自由度缺陷检测平台占位图', label: '3-DOF inspection platform' },
+    },
+    {
+      id: 'mobile-crane-robot',
+      organization: '南京工程学院',
+      role: '全国大学生移动起重机器人竞赛',
+      period: '2022.02-2022.11',
+      location: '南京',
+      advisor: '郝飞 副教授',
+      summary: '带领团队开发了一台沿指定路线运输并放置不同物体的移动起重机器人。',
+      highlights: [
+        '负责机械设计、运动分析与系统集成，并使用 STM32、CAN 总线协调电机、舵机和机械臂。',
+        '开发动态最短路径算法并将执行机构由单电机升级为三电机，总运行时间由 4 分 32 秒降至 3 分 15 秒。',
+      ],
+      media: { alt: '移动起重机器人占位图', label: 'Mobile crane robot' },
     },
   ],
 }
