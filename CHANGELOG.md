@@ -2,6 +2,7 @@
 
 ## 2026-09-04
 
+- Structure: separated layout chrome into `src/components/layout` and shared building blocks into `src/components/common`.
 - Portfolio: reframed the English site around the latest CV with a first-person introduction and verbatim résumé records.
 - Profile: added a categorized technology proficiency carousel beneath the avatar.
 - Layout: tightened academic records with expandable details and figure-led publication entries.

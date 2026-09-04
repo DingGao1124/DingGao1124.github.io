@@ -3,7 +3,7 @@ import { computed } from 'vue'
 
 import PublicationEntry from '@/components/publications/PublicationEntry.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
-import PageShell from '@/components/common/PageShell.vue'
+import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import { usePersonalData } from '@/hooks/usePersonalData'
 import { useSiteLocale } from '@/hooks/useSiteLocale'

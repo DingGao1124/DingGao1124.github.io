@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { Download, Mail, Phone, ScanSearch } from '@lucide/vue'
 
 import PageHeader from '@/components/common/PageHeader.vue'
-import PageShell from '@/components/common/PageShell.vue'
+import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'

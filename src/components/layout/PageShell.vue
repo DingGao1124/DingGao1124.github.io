@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import PageToc from '@/components/common/PageToc.vue'
-import type { PageTocItem } from '@/components/common/PageToc.vue'
+import PageToc from '@/components/layout/PageToc.vue'
+import type { PageTocItem } from '@/components/layout/PageToc.vue'
 
 defineProps<{
   tocItems: readonly PageTocItem[]

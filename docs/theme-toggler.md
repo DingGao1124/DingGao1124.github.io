@@ -89,4 +89,4 @@ Browsers without `document.startViewTransition` fall back to a plain, instant th
 - `src/hooks/useTheme.ts` — theme state and persistence (`isDark`, `setTheme`).
 - `src/hooks/useAnimatedThemeToggler.ts` — the animated toggle and clip-path math.
 - `src/styles/globals.css` — the scoped view-transition rules.
-- `src/components/common/SiteHeader.vue` — wired in place of the previous instant toggle.
+- `src/components/layout/SiteHeader.vue` — wired in place of the previous instant toggle.

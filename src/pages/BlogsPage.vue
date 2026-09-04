@@ -4,7 +4,7 @@ import { useData } from 'vitepress'
 import { Construction } from '@lucide/vue'
 
 import PageHeader from '@/components/common/PageHeader.vue'
-import PageShell from '@/components/common/PageShell.vue'
+import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import TimelineEntry from '@/components/common/TimelineEntry.vue'
 import { useSiteLocale } from '@/hooks/useSiteLocale'

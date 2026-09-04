@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ArrowRight } from '@lucide/vue'
 
-import PageShell from '@/components/common/PageShell.vue'
+import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import NewsList from '@/components/home/NewsList.vue'
 import ProfileHero from '@/components/home/ProfileHero.vue'

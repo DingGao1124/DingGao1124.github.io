@@ -3,7 +3,7 @@ import { computed } from 'vue'
 
 import AcademicMedia from '@/components/common/AcademicMedia.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
-import PageShell from '@/components/common/PageShell.vue'
+import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import TimelineEntry from '@/components/common/TimelineEntry.vue'
 import { usePersonalData } from '@/hooks/usePersonalData'
