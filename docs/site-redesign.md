@@ -16,7 +16,7 @@ The personal introduction uses first person. Research, project, professional, ed
 - **Blog** contains long-form notes on robotics, agent systems, and engineering.
 - **Contact** publishes the email, phone number, external profiles, and latest CV.
 
-CV-derived content lives in `src/data/`. Interface labels remain in `src/i18n/sources/`. `usePersonalData` selects the active locale and is the single source passed into route-level components.
+Localized content lives in the seven route files at the top level of `src/data/`, with shared news and skills in `src/data/common/`. Each route groups interface text under `label`, body data under `content`, and ungrouped values such as contact details at the route object's top level. `useSiteLocale` selects the active `messages` object, and every route-level component reads only its matching namespace.
 
 ## Component responsibilities
 

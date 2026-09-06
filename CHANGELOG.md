@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-07
+
+- Data: organized localized content by route with consistent label and content groups.
+- Localization: migrated route components from personal-data aggregation to route-scoped messages.
+
 ## 2026-09-04
 
 - Structure: separated layout chrome into `src/components/layout` and shared building blocks into `src/components/common`.

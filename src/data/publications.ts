@@ -1,17 +1,17 @@
-export type PublicationType = 'journal' | 'patent'
+type PublicationType = 'journal' | 'patent'
 
-export type PublicationLink = {
+type PublicationLink = {
   label: string
   href: string
 }
 
-export type PublicationAuthor = {
+type PublicationAuthor = {
   name: string
   equalContribution?: boolean
   correspondingAuthor?: boolean
 }
 
-export type PublicationMedia = {
+type PublicationMedia = {
   src?: string
   alt: string
   label: string
@@ -29,6 +29,21 @@ export type Publication = {
   identifier?: string
   links?: PublicationLink[]
   media: PublicationMedia
+}
+
+export type Publications = {
+  label: {
+    eyebrow: string
+    title: string
+    journalSectionTitle: string
+    patentSectionTitle: string
+    authorNotes: string
+    pageContentsLabel: string
+  }
+  content: {
+    lede: string
+    items: Publication[]
+  }
 }
 
 const digitalTwinsAuthors: PublicationAuthor[] = [
@@ -55,149 +70,177 @@ const historicalVqaAuthors: PublicationAuthor[] = [
   { name: 'Jinsong Bao', correspondingAuthor: true },
 ]
 
-export const publications: Record<SiteLocale, Publication[]> = {
-  en: [
-    {
-      id: 'self-evolving-digital-twins',
-      type: 'journal',
-      title:
-        'Self-evolving digital twins in flexible manufacturing: A large language model-powered multi-agent approach',
-      authors: digitalTwinsAuthors,
-      venue: 'Digital Engineering',
-      year: '2026',
-      volume: '10',
-      pages: '100099',
-      identifier: '10.1016/j.dte.2026.100099',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
-      media: {
-        alt: 'Placeholder for the digital-twin multi-agent architecture figure',
-        label: 'Digital-twin agent architecture',
-      },
+export const publications: Record<SiteLocale, Publications> = {
+  en: {
+    label: {
+      eyebrow: 'Publications',
+      title: 'Publications & patents',
+      journalSectionTitle: 'Journal publications',
+      patentSectionTitle: 'Patents',
+      authorNotes: '* Equal contribution · † Corresponding author',
+      pageContentsLabel: 'On this page',
     },
-    {
-      id: 'multi-cognitive-agent',
-      type: 'journal',
-      title:
-        'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly',
-      authors: multiCognitiveAuthors,
-      venue: 'Robotics and Computer-Integrated Manufacturing',
-      year: '2026',
-      volume: '99',
-      pages: '103207',
-      identifier: '10.1016/j.rcim.2025.103207',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
-      media: {
-        alt: 'Placeholder for the single-robot multi-cognitive agent system figure',
-        label: 'Multi-cognitive agent system',
-      },
+    content: {
+      lede: 'My publications span LLM-enabled digital twins, cognitive agent systems, and augmented-reality-assisted human-robot collaboration.',
+      items: [
+        {
+          id: 'self-evolving-digital-twins',
+          type: 'journal',
+          title:
+            'Self-evolving digital twins in flexible manufacturing: A large language model-powered multi-agent approach',
+          authors: digitalTwinsAuthors,
+          venue: 'Digital Engineering',
+          year: '2026',
+          volume: '10',
+          pages: '100099',
+          identifier: '10.1016/j.dte.2026.100099',
+          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
+          media: {
+            alt: 'Placeholder for the digital-twin multi-agent architecture figure',
+            label: 'Digital-twin agent architecture',
+          },
+        },
+        {
+          id: 'multi-cognitive-agent',
+          type: 'journal',
+          title:
+            'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly',
+          authors: multiCognitiveAuthors,
+          venue: 'Robotics and Computer-Integrated Manufacturing',
+          year: '2026',
+          volume: '99',
+          pages: '103207',
+          identifier: '10.1016/j.rcim.2025.103207',
+          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
+          media: {
+            alt: 'Placeholder for the single-robot multi-cognitive agent system figure',
+            label: 'Multi-cognitive agent system',
+          },
+        },
+        {
+          id: 'historical-vqa',
+          type: 'journal',
+          title:
+            'Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration',
+          authors: historicalVqaAuthors,
+          venue: 'Journal of Manufacturing Systems',
+          year: '2025',
+          volume: '83',
+          pages: '546-556',
+          identifier: '10.1016/j.jmsy.2025.10.005',
+          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
+          media: {
+            alt: 'Placeholder for the AR-assisted human-robot collaboration workflow figure',
+            label: 'AR-assisted HRC workflow',
+          },
+        },
+        {
+          id: 'conductive-concrete',
+          type: 'patent',
+          title: 'A Prefabricated Component System Based on Conductive Concrete',
+          venue: 'Utility Model Patent',
+          identifier: 'ZL 12601087',
+          media: {
+            alt: 'Placeholder for the conductive-concrete prefabricated component patent',
+            label: 'Conductive concrete system',
+          },
+        },
+        {
+          id: 'adjustable-stage',
+          type: 'patent',
+          title: 'An Angle-Adjustable Stage and Its Use Method',
+          venue: 'Invention Patent Application',
+          identifier: 'CN 113702385 A',
+          media: {
+            alt: 'Placeholder for the angle-adjustable stage patent',
+            label: 'Angle-adjustable stage',
+          },
+        },
+      ],
     },
-    {
-      id: 'historical-vqa',
-      type: 'journal',
-      title:
-        'Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration',
-      authors: historicalVqaAuthors,
-      venue: 'Journal of Manufacturing Systems',
-      year: '2025',
-      volume: '83',
-      pages: '546-556',
-      identifier: '10.1016/j.jmsy.2025.10.005',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
-      media: {
-        alt: 'Placeholder for the AR-assisted human-robot collaboration workflow figure',
-        label: 'AR-assisted HRC workflow',
-      },
+  },
+  zh: {
+    label: {
+      eyebrow: '成果',
+      title: '论文与专利',
+      journalSectionTitle: '期刊论文',
+      patentSectionTitle: '专利',
+      authorNotes: '* 共同贡献 · † 通讯作者',
+      pageContentsLabel: '本页目录',
     },
-    {
-      id: 'conductive-concrete',
-      type: 'patent',
-      title: 'A Prefabricated Component System Based on Conductive Concrete',
-      venue: 'Utility Model Patent',
-      identifier: 'ZL 12601087',
-      media: {
-        alt: 'Placeholder for the conductive-concrete prefabricated component patent',
-        label: 'Conductive concrete system',
-      },
+    content: {
+      lede: '围绕数字孪生、智能体系统与人机协作的期刊论文、修回工作和专利。',
+      items: [
+        {
+          id: 'self-evolving-digital-twins',
+          type: 'journal',
+          title:
+            'Self-evolving digital twins in flexible manufacturing: A large language model-powered multi-agent approach',
+          authors: digitalTwinsAuthors,
+          venue: 'Digital Engineering',
+          year: '2026',
+          volume: '10',
+          pages: '100099',
+          identifier: '10.1016/j.dte.2026.100099',
+          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
+          media: {
+            alt: '数字孪生多智能体架构论文配图占位',
+            label: 'Digital-twin agent architecture',
+          },
+        },
+        {
+          id: 'multi-cognitive-agent',
+          type: 'journal',
+          title:
+            'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly',
+          authors: multiCognitiveAuthors,
+          venue: 'Robotics and Computer-Integrated Manufacturing',
+          year: '2026',
+          volume: '99',
+          pages: '103207',
+          identifier: '10.1016/j.rcim.2025.103207',
+          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
+          media: {
+            alt: '单机器人多认知智能体系统论文配图占位',
+            label: 'Multi-cognitive agent system',
+          },
+        },
+        {
+          id: 'historical-vqa',
+          type: 'journal',
+          title:
+            'Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration',
+          authors: historicalVqaAuthors,
+          venue: 'Journal of Manufacturing Systems',
+          year: '2025',
+          volume: '83',
+          pages: '546-556',
+          identifier: '10.1016/j.jmsy.2025.10.005',
+          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
+          media: {
+            alt: '增强现实人机协作论文配图占位',
+            label: 'AR-assisted HRC workflow',
+          },
+        },
+        {
+          id: 'conductive-concrete',
+          type: 'patent',
+          title: '一种基于导电混凝土的预制构件系统',
+          venue: '实用新型专利',
+          identifier: 'ZL 12601087',
+          media: { alt: '导电混凝土预制构件系统专利配图占位', label: 'Conductive concrete system' },
+        },
+        {
+          id: 'adjustable-stage',
+          type: 'patent',
+          title: '一种角度可调节舞台及其使用方法',
+          venue: '发明专利申请',
+          identifier: 'CN 113702385 A',
+          media: { alt: '角度可调节舞台专利配图占位', label: 'Angle-adjustable stage' },
+        },
+      ],
     },
-    {
-      id: 'adjustable-stage',
-      type: 'patent',
-      title: 'An Angle-Adjustable Stage and Its Use Method',
-      venue: 'Invention Patent Application',
-      identifier: 'CN 113702385 A',
-      media: {
-        alt: 'Placeholder for the angle-adjustable stage patent',
-        label: 'Angle-adjustable stage',
-      },
-    },
-  ],
-  zh: [
-    {
-      id: 'self-evolving-digital-twins',
-      type: 'journal',
-      title:
-        'Self-evolving digital twins in flexible manufacturing: A large language model-powered multi-agent approach',
-      authors: digitalTwinsAuthors,
-      venue: 'Digital Engineering',
-      year: '2026',
-      volume: '10',
-      pages: '100099',
-      identifier: '10.1016/j.dte.2026.100099',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
-      media: {
-        alt: '数字孪生多智能体架构论文配图占位',
-        label: 'Digital-twin agent architecture',
-      },
-    },
-    {
-      id: 'multi-cognitive-agent',
-      type: 'journal',
-      title:
-        'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly',
-      authors: multiCognitiveAuthors,
-      venue: 'Robotics and Computer-Integrated Manufacturing',
-      year: '2026',
-      volume: '99',
-      pages: '103207',
-      identifier: '10.1016/j.rcim.2025.103207',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
-      media: {
-        alt: '单机器人多认知智能体系统论文配图占位',
-        label: 'Multi-cognitive agent system',
-      },
-    },
-    {
-      id: 'historical-vqa',
-      type: 'journal',
-      title:
-        'Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration',
-      authors: historicalVqaAuthors,
-      venue: 'Journal of Manufacturing Systems',
-      year: '2025',
-      volume: '83',
-      pages: '546-556',
-      identifier: '10.1016/j.jmsy.2025.10.005',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
-      media: {
-        alt: '增强现实人机协作论文配图占位',
-        label: 'AR-assisted HRC workflow',
-      },
-    },
-    {
-      id: 'conductive-concrete',
-      type: 'patent',
-      title: '一种基于导电混凝土的预制构件系统',
-      venue: '实用新型专利',
-      identifier: 'ZL 12601087',
-      media: { alt: '导电混凝土预制构件系统专利配图占位', label: 'Conductive concrete system' },
-    },
-    {
-      id: 'adjustable-stage',
-      type: 'patent',
-      title: '一种角度可调节舞台及其使用方法',
-      venue: '发明专利申请',
-      identifier: 'CN 113702385 A',
-      media: { alt: '角度可调节舞台专利配图占位', label: 'Angle-adjustable stage' },
-    },
-  ],
+  },
 }
+
+export default publications

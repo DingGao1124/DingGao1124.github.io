@@ -69,7 +69,9 @@ export default defineConfig({
     },
   },
   markdown: {
-    image: true,
+    image: {
+      lazyLoad: true,
+    },
     theme: {
       light: 'github-light',
       dark: 'github-dark',

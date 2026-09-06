@@ -30,14 +30,18 @@ const tocItems = computed(() =>
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
-    <PageHeader :eyebrow="blogs.eyebrow" :title="blogs.title" :lede="blogs.lede" />
+  <PageShell :toc-items="tocItems" :toc-label="blogs.label.pageContentsLabel">
+    <PageHeader
+      :eyebrow="blogs.label.eyebrow"
+      :title="blogs.label.title"
+      :lede="blogs.content.lede"
+    />
 
-    <Section :title="blogs.postsTitle" class="mt-8 md:mt-10">
+    <Section :title="blogs.label.postsTitle" class="mt-8 md:mt-10">
       <p v-if="posts.length === 0" class="measure text-muted-foreground">
         <span class="inline-flex items-center gap-2">
           <Construction class="size-5" />
-          {{ blogs.emptyLabel }}
+          {{ blogs.label.emptyLabel }}
         </span>
       </p>
       <TimelineEntry
@@ -47,7 +51,7 @@ const tocItems = computed(() =>
         :period="post.date"
         :title="post.title"
         :summary="post.description"
-        :links="[{ label: blogs.readMoreLabel, href: path(post.href) }]"
+        :links="[{ label: blogs.label.readMoreLabel, href: path(post.href) }]"
       />
     </Section>
   </PageShell>

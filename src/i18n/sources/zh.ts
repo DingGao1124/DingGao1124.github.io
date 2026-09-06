@@ -1,16 +1,20 @@
+import profile from '@/data/profile'
+import research from '@/data/research'
+import publications from '@/data/publications'
+import experiences from '@/data/experiences'
+import projects from '@/data/projects'
+import blogs from '@/data/blogs'
+import contact from '@/data/contact'
+import skills from '@/data/common/skills'
+
 export default {
   siteName: '高鼎 / Ding Gao',
   primaryNavigationLabel: '主导航',
   switchLanguageLabel: '切换语言',
   skipToContentLabel: '跳到主要内容',
-  pageContentsLabel: '本页目录',
   returnToTopLabel: '返回顶部',
   switchToDarkLabel: '切换到深色主题',
   switchToLightLabel: '切换到浅色主题',
-  emailLabel: '发送邮件',
-  downloadCvLabel: '下载简历',
-  showMoreLabel: '展开',
-  showLessLabel: '收起',
   navigation: [
     { id: 'profile', label: '简介', href: '/' },
     { id: 'research', label: '研究', href: '/research/' },
@@ -24,71 +28,11 @@ export default {
   notFoundDescription: '你请求的页面不存在。',
   backHomeLabel: '返回首页',
   footer: '©高鼎 · 2026',
-  home: {
-    eyebrow: '关于我',
-    title: '关于我',
-    techTitle: '技术熟练度',
-    aboutTitle: '关于我',
-    newsTitle: '动态',
-    focusTitle: '研究方向',
-    publicationsTitle: '代表论文',
-    viewAll: '查看全部',
-  },
-  research: {
-    eyebrow: '研究',
-    title: '研究',
-    lede: '我的工作涵盖数字孪生、LLM 多智能体、具身智能与人机协作，关注如何把数字模型和智能推理连接到可靠的物理执行。',
-    areasTitle: '研究方向',
-    experienceTitle: '研究经历',
-    advisorLabel: '导师',
-  },
-  publications: {
-    eyebrow: '成果',
-    title: '论文与专利',
-    lede: '围绕数字孪生、智能体系统与人机协作的期刊论文、修回工作和专利。',
-    journalSectionTitle: '期刊论文',
-    patentSectionTitle: '专利',
-    authorNotes: '* 共同贡献 · † 通讯作者',
-  },
-  experience: {
-    eyebrow: '经历',
-    title: '经历',
-    lede: '覆盖工业软件、机器人研发、教育背景、专业技能与代表性荣誉的完整履历。',
-    professionalTitle: '行业经历',
-    educationTitle: '教育背景',
-    skillsTitle: '专业技能',
-    honorsTitle: '荣誉与竞赛',
-    gpaLabel: 'GPA',
-    rankLabel: '专业排名',
-    awardsLabel: '奖项',
-    competitionsLabel: '竞赛',
-    thesisLabel: '毕业设计',
-  },
-  projects: {
-    eyebrow: '项目',
-    title: '精选项目',
-    lede: '五个具备明确技术范围、个人贡献与成果证据的项目，涵盖数字孪生产线、机器人系统和智能体软件。',
-    systemsTitle: '精选系统',
-    placeholderLabel: '项目图片占位',
-  },
-  blogs: {
-    eyebrow: '博客',
-    title: '博客',
-    lede: '关于机器人、智能体系统与全栈工程的笔记与文章。',
-    postsTitle: '文章',
-    readMoreLabel: '阅读全文',
-    emptyLabel: '还没有内容。',
-  },
-  contact: {
-    eyebrow: '联系',
-    title: '联系',
-    lede: '如需交流机器人、智能体系统、全栈工程或智能制造相关话题，邮件是最直接的方式。',
-    description: '我目前位于上海，欢迎有实质内容的研究与工程交流。',
-    phoneLabel: '电话',
-    profilesTitle: '其他主页',
-    cvTitle: '个人简历',
-    cvDescription: '下载最新版本的个人简历 PDF。',
-    viewCvLabel: '预览简历',
-    downloadCvLabel: '下载简历',
-  },
+  home: profile['zh'],
+  research: research['zh'],
+  publications: publications['zh'],
+  experience: { ...experiences['zh'], skills: skills['zh'] },
+  projects: projects['zh'],
+  blogs: blogs['zh'],
+  contact: contact['zh'],
 }

@@ -2,6 +2,7 @@
 @import 'tw-animate-css';
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/newsreader';
+@import './animations.css';
 
 @source "../../site";
 @source "../../.vitepress";
@@ -190,20 +191,6 @@
     background: var(--link-soft);
     color: var(--foreground);
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
 }
 
 @layer components {
@@ -218,44 +205,6 @@
   .link {
     @apply text-link underline decoration-link/30 underline-offset-4 transition-colors hover:decoration-link;
   }
-}
-
-/* Thin top progress bar that sweeps across while a page chunk loads. */
-@keyframes route-loading {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(400%);
-  }
-}
-
-/* Animated theme toggle — View Transitions clip-path reveal. */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-/* Scoped to the toggler so other root view transitions stay unaffected. */
-html[data-magicui-theme-vt='expand']::view-transition-group(root),
-html[data-magicui-theme-vt='collapse']::view-transition-group(root) {
-  animation-duration: var(--magicui-theme-toggle-vt-duration);
-}
-
-/* dark -> light: the new (light) theme expands from the button. */
-html[data-magicui-theme-vt='expand']::view-transition-new(root) {
-  clip-path: var(--magicui-theme-vt-clip-from);
-}
-
-/* light -> dark: the old (light) theme collapses toward the button. */
-html[data-magicui-theme-vt='collapse']::view-transition-old(root) {
-  clip-path: var(--magicui-theme-vt-clip-from);
-  z-index: 2;
-}
-
-html[data-magicui-theme-vt='collapse']::view-transition-new(root) {
-  z-index: 1;
 }
 
 /* Blog prose: bind the typography plugin's palette to the site theme */

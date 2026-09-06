@@ -1,16 +1,20 @@
+import profile from '@/data/profile'
+import research from '@/data/research'
+import publications from '@/data/publications'
+import experiences from '@/data/experiences'
+import projects from '@/data/projects'
+import blogs from '@/data/blogs'
+import contact from '@/data/contact'
+import skills from '@/data/common/skills'
+
 export default {
   siteName: 'Ding Gao',
   primaryNavigationLabel: 'Primary navigation',
   switchLanguageLabel: 'Switch language',
   skipToContentLabel: 'Skip to content',
-  pageContentsLabel: 'On this page',
   returnToTopLabel: 'Return to top',
   switchToDarkLabel: 'Switch to dark theme',
   switchToLightLabel: 'Switch to light theme',
-  emailLabel: 'Email',
-  downloadCvLabel: 'Download CV',
-  showMoreLabel: 'Show more',
-  showLessLabel: 'Show less',
   navigation: [
     { id: 'profile', label: 'Profile', href: '/' },
     { id: 'research', label: 'Research', href: '/research/' },
@@ -24,71 +28,11 @@ export default {
   notFoundDescription: 'The page you requested could not be found.',
   backHomeLabel: 'Back to home',
   footer: '©Ding Gao 2026. All rights reserved.',
-  home: {
-    eyebrow: 'About Me',
-    title: 'About Me',
-    techTitle: 'Tech proficiency',
-    aboutTitle: 'About Me',
-    newsTitle: 'News',
-    focusTitle: 'Research focus',
-    publicationsTitle: 'Selected publications',
-    viewAll: 'View all',
-  },
-  research: {
-    eyebrow: 'Research',
-    title: 'Research',
-    lede: 'I study how intelligent agents can perceive, reason about, and act within physical systems. My work brings together robot perception and control, human-robot collaboration, and digital twins for manufacturing.',
-    areasTitle: 'Research directions',
-    experienceTitle: 'Research experience',
-    advisorLabel: 'Advisor',
-  },
-  publications: {
-    eyebrow: 'Publications',
-    title: 'Publications & patents',
-    lede: 'My publications span LLM-enabled digital twins, cognitive agent systems, and augmented-reality-assisted human-robot collaboration.',
-    journalSectionTitle: 'Journal publications',
-    patentSectionTitle: 'Patents',
-    authorNotes: '* Equal contribution · † Corresponding author',
-  },
-  experience: {
-    eyebrow: 'Experience',
-    title: 'Experience',
-    lede: 'My experience connects research prototypes with production software, from robot applications and industrial data systems to embedded control.',
-    professionalTitle: 'Professional experience',
-    educationTitle: 'Education',
-    skillsTitle: 'Professional skills',
-    honorsTitle: 'Honors & competitions',
-    gpaLabel: 'GPA',
-    rankLabel: 'Major rank',
-    awardsLabel: 'Awards',
-    competitionsLabel: 'Competitions',
-    thesisLabel: 'Thesis',
-  },
-  projects: {
-    eyebrow: 'Projects',
-    title: 'Projects',
-    lede: 'I build systems across digital twins, embodied robotics, robot automation, embedded control, and multi-agent software.',
-    systemsTitle: 'Selected systems',
-    placeholderLabel: 'Project media placeholders',
-  },
-  blogs: {
-    eyebrow: 'Blog',
-    title: 'Blog',
-    lede: 'I write about robotics, agent systems, and the engineering work behind them.',
-    postsTitle: 'Posts',
-    readMoreLabel: 'Read more',
-    emptyLabel: 'Coming soon...',
-  },
-  contact: {
-    eyebrow: 'Contact',
-    title: 'Contact',
-    lede: 'I welcome conversations about robotics, embodied and agentic AI, digital twins, and intelligent manufacturing.',
-    description: 'I am based in Shanghai and can be reached by email or phone.',
-    phoneLabel: 'Phone',
-    profilesTitle: 'Elsewhere',
-    cvTitle: 'Curriculum vitae',
-    cvDescription: 'You can view and download my latest CV here.',
-    viewCvLabel: 'View CV',
-    downloadCvLabel: 'Download CV',
-  },
+  home: profile['en'],
+  research: research['en'],
+  publications: publications['en'],
+  experience: { ...experiences['en'], skills: skills['en'] },
+  projects: projects['en'],
+  blogs: blogs['en'],
+  contact: contact['en'],
 }

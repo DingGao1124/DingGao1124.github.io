@@ -7,48 +7,50 @@ import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { usePersonalData } from '@/hooks/usePersonalData'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = usePersonalData()
 
 const contact = computed(() => messages.value.contact)
 const tocItems = computed(() => [
-  { id: 'contact-details', label: contact.value.title },
-  { id: 'cv-download', label: contact.value.cvTitle },
+  { id: 'contact-details', label: contact.value.label.title },
+  { id: 'cv-download', label: contact.value.label.cvTitle },
 ])
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
-    <PageHeader :eyebrow="contact.eyebrow" :title="contact.title" :lede="contact.lede" />
+  <PageShell :toc-items="tocItems" :toc-label="contact.label.pageContentsLabel">
+    <PageHeader
+      :eyebrow="contact.label.eyebrow"
+      :title="contact.label.title"
+      :lede="contact.content.lede"
+    />
 
     <Section class="mt-8 md:mt-10">
       <div class="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.65fr)] md:gap-16">
         <div id="contact-details" class="scroll-mt-28">
           <p class="measure text-lg leading-8 text-card-foreground">
-            {{ contact.description }}
+            {{ contact.content.description }}
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
             <Button
               as="a"
-              :href="profile.phoneHref"
-              :aria-label="`${contact.phoneLabel}: ${profile.phone}`"
+              :href="contact.phoneHref"
+              :aria-label="`${contact.label.phoneLabel}: ${contact.phone}`"
             >
               <Phone data-icon="inline-start" aria-hidden="true" />
-              {{ profile.phone }}
+              {{ contact.phone }}
             </Button>
-            <Button as="a" variant="outline" :href="`mailto:${profile.email}`">
+            <Button as="a" variant="outline" :href="`mailto:${contact.email}`">
               <Mail data-icon="inline-start" aria-hidden="true" />
-              {{ profile.email }}
+              {{ contact.email }}
             </Button>
           </div>
 
-          <h2 class="mt-12 text-xl font-medium">{{ contact.profilesTitle }}</h2>
+          <h2 class="mt-12 text-xl font-medium">{{ contact.label.profilesTitle }}</h2>
           <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-            <li v-for="link in profile.profileLinks" :key="link.href">
+            <li v-for="link in contact.profileLinks" :key="link.href">
               <a
                 class="link inline-flex items-center gap-2"
                 :href="link.href"
@@ -72,25 +74,25 @@ const tocItems = computed(() => [
         <aside id="cv-download" class="scroll-mt-28">
           <Separator />
           <div class="py-6">
-            <h2 class="text-xl font-medium">{{ contact.cvTitle }}</h2>
+            <h2 class="text-xl font-medium">{{ contact.label.cvTitle }}</h2>
             <p class="mt-3 text-sm leading-6 text-muted-foreground">
-              {{ contact.cvDescription }}
+              {{ contact.content.cvDescription }}
             </p>
             <div class="mt-5 flex flex-wrap items-center gap-3">
               <Button
                 as="a"
                 variant="outline"
                 size="sm"
-                :href="profile.cvHref"
+                :href="contact.cvHref"
                 target="_blank"
                 rel="noreferrer"
               >
                 <ScanSearch data-icon="inline-start" aria-hidden="true" />
-                {{ contact.viewCvLabel }}
+                {{ contact.label.viewCvLabel }}
               </Button>
-              <Button as="a" variant="outline" size="sm" :href="profile.cvHref" download>
+              <Button as="a" variant="outline" size="sm" :href="contact.cvHref" download>
                 <Download data-icon="inline-start" aria-hidden="true" />
-                {{ contact.downloadCvLabel }}
+                {{ contact.label.downloadCvLabel }}
               </Button>
             </div>
           </div>

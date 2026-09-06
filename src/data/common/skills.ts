@@ -3,7 +3,7 @@ export type SkillProficiency = {
   value: number
 }
 
-export type SkillGroup = {
+export type SkillItem = {
   label: string
   note: string
   detail: string
@@ -12,7 +12,9 @@ export type SkillGroup = {
   proficiencies: SkillProficiency[]
 }
 
-export const skillGroups: Record<SiteLocale, SkillGroup[]> = {
+export type Skills = SkillItem[]
+
+export const skills: Record<SiteLocale, Skills> = {
   en: [
     {
       label: 'Robotics & Automation',
@@ -243,3 +245,5 @@ export const skillGroups: Record<SiteLocale, SkillGroup[]> = {
     },
   ],
 }
+
+export default skills

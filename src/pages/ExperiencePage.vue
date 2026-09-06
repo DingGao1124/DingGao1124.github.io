@@ -8,65 +8,73 @@ import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import TimelineEntry from '@/components/common/TimelineEntry.vue'
-import { usePersonalData } from '@/hooks/usePersonalData'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = usePersonalData()
 
-const m = computed(() => messages.value.experience)
+const experience = computed(() => messages.value.experience)
 const tocItems = computed(() => [
-  { id: 'professional-experience', label: m.value.professionalTitle },
-  { id: 'education', label: m.value.educationTitle },
-  { id: 'skills', label: m.value.skillsTitle },
-  { id: 'honors', label: m.value.honorsTitle },
+  { id: 'professional-experience', label: experience.value.label.professionalTitle },
+  { id: 'education', label: experience.value.label.educationTitle },
+  { id: 'skills', label: experience.value.label.skillsTitle },
+  { id: 'honors', label: experience.value.label.honorsTitle },
 ])
 const skillItems = computed(() =>
-  profile.value.skillGroups.map((group) => ({
+  experience.value.skills.map((group) => ({
     term: group.label,
     detail: group.detail,
   })),
 )
 
-function educationSummary(item: (typeof profile.value.education)[number]) {
+function educationSummary(item: (typeof experience.value.content.education)[number]) {
   return [
-    `${m.value.gpaLabel}: ${item.gpa}`,
-    item.rank ? `${m.value.rankLabel}: ${item.rank}` : undefined,
+    `${experience.value.label.gpaLabel}: ${item.gpa}`,
+    item.rank ? `${experience.value.label.rankLabel}: ${item.rank}` : undefined,
   ]
     .filter(Boolean)
     .join(' · ')
 }
 
-function educationDetails(item: (typeof profile.value.education)[number]) {
+function educationDetails(item: (typeof experience.value.content.education)[number]) {
   return [
-    ...item.awards.map((award) => `${m.value.awardsLabel}: ${award}`),
-    ...item.competitions.map((competition) => `${m.value.competitionsLabel}: ${competition}`),
-    ...(item.thesis ? [`${m.value.thesisLabel}: ${item.thesis}`] : []),
+    ...item.awards.map((award) => `${experience.value.label.awardsLabel}: ${award}`),
+    ...item.competitions.map(
+      (competition) => `${experience.value.label.competitionsLabel}: ${competition}`,
+    ),
+    ...(item.thesis ? [`${experience.value.label.thesisLabel}: ${item.thesis}`] : []),
   ]
 }
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
-    <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
+  <PageShell :toc-items="tocItems" :toc-label="experience.label.pageContentsLabel">
+    <PageHeader
+      :eyebrow="experience.label.eyebrow"
+      :title="experience.label.title"
+      :lede="experience.content.lede"
+    />
 
-    <Section id="professional-experience" :title="m.professionalTitle" class="mt-8 md:mt-10">
+    <Section
+      id="professional-experience"
+      :title="experience.label.professionalTitle"
+      class="mt-8 md:mt-10"
+    >
       <TimelineEntry
-        v-for="experience in profile.experiences"
-        :key="experience.id"
-        :period="experience.period"
-        :title="experience.organization"
-        :meta="`${experience.role} · ${experience.location}`"
-        :summary="experience.summary"
-        :highlights="experience.highlights"
+        v-for="item in experience.content.items"
+        :key="item.id"
+        :period="item.period"
+        :title="item.organization"
+        :meta="`${item.role} · ${item.location}`"
+        :summary="item.summary"
+        :highlights="item.highlights"
         collapsible
-        :show-more-label="messages.showMoreLabel"
-        :show-less-label="messages.showLessLabel"
+        :show-more-label="experience.label.showMoreLabel"
+        :show-less-label="experience.label.showLessLabel"
       >
-        <template v-if="experience.logoSrc" #mark>
+        <template v-if="item.logoSrc" #mark>
           <img
             class="max-h-7 max-w-16 object-contain"
-            :src="experience.logoSrc"
+            :src="item.logoSrc"
             alt=""
             width="64"
             height="28"
@@ -74,14 +82,14 @@ function educationDetails(item: (typeof profile.value.education)[number]) {
           />
         </template>
         <template #media>
-          <AcademicMedia :media="experience.media" />
+          <AcademicMedia :media="item.media" />
         </template>
       </TimelineEntry>
     </Section>
 
-    <Section id="education" :title="m.educationTitle" class="mt-10">
+    <Section id="education" :title="experience.label.educationTitle" class="mt-10">
       <TimelineEntry
-        v-for="item in profile.education"
+        v-for="item in experience.content.education"
         :key="item.school"
         :period="item.period"
         :title="item.school"
@@ -89,17 +97,17 @@ function educationDetails(item: (typeof profile.value.education)[number]) {
         :summary="educationSummary(item)"
         :highlights="educationDetails(item)"
         collapsible
-        :show-more-label="messages.showMoreLabel"
-        :show-less-label="messages.showLessLabel"
+        :show-more-label="experience.label.showMoreLabel"
+        :show-less-label="experience.label.showLessLabel"
       />
     </Section>
 
-    <Section id="skills" :title="m.skillsTitle" class="mt-10">
+    <Section id="skills" :title="experience.label.skillsTitle" class="mt-10">
       <DefinitionList :items="skillItems" />
     </Section>
 
-    <Section id="honors" :title="m.honorsTitle" class="mt-10">
-      <CompactRecordList :items="profile.honors" />
+    <Section id="honors" :title="experience.label.honorsTitle" class="mt-10">
+      <CompactRecordList :items="experience.content.honors" />
     </Section>
   </PageShell>
 </template>

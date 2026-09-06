@@ -2,7 +2,7 @@
 import { ArrowUpRight } from '@lucide/vue'
 
 import { Separator } from '@/components/ui/separator'
-import type { NewsItem } from '@/data/news'
+import type { NewsItem } from '@/data/common/news'
 
 defineProps<{
   items: readonly NewsItem[]

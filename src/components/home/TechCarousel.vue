@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 import { Progress } from '@/components/ui/progress'
-import type { SkillGroup } from '@/data/skills'
+import type { SkillGroup } from '@/data/common/skills'
 
 defineOptions({
   inheritAttrs: false,

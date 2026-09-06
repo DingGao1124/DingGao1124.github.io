@@ -6,15 +6,13 @@ import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
 import TimelineEntry from '@/components/common/TimelineEntry.vue'
-import { usePersonalData } from '@/hooks/usePersonalData'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
-const { profile } = usePersonalData()
 
-const m = computed(() => messages.value.projects)
+const projects = computed(() => messages.value.projects)
 const tocItems = computed(() =>
-  profile.value.projects.map((project) => ({
+  projects.value.content.items.map((project) => ({
     id: `project-${project.id}`,
     label: project.title,
   })),
@@ -22,12 +20,16 @@ const tocItems = computed(() =>
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
-    <PageHeader :eyebrow="m.eyebrow" :title="m.title" :lede="m.lede" />
+  <PageShell :toc-items="tocItems" :toc-label="projects.label.pageContentsLabel">
+    <PageHeader
+      :eyebrow="projects.label.eyebrow"
+      :title="projects.label.title"
+      :lede="projects.content.lede"
+    />
 
-    <Section :title="m.systemsTitle" class="mt-8 md:mt-10">
+    <Section :title="projects.label.systemsTitle" class="mt-8 md:mt-10">
       <TimelineEntry
-        v-for="project in profile.projects"
+        v-for="project in projects.content.items"
         :key="project.id"
         :id="`project-${project.id}`"
         :period="project.period"
@@ -38,8 +40,8 @@ const tocItems = computed(() =>
         :tags="project.tech"
         :links="project.links"
         collapsible
-        :show-more-label="messages.showMoreLabel"
-        :show-less-label="messages.showLessLabel"
+        :show-more-label="projects.label.showMoreLabel"
+        :show-less-label="projects.label.showLessLabel"
       >
         <template #media>
           <AcademicMedia :media="project.media" />

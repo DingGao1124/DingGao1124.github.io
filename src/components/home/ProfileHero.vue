@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ArrowRight, Download, Mail, MapPin } from '@lucide/vue'
+import { ArrowRight, Mail, MapPin, ScanSearch } from '@lucide/vue'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
 import type { ProfileLink } from '@/data/profile'
-import type { SkillGroup } from '@/data/skills'
+import type { SkillGroup } from '@/data/common/skills'
 import TechCarousel from '@/components/home/TechCarousel.vue'
 
 defineProps<{
@@ -71,12 +71,8 @@ defineProps<{
           <Mail data-icon="inline-start" aria-hidden="true" />
           {{ emailLabel }}
         </Button>
-        <span class="inline-flex items-center gap-2 text-muted-foreground">
-          <MapPin class="size-4" aria-hidden="true" />
-          {{ location }}
-        </span>
-        <Button as="a" variant="outline" size="sm" :href="cvHref" download>
-          <Download data-icon="inline-start" aria-hidden="true" />
+        <Button as="a" variant="outline" size="sm" :href="cvHref" target="_blank" rel="noreferrer">
+          <ScanSearch data-icon="inline-start" aria-hidden="true" />
           {{ cvLabel }}
         </Button>
       </div>

@@ -5,7 +5,9 @@ export type NewsItem = {
   linkLabel?: string
 }
 
-export const news: Record<SiteLocale, NewsItem[]> = {
+export type News = NewsItem[]
+
+export const news: Record<SiteLocale, News> = {
   en: [
     {
       date: 'Jun 2026',
@@ -63,3 +65,5 @@ export const news: Record<SiteLocale, NewsItem[]> = {
     },
   ],
 }
+
+export default news
