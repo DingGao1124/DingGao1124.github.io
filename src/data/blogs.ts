@@ -19,7 +19,7 @@ export const blogs: Record<SiteLocale, Blog> = {
       title: 'Blog',
       postsTitle: 'Posts',
       readMoreLabel: 'Read more',
-      emptyLabel: 'Coming soon...',
+      emptyLabel: 'Under construction, coming soon...',
       pageContentsLabel: 'On this page',
     },
     content: {

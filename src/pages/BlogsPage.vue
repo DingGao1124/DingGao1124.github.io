@@ -19,7 +19,7 @@ type BlogPost = {
 const { page } = useData()
 const { messages, path } = useSiteLocale()
 
-const blogs = computed(() => messages.value.blogs)
+const blogSection = computed(() => messages.value.blogs)
 const posts = computed(() => (page.value.frontmatter.posts ?? []) as BlogPost[])
 const tocItems = computed(() =>
   posts.value.map((post, index) => ({
@@ -30,18 +30,18 @@ const tocItems = computed(() =>
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="blogs.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="blogSection.label.pageContentsLabel">
     <PageHeader
-      :eyebrow="blogs.label.eyebrow"
-      :title="blogs.label.title"
-      :lede="blogs.content.lede"
+      :eyebrow="blogSection.label.eyebrow"
+      :title="blogSection.label.title"
+      :lede="blogSection.content.lede"
     />
 
-    <Section :title="blogs.label.postsTitle" class="mt-8 md:mt-10">
+    <Section :title="blogSection.label.postsTitle" class="mt-8 md:mt-10">
       <p v-if="posts.length === 0" class="measure text-muted-foreground">
         <span class="inline-flex items-center gap-2">
           <Construction class="size-5" />
-          {{ blogs.label.emptyLabel }}
+          {{ blogSection.label.emptyLabel }}
         </span>
       </p>
       <TimelineEntry
@@ -51,7 +51,7 @@ const tocItems = computed(() =>
         :period="post.date"
         :title="post.title"
         :summary="post.description"
-        :links="[{ label: blogs.label.readMoreLabel, href: path(post.href) }]"
+        :links="[{ label: blogSection.label.readMoreLabel, href: path(post.href) }]"
       />
     </Section>
   </PageShell>

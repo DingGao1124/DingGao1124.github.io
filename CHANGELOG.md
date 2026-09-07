@@ -1,9 +1,20 @@
 # Changelog
 
+## 2026-09-08
+
+- Content: expanded the bilingual timeline with academic, professional, award, and patent milestones.
+- Content: corrected key dates, titles, and status wording across major records.
+- Content: added and refined early-life and school memories.
+
 ## 2026-09-07
 
 - Data: organized localized content by route with consistent label and content groups.
 - Localization: migrated route components from personal-data aggregation to route-scoped messages.
+- Profile: added a phone contact button as the first action in the profile hero.
+- Data: normalized Chinese skill groups to the same `skills` structure as English.
+- Home: reformatted the news list as a bulleted list with bold inline date prefixes.
+- Home: completed the bilingual news timeline with CV milestones.
+- Home: distinguished updates from milestones with compact news badges.
 
 ## 2026-09-04
 

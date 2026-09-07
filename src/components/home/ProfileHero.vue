@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, Mail, MapPin, ScanSearch } from '@lucide/vue'
+import { Dot, Mail, MapPin, Phone, ScanSearch } from '@lucide/vue'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
@@ -19,14 +19,16 @@ defineProps<{
   intro: readonly string[]
   email: string
   emailLabel: string
+  phoneHref: string
+  phoneLabel: string
   cvHref: string
   cvLabel: string
   avatarSrc: string
   avatarAlt: string
-  systemsThread: readonly string[]
+  researchKeywords: readonly string[]
   links: readonly ProfileLink[]
-  techTitle: string
-  techGroups: readonly SkillGroup[]
+  skillTitle: string
+  skillItems: readonly SkillGroup[]
 }>()
 </script>
 
@@ -49,25 +51,29 @@ defineProps<{
       </div>
 
       <ol
-        class="flex max-w-3xl flex-wrap items-center gap-x-2 gap-y-2 font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-muted-foreground"
+        class="flex max-w-3xl flex-wrap items-center gap-x-1 gap-y-2 font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-muted-foreground"
         aria-label="Research system thread"
       >
         <li
-          v-for="(item, index) in systemsThread"
+          v-for="(item, index) in researchKeywords"
           :key="item"
-          class="inline-flex items-center gap-2"
+          class="inline-flex items-center gap-1"
         >
           <span>{{ item }}</span>
-          <ArrowRight
-            v-if="index < systemsThread.length - 1"
-            class="size-3 text-link"
+          <Dot
+            v-if="index < researchKeywords.length - 1"
+            class="size-6 text-link"
             aria-hidden="true"
           />
         </li>
       </ol>
 
       <div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
-        <Button as="a" variant="ghost" size="sm" :href="`mailto:${email}`">
+        <Button as="a" variant="outline" size="sm" :href="phoneHref">
+          <Phone data-icon="inline-start" aria-hidden="true" />
+          {{ phoneLabel }}
+        </Button>
+        <Button as="a" variant="outline" size="sm" :href="`mailto:${email}`">
           <Mail data-icon="inline-start" aria-hidden="true" />
           {{ emailLabel }}
         </Button>
@@ -141,8 +147,8 @@ defineProps<{
         </p>
       </div>
       <TechCarousel
-        :title="techTitle"
-        :groups="techGroups"
+        :title="skillTitle"
+        :groups="skillItems"
         class="lg:block hidden max-w-80 mt-5 pt-5 border-t border-border"
       />
     </aside>

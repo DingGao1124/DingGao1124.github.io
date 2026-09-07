@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ArrowUpRight } from '@lucide/vue'
-
-import { Separator } from '@/components/ui/separator'
+import { Badge } from '@/components/ui/badge'
 import type { NewsItem } from '@/data/common/news'
 
 defineProps<{
@@ -10,25 +8,21 @@ defineProps<{
 </script>
 
 <template>
-  <ol>
+  <ul
+    class="list-disc space-y-3 mx-2 pl-5 text-[0.9375rem] leading-6 text-card-foreground marker:text-muted-foreground"
+  >
     <li v-for="item in items" :key="`${item.date}-${item.text}`">
-      <Separator />
-      <div class="grid gap-1 py-3.5 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-5">
-        <time class="font-mono text-xs leading-6 text-muted-foreground">{{ item.date }}</time>
-        <p class="max-w-3xl text-[0.9375rem] leading-6 text-card-foreground">
-          {{ item.text }}
-          <a
-            v-if="item.href"
-            class="link ml-1 inline-flex items-center gap-1 whitespace-nowrap text-sm"
-            :href="item.href"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {{ item.linkLabel }}
-            <ArrowUpRight class="size-3.5" aria-hidden="true" />
-          </a>
-        </p>
-      </div>
+      <strong v-if="item.date" class="font-semibold">{{ item.date }}:</strong>
+      <Badge
+        class="mx-1 align-text-top px-2 py-0.5 text-xs"
+        :variant="item.type === 'Milestone' ? 'secondary' : 'outline'"
+      >
+        {{ item.type }}
+      </Badge>
+      {{ item.text }}
+      <a v-if="item.href" class="link ml-1" :href="item.href" target="_blank" rel="noreferrer">
+        {{ item.linkLabel }}
+      </a>
     </li>
-  </ol>
+  </ul>
 </template>

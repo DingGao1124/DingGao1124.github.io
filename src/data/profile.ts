@@ -1,5 +1,5 @@
 import { news, type NewsItem } from './common/news'
-import { skills, type Skills } from './common/skills'
+import { techTopics, type TechTopics } from './common/skills'
 
 export type ProfileLink = {
   label: string
@@ -15,7 +15,7 @@ type Identity = {
   location: string
   avatarAlt: string
   intro: string[]
-  systemsThread: string[]
+  researchKeywords: string[]
 }
 
 type ResearchArea = {
@@ -54,7 +54,7 @@ export type Profile = {
   phoneHref: string
   avatarSrc: string
   cvHref: string
-  skills: Skills
+  techGroups: TechTopics
   identity: Identity
   profileLinks: ProfileLink[]
   label: {
@@ -67,6 +67,7 @@ export type Profile = {
     publicationsTitle: string
     viewAll: string
     emailLabel: string
+    phoneLabel: string
     viewCvLabel: string
     pageContentsLabel: string
   }
@@ -88,7 +89,7 @@ export const profile: Record<SiteLocale, Profile> = {
     phoneHref: 'tel:+8615962956251',
     avatarSrc: AVATAR_SRC,
     cvHref: CV_HREF,
-    skills: skills['en'],
+    techGroups: techTopics['en'],
     identity: {
       name: 'Ding Gao',
       headline: 'Full-Stack Engineer & Robotics Researcher',
@@ -104,7 +105,12 @@ export const profile: Record<SiteLocale, Profile> = {
         'Hi, my name is Ding Gao. I am a full-stack engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
         'I am interested in how robots can perceive, reason, and act reliably in real-world environments. My recent work explores LLM-enabled flexible manufacturing, multimodal industrial disassembly, and task-planning agents for robot automation.',
       ],
-      systemsThread: ['Physical systems', 'Digital models', 'Intelligent agents', 'Robot action'],
+      researchKeywords: [
+        'Digital Twin',
+        'LLM Multi-Agent Systems',
+        'Robotics & Embodied AI',
+        'Automation & Control',
+      ],
     },
     profileLinks: [
       {
@@ -118,6 +124,11 @@ export const profile: Record<SiteLocale, Profile> = {
         iconSrc: '/media/Linkin.svg',
       },
       {
+        label: 'Videos',
+        href: 'https://space.bilibili.com/441110980/upload/video',
+        iconSrc: '/media/bilibili.svg',
+      },
+      {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
         iconSrc: '/media/Yuque.svg',
@@ -128,11 +139,12 @@ export const profile: Record<SiteLocale, Profile> = {
       title: 'About Me',
       techTitle: 'Tech proficiency',
       aboutTitle: 'About Me',
-      newsTitle: 'News',
+      newsTitle: 'Recent Events',
       focusTitle: 'Research focus',
       publicationsTitle: 'Selected publications',
       viewAll: 'View all',
       emailLabel: 'Email',
+      phoneLabel: 'Phone',
       viewCvLabel: 'View CV',
       pageContentsLabel: 'On this page',
     },
@@ -240,7 +252,7 @@ export const profile: Record<SiteLocale, Profile> = {
     phoneHref: 'tel:+8615962956251',
     avatarSrc: AVATAR_SRC,
     cvHref: CV_HREF,
-    skills: skills['zh'],
+    techGroups: techTopics['zh'],
     identity: {
       name: '高鼎',
       headline: '全栈工程师与机器人研究者',
@@ -256,7 +268,7 @@ export const profile: Record<SiteLocale, Profile> = {
         '你好，我叫高鼎，是一名常驻上海的全栈工程师与机器人研究者。我已完成东华大学智能制造工程硕士学业，目前在哔哩哔哩担任软件工程师。',
         '我关注机器人如何在真实环境中可靠地感知、推理与执行。近期工作主要涉及 LLM 驱动的柔性制造、多模态工业拆解，以及面向机器人自动化的任务规划智能体。',
       ],
-      systemsThread: ['物理系统', '数字模型', '智能体', '机器人执行'],
+      researchKeywords: ['物理系统', '数字模型', '智能体', '机器人执行'],
     },
     profileLinks: [
       {
@@ -285,6 +297,7 @@ export const profile: Record<SiteLocale, Profile> = {
       publicationsTitle: '代表论文',
       viewAll: '查看全部',
       emailLabel: '发送邮件',
+      phoneLabel: '电话',
       viewCvLabel: '预览简历',
       pageContentsLabel: '本页目录',
     },

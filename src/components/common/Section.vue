@@ -6,14 +6,24 @@ defineProps<{
   id?: string
   title?: string
   description?: string
+  position?: 'left' | 'center' | 'right'
 }>()
 </script>
 
 <template>
-  <section :id="id" class="scroll-mt-20">
+  <section :id="id" class="scroll-mt-28">
     <Separator />
     <div class="pt-5">
-      <div v-if="title" class="flex flex-col gap-2">
+      <div
+        v-if="title"
+        :class="
+          cn(
+            'flex flex-col gap-2',
+            position === 'center' && 'items-center text-center',
+            position === 'right' && 'items-end text-right',
+          )
+        "
+      >
         <h2 class="text-xl font-medium md:text-2xl">{{ title }}</h2>
         <p v-if="description" class="measure text-muted-foreground">
           {{ description }}

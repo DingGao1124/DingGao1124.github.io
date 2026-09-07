@@ -58,11 +58,8 @@ onBeforeUnmount(() => {
                 {{ String(props.groups.length).padStart(2, '0') }}
               </p>
             </div>
-            <p class="mt-1 text-[0.6875rem] leading-4 text-muted-foreground">
-              {{ group.note }}
-            </p>
             <ul class="mt-3.5 flex list-none flex-col gap-2.5">
-              <li v-for="item in group.proficiencies" :key="item.label">
+              <li v-for="item in group.skills" :key="item.label">
                 <p class="mb-1 text-[0.6875rem] leading-4">{{ item.label }}</p>
                 <Progress
                   :model-value="item.value"

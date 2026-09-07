@@ -75,7 +75,7 @@ watch(
           :key="bulletKey(item, index)"
           class="grid grid-cols-[0.625rem_1fr] gap-2"
         >
-          <span class="mt-[0.625rem] h-px bg-border" aria-hidden="true" />
+          <span class="mt-2.5 h-px bg-border" aria-hidden="true" />
           <span>{{ item }}</span>
         </li>
       </ul>
