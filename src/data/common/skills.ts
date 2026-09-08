@@ -20,14 +20,14 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
       showInProfile: true,
       skills: [
         { label: 'Python', value: 94 },
-        { label: 'TypeScript', value: 91 },
+        { label: 'TypeScript/JavaScript', value: 91 },
         { label: 'C#', value: 80 },
         { label: 'C / C++', value: 76 },
         { label: 'MATLAB', value: 72 },
       ],
     },
     {
-      label: 'Embedded Systems & CAD',
+      label: 'Hardware Development',
       detail:
         'STM32/8051, Keil MDK, Proteus, AutoCAD, SolidWorks, and UG NX; familiar with ANSYS and Pro/ENGINEER.',
       showInProfile: true,
@@ -36,18 +36,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
         { label: 'CAN bus', value: 80 },
         { label: 'SolidWorks / UG NX', value: 78 },
         { label: 'ANSYS', value: 70 },
-      ],
-    },
-    {
-      label: 'Embodied & Agentic AI',
-      detail:
-        'LLM/VLM-based agents, multi-agent coordination, RAG, MCP, LangChain, LangGraph, Deep Agents, FastSAM, and GraspNet.',
-      showInProfile: true,
-      skills: [
-        { label: 'LLM / VLM agents', value: 94 },
-        { label: 'Multi-agent systems', value: 92 },
-        { label: 'RAG / MCP', value: 88 },
-        { label: 'Computer vision', value: 78 },
       ],
     },
     {
@@ -63,10 +51,22 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
       ],
     },
     {
+      label: 'Embodied & Agentic AI',
+      detail:
+        'LLM/VLM-based agents, multi-agent coordination, RAG, MCP, LangChain, LangGraph, Deep Agents, FastSAM, and GraspNet.',
+      showInProfile: true,
+      skills: [
+        { label: 'LLM / VLM agents', value: 94 },
+        { label: 'Multi-agent systems', value: 92 },
+        { label: 'RAG / MCP', value: 88 },
+        { label: 'Computer vision', value: 78 },
+      ],
+    },
+    {
       label: 'Robotics & Automation',
       detail:
         'Robot task planning and grasping, UR and ABB robot integration, RAPID/RWS, multi-actuator control, and CAN bus.',
-      showInProfile: false,
+      showInProfile: true,
       skills: [
         { label: 'Task planning', value: 90 },
         { label: 'ABB / UR integration', value: 84 },

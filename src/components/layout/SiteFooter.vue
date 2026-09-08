@@ -17,7 +17,17 @@ function formatSiteViews(): void {
   if (formatted !== raw) element.textContent = formatted
 }
 
-onMounted(formatSiteViews)
+onMounted(() => {
+  formatSiteViews()
+  if (document.getElementById('busuanzi-script')) return
+
+  const script = document.createElement('script')
+  script.id = 'busuanzi-script'
+  script.src = 'https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js'
+  script.async = true
+  document.head.append(script)
+})
+
 useMutationObserver(siteViews, formatSiteViews, {
   childList: true,
   characterData: true,
@@ -60,8 +70,8 @@ useMutationObserver(siteViews, formatSiteViews, {
           class="inline-flex"
         >
           <img
-            width="85"
-            height="25"
+            width="65"
+            height="20"
             src="https://www.busuanzi.cc/static/images/bsz-tongji.png"
             alt="不蒜子统计"
             loading="lazy"
