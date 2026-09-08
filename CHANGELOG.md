@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-09
+
+- Site: prevented the footer view counter from freezing the page.
+
 ## 2026-09-08
 
 - Site: added a comma-formatted site view counter in the footer.

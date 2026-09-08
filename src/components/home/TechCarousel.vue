@@ -44,7 +44,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section v-bind="$attrs" class="w-full text-left" :aria-label="title">
+  <section v-bind="$attrs" class="w-[75%] text-left" :aria-label="title">
     <Carousel class="w-full" :opts="{ align: 'start' }" :aria-label="title" @init-api="setApi">
       <CarouselContent>
         <CarouselItem v-for="group in groups" :key="group.label">

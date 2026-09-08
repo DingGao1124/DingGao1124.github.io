@@ -15,15 +15,27 @@ export type TechTopics = SkillGroup[]
 export const techTopics: Record<SiteLocale, TechTopics> = {
   en: [
     {
-      label: 'Robotics & Automation',
-      detail:
-        'Robot task planning and grasping, UR and ABB robot integration, RAPID/RWS, multi-actuator control, and CAN bus.',
+      label: 'Programming',
+      detail: 'Python, JavaScript/TypeScript; familiar with C, C++, C#, and MATLAB.',
       showInProfile: true,
       skills: [
-        { label: 'Task planning', value: 90 },
-        { label: 'ABB / UR integration', value: 84 },
-        { label: 'Grasping & vision', value: 80 },
-        { label: 'Multi-actuator control', value: 76 },
+        { label: 'Python', value: 94 },
+        { label: 'TypeScript', value: 91 },
+        { label: 'C#', value: 80 },
+        { label: 'C / C++', value: 76 },
+        { label: 'MATLAB', value: 72 },
+      ],
+    },
+    {
+      label: 'Embedded Systems & CAD',
+      detail:
+        'STM32/8051, Keil MDK, Proteus, AutoCAD, SolidWorks, and UG NX; familiar with ANSYS and Pro/ENGINEER.',
+      showInProfile: true,
+      skills: [
+        { label: 'STM32 / 8051', value: 84 },
+        { label: 'CAN bus', value: 80 },
+        { label: 'SolidWorks / UG NX', value: 78 },
+        { label: 'ANSYS', value: 70 },
       ],
     },
     {
@@ -39,18 +51,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
       ],
     },
     {
-      label: 'Programming',
-      detail: 'Python, JavaScript/TypeScript; familiar with C, C++, C#, and MATLAB.',
-      showInProfile: true,
-      skills: [
-        { label: 'Python', value: 94 },
-        { label: 'TypeScript', value: 91 },
-        { label: 'C#', value: 80 },
-        { label: 'C / C++', value: 76 },
-        { label: 'MATLAB', value: 72 },
-      ],
-    },
-    {
       label: 'Software Development',
       detail: 'Git, React, Angular, Vue, Next.js, NestJS, Docker, Kubernetes, and Jenkins.',
       showInProfile: true,
@@ -63,15 +63,15 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
       ],
     },
     {
-      label: 'Embedded Systems & CAD',
+      label: 'Robotics & Automation',
       detail:
-        'STM32/8051, Keil MDK, Proteus, AutoCAD, SolidWorks, and UG NX; familiar with ANSYS and Pro/ENGINEER.',
-      showInProfile: true,
+        'Robot task planning and grasping, UR and ABB robot integration, RAPID/RWS, multi-actuator control, and CAN bus.',
+      showInProfile: false,
       skills: [
-        { label: 'STM32 / 8051', value: 84 },
-        { label: 'CAN bus', value: 80 },
-        { label: 'SolidWorks / UG NX', value: 78 },
-        { label: 'ANSYS', value: 70 },
+        { label: 'Task planning', value: 90 },
+        { label: 'ABB / UR integration', value: 84 },
+        { label: 'Grasping & vision', value: 80 },
+        { label: 'Multi-actuator control', value: 76 },
       ],
     },
     {

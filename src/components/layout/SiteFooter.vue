@@ -10,7 +10,10 @@ const siteViews = useTemplateRef<HTMLSpanElement>('siteViews')
 function formatSiteViews(): void {
   const element = siteViews.value
   const raw = element?.textContent?.trim() ?? ''
-  if (element && /^\d+$/.test(raw)) element.textContent = Number(raw).toLocaleString('en-US')
+  if (!element || !/^\d+$/.test(raw)) return
+
+  const formatted = Number(raw).toLocaleString('en-US')
+  if (formatted !== raw) element.textContent = formatted
 }
 
 onMounted(formatSiteViews)
