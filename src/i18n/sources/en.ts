@@ -29,6 +29,7 @@ export default {
   backHomeLabel: 'Back to home',
   viewsLabel: 'Site Views',
   footer: '©Ding Gao 2026. All rights reserved.',
+  loading: 'Loading...',
   home: profile['en'],
   research: research['en'],
   publications: publications['en'],

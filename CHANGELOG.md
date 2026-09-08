@@ -2,6 +2,7 @@
 
 ## 2026-09-09
 
+- Site: updated the footer visit counter with comma-formatted display, loading feedback, and attribution.
 - Site: prevented the footer view counter from freezing the page.
 
 ## 2026-09-08

@@ -29,6 +29,7 @@ export default {
   backHomeLabel: '返回首页',
   viewsLabel: '网站访问量',
   footer: '©高鼎 · 2026',
+  loading: '加载中...',
   home: profile['zh'],
   research: research['zh'],
   publications: publications['zh'],
