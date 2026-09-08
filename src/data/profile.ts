@@ -102,7 +102,7 @@ export const profile: Record<SiteLocale, Profile> = {
       location: 'Shanghai, China',
       avatarAlt: 'Profile avatar of Ding Gao',
       intro: [
-        'Hi, my name is Ding Gao. I am a full-stack engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
+        'Hi there👋, my name is Ding Gao. I am a full-stack engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
         'I am interested in how robots can perceive, reason, and act reliably in real-world environments. My recent work explores LLM-enabled flexible manufacturing, multimodal industrial disassembly, and task-planning agents for robot automation.',
       ],
       researchKeywords: [

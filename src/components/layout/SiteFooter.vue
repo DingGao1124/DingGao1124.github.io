@@ -61,7 +61,7 @@ useMutationObserver(siteViews, formatSiteViews, {
             <LoaderIcon class="size-3 animate-spin" />{{ messages.loading }} </span
           >{{ '.' }}
         </span>
-        <span>{{ '(' }}Powered by</span>
+        <span>{{ '( ' }}Powered by</span>
         <a
           href="https://www.busuanzi.cc/count.php?search=dinggao1124.github.io"
           title="不蒜子统计"

@@ -2,6 +2,8 @@
 
 ## 2026-09-09
 
+- Skills: recalibrated proficiency scores against documented experience.
+- Home: restored the research focus and selected publications sections.
 - Site: stabilized the visit counter on first load.
 - Site: updated the footer visit counter with comma-formatted display, loading feedback, and attribution.
 - Site: prevented the footer view counter from freezing the page.
