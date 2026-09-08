@@ -31,6 +31,10 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: 'Ding Gao' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['script', {}, setUpThemeScript],
+    [
+      'script',
+      { async: '', src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js' },
+    ],
   ],
   locales: {
     root: {

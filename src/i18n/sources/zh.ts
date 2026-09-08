@@ -27,6 +27,7 @@ export default {
   notFoundTitle: '页面不存在',
   notFoundDescription: '你请求的页面不存在。',
   backHomeLabel: '返回首页',
+  viewsLabel: '网站访问量',
   footer: '©高鼎 · 2026',
   home: profile['zh'],
   research: research['zh'],

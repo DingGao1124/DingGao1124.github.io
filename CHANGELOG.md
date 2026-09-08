@@ -2,6 +2,7 @@
 
 ## 2026-09-08
 
+- Site: added a comma-formatted site view counter in the footer.
 - Content: expanded the bilingual timeline with academic, professional, award, and patent milestones.
 - Content: corrected key dates, titles, and status wording across major records.
 - Content: added and refined early-life and school memories.

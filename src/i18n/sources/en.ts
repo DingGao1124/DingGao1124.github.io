@@ -27,6 +27,7 @@ export default {
   notFoundTitle: 'Page not found',
   notFoundDescription: 'The page you requested could not be found.',
   backHomeLabel: 'Back to home',
+  viewsLabel: 'Site Views',
   footer: '©Ding Gao 2026. All rights reserved.',
   home: profile['en'],
   research: research['en'],
