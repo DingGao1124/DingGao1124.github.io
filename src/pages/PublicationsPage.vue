@@ -33,7 +33,7 @@ const tocItems = computed(() => [
     <Section
       id="journal-publications"
       :title="publications.label.journalSectionTitle"
-      class="mt-8 md:mt-10"
+      class="mt-4 md:mt-5"
     >
       <p class="mb-3 font-mono text-xs text-muted-foreground">
         {{ publications.label.authorNotes }}
@@ -41,8 +41,8 @@ const tocItems = computed(() => [
       <ol>
         <PublicationEntry
           v-for="publication in journalPublications"
-          :key="publication.id"
-          :id="`publication-${publication.id}`"
+          :key="publication.topic"
+          :id="`publication-${publication.topic}`"
           :publication="publication"
         />
       </ol>
@@ -52,8 +52,8 @@ const tocItems = computed(() => [
       <ol>
         <PublicationEntry
           v-for="patent in patents"
-          :key="patent.id"
-          :id="`publication-${patent.id}`"
+          :key="patent.topic"
+          :id="`publication-${patent.topic}`"
           :publication="patent"
         />
       </ol>

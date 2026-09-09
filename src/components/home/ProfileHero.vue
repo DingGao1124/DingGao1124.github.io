@@ -83,7 +83,7 @@ defineProps<{
         </Button>
       </div>
 
-      <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
         <li v-for="link in links" :key="link.href">
           <a
             class="inline-flex items-center gap-2 transition-colors hover:text-foreground hover:underline hover:underline-offset-4"
@@ -93,7 +93,7 @@ defineProps<{
           >
             <img
               v-if="link.iconSrc"
-              class="size-4 object-contain"
+              :class="`size-${link.iconSize ?? 4} object-contain`"
               :src="link.iconSrc"
               alt=""
               width="16"

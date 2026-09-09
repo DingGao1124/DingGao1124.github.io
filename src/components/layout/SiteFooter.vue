@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useMutationObserver } from '@vueuse/core'
-import { onMounted, useTemplateRef } from 'vue'
+import { computed, onMounted, useTemplateRef } from 'vue'
 import { Separator } from '@/components/ui/separator'
 import { LoaderIcon } from '@lucide/vue'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
+const footer = computed(() => messages.value.footer)
 const siteViews = useTemplateRef<HTMLSpanElement>('siteViews')
 
 function formatSiteViews(): void {
@@ -41,7 +42,7 @@ useMutationObserver(siteViews, formatSiteViews, {
     <div
       class="mx-auto flex max-w-content flex-wrap items-baseline gap-x-3 gap-y-2 px-5 py-8 md:px-6"
     >
-      <p class="text-sm text-muted-foreground">{{ messages.footer }}</p>
+      <p class="text-sm text-muted-foreground">{{ footer.footerTag }}</p>
       <p
         class="inline-flex flex-wrap items-center gap-1 text-xs leading-none text-muted-foreground"
       >
@@ -52,16 +53,16 @@ useMutationObserver(siteViews, formatSiteViews, {
         <!-- busuanzi_today_pv -->
         <!-- busuanzi_today_uv -->
         <span class="inline-flex items-center">
-          {{ messages.viewsLabel }}:
+          {{ footer.viewsLabel }}:
           <span
             id="busuanzi_site_pv"
             ref="siteViews"
             class="ml-1 inline-flex items-center gap-1 tabular-nums"
           >
-            <LoaderIcon class="size-3 animate-spin" />{{ messages.loading }} </span
+            <LoaderIcon class="size-3 animate-spin" />{{ footer.loading }} </span
           >{{ '.' }}
         </span>
-        <span>{{ '( ' }}Powered by</span>
+        <span>{{ '( ' }}{{ footer.statistics }}</span>
         <a
           href="https://www.busuanzi.cc/count.php?search=dinggao1124.github.io"
           title="不蒜子统计"

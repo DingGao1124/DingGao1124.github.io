@@ -57,7 +57,7 @@ function educationDetails(item: (typeof experience.value.content.education)[numb
     <Section
       id="professional-experience"
       :title="experience.label.professionalTitle"
-      class="mt-8 md:mt-10"
+      class="mt-4 md:mt-5"
     >
       <TimelineEntry
         v-for="item in experience.content.items"

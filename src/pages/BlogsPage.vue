@@ -37,7 +37,7 @@ const tocItems = computed(() =>
       :lede="blogSection.content.lede"
     />
 
-    <Section :title="blogSection.label.postsTitle" class="mt-8 md:mt-10">
+    <Section :title="blogSection.label.postsTitle" class="mt-4 md:mt-5">
       <p v-if="posts.length === 0" class="measure text-muted-foreground">
         <span class="inline-flex items-center gap-2">
           <Construction class="size-5" />

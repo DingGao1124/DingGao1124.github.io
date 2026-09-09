@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-10
+
+- Publications: refreshed papers and patents with verified dates, metadata, links, and keywords.
+- Publications: added the verified CIMS Online First paper.
+
 ## 2026-09-09
 
 - Skills: recalibrated proficiency scores against documented experience.

@@ -27,7 +27,7 @@ const tocItems = computed(() =>
       :lede="projects.content.lede"
     />
 
-    <Section :title="projects.label.systemsTitle" class="mt-8 md:mt-10">
+    <Section :title="projects.label.systemsTitle" class="mt-4 md:mt-5">
       <TimelineEntry
         v-for="project in projects.content.items"
         :key="project.id"

@@ -25,7 +25,7 @@ const tocItems = computed(() => [
       :lede="research.content.lede"
     />
 
-    <Section id="research-areas" :title="research.label.areasTitle" class="mt-8 md:mt-10">
+    <Section id="research-areas" :title="research.label.areasTitle" class="mt-4 md:mt-5">
       <div class="grid gap-x-10 gap-y-6 md:grid-cols-2">
         <article v-for="area in research.content.areas" :key="area.title">
           <h3 class="text-xl font-medium">{{ area.title }}</h3>

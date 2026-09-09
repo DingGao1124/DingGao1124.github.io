@@ -26,14 +26,14 @@ const tocItems = computed(() => [
       :lede="contact.content.lede"
     />
 
-    <Section class="mt-8 md:mt-10">
+    <Section class="mt-4 md:mt-5">
       <div class="grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.65fr)] md:gap-16">
         <div id="contact-details" class="scroll-mt-28">
-          <p class="measure text-lg leading-8 text-card-foreground">
-            {{ contact.content.description }}
-          </p>
+          <h2 class="measure text-xl font-normal">
+            {{ contact.label.profilesMainTitle }}
+          </h2>
 
-          <div class="mt-8 flex flex-wrap gap-3">
+          <div class="mt-4 flex flex-wrap gap-3">
             <Button
               as="a"
               :href="contact.phoneHref"
@@ -48,8 +48,8 @@ const tocItems = computed(() => [
             </Button>
           </div>
 
-          <h2 class="mt-12 text-xl font-medium">{{ contact.label.profilesTitle }}</h2>
-          <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <h2 class="mt-6 text-xl font-normal">{{ contact.label.profilesSubTitle }}</h2>
+          <ul class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
             <li v-for="link in contact.profileLinks" :key="link.href">
               <a
                 class="link inline-flex items-center gap-2"
@@ -59,7 +59,7 @@ const tocItems = computed(() => [
               >
                 <img
                   v-if="link.iconSrc"
-                  class="size-4 object-contain"
+                  :class="`size-${link.iconSize ?? 4} object-contain`"
                   :src="link.iconSrc"
                   alt=""
                   width="16"
@@ -73,12 +73,12 @@ const tocItems = computed(() => [
 
         <aside id="cv-download" class="scroll-mt-28">
           <Separator />
-          <div class="py-6">
+          <div class="py-5">
             <h2 class="text-xl font-medium">{{ contact.label.cvTitle }}</h2>
-            <p class="mt-3 text-sm leading-6 text-muted-foreground">
+            <p class="text-sm leading-6 text-muted-foreground">
               {{ contact.content.cvDescription }}
             </p>
-            <div class="mt-5 flex flex-wrap items-center gap-3">
+            <div class="mt-4 flex flex-wrap items-center gap-3">
               <Button
                 as="a"
                 variant="outline"

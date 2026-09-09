@@ -4,6 +4,7 @@ import { techTopics, type TechTopics } from './common/skills'
 export type ProfileLink = {
   label: string
   href: string
+  iconSize?: number
   iconSrc?: string
 }
 
@@ -126,7 +127,8 @@ export const profile: Record<SiteLocale, Profile> = {
       {
         label: 'Videos',
         href: 'https://space.bilibili.com/441110980/upload/video',
-        iconSrc: '/media/bilibili.svg',
+        iconSize: 7,
+        iconSrc: '/media/BILIBILI.svg',
       },
       {
         label: 'Portfolio',
