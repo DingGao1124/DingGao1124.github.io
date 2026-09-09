@@ -139,6 +139,32 @@ export const publications: Record<SiteLocale, Publications> = {
         // },
         {
           type: 'journal',
+          topic: 'multi-agent-digital-twin-modeling',
+          title: '基于多智能体协同机制的数字孪生产线动态建模方法',
+          authors: [
+            { name: '温晓健' },
+            { name: '高鼎' },
+            { name: '吕健豪' },
+            { name: '司佳辉' },
+            { name: '王聪' },
+            { name: '鲍劲松' },
+            { name: '张丹' },
+          ],
+          venue: {
+            name: '计算机集成制造系统 · 网络首发',
+            abbreviation: 'CIMS',
+          },
+          publicationDate: { year: '2026', datetime: '2026-06-26', label: '2026.06' },
+          identifier: '10.13196/j.cims.2025.0269',
+          keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性生产线', '知识图谱'],
+          links: [{ label: 'DOI', href: 'https://doi.org/10.13196/j.cims.2025.0269' }],
+          media: {
+            alt: '多智能体协同数字孪生产线动态建模框架配图占位',
+            label: '多智能体数字孪生建模框架',
+          },
+        },
+        {
+          type: 'journal',
           topic: 'multi-cognitive-agent',
           title:
             'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human–robot collaborative disassembly',
@@ -231,6 +257,35 @@ export const publications: Record<SiteLocale, Publications> = {
         },
         {
           type: 'patent',
+          topic: 'solar-folding-car-canopy',
+          title: 'A Solar-Powered Foldable Fully Automatic Car Sunshade Canopy',
+          authors: [
+            { name: 'Jiangtao Xu' },
+            { name: 'Yong Feng' },
+            { name: 'Haojie Zhou' },
+            { name: 'Zhiyuan Zhou' },
+            { name: 'Zepeng Cheng' },
+            { name: 'Ding Gao' },
+          ],
+          venue: {
+            name: 'Invention Patent Application',
+          },
+          publicationDate: { year: '2021', datetime: '2021-05', label: 'May 2021' },
+          identifier: 'CN112776579A',
+          keywords: [
+            'Solar Energy',
+            'Foldable Canopy',
+            'Automatic Deployment',
+            'Photovoltaic Power Generation',
+          ],
+          links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN112776579A/en' }],
+          media: {
+            alt: 'Placeholder for the solar-powered foldable car sunshade canopy patent',
+            label: 'Solar folding car canopy',
+          },
+        },
+        {
+          type: 'patent',
           topic: 'conductive-concrete',
           title: 'A Prefabricated Component System Based on Conductive Concrete',
           authors: [
@@ -299,32 +354,32 @@ export const publications: Record<SiteLocale, Publications> = {
             label: 'Digital-twin agent architecture',
           },
         },
-        // {
-        //   type: 'journal',
-        //   topic: 'multi-agent-digital-twin-modeling',
-        //   title: '基于多智能体协同机制的数字孪生产线动态建模方法',
-        //   authors: [
-        //     { name: '温晓健' },
-        //     { name: '高鼎' },
-        //     { name: '吕健豪' },
-        //     { name: '司佳辉' },
-        //     { name: '王聪' },
-        //     { name: '鲍劲松' },
-        //     { name: '张丹' },
-        //   ],
-        //   venue: {
-        //     name: '计算机集成制造系统 · 网络首发',
-        //     abbreviation: 'CIMS',
-        //   },
-        //   publicationDate: { year: '2026', datetime: '2026-06-26', label: '2026.06' },
-        //   identifier: '10.13196/j.cims.2025.0269',
-        //   keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性生产线', '知识图谱'],
-        //   links: [{ label: 'DOI', href: 'https://doi.org/10.13196/j.cims.2025.0269' }],
-        //   media: {
-        //     alt: '多智能体协同数字孪生产线动态建模框架配图占位',
-        //     label: '多智能体数字孪生建模框架',
-        //   },
-        // },
+        {
+          type: 'journal',
+          topic: 'multi-agent-digital-twin-modeling',
+          title: '基于多智能体协同机制的数字孪生产线动态建模方法',
+          authors: [
+            { name: '温晓健' },
+            { name: '高鼎' },
+            { name: '吕健豪' },
+            { name: '司佳辉' },
+            { name: '王聪' },
+            { name: '鲍劲松' },
+            { name: '张丹' },
+          ],
+          venue: {
+            name: '计算机集成制造系统 · 网络首发',
+            abbreviation: 'CIMS',
+          },
+          publicationDate: { year: '2026', datetime: '2026-06-26', label: '2026.06' },
+          identifier: '10.13196/j.cims.2025.0269',
+          keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性生产线', '知识图谱'],
+          links: [{ label: 'DOI', href: 'https://doi.org/10.13196/j.cims.2025.0269' }],
+          media: {
+            alt: '多智能体协同数字孪生产线动态建模框架配图占位',
+            label: '多智能体数字孪生建模框架',
+          },
+        },
         {
           type: 'journal',
           topic: 'multi-cognitive-agent',
@@ -398,6 +453,30 @@ export const publications: Record<SiteLocale, Publications> = {
           keywords: ['视觉检测', '角度调节', '精密定位', '缺陷检测'],
           links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN113702385B/zh' }],
           media: { alt: '角度可调载物台专利配图占位', label: '角度可调载物台' },
+        },
+        {
+          type: 'patent',
+          topic: 'solar-folding-car-canopy',
+          title: '一种太阳能折叠式全自动汽车防晒车篷',
+          authors: [
+            { name: '许江涛' },
+            { name: '冯勇' },
+            { name: '周豪杰' },
+            { name: '周智远' },
+            { name: '程泽鹏' },
+            { name: '高鼎' },
+          ],
+          venue: {
+            name: '发明专利申请',
+          },
+          publicationDate: { year: '2021', datetime: '2021-05', label: '2021.05' },
+          identifier: 'CN112776579A',
+          keywords: ['太阳能', '折叠车篷', '自动展开', '光伏发电'],
+          links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN112776579A/zh' }],
+          media: {
+            alt: '太阳能折叠式全自动汽车防晒车篷专利配图占位',
+            label: '太阳能折叠式汽车车篷',
+          },
         },
         {
           type: 'patent',

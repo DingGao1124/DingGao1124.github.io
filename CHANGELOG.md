@@ -4,6 +4,7 @@
 
 - Publications: refreshed papers and patents with verified dates, metadata, links, and keywords.
 - Publications: added the verified CIMS Online First paper.
+- Publications: added the solar-powered foldable car sunshade patent application.
 
 ## 2026-09-09
 
