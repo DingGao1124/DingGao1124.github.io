@@ -48,7 +48,7 @@ const tocItems = computed(() => [
       </ol>
     </Section>
 
-    <Section id="patents" :title="publications.label.patentSectionTitle" class="mt-10">
+    <Section id="patents" :title="publications.label.patentSectionTitle" class="mt-8">
       <ol>
         <PublicationEntry
           v-for="patent in patents"

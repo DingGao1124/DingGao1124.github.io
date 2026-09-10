@@ -111,7 +111,7 @@ export const news: Record<SiteLocale, News> = {
     {
       type: 'Milestone',
       date: '01/2023',
-      text: 'I got the opportunity to participate in the 14th National University Students Mathematics Competition and won the National First Prize 🥇! Eventually 🎉!',
+      text: 'I got the opportunity to participate in the 14th National University Students Mathematics Competition and won the National First Prize 🥇! I made it eventually 🎉!',
     },
     {
       type: 'Update',

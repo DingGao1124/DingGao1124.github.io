@@ -60,12 +60,18 @@ function isDingGao(author: string) {
         <h3 class="text-lg leading-snug font-medium md:text-xl">
           {{ publication.title }}
         </h3>
-        <ul v-if="publication.keywords?.length" class="mt-2 flex flex-wrap gap-1.5">
+        <ul v-if="publication.keywords?.length" class="mt-1.5 flex flex-wrap gap-1.5">
           <li v-for="keyword in publication.keywords" :key="keyword">
-            <Badge class="border-link/25 bg-link/10 text-link/90">{{ keyword }}</Badge>
+            <Badge
+              class="border-link/25 bg-link/10 px-1.5 py-0 text-[0.6875rem] leading-4 text-link/90"
+              >{{ keyword }}</Badge
+            >
           </li>
         </ul>
-        <p v-if="publication.authors?.length" class="mt-2 text-sm leading-5 text-muted-foreground">
+        <p
+          v-if="publication.authors?.length"
+          class="mt-1.5 text-sm leading-5 text-muted-foreground"
+        >
           <template v-for="(author, index) in publication.authors" :key="author.name">
             <strong v-if="isDingGao(author.name)" class="font-semibold text-foreground">{{
               author.name

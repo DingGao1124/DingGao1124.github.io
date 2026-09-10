@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Dot, Mail, MapPin, Phone, ScanSearch } from '@lucide/vue'
+import { Building2, Dot, Mail, MapPin, Phone, ScanSearch } from '@lucide/vue'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
@@ -123,6 +123,7 @@ defineProps<{
         <p class="font-serif text-2xl font-medium">{{ name }}</p>
         <p class="text-sm font-medium">{{ headline }}</p>
         <p class="flex flex-wrap items-center justify-center gap-1.5 text-sm text-muted-foreground">
+          <!-- <Building2 class="size-4" aria-hidden="true" /> -->
           <span>{{ currentPosition }}</span>
           <a
             class="inline-flex items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"

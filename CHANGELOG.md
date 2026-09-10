@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-11
+
+- Projects: reorganized the Portfolio into three project groups with evidence-backed entries and links.
+- Projects: tightened keyword badges and collapsed previews to align with project media.
+
 ## 2026-09-10
 
 - Publications: refreshed papers and patents with verified dates, metadata, links, and keywords.

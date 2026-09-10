@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, shallowRef, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, shallowRef, watch } from 'vue'
 import { ChevronDown } from '@lucide/vue'
 
 import { Button } from '@/components/ui/button'
@@ -11,11 +11,13 @@ const props = withDefaults(
     summary?: string
     items: readonly string[]
     collapsible?: boolean
+    collapsedHeight?: number
     showMoreLabel?: string
     showLessLabel?: string
   }>(),
   {
     collapsible: false,
+    collapsedHeight: 176,
     showMoreLabel: 'Show more',
     showLessLabel: 'Show less',
   },
@@ -24,12 +26,15 @@ const props = withDefaults(
 const isOpen = shallowRef(false)
 const content = shallowRef<HTMLElement>()
 const hasOverflow = shallowRef(false)
-const collapsedHeight = 176
 let resizeObserver: ResizeObserver | undefined
+
+const collapsedStyle = computed(() =>
+  hasOverflow.value && !isOpen.value ? { maxHeight: `${props.collapsedHeight}px` } : undefined,
+)
 
 function measureOverflow() {
   hasOverflow.value = Boolean(
-    props.collapsible && content.value && content.value.scrollHeight > collapsedHeight + 1,
+    props.collapsible && content.value && content.value.scrollHeight > props.collapsedHeight + 1,
   )
 }
 
@@ -46,7 +51,7 @@ onMounted(() => {
 onBeforeUnmount(() => resizeObserver?.disconnect())
 
 watch(
-  () => [props.summary, props.items],
+  () => [props.summary, props.items, props.collapsedHeight],
   () => void nextTick(measureOverflow),
 )
 </script>
@@ -59,6 +64,7 @@ watch(
         'relative overflow-hidden',
         hasOverflow && !isOpen && 'expandable-content-collapsed',
       ]"
+      :style="collapsedStyle"
     >
       <p v-if="summary" class="measure text-sm leading-[1.55] text-card-foreground">
         {{ summary }}
@@ -104,10 +110,6 @@ watch(
 </template>
 
 <style scoped>
-.expandable-content-collapsed {
-  max-height: 11rem;
-}
-
 .expandable-content-collapsed::after {
   position: absolute;
   inset: auto 0 0;

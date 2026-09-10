@@ -23,6 +23,7 @@ const props = withDefaults(
     tags?: readonly string[]
     links?: readonly TimelineLink[]
     collapsible?: boolean
+    collapsedHeight?: number
     showMoreLabel?: string
     showLessLabel?: string
   }>(),
@@ -68,21 +69,23 @@ const gridClass = computed(() =>
       <p v-if="meta" class="mt-1 text-xs leading-5 text-muted-foreground">
         {{ meta }}
       </p>
+
+      <div v-if="tags?.length" class="mt-1.5 flex flex-wrap gap-1.5 md:flex-nowrap">
+        <Badge v-for="tag in tags" :key="tag" variant="outline">{{ tag }}</Badge>
+      </div>
+
       <ExpandableBulletList
         v-if="summary || highlights?.length"
-        class="mt-2.5"
+        class="mt-1.5"
         :summary="summary"
         :items="highlights ?? []"
         :collapsible="collapsible"
+        :collapsed-height="collapsedHeight"
         :show-more-label="showMoreLabel"
         :show-less-label="showLessLabel"
       />
 
-      <div v-if="tags?.length" class="mt-2.5 flex flex-wrap gap-1.5">
-        <Badge v-for="tag in tags" :key="tag" variant="outline">{{ tag }}</Badge>
-      </div>
-
-      <ul v-if="links?.length" class="mt-2.5 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+      <ul v-if="links?.length" class="mt-1.5 flex flex-wrap gap-x-4 gap-y-2 text-xs">
         <li v-for="link in links" :key="link.href">
           <a
             class="link inline-flex items-center gap-1.5"

@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { ArrowUpRight } from '@lucide/vue'
 
 import AcademicMedia from '@/components/common/AcademicMedia.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
-import TimelineEntry from '@/components/common/TimelineEntry.vue'
+import ProjectsEntry from '@/components/projects/ProjectsEntry.vue'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
 
 const projects = computed(() => messages.value.projects)
 const tocItems = computed(() =>
-  projects.value.content.items.map((project) => ({
-    id: `project-${project.id}`,
-    label: project.title,
+  projects.value.content.sections.map((section) => ({
+    id: `project-section-${section.id}`,
+    label: section.title,
   })),
 )
 </script>
@@ -27,26 +28,44 @@ const tocItems = computed(() =>
       :lede="projects.content.lede"
     />
 
-    <Section :title="projects.label.systemsTitle" class="mt-4 md:mt-5">
-      <TimelineEntry
-        v-for="project in projects.content.items"
-        :key="project.id"
-        :id="`project-${project.id}`"
-        :period="project.period"
-        :title="project.title"
-        :meta="`${project.role} · ${project.category}`"
-        :summary="project.description"
-        :highlights="project.highlights"
-        :tags="project.tech"
-        :links="project.links"
-        collapsible
-        :show-more-label="projects.label.showMoreLabel"
-        :show-less-label="projects.label.showLessLabel"
-      >
-        <template #media>
-          <AcademicMedia :media="project.media" />
-        </template>
-      </TimelineEntry>
+    <Section
+      v-for="section in projects.content.sections"
+      :id="`project-section-${section.id}`"
+      :key="section.id"
+      :title="section.title"
+      class="mt-6 md:mt-8"
+    >
+      <template v-for="project in section.items" :key="project.id">
+        <ProjectsEntry
+          :id="`project-${project.id}`"
+          :period="project.period"
+          :title="project.title"
+          :summary="project.description"
+          :highlights="project.highlights"
+          :tags="project.tech"
+          :links="project.links"
+          collapsible
+          :collapsed-height="120"
+          :show-more-label="projects.label.showMoreLabel"
+          :show-less-label="projects.label.showLessLabel"
+        >
+          <template #media>
+            <AcademicMedia :media="project.media" />
+          </template>
+        </ProjectsEntry>
+      </template>
     </Section>
+
+    <div class="mt-8 flex">
+      <a
+        class="link inline-flex items-center gap-1.5 text-sm"
+        :href="projects.content.moreLink.href"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {{ projects.content.moreLink.label }}
+        <ArrowUpRight class="size-4" aria-hidden="true" />
+      </a>
+    </div>
   </PageShell>
 </template>
