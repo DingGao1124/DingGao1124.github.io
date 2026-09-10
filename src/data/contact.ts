@@ -41,7 +41,7 @@ export const contact: Record<SiteLocale, Contact> = {
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/linkin.svg',
+        iconSrc: '/media/linkedin.svg',
       },
       {
         label: 'Videos',
@@ -85,7 +85,7 @@ export const contact: Record<SiteLocale, Contact> = {
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/linkin.svg',
+        iconSrc: '/media/linkedin.svg',
       },
       {
         label: 'Portfolio',
