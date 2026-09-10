@@ -98,7 +98,7 @@ export const profile: Record<SiteLocale, Profile> = {
       employer: {
         label: '@bilibili',
         href: 'https://github.com/bilibili',
-        iconSrc: '/company/BILIBILI.svg',
+        iconSrc: '/company/bilibili.svg',
       },
       location: 'Shanghai, China',
       avatarAlt: 'Profile avatar of Ding Gao',
@@ -117,23 +117,23 @@ export const profile: Record<SiteLocale, Profile> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/GitHub.svg',
+        iconSrc: '/media/github.svg',
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/Linkin.svg',
+        iconSrc: '/media/linkin.svg',
       },
       {
         label: 'Videos',
         href: 'https://space.bilibili.com/441110980/upload/video',
         iconSize: 7,
-        iconSrc: '/media/BILIBILI.svg',
+        iconSrc: '/media/bilibili.svg',
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/Yuque.svg',
+        iconSrc: '/media/yuque.svg',
       },
     ],
     label: {
@@ -262,7 +262,7 @@ export const profile: Record<SiteLocale, Profile> = {
       employer: {
         label: '@哔哩哔哩',
         href: 'https://github.com/bilibili',
-        iconSrc: '/company/BILIBILI.svg',
+        iconSrc: '/company/bilibili.svg',
       },
       location: '中国上海',
       avatarAlt: '高鼎的个人头像',
@@ -276,17 +276,17 @@ export const profile: Record<SiteLocale, Profile> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/GitHub.svg',
+        iconSrc: '/media/github.svg',
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/Linkin.svg',
+        iconSrc: '/media/linkin.svg',
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/Yuque.svg',
+        iconSrc: '/media/yuque.svg',
       },
     ],
     label: {

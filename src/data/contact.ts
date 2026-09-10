@@ -36,23 +36,23 @@ export const contact: Record<SiteLocale, Contact> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/GitHub.svg',
+        iconSrc: '/media/github.svg',
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/Linkin.svg',
+        iconSrc: '/media/linkin.svg',
       },
       {
         label: 'Videos',
         href: 'https://space.bilibili.com/441110980/upload/video',
         iconSize: 7,
-        iconSrc: '/media/BILIBILI.svg',
+        iconSrc: '/media/bilibili.svg',
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/Yuque.svg',
+        iconSrc: '/media/yuque.svg',
       },
     ],
     label: {
@@ -80,17 +80,17 @@ export const contact: Record<SiteLocale, Contact> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/GitHub.svg',
+        iconSrc: '/media/github.svg',
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/Linkin.svg',
+        iconSrc: '/media/linkin.svg',
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/Yuque.svg',
+        iconSrc: '/media/yuque.svg',
       },
     ],
     label: {

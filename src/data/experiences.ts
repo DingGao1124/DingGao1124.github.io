@@ -90,7 +90,7 @@ export const experiences: Record<SiteLocale, Experience> = {
             'Developed an agent-driven data-processing workflow that recognized user intent, grouped records by request type, delegated clustering tasks to subagents, and synthesized their results into structured analytical outputs.',
             'Integrated agent outputs into an Angular/C# internal visualization platform, enabling R&D teams to identify critical issues, prioritize high-demand feature requests, and adjust product-development priorities based on data insights.',
           ],
-          logoSrc: '/company/Tesla.svg',
+          logoSrc: '/company/tesla.svg',
           media: {
             alt: 'Placeholder for the Tesla agentic user-feedback analysis system',
             label: 'Agentic feedback analysis',
@@ -108,7 +108,7 @@ export const experiences: Record<SiteLocale, Experience> = {
             'Implemented parallel task coordination and execution-failure handling, enabling the planner to manage multi-step robot operations and respond to unsuccessful actions.',
             'Improved Tangram recognition under variable lighting through dynamic HSV parameter adjustment and developed a RAG-based AppStudio assistant for robot-function generation and technical knowledge retrieval.',
           ],
-          logoSrc: '/company/ABB.svg',
+          logoSrc: '/company/abb.svg',
           media: {
             alt: 'Placeholder for the ABB robot task-planning system',
             label: 'Robot task planning',
@@ -125,7 +125,7 @@ export const experiences: Record<SiteLocale, Experience> = {
           highlights: [
             'Developed a RAG-based diagnostic agent that retrieved relevant technical knowledge and generated structured JSON solutions for frontend visualization.',
           ],
-          logoSrc: '/company/BILIBILI.svg',
+          logoSrc: '/company/bilibili.svg',
           media: {
             alt: 'Placeholder for the Bilibili AI-assisted error-monitoring pipeline',
             label: 'AI error monitoring',
@@ -242,7 +242,7 @@ export const experiences: Record<SiteLocale, Experience> = {
             '实现了意图识别、请求类型分组、子智能体聚类和结构化结果汇总。',
             '将智能体输出接入 Angular/C# 内部平台，帮助研发团队识别关键问题并调整产品优先级。',
           ],
-          logoSrc: '/company/Tesla.svg',
+          logoSrc: '/company/tesla.svg',
           media: { alt: 'Tesla 用户反馈分析系统占位图', label: 'Agentic feedback analysis' },
         },
         {
@@ -257,7 +257,7 @@ export const experiences: Record<SiteLocale, Experience> = {
             '实现了并行任务协调与执行失败处理。',
             '通过动态 HSV 参数调整改善变化光照下的七巧板识别，并开发机器人功能生成与技术检索助手。',
           ],
-          logoSrc: '/company/ABB.svg',
+          logoSrc: '/company/abb.svg',
           media: { alt: 'ABB 机器人任务规划系统占位图', label: 'Robot task planning' },
         },
         {
@@ -271,7 +271,7 @@ export const experiences: Record<SiteLocale, Experience> = {
             '使用 NestJS 定时任务捕获 JavaScript 与未处理 Promise rejection 错误，并将分析结果写入 MySQL。',
             '开发了检索相关技术知识并为前端可视化生成结构化 JSON 解决方案的 RAG 诊断智能体。',
           ],
-          logoSrc: '/company/BILIBILI.svg',
+          logoSrc: '/company/bilibili.svg',
           media: { alt: '哔哩哔哩错误监测系统占位图', label: 'AI error monitoring' },
         },
         {

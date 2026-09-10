@@ -2,6 +2,7 @@
 
 ## 2026-09-10
 
+- Assets: renamed all SVG files to lowercase and updated their references.
 - Publications: refreshed papers and patents with verified dates, metadata, links, and keywords.
 - Publications: added the verified CIMS Online First paper.
 - Publications: added the solar-powered foldable car sunshade patent application.
