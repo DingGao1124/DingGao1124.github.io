@@ -49,7 +49,6 @@ export type Publications = {
     pageContentsLabel: string
   }
   content: {
-    lede: string
     items: Publication[]
   }
 }
@@ -65,7 +64,6 @@ export const publications: Record<SiteLocale, Publications> = {
       pageContentsLabel: 'On this page',
     },
     content: {
-      lede: 'My publications span LLM-enabled digital twins, cognitive agent systems, and augmented-reality-assisted human-robot collaboration.',
       items: [
         {
           type: 'journal',
@@ -324,7 +322,6 @@ export const publications: Record<SiteLocale, Publications> = {
       pageContentsLabel: '本页目录',
     },
     content: {
-      lede: '围绕大语言模型驱动的数字孪生、认知智能体系统与增强现实人机协作的期刊论文和专利。',
       items: [
         {
           type: 'journal',

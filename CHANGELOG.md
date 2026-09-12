@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-12
+
+- Projects: replaced the plain portfolio link with a ported MagicUI RainbowButton on a softened palette.
+- Data: split the experience record into one file per content group under `src/data/experiences/` (professional, research, education, honors), with each group's type defined beside its data.
+- Experience: merged the Research page into the Experience page as a Research experience section and removed the Research route and navigation entry.
+- Home: removed page contents entries that pointed at commented-out sections.
+- Docs: updated the i18n and redesign notes for the merged research and experience record.
+- Docs: added brief region comments to the component templates.
+- Motion: added a height transition to the Show more / Show less toggle with a fading gradient overlay.
+
 ## 2026-09-11
 
 - Projects: reorganized the Portfolio into three project groups with evidence-backed entries and links.

@@ -43,10 +43,11 @@ function isDingGao(author: string) {
       :class="
         cn(
           'grid scroll-mt-28 items-start gap-4 py-5 md:gap-5',
-          'md:grid-cols-[6rem_minmax(0,1fr)] lg:grid-cols-[6rem_minmax(0,1fr)_20rem]',
+          'md:grid-cols-[6rem_minmax(0,1fr)] lg:grid-cols-[6rem_minmax(0,1fr)_22rem]',
         )
       "
     >
+      <!-- Left Part -->
       <div class="timeline-date relative self-stretch pl-5 pt-0.5 md:pl-0 md:pr-7">
         <time
           class="font-mono text-xs leading-6 whitespace-nowrap text-muted-foreground"
@@ -56,6 +57,7 @@ function isDingGao(author: string) {
         </time>
       </div>
 
+      <!-- Middle Part -->
       <div class="min-w-0 py-0.5">
         <h3 class="text-lg leading-snug font-medium md:text-xl">
           {{ publication.title }}
@@ -97,6 +99,7 @@ function isDingGao(author: string) {
         </ul>
       </div>
 
+      <!-- Right Part -->
       <div class="min-w-0 self-start md:col-start-2 lg:col-start-3 lg:row-start-1">
         <AcademicMedia :media="publication.media" />
       </div>

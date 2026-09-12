@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Building2, Dot, Mail, MapPin, Phone, ScanSearch } from '@lucide/vue'
+import { ArrowRight, Building2, Dot, Mail, MapPin, Phone, ScanSearch } from '@lucide/vue'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
@@ -34,6 +34,7 @@ defineProps<{
 
 <template>
   <section class="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+    <!-- Introduction -->
     <div class="order-2 flex flex-col gap-5 max-w-2xl lg:order-1 lg:pt-2">
       <div class="flex flex-col gap-4">
         <p class="eyebrow">{{ eyebrow }}</p>
@@ -83,10 +84,10 @@ defineProps<{
         </Button>
       </div>
 
-      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+      <ul class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
         <li v-for="link in links" :key="link.href">
           <a
-            class="inline-flex items-center gap-2 transition-colors hover:text-foreground hover:underline hover:underline-offset-4"
+            class="group inline-flex items-center gap-1.5 transition-colors hover:text-foreground hover:underline hover:underline-offset-4"
             :href="link.href"
             target="_blank"
             rel="noreferrer"
@@ -99,12 +100,17 @@ defineProps<{
               width="16"
               height="16"
             />
-            {{ link.label }} ↗
+            {{ link.label }}
+            <ArrowRight
+              class="-ms-0.5 size-3.5 -rotate-45 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              aria-hidden="true"
+            />
           </a>
         </li>
       </ul>
     </div>
 
+    <!-- Portrait and identity -->
     <aside
       class="order-1 mx-auto flex w-full max-w-sm flex-col items-center text-center lg:order-2 lg:mx-0"
     >

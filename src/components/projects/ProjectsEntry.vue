@@ -53,10 +53,12 @@ const gridClass = computed(() =>
 <template>
   <Separator />
   <article :id="id" :class="cn(gridClass, 'scroll-mt-28')">
+    <!-- Timeline period -->
     <div class="timeline-date relative pl-5 md:pl-0 md:pr-7">
       <time class="font-mono text-xs leading-6 text-muted-foreground">{{ period }}</time>
     </div>
 
+    <!-- Project content -->
     <div class="min-w-0">
       <div class="flex items-start justify-between gap-5">
         <h3 class="text-base leading-snug font-medium md:text-lg">
@@ -106,6 +108,7 @@ const gridClass = computed(() =>
       </ul>
     </div>
 
+    <!-- Media figure -->
     <div v-if="hasMedia" class="min-w-0 self-start md:col-start-2 lg:col-start-3 lg:row-start-1">
       <slot name="media" />
     </div>

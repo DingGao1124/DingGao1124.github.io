@@ -19,8 +19,6 @@ const profileTechGroups = computed(() =>
 const tocItems = computed(() => [
   { id: 'profile', label: home.value.label.aboutTitle },
   { id: 'news', label: home.value.label.newsTitle },
-  { id: 'research-focus', label: home.value.label.focusTitle },
-  { id: 'selected-publications', label: home.value.label.publicationsTitle },
 ])
 </script>
 
@@ -63,7 +61,7 @@ const tocItems = computed(() => [
           </p>
         </article>
       </div>
-      <Button as="a" variant="link" size="sm" class="mt-6" :href="path('/research/')">
+      <Button as="a" variant="link" size="sm" class="mt-6" :href="`${path('/experience/')}#research-experience`">
         {{ home.label.viewAll }}
         <ArrowRight data-icon="inline-end" aria-hidden="true" />
       </Button>

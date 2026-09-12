@@ -51,3 +51,13 @@ html[data-magicui-theme-vt='collapse']::view-transition-old(root) {
 html[data-magicui-theme-vt='collapse']::view-transition-new(root) {
   z-index: 1;
 }
+
+/* MagicUI rainbow button — shifts the gradient stack under an oversized background. */
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  to {
+    background-position: 200%;
+  }
+}

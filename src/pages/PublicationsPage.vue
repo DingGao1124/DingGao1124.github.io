@@ -24,16 +24,12 @@ const tocItems = computed(() => [
 
 <template>
   <PageShell :toc-items="tocItems" :toc-label="publications.label.pageContentsLabel">
-    <PageHeader
-      :eyebrow="publications.label.eyebrow"
-      :title="publications.label.title"
-      :lede="publications.content.lede"
-    />
+    <PageHeader :eyebrow="publications.label.eyebrow" :title="publications.label.title" />
 
     <Section
       id="journal-publications"
       :title="publications.label.journalSectionTitle"
-      class="mt-4 md:mt-5"
+      class="mt-6 md:mt-8"
     >
       <p class="mb-3 font-mono text-xs text-muted-foreground">
         {{ publications.label.authorNotes }}

@@ -7,9 +7,6 @@ export type Blog = {
     emptyLabel: string
     pageContentsLabel: string
   }
-  content: {
-    lede: string
-  }
 }
 
 export const blogs: Record<SiteLocale, Blog> = {
@@ -22,9 +19,6 @@ export const blogs: Record<SiteLocale, Blog> = {
       emptyLabel: 'Under construction, coming soon...',
       pageContentsLabel: 'On this page',
     },
-    content: {
-      lede: 'I write about robotics, agent systems, and the engineering work behind them.',
-    },
   },
   zh: {
     label: {
@@ -34,9 +28,6 @@ export const blogs: Record<SiteLocale, Blog> = {
       readMoreLabel: '阅读全文',
       emptyLabel: '还没有内容。',
       pageContentsLabel: '本页目录',
-    },
-    content: {
-      lede: '关于机器人、智能体系统与全栈工程的笔记与文章。',
     },
   },
 }

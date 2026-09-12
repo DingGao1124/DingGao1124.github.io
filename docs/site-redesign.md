@@ -2,21 +2,20 @@
 
 ## Purpose
 
-The site is an English-first academic portfolio for prospective PhD supervisors, research laboratories, and technical collaborators. Its content is derived from the current public CV and presents research before industry experience. The existing Simplified Chinese routes remain available at `/zh/`, but their navigation entry stays hidden while the translation is being refined.
+The site is an English-first academic portfolio for prospective PhD supervisors, research laboratories, and technical collaborators. Its content is derived from the current public CV and presents research experience together with industry experience. The existing Simplified Chinese routes remain available at `/zh/`, but their navigation entry stays hidden while the translation is being refined.
 
 The personal introduction uses first person. Research, project, professional, education, and honors records preserve the CV wording instead of rewriting it as personal narrative. Page copy should describe work and results directly; it should not explain what a page or section contains.
 
 ## Information architecture
 
 - **Profile** introduces the research focus, provides dated news, and links to research and selected publications.
-- **Research** groups four research directions and four chronological research experiences.
 - **Publications** separates journal publications from patents and preserves equal-contribution and corresponding-author markers.
 - **Projects** presents five implemented systems with personal contributions, evidence, technology, and replaceable media.
-- **Experience** contains professional roles, education, factual technical skills, and selected honors.
+- **Experience** contains professional roles, four chronological research experiences, education, factual technical skills, and selected honors.
 - **Blog** contains long-form notes on robotics, agent systems, and engineering.
 - **Contact** publishes the email, phone number, external profiles, and latest CV.
 
-Localized content lives in the seven route files at the top level of `src/data/`, with shared news and skills in `src/data/common/`. Each route groups interface text under `label`, body data under `content`, and ungrouped values such as contact details at the route object's top level. `useSiteLocale` selects the active `messages` object, and every route-level component reads only its matching namespace.
+Localized content lives in the route modules under `src/data/`: `profile.ts`, `projects.ts`, `publications.ts`, `blogs.ts`, and `contact.ts` at the top level, the experience record in `src/data/experiences/`, and shared news and skills in `src/data/common/`. Each route groups interface text under `label`, body data under `content`, and ungrouped values such as contact details at the route object's top level. `useSiteLocale` selects the active `messages` object, and every route-level component reads only its matching namespace.
 
 ## Component responsibilities
 
@@ -29,6 +28,7 @@ Localized content lives in the seven route files at the top level of `src/data/`
 - The projects route groups Portfolio work into Robotic & Embodied AI, LLM-Based AI Agents, and Full-Stack AI Projects while preserving the shared timeline entry layout.
 - `CompactRecordList` renders honors as dense year-and-record rows.
 - `ExpandableBulletList` provides the shared disclosure behavior for CV-derived bullet lists.
+- `RainbowButton` ports the MagicUI rainbow button (softened okLCH palette, 2px gradient ring, blurred glow) for the outbound portfolio link.
 - `AcademicMedia` renders the single 16:9 figure or labeled placeholder shared by research, publication, project, and professional-experience entries.
 - `PublicationEntry` renders journal papers as compact figure-and-citation rows and patents as single-column records. Missing paper figures use labeled placeholders.
 
@@ -44,7 +44,7 @@ The signature element is the profile's research systems thread: physical systems
 
 - Replace `public/Avatar.png` in place to update the portrait.
 - Add one project image under `public/projects/<project-id>/` and set the corresponding `media.src` value in `src/data/projects.ts`.
-- Add one research image under `public/research/<research-id>/` and set the corresponding `media.src` value in `src/data/research.ts`.
+- Add one research image under `public/research/<research-id>/` and set the corresponding `media.src` value in `src/data/experiences/research.ts`.
 - Add publication and professional-experience images under their matching public asset folders and set the corresponding `media.src` values in their data files.
 - Existing Tesla, ABB, and Bilibili marks are referenced from `public/company/`. Missing organization marks intentionally fall back to text.
 - Existing LinkedIn and GitHub marks are referenced from `public/media/`. Assets without a confirmed destination are not rendered.
@@ -72,4 +72,4 @@ npm run build
 git diff --check
 ```
 
-Review Profile, Research, Publications, Projects, Experience, and Contact at 375px, 768px, 1280px, and 1440px, plus 200% browser zoom. Check both themes, keyboard navigation, image placeholders, long publication titles, organization marks, DOI links, phone and email links, and the CV view/download actions.
+Review Profile, Publications, Projects, Experience, and Contact at 375px, 768px, 1280px, and 1440px, plus 200% browser zoom. Check both themes, keyboard navigation, image placeholders, long publication titles, organization marks, DOI links, phone and email links, and the CV view/download actions.

@@ -26,16 +26,41 @@ const props = withDefaults(
 const isOpen = shallowRef(false)
 const content = shallowRef<HTMLElement>()
 const hasOverflow = shallowRef(false)
+const contentHeight = shallowRef(0)
+// Height the clamp animates through; cleared once the transition settles so the
+// expanded content is never clipped when it reflows (font swap, window resize).
+const animatedHeight = shallowRef<number>()
 let resizeObserver: ResizeObserver | undefined
 
-const collapsedStyle = computed(() =>
-  hasOverflow.value && !isOpen.value ? { maxHeight: `${props.collapsedHeight}px` } : undefined,
-)
+const clampStyle = computed(() => {
+  if (!hasOverflow.value) return undefined
+  if (animatedHeight.value != null) return { maxHeight: `${animatedHeight.value}px` }
+  return isOpen.value ? undefined : { maxHeight: `${props.collapsedHeight}px` }
+})
 
 function measureOverflow() {
-  hasOverflow.value = Boolean(
-    props.collapsible && content.value && content.value.scrollHeight > props.collapsedHeight + 1,
-  )
+  const element = content.value
+  if (!element) return
+  contentHeight.value = element.scrollHeight
+  hasOverflow.value = Boolean(props.collapsible && element.scrollHeight > props.collapsedHeight + 1)
+}
+
+function startHeightAnimation() {
+  const element = content.value
+  if (!element || !hasOverflow.value) return
+  contentHeight.value = element.scrollHeight
+  animatedHeight.value = contentHeight.value
+  // Collapsing needs a fixed start height first, so the clamp has a value to
+  // transition from on the next frame.
+  if (!isOpen.value) {
+    requestAnimationFrame(() => {
+      animatedHeight.value = props.collapsedHeight
+    })
+  }
+}
+
+function settleHeightAnimation(event: TransitionEvent) {
+  if (event.propertyName === 'max-height') animatedHeight.value = undefined
 }
 
 function bulletKey(item: string, index: number) {
@@ -54,6 +79,8 @@ watch(
   () => [props.summary, props.items, props.collapsedHeight],
   () => void nextTick(measureOverflow),
 )
+
+watch(isOpen, startHeightAnimation)
 </script>
 
 <template>
@@ -61,10 +88,11 @@ watch(
     <div
       ref="content"
       :class="[
-        'relative overflow-hidden',
+        'expandable-content relative overflow-hidden transition-[max-height] duration-300 ease-out',
         hasOverflow && !isOpen && 'expandable-content-collapsed',
       ]"
-      :style="collapsedStyle"
+      :style="clampStyle"
+      @transitionend="settleHeightAnimation"
     >
       <p v-if="summary" class="measure text-sm leading-[1.55] text-card-foreground">
         {{ summary }}
@@ -110,12 +138,18 @@ watch(
 </template>
 
 <style scoped>
-.expandable-content-collapsed::after {
+.expandable-content::after {
   position: absolute;
   inset: auto 0 0;
   height: 3.5rem;
   background: linear-gradient(to bottom, transparent, var(--background));
   pointer-events: none;
   content: '';
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+.expandable-content-collapsed::after {
+  opacity: 1;
 }
 </style>

@@ -3,11 +3,10 @@ import { computed } from 'vue'
 
 import AcademicMedia from '@/components/common/AcademicMedia.vue'
 import CompactRecordList from '@/components/common/CompactRecordList.vue'
-import DefinitionList from '@/components/common/DefinitionList.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
-import TimelineEntry from '@/components/common/TimelineEntry.vue'
+import ExperienceEntry from '@/components/experiences/ExperienceEntry.vue'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
@@ -15,16 +14,10 @@ const { messages } = useSiteLocale()
 const experience = computed(() => messages.value.experience)
 const tocItems = computed(() => [
   { id: 'professional-experience', label: experience.value.label.professionalTitle },
+  { id: 'research-experience', label: experience.value.label.researchTitle },
   { id: 'education', label: experience.value.label.educationTitle },
-  { id: 'skills', label: experience.value.label.skillsTitle },
   { id: 'honors', label: experience.value.label.honorsTitle },
 ])
-const skillItems = computed(() =>
-  experience.value.skills.map((group) => ({
-    term: group.label,
-    detail: group.detail,
-  })),
-)
 
 function educationSummary(item: (typeof experience.value.content.education)[number]) {
   return [
@@ -48,19 +41,15 @@ function educationDetails(item: (typeof experience.value.content.education)[numb
 
 <template>
   <PageShell :toc-items="tocItems" :toc-label="experience.label.pageContentsLabel">
-    <PageHeader
-      :eyebrow="experience.label.eyebrow"
-      :title="experience.label.title"
-      :lede="experience.content.lede"
-    />
+    <PageHeader :eyebrow="experience.label.eyebrow" :title="experience.label.title" />
 
     <Section
       id="professional-experience"
       :title="experience.label.professionalTitle"
-      class="mt-4 md:mt-5"
+      class="mt-6 md:mt-8"
     >
-      <TimelineEntry
-        v-for="item in experience.content.items"
+      <ExperienceEntry
+        v-for="item in experience.content.professional"
         :key="item.id"
         :period="item.period"
         :title="item.organization"
@@ -84,11 +73,30 @@ function educationDetails(item: (typeof experience.value.content.education)[numb
         <template #media>
           <AcademicMedia :media="item.media" />
         </template>
-      </TimelineEntry>
+      </ExperienceEntry>
+    </Section>
+
+    <Section id="research-experience" :title="experience.label.researchTitle" class="mt-10">
+      <ExperienceEntry
+        v-for="item in experience.content.research"
+        :key="item.id"
+        :period="item.period"
+        :title="item.role"
+        :meta="`${item.organization} · ${item.location} · ${experience.label.advisorLabel}: ${item.advisor}`"
+        :summary="item.summary"
+        :highlights="item.highlights"
+        collapsible
+        :show-more-label="experience.label.showMoreLabel"
+        :show-less-label="experience.label.showLessLabel"
+      >
+        <template #media>
+          <AcademicMedia :media="item.media" />
+        </template>
+      </ExperienceEntry>
     </Section>
 
     <Section id="education" :title="experience.label.educationTitle" class="mt-10">
-      <TimelineEntry
+      <ExperienceEntry
         v-for="item in experience.content.education"
         :key="item.school"
         :period="item.period"
@@ -100,10 +108,6 @@ function educationDetails(item: (typeof experience.value.content.education)[numb
         :show-more-label="experience.label.showMoreLabel"
         :show-less-label="experience.label.showLessLabel"
       />
-    </Section>
-
-    <Section id="skills" :title="experience.label.skillsTitle" class="mt-10">
-      <DefinitionList :items="skillItems" />
     </Section>
 
     <Section id="honors" :title="experience.label.honorsTitle" class="mt-10">

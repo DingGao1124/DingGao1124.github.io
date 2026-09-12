@@ -31,13 +31,13 @@ const tocItems = computed(() =>
 
 <template>
   <PageShell :toc-items="tocItems" :toc-label="blogSection.label.pageContentsLabel">
-    <PageHeader
-      :eyebrow="blogSection.label.eyebrow"
-      :title="blogSection.label.title"
-      :lede="blogSection.content.lede"
-    />
+    <PageHeader :eyebrow="blogSection.label.eyebrow" :title="blogSection.label.title">
+      <p>{{ '( ' }}Honsetly, I prefer writing something locally with apps like obsidian,</p>
+      <p>but I'm tyring to migrate some of my notes to here and share my thoughts with you.</p>
+      <p>Looking forward to your feedback soon!{{ ' :)' }}</p>
+    </PageHeader>
 
-    <Section :title="blogSection.label.postsTitle" class="mt-4 md:mt-5">
+    <Section :title="blogSection.label.postsTitle" class="mt-6 md:mt-8">
       <p v-if="posts.length === 0" class="measure text-muted-foreground">
         <span class="inline-flex items-center gap-2">
           <Construction class="size-5" />

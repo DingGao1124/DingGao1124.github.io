@@ -17,7 +17,9 @@ defineProps<{
     <li v-for="item in items" :key="`${item.year}-${item.title}`">
       <Separator />
       <article class="grid gap-1 py-3 sm:grid-cols-[6rem_minmax(0,1fr)] sm:gap-4">
+        <!-- Year -->
         <time class="font-mono text-sm font-medium text-link">{{ item.year }}</time>
+        <!-- Title and detail -->
         <div class="min-w-0">
           <h3 class="text-sm leading-5 font-medium md:text-base">
             {{ item.title }}

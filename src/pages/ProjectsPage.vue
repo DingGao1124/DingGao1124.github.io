@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { ArrowUpRight } from '@lucide/vue'
 
 import AcademicMedia from '@/components/common/AcademicMedia.vue'
+import RainbowButton from '@/components/common/animation/RainbowButton.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
@@ -22,11 +22,7 @@ const tocItems = computed(() =>
 
 <template>
   <PageShell :toc-items="tocItems" :toc-label="projects.label.pageContentsLabel">
-    <PageHeader
-      :eyebrow="projects.label.eyebrow"
-      :title="projects.label.title"
-      :lede="projects.content.lede"
-    />
+    <PageHeader :eyebrow="projects.label.eyebrow" :title="projects.label.title" />
 
     <Section
       v-for="section in projects.content.sections"
@@ -57,15 +53,10 @@ const tocItems = computed(() =>
     </Section>
 
     <div class="mt-8 flex">
-      <a
-        class="link inline-flex items-center gap-1.5 text-sm"
+      <RainbowButton
         :href="projects.content.moreLink.href"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {{ projects.content.moreLink.label }}
-        <ArrowUpRight class="size-4" aria-hidden="true" />
-      </a>
+        :label="projects.content.moreLink.label"
+      />
     </div>
   </PageShell>
 </template>

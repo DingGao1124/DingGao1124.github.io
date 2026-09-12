@@ -14,6 +14,7 @@ const { page } = useData()
 const { locale, messages, path } = useSiteLocale()
 const { isDark, toggle } = useAnimatedThemeToggler()
 
+const header = computed(() => messages.value.header)
 const homePath = computed(() => path('/'))
 const relativePath = computed(() => page.value.relativePath ?? '')
 
@@ -43,15 +44,15 @@ const alternate = computed(() => {
       class="mx-auto flex max-w-content flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-6 md:py-4"
     >
       <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
-        {{ messages.siteName }}
+        {{ header.siteName }}
       </a>
 
       <nav
         class="order-3 w-full overflow-x-auto md:order-2 md:ml-auto md:w-auto"
-        :aria-label="messages.primaryNavigationLabel"
+        :aria-label="header.primaryNavigationLabel"
       >
         <ul class="flex min-w-max items-center gap-5 pb-1 text-sm text-muted-foreground md:pb-0">
-          <li v-for="item in messages.navigation" :key="item.id">
+          <li v-for="item in header.navigation" :key="item.id">
             <a
               :href="path(item.href)"
               :class="
@@ -75,7 +76,7 @@ const alternate = computed(() => {
             <Button
               variant="ghost"
               size="icon-xs"
-              :aria-label="isDark ? messages.switchToLightLabel : messages.switchToDarkLabel"
+              :aria-label="isDark ? header.switchToLightLabel : header.switchToDarkLabel"
               @click="toggle($event)"
             >
               <Sun v-if="isDark" aria-hidden="true" />
@@ -84,7 +85,7 @@ const alternate = computed(() => {
           </TooltipTrigger>
           <TooltipContent>
             <p>
-              {{ isDark ? messages.switchToLightLabel : messages.switchToDarkLabel }}
+              {{ isDark ? header.switchToLightLabel : header.switchToDarkLabel }}
             </p>
           </TooltipContent>
         </Tooltip>
@@ -92,7 +93,7 @@ const alternate = computed(() => {
         <a
           v-show="locale === 'zh'"
           class="font-mono text-xs uppercase tracking-wide text-muted-foreground transition-colors hover:text-foreground"
-          :aria-label="`${messages.switchLanguageLabel}: ${alternate.name}`"
+          :aria-label="`${header.switchLanguageLabel}: ${alternate.name}`"
           :href="alternate.href"
           :lang="locale === 'zh' ? 'en' : 'zh-CN'"
         >

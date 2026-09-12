@@ -21,7 +21,6 @@ export type Contact = {
     pageContentsLabel: string
   }
   content: {
-    lede: string
     cvDescription: string
   }
 }
@@ -67,7 +66,6 @@ export const contact: Record<SiteLocale, Contact> = {
       pageContentsLabel: 'On this page',
     },
     content: {
-      lede: 'I warmly welcome conversations about robotics, embodied and agentic AI, digital twins, and intelligent manufacturing.',
       cvDescription: 'You can view and download my latest CV here.',
     },
   },
@@ -105,7 +103,6 @@ export const contact: Record<SiteLocale, Contact> = {
       pageContentsLabel: '本页目录',
     },
     content: {
-      lede: '如需交流机器人、智能体系统、全栈工程或智能制造相关话题，邮件是最直接的方式。',
       cvDescription: '下载最新版本的个人简历 PDF。',
     },
   },
