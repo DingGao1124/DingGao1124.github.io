@@ -37,6 +37,7 @@ watch(
         class="absolute inset-0 rounded-none bg-primary/20"
         aria-hidden="true"
       />
+      <!-- Picture should be lazy loaded -->
       <img
         v-if="media.src && !failed"
         class="size-full object-cover"
