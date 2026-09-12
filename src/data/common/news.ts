@@ -284,7 +284,7 @@ export const news: Record<SiteLocale, News> = {
     },
     {
       type: 'Milestone',
-      date: '',
+      date: '2025.06',
       text: '2025 年，我们基于 LLM 多智能体系统的具身智能机器人获得第十二届 NVIDIA Sky Hackathon 卓越奖（全国第二名）。',
       href: '',
       linkLabel: '查看我们的工作。',
@@ -333,14 +333,14 @@ export const news: Record<SiteLocale, News> = {
     },
     {
       type: 'Milestone',
-      date: '',
+      date: '2023.06',
       text: '2023 年，我获得优秀毕业生荣誉。',
       href: '',
       linkLabel: '查看奖项。',
     },
     {
       type: 'Update',
-      date: '',
+      date: '2022.10 - 2023.05',
       text: '我在 2022 年和 2023 年获评校三好学生。',
       href: '',
       linkLabel: '查看奖项。',
@@ -392,7 +392,7 @@ export const news: Record<SiteLocale, News> = {
     {
       type: 'Milestone',
       date: '2021.11',
-      text: '我们的移动起重机器人获得第六届全国大学生移动起重机器人竞赛全国一等奖。',
+      text: '我们的移动起重机器人获得第六届全国大学生起重机创意大赛全国一等奖。',
       href: 'https://njit.edu.cn/info/1042/17898.htm',
       linkLabel: '查看我们的工作。',
     },

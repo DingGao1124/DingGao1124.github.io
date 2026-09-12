@@ -5,7 +5,6 @@ export type Skill = {
 
 export type SkillGroup = {
   label: string
-  detail: string
   showInProfile: boolean
   skills: Skill[]
 }
@@ -16,7 +15,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
   en: [
     {
       label: 'Programming',
-      detail: 'Python, JavaScript/TypeScript; familiar with C, C++, C#, and MATLAB.',
       showInProfile: true,
       skills: [
         { label: 'Python', value: 84 },
@@ -28,8 +26,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: 'Hardware Development',
-      detail:
-        'STM32/8051, Keil MDK, Proteus, AutoCAD, SolidWorks, and UG NX; familiar with ANSYS and Pro/ENGINEER.',
       showInProfile: true,
       skills: [
         { label: 'SolidWorks / UG NX', value: 78 },
@@ -41,7 +37,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: 'Software Development',
-      detail: 'Git, React, Angular, Vue, Next.js, NestJS, Docker, Kubernetes, and Jenkins.',
       showInProfile: true,
       skills: [
         { label: 'React / Vue / Angular', value: 80 },
@@ -53,8 +48,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: 'Embodied & Agentic AI',
-      detail:
-        'LLM/VLM-based agents, Multi-Agent System, RAG, LangChain, LangGraph, Deep Agents, FastSAM, GraspNet.',
       showInProfile: true,
       skills: [
         { label: 'Multi-Agent Systems', value: 88 },
@@ -66,8 +59,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: 'Robotics & Automation',
-      detail:
-        'Robot task planning and grasping, UR and ABB robot integration, RAPID/RWS, multi-actuator control, CAN bus.',
       showInProfile: true,
       skills: [
         { label: 'Task planning / Grasping', value: 82 },
@@ -79,7 +70,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: 'English',
-      detail: 'IELTS 7.0 (Listening 7.5, Reading 8.0, Writing 6.0, Speaking 6.0).',
       showInProfile: false,
       skills: [{ label: 'IELTS 7.0', value: 78 }],
     },
@@ -87,7 +77,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
   zh: [
     {
       label: '机器人与自动化',
-      detail: '机器人任务规划与抓取、UR 与 ABB 机器人集成、RAPID/RWS、多执行器控制和 CAN 总线。',
       showInProfile: true,
       skills: [
         { label: '任务规划', value: 82 },
@@ -98,8 +87,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: '具身智能与智能体 AI',
-      detail:
-        '基于 LLM/VLM 的智能体、多智能体协同、RAG、MCP、LangChain、LangGraph、Deep Agents、FastSAM 和 GraspNet。',
       showInProfile: true,
       skills: [
         { label: 'LLM / VLM 智能体', value: 82 },
@@ -110,7 +97,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: '编程语言',
-      detail: 'Python、JavaScript/TypeScript；熟悉 C、C++、C# 和 MATLAB。',
       showInProfile: true,
       skills: [
         { label: 'Python', value: 84 },
@@ -122,7 +108,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: '软件开发',
-      detail: 'Git、React、Angular、Vue、Next.js、NestJS、Docker、Kubernetes 和 Jenkins。',
       showInProfile: true,
       skills: [
         { label: 'React / Vue / Angular', value: 80 },
@@ -134,8 +119,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: '嵌入式系统与 CAD',
-      detail:
-        'STM32/8051、Keil MDK、Proteus、AutoCAD、SolidWorks 和 UG NX；熟悉 ANSYS 与 Pro/ENGINEER。',
       showInProfile: true,
       skills: [
         { label: 'STM32 / 8051', value: 78 },
@@ -146,7 +129,6 @@ export const techTopics: Record<SiteLocale, TechTopics> = {
     },
     {
       label: '英语',
-      detail: 'IELTS 7.0（听力 7.5、阅读 8.0、写作 6.0、口语 6.0）。',
       showInProfile: false,
       skills: [{ label: 'IELTS 7.0', value: 78 }],
     },

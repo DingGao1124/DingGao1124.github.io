@@ -4,7 +4,7 @@ description: Robotics and automation researcher working on embodied AI, robot pe
 ---
 
 <script setup lang="ts">
-import HomePage from "@/pages/HomePage.vue"
+import HomePage from "@/pages/home/index.vue"
 </script>
 
 <HomePage />

@@ -4,7 +4,7 @@ description: 涵盖研究、机器人、硬件与软件的代表性工作，从�
 ---
 
 <script setup lang="ts">
-import ProjectsPage from "@/pages/ProjectsPage.vue"
+import ProjectsPage from "@/pages/projects/index.vue"
 </script>
 
 <ProjectsPage />

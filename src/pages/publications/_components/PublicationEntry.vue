@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { ArrowUpRight } from '@lucide/vue'
 
-import AcademicMedia from '@/components/common/AcademicMedia.vue'
+import Media from '@/components/common/Media.vue'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -101,7 +101,7 @@ function isDingGao(author: string) {
 
       <!-- Right Part -->
       <div class="min-w-0 self-start md:col-start-2 lg:col-start-3 lg:row-start-1">
-        <AcademicMedia :media="publication.media" />
+        <Media :media="publication.media" />
       </div>
     </article>
   </li>

@@ -4,7 +4,7 @@ description: 关于数字孪生、LLM 驱动的多智能体系统与人机协作
 ---
 
 <script setup lang="ts">
-import PublicationsPage from "@/pages/PublicationsPage.vue"
+import PublicationsPage from "@/pages/publications/index.vue"
 </script>
 
 <PublicationsPage />

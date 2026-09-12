@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import AcademicMedia from '@/components/common/AcademicMedia.vue'
+import Media from '@/components/common/Media.vue'
 import RainbowButton from '@/components/common/animation/RainbowButton.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
-import ProjectsEntry from '@/components/projects/ProjectsEntry.vue'
+import ProjectsEntry from '@/pages/projects/_components/ProjectsEntry.vue'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
 
 const { messages } = useSiteLocale()
@@ -46,7 +46,7 @@ const tocItems = computed(() =>
           :show-less-label="projects.label.showLessLabel"
         >
           <template #media>
-            <AcademicMedia :media="project.media" />
+            <Media :media="project.media" />
           </template>
         </ProjectsEntry>
       </template>

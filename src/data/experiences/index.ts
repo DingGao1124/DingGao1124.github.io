@@ -10,14 +10,13 @@ export type Experience = {
     professionalTitle: string
     researchTitle: string
     educationTitle: string
-    skillsTitle: string
     honorsTitle: string
     gpaLabel: string
     rankLabel: string
-    awardsLabel: string
-    competitionsLabel: string
     thesisLabel: string
     advisorLabel: string
+    departmentLabel: string
+    roleLabel: string
     pageContentsLabel: string
     showMoreLabel: string
     showLessLabel: string
@@ -35,17 +34,16 @@ export const experiences: Record<SiteLocale, Experience> = {
     label: {
       eyebrow: 'Experience',
       title: 'Experience',
-      professionalTitle: 'Professional experience',
-      researchTitle: 'Research experience',
+      professionalTitle: 'Work/Intern Experience',
+      researchTitle: 'Research Experience',
       educationTitle: 'Education',
-      skillsTitle: 'Professional skills',
       honorsTitle: 'Selected honors',
       gpaLabel: 'GPA',
       rankLabel: 'Major rank',
-      awardsLabel: 'Awards',
-      competitionsLabel: 'Competitions',
       thesisLabel: 'Thesis',
       advisorLabel: 'Advisor',
+      departmentLabel: 'Department',
+      roleLabel: 'Role',
       pageContentsLabel: 'On this page',
       showMoreLabel: 'Show more',
       showLessLabel: 'Show less',
@@ -64,14 +62,13 @@ export const experiences: Record<SiteLocale, Experience> = {
       professionalTitle: '行业经历',
       researchTitle: '研究经历',
       educationTitle: '教育背景',
-      skillsTitle: '专业技能',
       honorsTitle: '荣誉与竞赛',
       gpaLabel: 'GPA',
       rankLabel: '专业排名',
-      awardsLabel: '奖项',
-      competitionsLabel: '竞赛',
       thesisLabel: '毕业设计',
       advisorLabel: '导师',
+      departmentLabel: '部门',
+      roleLabel: '职位',
       pageContentsLabel: '本页目录',
       showMoreLabel: '展开',
       showLessLabel: '收起',

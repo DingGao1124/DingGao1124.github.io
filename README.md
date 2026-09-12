@@ -44,13 +44,13 @@ npm run preview
 ├── .vitepress/              # VitePress 配置与全局布局
 ├── site/                    # Markdown 页面入口（按语言/路由组织）
 ├── src/api/                 # 预留的 API 层
-├── src/components/          # 业务组件（site/ 复用原语，projects/ 等按功能拆分）
+├── src/components/          # 跨页面复用的通用组件（common/、layout/）
 ├── src/components/ui/       # shadcn-vue 组件源码
 ├── src/data/                # 按分类组织的结构化内容与类型（中英文在同一文件）
 ├── src/hooks/               # 组合式函数（语言、内容选择）
 ├── src/i18n/                # 界面文案资源
 ├── src/lib/                 # 通用工具
-├── src/pages/               # 各路由页面视图
+├── src/pages/               # 各路由页面视图（含私有组件的页面用 <page>/index.vue + _components/）
 ├── src/styles/              # 全局样式与主题变量
 ├── src/types/               # 类型定义
 ├── src/utils/               # 工具函数

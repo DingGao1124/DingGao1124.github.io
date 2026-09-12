@@ -2,13 +2,14 @@
 
 ## 2026-09-12
 
-- Projects: replaced the plain portfolio link with a ported MagicUI RainbowButton on a softened palette.
-- Data: split the experience record into one file per content group under `src/data/experiences/` (professional, research, education, honors), with each group's type defined beside its data.
-- Experience: merged the Research page into the Experience page as a Research experience section and removed the Research route and navigation entry.
-- Home: removed page contents entries that pointed at commented-out sections.
-- Docs: updated the i18n and redesign notes for the merged research and experience record.
-- Docs: added brief region comments to the component templates.
-- Motion: added a height transition to the Show more / Show less toggle with a fading gradient overlay.
+- Experience: rebuilt record headers with logo, name, location, department, and role.
+- Experience: added university crests, trimmed education entries, and sorted Selected honors with category marks.
+- Data: re-checked the experience and news records against the CV.
+- Home: smoothed the Recent Events expand and collapse motion for long timelines.
+- Experience: merged the Research page into the Experience page, with the record split into per-group files under `src/data/experiences/`.
+- Home: rebuilt the lower page as compact publication and work/internship lists with view-all links, company logos, venue abbreviations, and the current Bilibili AI Agent Engineer role.
+- Home: moved the publication and work/internship records into the profile data so the home page no longer reads other pages.
+- Structure: moved Home, Experience, Projects, and Publications into `src/pages/<page>/` with their private components under `_components/`, leaving shared blocks in `src/components/`.
 
 ## 2026-09-11
 

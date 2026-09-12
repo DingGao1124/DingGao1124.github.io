@@ -4,7 +4,7 @@ description: Systems built by Ding Gao across digital twins, embodied robotics, 
 ---
 
 <script setup lang="ts">
-import ProjectsPage from "@/pages/ProjectsPage.vue"
+import ProjectsPage from "@/pages/projects/index.vue"
 </script>
 
 <ProjectsPage />

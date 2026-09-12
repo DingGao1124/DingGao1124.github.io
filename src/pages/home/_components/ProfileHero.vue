@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
 import type { ProfileLink } from '@/data/profile'
 import type { SkillGroup } from '@/data/common/skills'
-import TechCarousel from '@/components/home/TechCarousel.vue'
+import TechCarousel from '@/pages/home/_components/TechCarousel.vue'
 
 defineProps<{
   eyebrow: string
@@ -69,6 +69,7 @@ defineProps<{
         </li>
       </ol>
 
+      <!-- Phone and Email -->
       <div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
         <Button as="a" variant="outline" size="sm" :href="phoneHref">
           <Phone data-icon="inline-start" aria-hidden="true" />
@@ -84,6 +85,7 @@ defineProps<{
         </Button>
       </div>
 
+      <!-- Social Media -->
       <ul class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
         <li v-for="link in links" :key="link.href">
           <a

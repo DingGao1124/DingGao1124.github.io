@@ -117,7 +117,7 @@ Motion should be minimal and functional only.
 
 ## Documentation & Change Logs
 
-- `CHANGELOG.md` (project root): one short line in English per change, in `Title: Detail` format — no implementation details.
+- `CHANGELOG.md` (project root): significant changes only — one short line in English in `Title: Detail` format, no implementation details. Small fixes, refactors, and polish don't get an entry.
 - `docs/`: write a full technical doc for new technical implementations or major updates.
 
 ---

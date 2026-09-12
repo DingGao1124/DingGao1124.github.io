@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import PublicationEntry from '@/components/publications/PublicationEntry.vue'
+import PublicationEntry from '@/pages/publications/_components/PublicationEntry.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'

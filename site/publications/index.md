@@ -4,7 +4,7 @@ description: Publications and patents by Ding Gao in digital twins, cognitive ag
 ---
 
 <script setup lang="ts">
-import PublicationsPage from "@/pages/PublicationsPage.vue"
+import PublicationsPage from "@/pages/publications/index.vue"
 </script>
 
 <PublicationsPage />

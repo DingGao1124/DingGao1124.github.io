@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 105" width="70" height="105" role="img" aria-label="Caerulean AI">
+  <path fill="#f8d75e" d="M35 0V35H0A35 35 0 0 1 35 0Z" />
+  <path fill="#ed72f8" d="M35 0H52.5A17.5 17.5 0 0 1 70 17.5A17.5 17.5 0 0 1 52.5 35H35Z" />
+  <path fill="#48a0f8" d="M0 35H35V70H0Z" />
+  <path fill="#2e6ccd" d="M0 70H35V105A35 35 0 0 1 0 70Z" />
+  <path fill="#6eed89" d="M35 70H52.5A17.5 17.5 0 0 1 70 87.5A17.5 17.5 0 0 1 52.5 105H35Z" />
+</svg>

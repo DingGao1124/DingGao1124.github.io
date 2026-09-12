@@ -275,7 +275,7 @@ export const projects: Record<SiteLocale, Projects> = {
         },
       ],
       moreLink: {
-        label: 'View more projects on my portfolio',
+        label: 'View more of my projects',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
       },
     },

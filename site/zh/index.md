@@ -4,7 +4,7 @@ description: 全栈工程师与机器人研究者，关注智能制造、数字�
 ---
 
 <script setup lang="ts">
-import HomePage from "@/pages/HomePage.vue"
+import HomePage from "@/pages/home/index.vue"
 </script>
 
 <HomePage />

@@ -95,7 +95,7 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
     {
       id: 'digital-twin-agents',
       organization: '东华大学',
-      role: '基于 LLM 的柔性制造自动化数字孪生研究',
+      role: '研究生科研 · 基于 LLM 的柔性制造自动化数字孪生研究',
       period: '2023.09-2026.06',
       location: '上海',
       advisor: '包劲松 教授',
@@ -110,7 +110,7 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
     {
       id: 'industrial-disassembly',
       organization: '东华大学',
-      role: '工业拆卸具身智能机器人系统',
+      role: '研究助理 · 工业拆卸具身智能机器人系统',
       period: '2025.04-2025.06',
       location: '上海',
       advisor: '司家辉 博士',
@@ -125,7 +125,7 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
     {
       id: 'ball-screw-platform',
       organization: '南京工程学院',
-      role: '三自由度滚珠丝杠缺陷检测平台',
+      role: '本科毕业设计 · 三自由度滚珠丝杠缺陷检测平台',
       period: '2023.01-2023.06',
       location: '南京',
       advisor: '郝飞 副教授',
@@ -139,7 +139,7 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
     {
       id: 'mobile-crane-robot',
       organization: '南京工程学院',
-      role: '全国大学生移动起重机器人竞赛',
+      role: '机器人竞赛 · 全国大学生起重机创意大赛',
       period: '2022.02-2022.11',
       location: '南京',
       advisor: '郝飞 副教授',

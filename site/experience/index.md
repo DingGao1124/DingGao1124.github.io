@@ -4,7 +4,7 @@ description: Ding Gao's research-oriented software experience, education, techni
 ---
 
 <script setup lang="ts">
-import ExperiencePage from "@/pages/ExperiencePage.vue"
+import ExperiencePage from "@/pages/experience/index.vue"
 </script>
 
 <ExperiencePage />

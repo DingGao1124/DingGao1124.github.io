@@ -19,34 +19,27 @@ type Identity = {
   researchKeywords: string[]
 }
 
-type ResearchArea = {
-  title: string
-  description: string
-}
-
-type HomePublication = {
+export type HomePublication = {
   id: string
-  type: 'journal'
   title: string
-  authors: {
+  venue: {
     name: string
-    equalContribution?: boolean
-    correspondingAuthor?: boolean
-  }[]
-  venue: string
+    abbreviation?: string
+  }
   year: string
-  volume: string
-  pages: string
   identifier: string
   links: {
-    label: string
     href: string
   }[]
-  media: {
-    src?: string
-    alt: string
-    label: string
-  }
+}
+
+export type HomeExperience = {
+  id: string
+  organization: string
+  role: string
+  period: string
+  logoSrc?: string
+  logoSize?: number
 }
 
 export type Profile = {
@@ -64,9 +57,12 @@ export type Profile = {
     techTitle: string
     aboutTitle: string
     newsTitle: string
-    focusTitle: string
-    publicationsTitle: string
+    publicationTitle: string
+    experienceTitle: string
+    acknowledgementsTitle: string
     viewAll: string
+    showMoreLabel: string
+    showLessLabel: string
     emailLabel: string
     phoneLabel: string
     viewCvLabel: string
@@ -74,9 +70,8 @@ export type Profile = {
   }
   content: {
     news: NewsItem[]
-    researchAreas: ResearchArea[]
     publications: HomePublication[]
-    summaryTags: string[]
+    experiences: HomeExperience[]
   }
 }
 
@@ -93,8 +88,8 @@ export const profile: Record<SiteLocale, Profile> = {
     techGroups: techTopics['en'],
     identity: {
       name: 'Ding Gao',
-      headline: 'Full-Stack Engineer & Robotics Researcher',
-      currentPosition: 'Software Engineer at',
+      headline: 'AI Agent Engineer & Robotics Researcher',
+      currentPosition: 'AI Agent Engineer at',
       employer: {
         label: '@bilibili',
         href: 'https://github.com/bilibili',
@@ -103,7 +98,7 @@ export const profile: Record<SiteLocale, Profile> = {
       location: 'Shanghai, China',
       avatarAlt: 'Profile avatar of Ding Gao',
       intro: [
-        'Hi there👋, my name is Ding Gao. I am a full-stack engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
+        'Hi there👋, my name is Ding Gao. I am an AI agent engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
         'I am interested in how robots can perceive, reason, and act reliably in real-world environments. My recent work explores LLM-enabled flexible manufacturing, multimodal industrial disassembly, and task-planning agents for robot automation.',
       ],
       researchKeywords: [
@@ -142,9 +137,12 @@ export const profile: Record<SiteLocale, Profile> = {
       techTitle: 'Tech proficiency',
       aboutTitle: 'About Me',
       newsTitle: 'Recent Events',
-      focusTitle: 'Research focus',
-      publicationsTitle: 'Selected publications',
+      publicationTitle: 'Recent Publications',
+      experienceTitle: 'Work/Intern Experience',
+      acknowledgementsTitle: 'Acknowledgements',
       viewAll: 'View all',
+      showMoreLabel: 'Show more',
+      showLessLabel: 'Show less',
       emailLabel: 'Email',
       phoneLabel: 'Phone',
       viewCvLabel: 'View CV',
@@ -152,100 +150,77 @@ export const profile: Record<SiteLocale, Profile> = {
     },
     content: {
       news: news['en'],
-      researchAreas: [
-        {
-          title: 'Robotics & Embodied AI',
-          description:
-            'I build intelligent systems that connect perception and reasoning to reliable action in the physical world.',
-        },
-        {
-          title: 'Robot Perception, Planning & Control',
-          description:
-            'I combine vision-language models, segmentation, point-cloud grasping, and task planning in closed-loop robot systems.',
-        },
-        {
-          title: 'Human-Robot Collaboration',
-          description:
-            'I study voice interaction, augmented reality, and industrial disassembly as settings for safer and more effective collaboration.',
-        },
-        {
-          title: 'Digital Twins & Cyber-Physical Manufacturing',
-          description:
-            'I model the knowledge, behavior, and geometry of flexible production systems and connect agent reasoning to live production state.',
-        },
-      ],
       publications: [
         {
           id: 'self-evolving-digital-twins',
-          type: 'journal',
           title:
             'Self-evolving digital twins in flexible manufacturing: A large language model-powered multi-agent approach',
-          authors: [
-            { name: 'Ding Gao', equalContribution: true },
-            { name: 'Xiaojian Wen', equalContribution: true },
-            { name: 'Jianhao Lv', equalContribution: true },
-            { name: 'Jiahui Si' },
-            { name: 'Cong Wang' },
-            { name: 'Jinsong Bao', correspondingAuthor: true },
-          ],
-          venue: 'Digital Engineering',
+          venue: { name: 'Digital Engineering', abbreviation: 'DE' },
           year: '2026',
-          volume: '10',
-          pages: '100099',
           identifier: '10.1016/j.dte.2026.100099',
-          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
-          media: {
-            alt: 'Placeholder for the digital-twin multi-agent architecture figure',
-            label: 'Digital-twin agent architecture',
-          },
+          links: [{ href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
         },
         {
           id: 'multi-cognitive-agent',
-          type: 'journal',
           title:
             'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly',
-          authors: [
-            { name: 'Jianhao Lv', equalContribution: true },
-            { name: 'Jiahui Si', equalContribution: true },
-            { name: 'Wenchao Li', equalContribution: true },
-            { name: 'Ding Gao', equalContribution: true },
-            { name: 'Jinsong Bao', correspondingAuthor: true },
-          ],
-          venue: 'Robotics and Computer-Integrated Manufacturing',
+          venue: { name: 'Robotics and Computer-Integrated Manufacturing', abbreviation: 'RCIM' },
           year: '2026',
-          volume: '99',
-          pages: '103207',
           identifier: '10.1016/j.rcim.2025.103207',
-          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
-          media: {
-            alt: 'Placeholder for the single-robot multi-cognitive agent system figure',
-            label: 'Multi-cognitive agent system',
-          },
+          links: [{ href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
         },
         {
           id: 'historical-vqa',
-          type: 'journal',
           title:
             'Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration',
-          authors: [
-            { name: 'Jianhao Lv', equalContribution: true },
-            { name: 'Jiahui Si', equalContribution: true },
-            { name: 'Ding Gao', equalContribution: true },
-            { name: 'Jinsong Bao', correspondingAuthor: true },
-          ],
-          venue: 'Journal of Manufacturing Systems',
+          venue: { name: 'Journal of Manufacturing Systems', abbreviation: 'JMS' },
           year: '2025',
-          volume: '83',
-          pages: '546-556',
           identifier: '10.1016/j.jmsy.2025.10.005',
-          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
-          media: {
-            alt: 'Placeholder for the AR-assisted human-robot collaboration workflow figure',
-            label: 'AR-assisted HRC workflow',
-          },
+          links: [{ href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
         },
       ],
-      summaryTags: ['Digital Twins', 'LLM Agents', 'Embodied AI', 'Robotics', 'Full-Stack'],
+      experiences: [
+        {
+          id: 'bilibili-agent-engineer',
+          organization: 'Bilibili',
+          role: 'AI Agent Engineer',
+          period: 'Jul 2026 - Present',
+          logoSrc: '/company/bilibili.svg',
+          logoSize: 7,
+        },
+        {
+          id: 'tesla',
+          organization: 'Tesla Gigafactory',
+          role: 'Full-Stack Development Intern · R&D Department',
+          period: 'Sep 2025 - Jan 2026',
+          logoSrc: '/company/tesla.svg',
+          logoSize: 5,
+        },
+        {
+          id: 'abb',
+          organization: 'ABB Robot Super Factory',
+          role: 'Software Development Intern · Robotics Application Software · R&D Department',
+          period: 'Jul 2025 - Sep 2025',
+          logoSrc: '/company/abb.svg',
+          logoSize: 6,
+        },
+        {
+          id: 'bilibili',
+          organization: 'Bilibili',
+          role: 'Software Development Intern',
+          period: 'Jun 2025 - Jul 2025',
+          logoSrc: '/company/bilibili.svg',
+          logoSize: 7,
+        },
+        {
+          id: 'caerulean',
+          organization: 'Caerulean AI Inc.',
+          role: 'Full-Stack Developer Intern (Remote)',
+          period: 'Dec 2024 - Apr 2025',
+          logoSrc: '/company/caerulean-ai.svg',
+          logoSize: 4,
+        },
+      ],
     },
   },
   zh: {
@@ -258,7 +233,7 @@ export const profile: Record<SiteLocale, Profile> = {
     identity: {
       name: '高鼎',
       headline: '全栈工程师与机器人研究者',
-      currentPosition: '软件工程师，就职于',
+      currentPosition: 'AI Agent 开发工程师，就职于',
       employer: {
         label: '@哔哩哔哩',
         href: 'https://github.com/bilibili',
@@ -295,9 +270,12 @@ export const profile: Record<SiteLocale, Profile> = {
       techTitle: '技术熟练度',
       aboutTitle: '关于我',
       newsTitle: '动态',
-      focusTitle: '研究方向',
-      publicationsTitle: '代表论文',
+      publicationTitle: '相关论文',
+      experienceTitle: '工作/实习经历',
+      acknowledgementsTitle: '致谢',
       viewAll: '查看全部',
+      showMoreLabel: '展开',
+      showLessLabel: '收起',
       emailLabel: '发送邮件',
       phoneLabel: '电话',
       viewCvLabel: '预览简历',
@@ -305,96 +283,76 @@ export const profile: Record<SiteLocale, Profile> = {
     },
     content: {
       news: news['zh'],
-      researchAreas: [
-        {
-          title: '机器人与具身智能',
-          description: '让智能体通过可靠的感知、推理与执行连接真实物理系统。',
-        },
-        {
-          title: '机器人感知、规划与控制',
-          description: '结合视觉语言模型、图像分割、点云抓取和任务规划构建机器人闭环系统。',
-        },
-        {
-          title: '人机协作',
-          description: '研究语音交互、增强现实和工业拆卸场景中的协作效率与执行可靠性。',
-        },
-        {
-          title: '数字孪生与信息物理制造系统',
-          description: '使用知识、行为与几何模型表达柔性产线，并将智能体推理连接到生产状态。',
-        },
-      ],
       publications: [
         {
           id: 'self-evolving-digital-twins',
-          type: 'journal',
           title:
             'Self-evolving digital twins in flexible manufacturing: A large language model-powered multi-agent approach',
-          authors: [
-            { name: 'Ding Gao', equalContribution: true },
-            { name: 'Xiaojian Wen', equalContribution: true },
-            { name: 'Jianhao Lv', equalContribution: true },
-            { name: 'Jiahui Si' },
-            { name: 'Cong Wang' },
-            { name: 'Jinsong Bao', correspondingAuthor: true },
-          ],
-          venue: 'Digital Engineering',
+          venue: { name: 'Digital Engineering', abbreviation: 'DE' },
           year: '2026',
-          volume: '10',
-          pages: '100099',
           identifier: '10.1016/j.dte.2026.100099',
-          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
-          media: {
-            alt: '数字孪生多智能体架构论文配图占位',
-            label: 'Digital-twin agent architecture',
-          },
+          links: [{ href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
         },
         {
           id: 'multi-cognitive-agent',
-          type: 'journal',
           title:
             'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human-robot collaborative disassembly',
-          authors: [
-            { name: 'Jianhao Lv', equalContribution: true },
-            { name: 'Jiahui Si', equalContribution: true },
-            { name: 'Wenchao Li', equalContribution: true },
-            { name: 'Ding Gao', equalContribution: true },
-            { name: 'Jinsong Bao', correspondingAuthor: true },
-          ],
-          venue: 'Robotics and Computer-Integrated Manufacturing',
+          venue: { name: 'Robotics and Computer-Integrated Manufacturing', abbreviation: 'RCIM' },
           year: '2026',
-          volume: '99',
-          pages: '103207',
           identifier: '10.1016/j.rcim.2025.103207',
-          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
-          media: {
-            alt: '单机器人多认知智能体系统论文配图占位',
-            label: 'Multi-cognitive agent system',
-          },
+          links: [{ href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
         },
         {
           id: 'historical-vqa',
-          type: 'journal',
           title:
             'Historical visual question answering with large language model for Augmented Reality-assisted Human-Robot Collaboration',
-          authors: [
-            { name: 'Jianhao Lv', equalContribution: true },
-            { name: 'Jiahui Si', equalContribution: true },
-            { name: 'Ding Gao', equalContribution: true },
-            { name: 'Jinsong Bao', correspondingAuthor: true },
-          ],
-          venue: 'Journal of Manufacturing Systems',
+          venue: { name: 'Journal of Manufacturing Systems', abbreviation: 'JMS' },
           year: '2025',
-          volume: '83',
-          pages: '546-556',
           identifier: '10.1016/j.jmsy.2025.10.005',
-          links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
-          media: {
-            alt: '增强现实人机协作论文配图占位',
-            label: 'AR-assisted HRC workflow',
-          },
+          links: [{ href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
         },
       ],
-      summaryTags: ['数字孪生', 'LLM 智能体', '具身智能', '机器人', '全栈开发'],
+      experiences: [
+        {
+          id: 'bilibili-agent-engineer',
+          organization: 'Bilibili',
+          role: 'AI Agent 开发工程师',
+          period: '2026.07-至今',
+          logoSrc: '/company/bilibili.svg',
+          logoSize: 8,
+        },
+        {
+          id: 'tesla',
+          organization: 'Tesla Gigafactory',
+          role: '全栈开发实习生 · 研发部门',
+          period: '2025.09-2026.01',
+          logoSrc: '/company/tesla.svg',
+        },
+        {
+          id: 'abb',
+          organization: 'ABB Robot Super Factory',
+          role: '机器人应用软件开发实习生 · 研发部门',
+          period: '2025.07-2025.09',
+          logoSrc: '/company/abb.svg',
+          logoSize: 6,
+        },
+        {
+          id: 'bilibili',
+          organization: 'Bilibili',
+          role: '软件开发实习生',
+          period: '2025.06-2025.07',
+          logoSrc: '/company/bilibili.svg',
+          logoSize: 8,
+        },
+        {
+          id: 'caerulean',
+          organization: 'Caerulean AI Inc.',
+          role: '全栈开发实习生（远程）',
+          period: '2024.12-2025.04',
+          logoSrc: '/company/caerulean-ai.svg',
+          logoSize: 3,
+        },
+      ],
     },
   },
 }

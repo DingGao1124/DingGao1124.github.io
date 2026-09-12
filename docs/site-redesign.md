@@ -24,7 +24,7 @@ Localized content lives in the route modules under `src/data/`: `profile.ts`, `p
 - `NewsList` renders short dated updates and optional source links.
 - `PageShell` reserves the desktop column for in-page navigation.
 - `PageToc` tracks the active section while keeping every section label at equal opacity.
-- `TimelineEntry` renders chronological research, projects, education, and professional experience. When the complete summary and bullet list exceeds its preview height, the lower text fades toward a ruled Show more / Show less control; project entries use a compact preview aligned with their 16:9 media.
+- `TimelineEntry` renders chronological research, projects, education, and work/intern experience. When the complete summary and bullet list exceeds its preview height, the lower text fades toward a ruled Show more / Show less control; project entries use a compact preview aligned with their 16:9 media.
 - The projects route groups Portfolio work into Robotic & Embodied AI, LLM-Based AI Agents, and Full-Stack AI Projects while preserving the shared timeline entry layout.
 - `CompactRecordList` renders honors as dense year-and-record rows.
 - `ExpandableBulletList` provides the shared disclosure behavior for CV-derived bullet lists.
