@@ -7,6 +7,7 @@ type ProjectMedia = {
   src?: string
   alt: string
   label: string
+  ratio?: number
 }
 
 type ProjectItem = {
@@ -53,30 +54,24 @@ export const projects: Record<SiteLocale, Projects> = {
       sections: [
         {
           id: 'robotic-embodied-ai',
-          title: 'Robotic & Embodied AI',
+          title: 'Robotics & Embodied AI',
           items: [
             {
-              id: 'mobile-crane-robot',
-              title: 'STM32 Autonomous Mobile Crane Robot',
-              period: 'Feb 2022-Nov 2022',
+              id: 'abb-gofa-agent',
+              title: 'Natural-Language Task Planner for ABB GoFa Robot',
+              period: 'Jul 2025-Sep 2025',
               description:
-                'Built a competition robot that autonomously transported and placed objects along designated routes.',
+                'Built an LLM planner that turns natural-language instructions into consecutive and executable operations for an ABB GoFa robot.',
               highlights: [
-                'Designed the mechanical structure and integrated sensing, actuation, and control.',
-                'Coordinated DC motors, encoder motors, servos, and robotic arms through an STM32 controller and CAN bus.',
-                'Added a dynamic shortest-path algorithm and moved from one to three motors, cutting operation time from 4 min 32 s to 3 min 15 s.',
-                'This project received the National First Place Award.',
+                'Decomposes instructions into multi-step task lists and coordinates parallel robot operations with execution-status tracking.',
+                'Built an MCP server over Robot Web Services and RAPID for equipment queries, motion, picking, placing, and tool-call feedback.',
+                'Added execution-failure handling and short-term context so the planner can recover and continue the workflow.',
               ],
-              tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical'],
-              links: [
-                {
-                  label: 'Video',
-                  href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/',
-                },
-              ],
+              tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'Task Planning', 'ABB GoFa'],
               media: {
-                alt: 'Placeholder for the STM32 autonomous mobile crane robot',
-                label: 'Mobile crane robot',
+                src: '/projects/robotics/abb_gofa_agent.jpg',
+                alt: 'Placeholder for the ABB GoFa natural-language task planner',
+                label: 'ABB GoFa task planner',
               },
             },
             {
@@ -89,9 +84,9 @@ export const projects: Record<SiteLocale, Projects> = {
                 'Converted spoken requests into real-time task plans, tool selections, and robot actions through a LangGraph agent.',
                 'Combined FastSAM and vision-language models for scene understanding with Strategy of Mind prompting and GraspNet for grasp planning.',
                 'Exposed UR robot actions through MCP tools for collision-free pickup and delivery.',
-                'This project received the Excellence Award (National Second Place).',
+                'Our project received the Excellence Award (National Second Place).',
               ],
-              tech: ['LangGraph', 'VLM', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
+              tech: ['LangGraph', 'VLA', 'FastSAM', 'GraspNet', 'MCP', 'UR Robot'],
               links: [
                 { label: 'Video', href: 'https://www.bilibili.com/video/BV1sRj3zAEXG' },
                 {
@@ -104,25 +99,34 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/robotics/ur5_grasping_robot.jpg',
                 alt: 'Placeholder for the voice-guided embodied AI grasping robot',
                 label: 'Embodied grasping robot',
               },
             },
             {
-              id: 'abb-gofa-agent',
-              title: 'Natural-Language Task Planner for ABB GoFa',
-              period: 'Jul 2025-Sep 2025',
+              id: 'mobile-crane-robot',
+              title: 'Autonomous Mobile Crane Robot for Object Transportation',
+              period: 'Feb 2022-Nov 2022',
               description:
-                'Built an LLM planner that turns natural-language instructions into executable operations for an ABB GoFa robot.',
+                'Built a competition robot that autonomously transported and placed objects along designated routes.',
               highlights: [
-                'Decomposes instructions into multi-step task lists and coordinates parallel robot operations with execution-status tracking.',
-                'Built an MCP server over Robot Web Services and RAPID for equipment queries, motion, picking, placing, and tool-call feedback.',
-                'Added execution-failure handling and short-term context so the planner can recover and continue the workflow.',
+                'Designed the mechanical structure and integrated sensing, actuation, and control.',
+                'Coordinated DC motors, encoder motors, servos, and robotic arms through an STM32 controller and CAN bus.',
+                'Added a dynamic shortest-path algorithm and moved from one to three motors, cutting operation time from 4 min 32 s to 3 min 15 s.',
+                'Our project received the National First Place Award.',
               ],
-              tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'Task Planning', 'ABB GoFa'],
+              tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical'],
+              links: [
+                {
+                  label: 'Video',
+                  href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/',
+                },
+              ],
               media: {
-                alt: 'Placeholder for the ABB GoFa natural-language task planner',
-                label: 'ABB GoFa task planner',
+                src: '/projects/robotics/mobile_crane_robot.jpg',
+                alt: 'Placeholder for the STM32 autonomous mobile crane robot',
+                label: 'Mobile crane robot',
               },
             },
           ],
@@ -150,8 +154,10 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/agents/web_automation_agent.jpg',
                 alt: 'Placeholder for the Deep Agents web automation interface',
                 label: 'Agent harness interface',
+                ratio: 1.939,
               },
             },
             {
@@ -173,8 +179,10 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/agents/workstation_agent.jpg',
                 alt: 'Placeholder for the flexible-manufacturing LLM workstation',
                 label: 'LLM workstation',
+                ratio: 1.931,
               },
             },
             {
@@ -196,8 +204,10 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/agents/ai_agents_town.jpg',
                 alt: 'Placeholder for the interactive AI Agents Town',
                 label: 'AI Agents Town',
+                ratio: 1.407,
               },
             },
           ],
@@ -208,7 +218,7 @@ export const projects: Record<SiteLocale, Projects> = {
           items: [
             {
               id: 'bilibili-ai-feedback',
-              title: 'Bilibili Audience Feedback Intelligence',
+              title: 'Bilibili Audience Feedback Intelligence Platform',
               period: '',
               description:
                 'Built an AI review workspace that turns real Bilibili danmaku and comments into evidence-backed insights for creators.',
@@ -219,40 +229,10 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Streaming', 'Data Viz', 'Bilibili', 'Evidence'],
               media: {
+                src: '/projects/full-stack/bilibili_audience_feedback.jpg',
                 alt: 'Placeholder for the Bilibili audience feedback analysis workspace',
                 label: 'Audience feedback workspace',
-              },
-            },
-            {
-              id: 'whatsapp-ai-robot',
-              title: 'WhatsApp AI Property-Service Agent',
-              period: '',
-              description:
-                'Built an AI-assisted messaging and work-order system that answers rental customers and helps staff manage service requests.',
-              highlights: [
-                'Receives WhatsApp messages through a Twilio webhook and synchronizes them with the backend in real time.',
-                'Gives staff a WebSocket workspace to review the conversation and agent reply, and turns each request into a traceable work order with status, priority, property, and approval details.',
-              ],
-              tech: ['WhatsApp', 'Twilio', 'Webhooks', 'WebSocket', 'AI Agent', 'Work Orders'],
-              media: {
-                alt: 'Placeholder for the WhatsApp property-service agent workspace',
-                label: 'WhatsApp service agent',
-              },
-            },
-            {
-              id: 'llm-chrome-extension',
-              title: 'Multimodal LLM Chrome Extension',
-              period: '',
-              description:
-                'Developed an in-browser AI assistant that combines webpage context, visual understanding, search, and personal knowledge in one conversation panel.',
-              highlights: [
-                'Answers questions against the active webpage without moving content into a separate chat application.',
-                'Uses a vision-language model for image recognition and visual question answering, plus web search and knowledge-base access.',
-              ],
-              tech: ['Chrome', 'LLM', 'VLM', 'Web Search', 'Knowledge', 'RAG'],
-              media: {
-                alt: 'Placeholder for the multimodal LLM Chrome extension',
-                label: 'Browser AI assistant',
+                ratio: 1.942,
               },
             },
             {
@@ -267,8 +247,46 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Research', 'Literature', 'Community', 'Full-Stack'],
               media: {
+                src: '/projects/full-stack/the_three_stooges.jpg',
                 alt: 'Placeholder for The Three Stooges research collaboration platform',
                 label: 'Research collaboration platform',
+                ratio: 2.192,
+              },
+            },
+            {
+              id: 'whatsapp-ai-robot',
+              title: 'WhatsApp AI Property-Service Agent',
+              period: '',
+              description:
+                'Built an AI-assisted messaging and work-order system that answers rental customers and helps staff manage service requests.',
+              highlights: [
+                'Receives WhatsApp messages through a Twilio webhook and synchronizes them with the backend in real time.',
+                'Gives staff a WebSocket workspace to review the conversation and agent reply, and turns each request into a traceable work order with status, priority, property, and approval details.',
+              ],
+              tech: ['WhatsApp', 'Twilio', 'Webhooks', 'WebSocket', 'AI Agent', 'Work Orders'],
+              media: {
+                src: '/projects/full-stack/whatsapp_ai_agent.jpg',
+                alt: 'Placeholder for the WhatsApp property-service agent workspace',
+                label: 'WhatsApp service agent',
+                ratio: 2.092,
+              },
+            },
+            {
+              id: 'llm-chrome-extension',
+              title: 'Multimodal LLM Chrome Extension',
+              period: '',
+              description:
+                'Developed an in-browser AI assistant that combines webpage context, visual understanding, search, and personal knowledge in one conversation panel.',
+              highlights: [
+                'Answers questions against the active webpage without moving content into a separate chat application.',
+                'Uses a vision-language model for image recognition and visual question answering, plus web search and knowledge-base access.',
+              ],
+              tech: ['Chrome', 'LLM', 'VLM', 'Web Search', 'Knowledge', 'RAG'],
+              media: {
+                src: '/projects/full-stack/llm_chrome_extension.jpg',
+                alt: 'Placeholder for the multimodal LLM Chrome extension',
+                label: 'Browser AI assistant',
+                ratio: 2.013,
               },
             },
           ],
@@ -295,25 +313,20 @@ export const projects: Record<SiteLocale, Projects> = {
           title: '机器人与具身智能',
           items: [
             {
-              id: 'mobile-crane-robot',
-              title: '基于 STM32 的自主移动起重机器人',
-              period: '2022.02-2022.11',
-              description: '开发了一台沿指定路线自主运输并放置物体的竞赛机器人。',
+              id: 'abb-gofa-agent',
+              title: 'ABB GoFa 自然语言任务规划智能体',
+              period: '2025.07-2025.09',
+              description: '开发了将自然语言指令转为 ABB GoFa 可执行操作的 LLM 任务规划器。',
               highlights: [
-                '完成机械结构设计，并集成感知、执行与控制系统。',
-                '使用 STM32 与 CAN 总线协调直流电机、编码器电机、舵机与机械臂。',
-                '加入动态最短路径算法，将执行机构由单电机升级为三电机，总运行时间从 4 分 32 秒降至 3 分 15 秒，项目获得全国一等奖。',
+                '将指令拆解为多步骤任务列表，协调并行机器人操作并跟踪执行状态。',
+                '基于 Robot Web Services 与 RAPID 构建 MCP Server，支持设备查询、运动、抓取、放置与工具调用反馈。',
+                '加入执行失败处理与短期上下文，使规划器能够从失败动作中恢复并继续流程。',
               ],
-              tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical'],
-              links: [
-                {
-                  label: '演示视频',
-                  href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/',
-                },
-              ],
+              tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'Task Planning', 'ABB GoFa'],
               media: {
-                alt: '基于 STM32 的自主移动起重机器人主图占位',
-                label: '移动起重机器人',
+                src: '/projects/robotics/abb_gofa_agent.jpg',
+                alt: 'ABB GoFa 自然语言任务规划智能体主图占位',
+                label: 'ABB GoFa 任务规划器',
               },
             },
             {
@@ -340,24 +353,32 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/robotics/ur5_grasping_robot.jpg',
                 alt: '语音引导具身智能抓取机器人主图占位',
                 label: '具身智能抓取机器人',
               },
             },
             {
-              id: 'abb-gofa-agent',
-              title: 'ABB GoFa 自然语言任务规划智能体',
-              period: '2025.07-2025.09',
-              description: '开发了将自然语言指令转为 ABB GoFa 可执行操作的 LLM 任务规划器。',
+              id: 'mobile-crane-robot',
+              title: '基于 STM32 的自主移动起重机器人',
+              period: '2022.02-2022.11',
+              description: '开发了一台沿指定路线自主运输并放置物体的竞赛机器人。',
               highlights: [
-                '将指令拆解为多步骤任务列表，协调并行机器人操作并跟踪执行状态。',
-                '基于 Robot Web Services 与 RAPID 构建 MCP Server，支持设备查询、运动、抓取、放置与工具调用反馈。',
-                '加入执行失败处理与短期上下文，使规划器能够从失败动作中恢复并继续流程。',
+                '完成机械结构设计，并集成感知、执行与控制系统。',
+                '使用 STM32 与 CAN 总线协调直流电机、编码器电机、舵机与机械臂。',
+                '加入动态最短路径算法，将执行机构由单电机升级为三电机，总运行时间从 4 分 32 秒降至 3 分 15 秒，项目获得全国一等奖。',
               ],
-              tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'Task Planning', 'ABB GoFa'],
+              tech: ['STM32', 'C', 'CAN Bus', 'Path Planning', 'Mechanical'],
+              links: [
+                {
+                  label: '演示视频',
+                  href: 'https://www.bilibili.com/video/BV1J2p6zXEnv/',
+                },
+              ],
               media: {
-                alt: 'ABB GoFa 自然语言任务规划智能体主图占位',
-                label: 'ABB GoFa 任务规划器',
+                src: '/projects/robotics/mobile_crane_robot.jpg',
+                alt: '基于 STM32 的自主移动起重机器人主图占位',
+                label: '移动起重机器人',
               },
             },
           ],
@@ -385,8 +406,10 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/agents/web_automation_agent.jpg',
                 alt: 'Deep Agents 网页自动化界面主图占位',
                 label: '智能体 Harness 界面',
+                ratio: 1.939,
               },
             },
             {
@@ -408,8 +431,10 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/agents/workstation_agent.jpg',
                 alt: '面向柔性制造的 LLM 智能工作站主图占位',
                 label: 'LLM 智能工作站',
+                ratio: 1.931,
               },
             },
             {
@@ -431,8 +456,10 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
+                src: '/projects/agents/ai_agents_town.jpg',
                 alt: '交互式 AI Agents Town 主图占位',
                 label: 'AI Agents Town',
+                ratio: 1.407,
               },
             },
           ],
@@ -453,39 +480,10 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Streaming', 'Data Viz', 'Bilibili', 'Evidence'],
               media: {
+                src: '/projects/full-stack/bilibili_audience_feedback.jpg',
                 alt: 'Bilibili 观众反馈智能分析平台主图占位',
                 label: '观众反馈复盘工作台',
-              },
-            },
-            {
-              id: 'whatsapp-ai-robot',
-              title: 'WhatsApp AI 物业服务智能体',
-              period: '',
-              description: '构建了一个自动应答租赁客户并辅助员工处理服务工单的 AI 消息系统。',
-              highlights: [
-                '通过 Twilio Webhook 接收 WhatsApp 消息，并实时同步到后端。',
-                '提供 WebSocket 工作台供员工审核对话与智能体回复，并将请求转化为带状态、优先级、房源与审批信息的可追踪工单。',
-              ],
-              tech: ['WhatsApp', 'Twilio', 'Webhooks', 'WebSocket', 'AI Agent', 'Work Orders'],
-              media: {
-                alt: 'WhatsApp AI 物业服务智能体主图占位',
-                label: 'WhatsApp 服务智能体',
-              },
-            },
-            {
-              id: 'llm-chrome-extension',
-              title: '多模态 LLM Chrome 浏览器扩展',
-              period: '',
-              description:
-                '开发了一个结合网页上下文、视觉理解、搜索与个人知识库的浏览器内 AI 助手。',
-              highlights: [
-                '基于当前网页内容回答问题，无需将材料复制到独立聊天应用。',
-                '使用视觉语言模型完成图像识别与视觉问答，并支持联网搜索与知识库访问。',
-              ],
-              tech: ['Chrome', 'LLM', 'VLM', 'Web Search', 'Knowledge', 'RAG'],
-              media: {
-                alt: '多模态 LLM Chrome 浏览器扩展主图占位',
-                label: '浏览器 AI 助手',
+                ratio: 1.942,
               },
             },
             {
@@ -500,8 +498,45 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Research', 'Literature', 'Community', 'Full-Stack'],
               media: {
+                src: '/projects/full-stack/the_three_stooges.jpg',
                 alt: '三个臭皮匠科研协作平台主图占位',
                 label: '科研协作平台',
+                ratio: 2.192,
+              },
+            },
+            {
+              id: 'whatsapp-ai-robot',
+              title: 'WhatsApp AI 物业服务智能体',
+              period: '',
+              description: '构建了一个自动应答租赁客户并辅助员工处理服务工单的 AI 消息系统。',
+              highlights: [
+                '通过 Twilio Webhook 接收 WhatsApp 消息，并实时同步到后端。',
+                '提供 WebSocket 工作台供员工审核对话与智能体回复，并将请求转化为带状态、优先级、房源与审批信息的可追踪工单。',
+              ],
+              tech: ['WhatsApp', 'Twilio', 'Webhooks', 'WebSocket', 'AI Agent', 'Work Orders'],
+              media: {
+                src: '/projects/full-stack/whatsapp_ai_agent.jpg',
+                alt: 'WhatsApp AI 物业服务智能体主图占位',
+                label: 'WhatsApp 服务智能体',
+                ratio: 2.092,
+              },
+            },
+            {
+              id: 'llm-chrome-extension',
+              title: '多模态 LLM Chrome 浏览器扩展',
+              period: '',
+              description:
+                '开发了一个结合网页上下文、视觉理解、搜索与个人知识库的浏览器内 AI 助手。',
+              highlights: [
+                '基于当前网页内容回答问题，无需将材料复制到独立聊天应用。',
+                '使用视觉语言模型完成图像识别与视觉问答，并支持联网搜索与知识库访问。',
+              ],
+              tech: ['Chrome', 'LLM', 'VLM', 'Web Search', 'Knowledge', 'RAG'],
+              media: {
+                src: '/projects/full-stack/llm_chrome_extension.jpg',
+                alt: '多模态 LLM Chrome 浏览器扩展主图占位',
+                label: '浏览器 AI 助手',
+                ratio: 2.013,
               },
             },
           ],

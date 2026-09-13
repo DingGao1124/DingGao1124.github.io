@@ -62,7 +62,7 @@ function formatDate(value: unknown) {
 </script>
 
 <template>
-  <TooltipProvider :delay-duration="300">
+  <TooltipProvider :delay-duration="250">
     <div
       class="flex min-h-screen flex-col bg-background text-foreground transition-[background-color] duration-300"
     >

@@ -11,8 +11,8 @@ export default {
     siteName: 'Ding Gao.SKILL',
     primaryNavigationLabel: 'Primary navigation',
     switchLanguageLabel: 'Switch language',
-    switchToDarkLabel: 'Switch to dark theme',
-    switchToLightLabel: 'Switch to light theme',
+    switchToDarkLabel: 'Switch to dark mode',
+    switchToLightLabel: 'Switch to light mode',
     navigation: [
       { id: 'profile', label: 'Profile', href: '/' },
       { id: 'publications', label: 'Publications', href: '/publications/' },
@@ -27,6 +27,7 @@ export default {
   notFoundTitle: 'Page not found',
   notFoundDescription: 'The page you requested could not be found.',
   backHomeLabel: 'Back to home',
+  mediaFailedLabel: 'Fail to display image.',
   footer: {
     footerTag: '©Ding Gao 2026. All rights reserved.',
     viewsLabel: 'Site Views',

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { Briefcase, Building2, GraduationCap, MapPin, UserRound } from '@lucide/vue'
+
 import Media from '@/components/common/Media.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
@@ -18,16 +20,6 @@ const tocItems = computed(() => [
   { id: 'education', label: experience.value.label.educationTitle },
   { id: 'honors', label: experience.value.label.honorsTitle },
 ])
-
-function professionalDepartment(item: (typeof experience.value.content.professional)[number]) {
-  return item.department
-    ? `${experience.value.label.departmentLabel}: ${item.department}`
-    : undefined
-}
-
-function professionalRole(item: (typeof experience.value.content.professional)[number]) {
-  return `${experience.value.label.roleLabel}: ${item.role}`
-}
 
 function educationDetails(education: (typeof experience.value.content.education)[number]) {
   const lines = [`${experience.value.label.gpaLabel}: ${education.gpa}`]
@@ -52,14 +44,29 @@ function educationDetails(education: (typeof experience.value.content.education)
         :key="item.id"
         :period="item.period"
         :title="item.role"
-        :location="item.location"
-        :meta="`${item.organization} · ${experience.label.advisorLabel}: ${item.advisor}`"
         :summary="item.summary"
         :highlights="item.highlights"
         collapsible
         :show-more-label="experience.label.showMoreLabel"
         :show-less-label="experience.label.showLessLabel"
       >
+        <template #meta>
+          <div class="flex flex-col gap-0.5">
+            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <GraduationCap class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ item.organization }}</span>
+              <span aria-hidden="true">·</span>
+              <span class="inline-flex items-center gap-1">
+                <MapPin class="size-3.5 shrink-0" aria-hidden="true" />
+                {{ item.location }}
+              </span>
+            </p>
+            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <UserRound class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ experience.label.advisorLabel }}: {{ item.advisor }}</span>
+            </p>
+          </div>
+        </template>
         <template #media>
           <Media :media="item.media" />
         </template>
@@ -74,14 +81,24 @@ function educationDetails(education: (typeof experience.value.content.education)
         :period="item.period"
         :title="item.organization"
         :location="item.location"
-        :meta="professionalDepartment(item)"
-        :meta-end="professionalRole(item)"
         :summary="item.summary"
         :highlights="item.highlights"
         collapsible
         :show-more-label="experience.label.showMoreLabel"
         :show-less-label="experience.label.showLessLabel"
       >
+        <template #meta>
+          <div class="flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-0.5">
+            <p v-if="item.department" class="inline-flex items-center gap-x-2">
+              <Building2 class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ item.department }}</span>
+            </p>
+            <p class="inline-flex items-center gap-x-2">
+              <Briefcase class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ item.role }}</span>
+            </p>
+          </div>
+        </template>
         <template #logo>
           <img
             :class="`size-${item.logo.size ?? 6} shrink-0 object-contain`"

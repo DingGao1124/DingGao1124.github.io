@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, shallowRef, watch } from 'vue'
-import { ChevronDown } from '@lucide/vue'
+import { ChevronDown, CircleStar } from '@lucide/vue'
 
 import { Button } from '@/components/ui/button'
 import { Collapsible, CollapsibleTrigger } from '@/components/ui/collapsible'
@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 const props = withDefaults(
   defineProps<{
     summary?: string
-    items: readonly string[]
+    highlights: readonly string[]
     collapsible?: boolean
     collapsedHeight?: number
     showMoreLabel?: string
@@ -76,7 +76,7 @@ onMounted(() => {
 onBeforeUnmount(() => resizeObserver?.disconnect())
 
 watch(
-  () => [props.summary, props.items, props.collapsedHeight],
+  () => [props.summary, props.highlights, props.collapsedHeight],
   () => void nextTick(measureOverflow),
 )
 
@@ -94,22 +94,26 @@ watch(isOpen, startHeightAnimation)
       :style="clampStyle"
       @transitionend="settleHeightAnimation"
     >
-      <p v-if="summary" class="measure text-sm leading-[1.55] text-card-foreground">
-        {{ summary }}
+      <p
+        v-if="summary"
+        class="flex items-start gap-x-2 text-sm leading-[1.55] text-card-foreground"
+      >
+        <CircleStar class="mt-1 size-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />
+        <span>{{ summary }}</span>
       </p>
       <ul
-        v-if="items.length"
+        v-if="highlights.length"
         :class="[
           'flex list-none flex-col gap-1.5 text-[0.8125rem] leading-[1.55] text-muted-foreground',
           summary && 'mt-2.5',
         ]"
       >
         <li
-          v-for="(item, index) in items"
+          v-for="(item, index) in highlights"
           :key="bulletKey(item, index)"
-          class="grid grid-cols-[0.625rem_1fr] gap-2"
+          class="grid grid-cols-[0.875rem_1fr] gap-2"
         >
-          <span class="mt-2.5 h-px bg-border" aria-hidden="true" />
+          <span class="mt-2.5 h-px w-2.5 bg-border" aria-hidden="true" />
           <span>{{ item }}</span>
         </li>
       </ul>

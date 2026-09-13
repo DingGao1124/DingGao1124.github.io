@@ -80,7 +80,7 @@ const gridClass = computed(() =>
         v-if="summary || highlights?.length"
         class="mt-1.5"
         :summary="summary"
-        :items="highlights ?? []"
+        :highlights="highlights ?? []"
         :collapsible="collapsible"
         :collapsed-height="collapsedHeight"
         :show-more-label="showMoreLabel"

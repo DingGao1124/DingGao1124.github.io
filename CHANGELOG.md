@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-14
+
+- Projects: added a figure for every project, each linked to the portfolio.
+
 ## 2026-09-13
 
 - Blogs: rebuilt the page as a notebook card grid of recent docs, with hover lift and drag reordering saved per browser.

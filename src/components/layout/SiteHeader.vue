@@ -43,9 +43,18 @@ const alternate = computed(() => {
     <div
       class="mx-auto flex max-w-content flex-wrap items-center gap-x-5 gap-y-3 px-5 py-3 md:px-6 md:py-4"
     >
-      <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
-        {{ header.siteName }}
-      </a>
+      <!-- Ding Gao.SKILL -->
+      <!-- TODO: Make this a trigger to show all displayed data. -->
+      <Tooltip>
+        <TooltipTrigger as-child>
+          <a :href="homePath" class="font-serif text-lg font-medium tracking-tight">
+            {{ header.siteName }}
+          </a>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Turn me to be an AI skill ! Coming soon...</p>
+        </TooltipContent>
+      </Tooltip>
 
       <nav
         class="order-3 w-full overflow-x-auto md:order-2 md:ml-auto md:w-auto"

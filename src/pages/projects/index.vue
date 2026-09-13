@@ -46,12 +46,13 @@ const tocItems = computed(() =>
           :show-less-label="projects.label.showLessLabel"
         >
           <template #media>
-            <Media :media="project.media" />
+            <Media :media="project.media" :href="projects.content.moreLink.href" />
           </template>
         </ProjectsEntry>
       </template>
     </Section>
 
+    <!-- View more  -->
     <div class="mt-8 flex">
       <RainbowButton
         :href="projects.content.moreLink.href"

@@ -43,6 +43,7 @@ function isExternal(href: string) {
 const slots = useSlots()
 const hasLogo = computed(() => Boolean(slots.logo))
 const hasMedia = computed(() => Boolean(slots.media))
+const hasMeta = computed(() => Boolean(slots.meta) || Boolean(props.meta) || Boolean(props.metaEnd))
 const gridClass = computed(() =>
   cn(
     'grid gap-3 py-4 md:grid-cols-[6rem_minmax(0,1fr)] md:gap-5',
@@ -83,11 +84,13 @@ const gridClass = computed(() =>
         </p>
       </div>
       <div
-        v-if="meta || metaEnd"
+        v-if="hasMeta"
         class="mt-1 flex flex-wrap items-baseline justify-between gap-x-4 text-xs leading-5 text-muted-foreground"
       >
-        <span v-if="meta">{{ meta }}</span>
-        <span v-if="metaEnd">{{ metaEnd }}</span>
+        <slot name="meta">
+          <span v-if="meta">{{ meta }}</span>
+          <span v-if="metaEnd">{{ metaEnd }}</span>
+        </slot>
       </div>
 
       <div v-if="tags?.length" class="mt-1.5 flex flex-wrap gap-1.5 md:flex-nowrap">
@@ -98,7 +101,7 @@ const gridClass = computed(() =>
         v-if="summary || highlights?.length"
         class="mt-1.5"
         :summary="summary"
-        :items="highlights ?? []"
+        :highlights="highlights ?? []"
         :collapsible="collapsible"
         :collapsed-height="collapsedHeight"
         :show-more-label="showMoreLabel"
