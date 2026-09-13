@@ -35,12 +35,15 @@ function pathOnly(href: string) {
     .replace(/\/$/, '')
 }
 
-// Distinguish individual blog posts (markdown content) from the blog index and
-// other section pages, so only post content gets the prose typography.
-const isBlogPost = computed(() => {
-  const p = page.value.relativePath ?? ''
-  const segments = p.replace(/^zh\//, '').split('/')
-  return segments[0] === 'blogs' && segments[1]?.endsWith('.md') && segments[1] !== 'index.md'
+// Markdown under `blogs/` renders as an article; the blog index renders the
+// notebook grid instead.
+const isArticle = computed(() => {
+  const relativePath = (page.value.relativePath ?? '').replace(/^zh\//, '')
+  return (
+    relativePath.startsWith('blogs/') &&
+    relativePath.endsWith('.md') &&
+    relativePath !== 'blogs/index.md'
+  )
 })
 
 // Frontmatter dates are parsed as Date objects, then serialized to ISO strings
@@ -61,7 +64,7 @@ function formatDate(value: unknown) {
 <template>
   <TooltipProvider :delay-duration="300">
     <div
-      class="min-h-screen bg-background text-foreground transition-[background-color] duration-300"
+      class="flex min-h-screen flex-col bg-background text-foreground transition-[background-color] duration-300"
     >
       <div
         v-show="isRouteLoading"
@@ -77,7 +80,7 @@ function formatDate(value: unknown) {
         {{ messages.skipToContentLabel }}
       </a>
       <SiteHeader />
-      <main id="main-content" tabindex="-1">
+      <main id="main-content" tabindex="-1" class="flex-1">
         <template v-if="page.isNotFound">
           <div
             class="mx-auto flex min-h-[60vh] max-w-6xl flex-col items-start justify-center gap-3 px-5 md:px-8"
@@ -100,7 +103,7 @@ function formatDate(value: unknown) {
           </div>
         </template>
         <template v-else>
-          <article v-if="isBlogPost" class="mx-auto max-w-4xl px-5 py-12 md:px-8 md:py-16">
+          <article v-if="isArticle" class="mx-auto max-w-content px-5 py-12 md:px-6 md:py-16">
             <header v-if="page.frontmatter.title" class="mb-10">
               <h1
                 class="font-serif text-[clamp(2rem,5vw,3rem)] leading-[1.05] font-medium tracking-[-0.02em]"

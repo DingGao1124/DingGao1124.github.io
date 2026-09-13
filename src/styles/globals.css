@@ -187,6 +187,15 @@
     outline-offset: 2px;
   }
 
+  /*
+    A URL with a hash makes the browser focus the fragment target; it is a
+    container or heading, not a control, so drop the ring. Must stay after the
+    rule above — same specificity, so source order decides.
+  */
+  :where(section[id], li[id], h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]):focus {
+    outline: none;
+  }
+
   ::selection {
     background: var(--link-soft);
     color: var(--foreground);

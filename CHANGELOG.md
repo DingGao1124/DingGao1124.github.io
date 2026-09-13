@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-13
+
+- Blogs: rebuilt the page as a notebook card grid of recent docs, with hover lift and drag reordering saved per browser.
+- Blogs: added the `useSortableList` FLIP drag hook.
+- Blogs: added one folder per notebook under `site/blogs/`, each with a landing page.
+- Structure: moved Blogs into `src/pages/blogs/` with its private components under `_components/`.
+
 ## 2026-09-12
 
 - Experience: rebuilt record headers with logo, name, location, department, and role.
