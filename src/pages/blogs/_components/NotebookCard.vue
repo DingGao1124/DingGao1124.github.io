@@ -1,25 +1,13 @@
 <script setup lang="ts">
-import { Lock, Notebook as NotebookIcon } from '@lucide/vue'
+import { Notebook as NotebookIcon } from '@lucide/vue'
 
 import { Card } from '@/components/ui/card'
+import type { Notebook } from '@/data/blogs'
 import { useSiteLocale } from '@/hooks/useSiteLocale'
-
-export type NotebookDoc = {
-  title: string
-  date: string
-  href?: string
-}
-
-export type Notebook = {
-  title: string
-  description?: string
-  private?: boolean
-  docs: readonly NotebookDoc[]
-}
 
 defineProps<{ notebook: Notebook }>()
 
-const { messages, path } = useSiteLocale()
+const { path } = useSiteLocale()
 </script>
 
 <template>
@@ -27,10 +15,6 @@ const { messages, path } = useSiteLocale()
     <div class="flex items-center gap-2 px-5 pt-4">
       <NotebookIcon class="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
       <h3 class="min-w-0 truncate text-sm font-medium">{{ notebook.title }}</h3>
-      <template v-if="notebook.private">
-        <Lock class="size-3 shrink-0 text-muted-foreground" aria-hidden="true" />
-        <span class="sr-only">{{ messages.blogs.label.privateLabel }}</span>
-      </template>
     </div>
 
     <p v-if="notebook.description" class="px-5 pt-1 text-xs text-muted-foreground">

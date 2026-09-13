@@ -13,8 +13,8 @@ const { messages } = useSiteLocale()
 
 const experience = computed(() => messages.value.experience)
 const tocItems = computed(() => [
-  { id: 'professional-experience', label: experience.value.label.professionalTitle },
   { id: 'research-experience', label: experience.value.label.researchTitle },
+  { id: 'professional-experience', label: experience.value.label.professionalTitle },
   { id: 'education', label: experience.value.label.educationTitle },
   { id: 'honors', label: experience.value.label.honorsTitle },
 ])

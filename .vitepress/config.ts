@@ -3,6 +3,14 @@ import path from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
 
+import blogs from '../src/data/blogs'
+
+// Private notebooks should not be discovered.
+const srcExclude = Object.values(blogs)
+  .flatMap((locale) => locale.notebooks)
+  .filter((notebook) => notebook.private)
+  .map((notebook) => `blogs/${notebook.folder}/**`)
+
 const setUpThemeScript = `(function () {
   try {
     var stored = localStorage.getItem("theme")
@@ -19,6 +27,7 @@ const setUpThemeScript = `(function () {
 
 export default defineConfig({
   srcDir: 'site',
+  srcExclude,
   cleanUrls: true,
   appearance: false,
   title: 'Ding Gao',

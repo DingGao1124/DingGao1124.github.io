@@ -117,7 +117,7 @@ defineProps<{
       class="order-1 mx-auto flex w-full max-w-sm flex-col items-center text-center lg:order-2 lg:mx-0"
     >
       <Avatar class="size-40 ring-1 ring-border md:size-44 lg:size-52">
-        <AvatarImage :src="avatarSrc" :alt="avatarAlt" />
+        <AvatarImage :src="avatarSrc" :alt="avatarAlt" class="object-cover" />
         <AvatarFallback>
           <div class="flex flex-col items-center justify-center mt-2">
             <span class="text-xl">DG</span>
