@@ -28,6 +28,7 @@ export default {
   notFoundDescription: '你请求的页面不存在。',
   backHomeLabel: '返回首页',
   mediaFailedLabel: '图片加载失败',
+  pageContentsLabel: '本页目录',
   footer: {
     footerTag: '©高鼎 · 2026',
     viewsLabel: '网站访问量',

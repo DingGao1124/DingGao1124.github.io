@@ -13,8 +13,11 @@ type PublicationAuthor = {
 
 type PublicationMedia = {
   src?: string
+  /** For high resolution picture display. */
+  originalSrc?: string
   alt: string
   label: string
+  ratio?: number
 }
 
 export type Publication = {
@@ -31,8 +34,6 @@ export type Publication = {
     datetime: string
     label: string
   }
-  volume?: string
-  pages?: string
   identifier?: string
   keywords?: string[]
   links?: PublicationLink[]
@@ -46,7 +47,6 @@ export type Publications = {
     journalSectionTitle: string
     patentSectionTitle: string
     authorNotes: string
-    pageContentsLabel: string
   }
   content: {
     items: Publication[]
@@ -61,7 +61,6 @@ export const publications: Record<SiteLocale, Publications> = {
       journalSectionTitle: 'Journal publications',
       patentSectionTitle: 'Patents',
       authorNotes: '* Equal contribution · † Corresponding author',
-      pageContentsLabel: 'On this page',
     },
     content: {
       items: [
@@ -83,8 +82,6 @@ export const publications: Record<SiteLocale, Publications> = {
             abbreviation: 'DE',
           },
           publicationDate: { year: '2026', datetime: '2026-09', label: 'Sep 2026' },
-          volume: '10',
-          pages: '100099',
           identifier: '10.1016/j.dte.2026.100099',
           keywords: [
             'Digital Twin',
@@ -98,8 +95,11 @@ export const publications: Record<SiteLocale, Publications> = {
             { label: 'CODE', href: 'https://github.com/DingGao1124/Thesis-MultiAgents' },
           ],
           media: {
-            alt: 'Placeholder for the digital-twin multi-agent architecture figure',
+            src: '/publication/journal/self-evolving.png',
+            originalSrc: '/publication/journal/original/self-evolving.png',
+            alt: 'Digital-twin production line figure: dynamic task decomposition across line, module, and unit agents over the production-line space',
             label: 'Digital-twin agent architecture',
+            ratio: 1.392,
           },
         },
         // {
@@ -117,7 +117,7 @@ export const publications: Record<SiteLocale, Publications> = {
         //     { name: 'Dan Zhang' },
         //   ],
         //   venue: {
-        //     name: 'Computer Integrated Manufacturing Systems · Online First',
+        //     name: 'Computer Integrated Manufacturing Systems',
         //     abbreviation: 'CIMS',
         //   },
         //   publicationDate: { year: '2026', datetime: '2026-06-26', label: 'Jun 2026' },
@@ -137,32 +137,6 @@ export const publications: Record<SiteLocale, Publications> = {
         // },
         {
           type: 'journal',
-          topic: 'multi-agent-digital-twin-modeling',
-          title: '基于多智能体协同机制的数字孪生产线动态建模方法',
-          authors: [
-            { name: '温晓健' },
-            { name: '高鼎' },
-            { name: '吕健豪' },
-            { name: '司佳辉' },
-            { name: '王聪' },
-            { name: '鲍劲松' },
-            { name: '张丹' },
-          ],
-          venue: {
-            name: '计算机集成制造系统 · 网络首发',
-            abbreviation: 'CIMS',
-          },
-          publicationDate: { year: '2026', datetime: '2026-06-26', label: '2026.06' },
-          identifier: '10.13196/j.cims.2025.0269',
-          keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性生产线', '知识图谱'],
-          links: [{ label: 'DOI', href: 'https://doi.org/10.13196/j.cims.2025.0269' }],
-          media: {
-            alt: '多智能体协同数字孪生产线动态建模框架配图占位',
-            label: '多智能体数字孪生建模框架',
-          },
-        },
-        {
-          type: 'journal',
           topic: 'multi-cognitive-agent',
           title:
             'Graph-driven Single-Robot Multi-Cognitive Agent System architecture for human–robot collaborative disassembly',
@@ -178,8 +152,6 @@ export const publications: Record<SiteLocale, Publications> = {
             abbreviation: 'RCIM',
           },
           publicationDate: { year: '2026', datetime: '2026-06', label: 'Jun 2026' },
-          volume: '99',
-          pages: '103207',
           identifier: '10.1016/j.rcim.2025.103207',
           keywords: [
             'Single-Robot Multi-Cognitive Agent System',
@@ -189,8 +161,11 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
           media: {
-            alt: 'Placeholder for the single-robot multi-cognitive agent system figure',
+            src: '/publication/journal/collaborative-disassembly.jpg',
+            originalSrc: '/publication/journal/original/collaborative-disassembly.jpg',
+            alt: 'Disassembly scene graph generation, perception graph cues, and the single-robot multi-cognitive agent architecture over a knowledge graph',
             label: 'Multi-cognitive agent system',
+            ratio: 1.049,
           },
         },
         {
@@ -209,8 +184,6 @@ export const publications: Record<SiteLocale, Publications> = {
             abbreviation: 'JMS',
           },
           publicationDate: { year: '2025', datetime: '2025-12', label: 'Dec 2025' },
-          volume: '83',
-          pages: '546-556',
           identifier: '10.1016/j.jmsy.2025.10.005',
           keywords: [
             'Historical VQA',
@@ -220,8 +193,11 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
           media: {
-            alt: 'Placeholder for the AR-assisted human-robot collaboration workflow figure',
+            src: '/publication/journal/historical-vqa.jpg',
+            originalSrc: '/publication/journal/original/historical-vqa.jpg',
+            alt: 'Historical VQA with LLMs for AR-assisted human-robot collaboration across the perception, reasoning, and manipulation phases',
             label: 'AR-assisted HRC workflow',
+            ratio: 1.779,
           },
         },
         {
@@ -249,39 +225,42 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN113702385B/en' }],
           media: {
-            alt: 'Placeholder for the angle-adjustable stage patent',
+            src: '/publication/patent/CN113702385B.webp',
+            originalSrc: '/publication/patent/CN113702385B.webp',
+            alt: 'Patent drawing of the angle-adjustable stage: the base, the angle-adjusting body with knobs, and the top platform with a circular opening',
             label: 'Angle-adjustable stage',
+            ratio: 1.21,
           },
         },
-        {
-          type: 'patent',
-          topic: 'solar-folding-car-canopy',
-          title: 'A Solar-Powered Foldable Fully Automatic Car Sunshade Canopy',
-          authors: [
-            { name: 'Jiangtao Xu' },
-            { name: 'Yong Feng' },
-            { name: 'Haojie Zhou' },
-            { name: 'Zhiyuan Zhou' },
-            { name: 'Zepeng Cheng' },
-            { name: 'Ding Gao' },
-          ],
-          venue: {
-            name: 'Invention Patent Application',
-          },
-          publicationDate: { year: '2021', datetime: '2021-05', label: 'May 2021' },
-          identifier: 'CN112776579A',
-          keywords: [
-            'Solar Energy',
-            'Foldable Canopy',
-            'Automatic Deployment',
-            'Photovoltaic Power Generation',
-          ],
-          links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN112776579A/en' }],
-          media: {
-            alt: 'Placeholder for the solar-powered foldable car sunshade canopy patent',
-            label: 'Solar folding car canopy',
-          },
-        },
+        // {
+        //   type: 'patent',
+        //   topic: 'solar-folding-car-canopy',
+        //   title: 'A Solar-Powered Foldable Fully Automatic Car Sunshade Canopy',
+        //   authors: [
+        //     { name: 'Jiangtao Xu' },
+        //     { name: 'Yong Feng' },
+        //     { name: 'Haojie Zhou' },
+        //     { name: 'Zhiyuan Zhou' },
+        //     { name: 'Zepeng Cheng' },
+        //     { name: 'Ding Gao' },
+        //   ],
+        //   venue: {
+        //     name: 'Invention Patent Application',
+        //   },
+        //   publicationDate: { year: '2021', datetime: '2021-05', label: 'May 2021' },
+        //   identifier: 'CN112776579A',
+        //   keywords: [
+        //     'Solar Energy',
+        //     'Foldable Canopy',
+        //     'Automatic Deployment',
+        //     'Photovoltaic Power Generation',
+        //   ],
+        //   links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN112776579A/en' }],
+        //   media: {
+        //     alt: 'Placeholder for the solar-powered foldable car sunshade canopy patent',
+        //     label: 'Solar folding car canopy',
+        //   },
+        // },
         {
           type: 'patent',
           topic: 'conductive-concrete',
@@ -305,8 +284,11 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN212613158U/en' }],
           media: {
-            alt: 'Placeholder for the conductive-concrete prefabricated component patent',
+            src: '/publication/patent/CN212613158U.webp',
+            originalSrc: '/publication/patent/CN212613158U.webp',
+            alt: 'Patent drawing of the conductive-concrete prefabricated component system: the panel, its edge connectors, and the power and control boxes',
             label: 'Conductive concrete system',
+            ratio: 1.348,
           },
         },
       ],
@@ -319,7 +301,6 @@ export const publications: Record<SiteLocale, Publications> = {
       journalSectionTitle: '期刊论文',
       patentSectionTitle: '专利',
       authorNotes: '* 共同贡献 · † 通讯作者',
-      pageContentsLabel: '本页目录',
     },
     content: {
       items: [
@@ -341,42 +322,43 @@ export const publications: Record<SiteLocale, Publications> = {
             abbreviation: 'DE',
           },
           publicationDate: { year: '2026', datetime: '2026-09', label: '2026.09' },
-          volume: '10',
-          pages: '100099',
           identifier: '10.1016/j.dte.2026.100099',
           keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性制造'],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
           media: {
-            alt: '数字孪生多智能体架构论文配图占位',
+            src: '/publication/journal/self-evolving.png',
+            originalSrc: '/publication/journal/original/self-evolving.png',
+            alt: '数字孪生产线任务分解图：从产线智能体到模块智能体、单元智能体，再映射到产线空间',
             label: 'Digital-twin agent architecture',
+            ratio: 1.392,
           },
         },
-        {
-          type: 'journal',
-          topic: 'multi-agent-digital-twin-modeling',
-          title: '基于多智能体协同机制的数字孪生产线动态建模方法',
-          authors: [
-            { name: '温晓健' },
-            { name: '高鼎' },
-            { name: '吕健豪' },
-            { name: '司佳辉' },
-            { name: '王聪' },
-            { name: '鲍劲松' },
-            { name: '张丹' },
-          ],
-          venue: {
-            name: '计算机集成制造系统 · 网络首发',
-            abbreviation: 'CIMS',
-          },
-          publicationDate: { year: '2026', datetime: '2026-06-26', label: '2026.06' },
-          identifier: '10.13196/j.cims.2025.0269',
-          keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性生产线', '知识图谱'],
-          links: [{ label: 'DOI', href: 'https://doi.org/10.13196/j.cims.2025.0269' }],
-          media: {
-            alt: '多智能体协同数字孪生产线动态建模框架配图占位',
-            label: '多智能体数字孪生建模框架',
-          },
-        },
+        // {
+        //   type: 'journal',
+        //   topic: 'multi-agent-digital-twin-modeling',
+        //   title: '基于多智能体协同机制的数字孪生产线动态建模方法',
+        //   authors: [
+        //     { name: '温晓健' },
+        //     { name: '高鼎' },
+        //     { name: '吕健豪' },
+        //     { name: '司佳辉' },
+        //     { name: '王聪' },
+        //     { name: '鲍劲松' },
+        //     { name: '张丹' },
+        //   ],
+        //   venue: {
+        //     name: '计算机集成制造系统',
+        //     abbreviation: 'CIMS',
+        //   },
+        //   publicationDate: { year: '2026', datetime: '2026-06-26', label: '2026.06' },
+        //   identifier: '10.13196/j.cims.2025.0269',
+        //   keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性生产线', '知识图谱'],
+        //   links: [{ label: 'DOI', href: 'https://doi.org/10.13196/j.cims.2025.0269' }],
+        //   media: {
+        //     alt: '多智能体协同数字孪生产线动态建模框架配图占位',
+        //     label: '多智能体数字孪生建模框架',
+        //   },
+        // },
         {
           type: 'journal',
           topic: 'multi-cognitive-agent',
@@ -394,14 +376,15 @@ export const publications: Record<SiteLocale, Publications> = {
             abbreviation: 'RCIM',
           },
           publicationDate: { year: '2026', datetime: '2026-06', label: '2026.06' },
-          volume: '99',
-          pages: '103207',
           identifier: '10.1016/j.rcim.2025.103207',
           keywords: ['人机协作', '机器人拆解', '多认知智能体', '场景图'],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
           media: {
-            alt: '单机器人多认知智能体系统论文配图占位',
+            src: '/publication/journal/collaborative-disassembly.jpg',
+            originalSrc: '/publication/journal/original/collaborative-disassembly.jpg',
+            alt: '拆解场景图生成、感知图线索与单机器人多认知智能体架构及其知识图谱支撑',
             label: 'Multi-cognitive agent system',
+            ratio: 1.049,
           },
         },
         {
@@ -420,14 +403,15 @@ export const publications: Record<SiteLocale, Publications> = {
             abbreviation: 'JMS',
           },
           publicationDate: { year: '2025', datetime: '2025-12', label: '2025.12' },
-          volume: '83',
-          pages: '546-556',
           identifier: '10.1016/j.jmsy.2025.10.005',
           keywords: ['视觉问答', '增强现实', '人机协作', '大语言模型'],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
           media: {
-            alt: '增强现实人机协作论文配图占位',
+            src: '/publication/journal/historical-vqa.jpg',
+            originalSrc: '/publication/journal/original/historical-vqa.jpg',
+            alt: '面向 AR 人机协作的历史视觉问答流程：感知、推理与操作三个阶段',
             label: 'AR-assisted HRC workflow',
+            ratio: 1.779,
           },
         },
         {
@@ -449,32 +433,38 @@ export const publications: Record<SiteLocale, Publications> = {
           identifier: 'CN113702385B',
           keywords: ['视觉检测', '角度调节', '精密定位', '缺陷检测'],
           links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN113702385B/zh' }],
-          media: { alt: '角度可调载物台专利配图占位', label: '角度可调载物台' },
-        },
-        {
-          type: 'patent',
-          topic: 'solar-folding-car-canopy',
-          title: '一种太阳能折叠式全自动汽车防晒车篷',
-          authors: [
-            { name: '许江涛' },
-            { name: '冯勇' },
-            { name: '周豪杰' },
-            { name: '周智远' },
-            { name: '程泽鹏' },
-            { name: '高鼎' },
-          ],
-          venue: {
-            name: '发明专利申请',
-          },
-          publicationDate: { year: '2021', datetime: '2021-05', label: '2021.05' },
-          identifier: 'CN112776579A',
-          keywords: ['太阳能', '折叠车篷', '自动展开', '光伏发电'],
-          links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN112776579A/zh' }],
           media: {
-            alt: '太阳能折叠式全自动汽车防晒车篷专利配图占位',
-            label: '太阳能折叠式汽车车篷',
+            src: '/publication/patent/CN113702385B.webp',
+            originalSrc: '/publication/patent/CN113702385B.webp',
+            alt: '角度可调载物台专利附图：底座、带调节旋钮的角度调节本体，以及带圆孔的载物台面',
+            label: '角度可调载物台',
+            ratio: 0.909,
           },
         },
+        // {
+        //   type: 'patent',
+        //   topic: 'solar-folding-car-canopy',
+        //   title: '一种太阳能折叠式全自动汽车防晒车篷',
+        //   authors: [
+        //     { name: '许江涛' },
+        //     { name: '冯勇' },
+        //     { name: '周豪杰' },
+        //     { name: '周智远' },
+        //     { name: '程泽鹏' },
+        //     { name: '高鼎' },
+        //   ],
+        //   venue: {
+        //     name: '发明专利申请',
+        //   },
+        //   publicationDate: { year: '2021', datetime: '2021-05', label: '2021.05' },
+        //   identifier: 'CN112776579A',
+        //   keywords: ['太阳能', '折叠车篷', '自动展开', '光伏发电'],
+        //   links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN112776579A/zh' }],
+        //   media: {
+        //     alt: '太阳能折叠式全自动汽车防晒车篷专利配图占位',
+        //     label: '太阳能折叠式汽车车篷',
+        //   },
+        // },
         {
           type: 'patent',
           topic: 'conductive-concrete',
@@ -487,7 +477,13 @@ export const publications: Record<SiteLocale, Publications> = {
           identifier: 'CN212613158U',
           keywords: ['导电混凝土', '装配式预制构件', '建筑供暖', '温度控制'],
           links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN212613158U/zh' }],
-          media: { alt: '导电混凝土预制构件系统专利配图占位', label: '导电混凝土预制构件系统' },
+          media: {
+            src: '/publication/patent/CN212613158U.webp',
+            originalSrc: '/publication/patent/CN212613158U.webp',
+            alt: '导电混凝土装配式预制构件系统专利附图：预制构件板体、边缘连接件与电源/控制盒',
+            label: '导电混凝土预制构件系统',
+            ratio: 1.348,
+          },
         },
       ],
     },

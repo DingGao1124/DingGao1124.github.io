@@ -31,7 +31,6 @@ export type Projects = {
   label: {
     eyebrow: string
     title: string
-    pageContentsLabel: string
     showMoreLabel: string
     showLessLabel: string
   }
@@ -46,7 +45,6 @@ export const projects: Record<SiteLocale, Projects> = {
     label: {
       eyebrow: 'Projects',
       title: 'Projects',
-      pageContentsLabel: 'On this page',
       showMoreLabel: 'Show more',
       showLessLabel: 'Show less',
     },
@@ -77,7 +75,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'universal-grasping-robot',
               title: 'Voice-Guided Embodied AI Robot for Universal Grasping',
-              period: '2025',
+              period: 'Jun 2025',
               description:
                 'Created a vision-language-action agent for voice-guided UR robot grasping and tool-delivery tasks for the 12th NVIDIA Sky Hackathon.',
               highlights: [
@@ -138,7 +136,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'deep-agents',
               title: 'Deep Agents: Harness-Engineered Web Automation',
-              period: '',
+              period: 'Sep 2026',
               description:
                 'Built a controlled agent harness that turns visual references, wireframes, and content into responsive web pages with isolated browser previews.',
               highlights: [
@@ -163,7 +161,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'llm-workstation',
               title: 'LLM Workstation for Flexible Manufacturing',
-              period: '',
+              period: 'Jan 2025',
               description:
                 'Developed a configurable workstation that binds language models, manufacturing knowledge, digital assets, and production-line operations into reusable agent workflows.',
               highlights: [
@@ -219,7 +217,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'bilibili-ai-feedback',
               title: 'Bilibili Audience Feedback Intelligence Platform',
-              period: '',
+              period: 'Aug 2026',
               description:
                 'Built an AI review workspace that turns real Bilibili danmaku and comments into evidence-backed insights for creators.',
               highlights: [
@@ -238,7 +236,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'three-stooges',
               title: 'The Three Stooges: Research Collaboration Platform',
-              period: '',
+              period: 'Sep 2025-Nov 2025',
               description:
                 'Built a research website for organizing literature, exchanging technical ideas, and discussing questions with specialized LLM agents.',
               highlights: [
@@ -256,7 +254,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'whatsapp-ai-robot',
               title: 'WhatsApp AI Property-Service Agent',
-              period: '',
+              period: 'Mar 2025-Apr 2025',
               description:
                 'Built an AI-assisted messaging and work-order system that answers rental customers and helps staff manage service requests.',
               highlights: [
@@ -274,7 +272,7 @@ export const projects: Record<SiteLocale, Projects> = {
             {
               id: 'llm-chrome-extension',
               title: 'Multimodal LLM Chrome Extension',
-              period: '',
+              period: 'Oct 2024-Dec 2024',
               description:
                 'Developed an in-browser AI assistant that combines webpage context, visual understanding, search, and personal knowledge in one conversation panel.',
               highlights: [
@@ -302,7 +300,6 @@ export const projects: Record<SiteLocale, Projects> = {
     label: {
       eyebrow: '项目',
       title: '精选项目',
-      pageContentsLabel: '本页目录',
       showMoreLabel: '展开',
       showLessLabel: '收起',
     },

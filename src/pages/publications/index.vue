@@ -23,7 +23,7 @@ const tocItems = computed(() => [
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="publications.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="publications.label.eyebrow" :title="publications.label.title" />
 
     <Section

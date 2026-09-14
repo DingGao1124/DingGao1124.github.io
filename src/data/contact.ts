@@ -18,7 +18,6 @@ export type Contact = {
     cvTitle: string
     viewCvLabel: string
     downloadCvLabel: string
-    pageContentsLabel: string
   }
   content: {
     cvDescription: string
@@ -63,7 +62,6 @@ export const contact: Record<SiteLocale, Contact> = {
       cvTitle: 'Curriculum vitae',
       viewCvLabel: 'View CV',
       downloadCvLabel: 'Download CV',
-      pageContentsLabel: 'On this page',
     },
     content: {
       cvDescription: 'You can view and download my latest CV here.',
@@ -100,7 +98,6 @@ export const contact: Record<SiteLocale, Contact> = {
       cvTitle: '个人简历',
       viewCvLabel: '预览简历',
       downloadCvLabel: '下载简历',
-      pageContentsLabel: '本页目录',
     },
     content: {
       cvDescription: '下载最新版本的个人简历 PDF。',

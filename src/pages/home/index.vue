@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { ArrowRight } from '@lucide/vue'
+import { ArrowRight, Construction } from '@lucide/vue'
 
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
@@ -22,12 +22,12 @@ const tocItems = computed(() => [
   { id: 'news', label: home.value.label.newsTitle },
   { id: 'publications', label: home.value.label.publicationTitle },
   { id: 'experiences', label: home.value.label.experienceTitle },
-  // { id: 'acknowledgements', label: home.value.label.acknowledgementsTitle },
+  { id: 'acknowledgements', label: home.value.label.acknowledgementsTitle },
 ])
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="home.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <ProfileHero
       id="profile"
       :name="home.identity.name"
@@ -111,11 +111,16 @@ const tocItems = computed(() => [
     </Section>
 
     <!-- TODO: acknowledgements (Lazy Load) -->
-    <!-- <Section
+    <Section
       id="acknowledgements"
       :title="home.label.acknowledgementsTitle"
       :position="'center'"
-      class="mt-8 md:mt-10"
-    /> -->
+      class="mt-8 md:mt-10 text-center content"
+    >
+      <span class="inline-flex items-center justify-center gap-2">
+        <Construction class="size-5" />
+        {{ home.label.underConstruction }}
+      </span>
+    </Section>
   </PageShell>
 </template>

@@ -19,7 +19,7 @@ const tocItems = computed(() => [
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="contact.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="contact.label.eyebrow" :title="contact.label.title" />
 
     <Section class="mt-6 md:mt-8">

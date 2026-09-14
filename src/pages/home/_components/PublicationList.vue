@@ -9,7 +9,7 @@ function publicationMeta(publication: HomePublication) {
   const venue = publication.venue.abbreviation
     ? `${publication.venue.name} (${publication.venue.abbreviation})`
     : publication.venue.name
-  return [venue, publication.year, publication.identifier && `DOI: ${publication.identifier}`]
+  return [publication.year, venue, publication.identifier && `DOI: ${publication.identifier}`]
     .filter(Boolean)
     .join(' · ')
 }

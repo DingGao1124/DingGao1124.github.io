@@ -17,7 +17,6 @@ export type Experience = {
     advisorLabel: string
     departmentLabel: string
     roleLabel: string
-    pageContentsLabel: string
     showMoreLabel: string
     showLessLabel: string
   }
@@ -44,7 +43,6 @@ export const experiences: Record<SiteLocale, Experience> = {
       advisorLabel: 'Advisor',
       departmentLabel: 'Department',
       roleLabel: 'Role',
-      pageContentsLabel: 'On this page',
       showMoreLabel: 'Show more',
       showLessLabel: 'Show less',
     },
@@ -69,7 +67,6 @@ export const experiences: Record<SiteLocale, Experience> = {
       advisorLabel: '导师',
       departmentLabel: '部门',
       roleLabel: '职位',
-      pageContentsLabel: '本页目录',
       showMoreLabel: '展开',
       showLessLabel: '收起',
     },

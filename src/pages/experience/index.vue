@@ -34,7 +34,7 @@ function educationDetails(education: (typeof experience.value.content.education)
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="experience.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="experience.label.eyebrow" :title="experience.label.title" />
 
     <!-- Research Experience -->

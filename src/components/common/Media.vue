@@ -18,11 +18,14 @@ export type MediaItem = {
 const props = defineProps<{
   media: MediaItem
   href?: string
+  /** For same-origin href assets. */
+  newTab?: boolean
 }>()
 
 const { messages } = useSiteLocale()
 
 const isExternal = computed(() => Boolean(props.href) && /^https?:\/\//.test(props.href ?? ''))
+const opensInNewTab = computed(() => Boolean(props.href) && (props.newTab || isExternal.value))
 
 const loaded = ref(false)
 const failed = ref(false)
@@ -50,8 +53,8 @@ watch(
         v-if="media.src && !failed"
         :is="href ? 'a' : 'div'"
         :href="href"
-        :target="isExternal ? '_blank' : undefined"
-        :rel="isExternal ? 'noreferrer' : undefined"
+        :target="opensInNewTab ? '_blank' : undefined"
+        :rel="opensInNewTab ? 'noreferrer' : undefined"
         :class="
           cn(
             'block size-full',
@@ -73,7 +76,7 @@ watch(
       </component>
       <Empty
         v-else
-        class="absolute inset-0 size-full min-h-0 min-w-0 gap-1.5 overflow-hidden rounded-none border-0 p-2"
+        class="absolute inset-0 size-full min-h-0 min-w-0 gap-1.5 overflow-hidden rounded-none border-0 bg-card/60 p-2"
         role="img"
         :aria-label="media.alt"
       >

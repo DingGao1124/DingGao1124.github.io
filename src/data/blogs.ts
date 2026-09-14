@@ -20,7 +20,6 @@ export type Blog = {
     title: string
     postsTitle: string
     emptyLabel: string
-    pageContentsLabel: string
   }
   notebooks: readonly Notebook[]
 }
@@ -194,7 +193,6 @@ export const blogs: Record<SiteLocale, Blog> = {
       title: 'Blog',
       postsTitle: 'Posts',
       emptyLabel: 'Under construction, coming soon...',
-      pageContentsLabel: 'On this page',
     },
     notebooks,
   },
@@ -204,7 +202,6 @@ export const blogs: Record<SiteLocale, Blog> = {
       title: '博客',
       postsTitle: '文章',
       emptyLabel: '还没有内容。',
-      pageContentsLabel: '本页目录',
     },
     notebooks,
   },

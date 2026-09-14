@@ -21,7 +21,7 @@ const tocItems = computed(() =>
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="projects.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="projects.label.eyebrow" :title="projects.label.title" />
 
     <Section

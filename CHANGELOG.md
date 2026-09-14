@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-15
+
+- Publications: added a figure for every journal paper and patent, each linked to its full-size image.
+- Profile: rewrote the intro copy and re-centred the headline on software engineering.
+
 ## 2026-09-14
 
 - Projects: added a figure for every project, each linked to the portfolio.

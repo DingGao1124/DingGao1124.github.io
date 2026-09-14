@@ -25,9 +25,9 @@ const citationMeta = computed(() => {
 
   const publicationYear =
     props.publication.publicationDate.year ?? props.publication.publicationDate.datetime.slice(0, 4)
-  const venueAndYear = [venue, publicationYear].filter(Boolean).join(', ')
-  const volume = props.publication.volume ? `Vol. ${props.publication.volume}` : undefined
-  return [venueAndYear, volume, props.publication.pages].filter(Boolean).join(' · ')
+
+  const doi = props.publication.identifier ? `doi: ${props.publication.identifier}` : undefined
+  return [venue, publicationYear, doi].filter(Boolean).join(', ')
 })
 
 function isDingGao(author: string) {
@@ -101,7 +101,7 @@ function isDingGao(author: string) {
 
       <!-- Right Part -->
       <div class="min-w-0 self-start md:col-start-2 lg:col-start-3 lg:row-start-1">
-        <Media :media="publication.media" />
+        <Media :media="publication.media" :href="publication.media.originalSrc" new-tab />
       </div>
     </article>
   </li>

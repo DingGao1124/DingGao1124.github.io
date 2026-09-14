@@ -155,6 +155,7 @@ defineProps<{
           {{ location }}
         </p>
       </div>
+      <!-- Skill Proficiency -->
       <TechCarousel
         :title="skillTitle"
         :groups="skillItems"

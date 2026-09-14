@@ -15,8 +15,9 @@ const ORDER_KEY = 'blogs:notebook-order'
 const { messages } = useSiteLocale()
 
 const blogSection = computed(() => messages.value.blogs)
-const published = blogSection.value.notebooks.filter((notebook) => !notebook.private)
-const published_notebooks = ref<Notebook[]>(published)
+const published_notebooks = ref<Notebook[]>(
+  blogSection.value.notebooks.filter((notebook) => !notebook.private),
+)
 
 const notebookId = (notebook: Notebook) => `notebook-${notebook.title.replace(/\s+/g, '-')}`
 
@@ -54,7 +55,7 @@ watch(draggingIndex, (index, previous) => {
 </script>
 
 <template>
-  <PageShell :toc-items="tocItems" :toc-label="blogSection.label.pageContentsLabel">
+  <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="blogSection.label.eyebrow" :title="blogSection.label.title">
       <p>
         {{ '('

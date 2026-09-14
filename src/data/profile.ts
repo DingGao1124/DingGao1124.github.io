@@ -66,7 +66,7 @@ export type Profile = {
     emailLabel: string
     phoneLabel: string
     viewCvLabel: string
-    pageContentsLabel: string
+    underConstruction: string
   }
   content: {
     news: NewsItem[]
@@ -88,8 +88,8 @@ export const profile: Record<SiteLocale, Profile> = {
     techGroups: techTopics['en'],
     identity: {
       name: 'Ding Gao',
-      headline: 'AI Agent Engineer & Robotics Researcher',
-      currentPosition: 'AI Agent Engineer at',
+      headline: 'Software Engineer & Robotics Researcher',
+      currentPosition: 'Software Engineer at',
       employer: {
         label: '@bilibili',
         href: 'https://github.com/bilibili',
@@ -98,8 +98,9 @@ export const profile: Record<SiteLocale, Profile> = {
       location: 'Shanghai, China',
       avatarAlt: 'Profile avatar of Ding Gao',
       intro: [
-        'Hi there👋, my name is Ding Gao. I am an AI agent engineer and robotics researcher based in Shanghai. I recently completed my M.Eng. in Intelligent Manufacturing at Donghua University and now work as a software engineer at Bilibili.',
-        'I am interested in how robots can perceive, reason, and act reliably in real-world environments. My recent work explores LLM-enabled flexible manufacturing, multimodal industrial disassembly, and task-planning agents for robot automation.',
+        "Hi there 👋, I'm Ding Gao, a software engineer with a background in mechanical engineering and robotics. I hold an M.Eng. in Intelligent Manufacturing from Donghua University and currently work at BILIBILI.",
+        "My experiences range from robot control and digital twins to AI agents and full-stack web applications. I've built systems for guiding robot arms through language, automating web tasks, and making sense of user feedback.",
+        'I enjoy working across hardware and software, learning by building, and exploring how robots and AI can help people with practical tasks. Feel free to explore my Experience and Projects pages to learn more about my growth and what I’ve been working on. Thanks for stopping by!',
       ],
       researchKeywords: [
         'Digital Twin',
@@ -146,7 +147,7 @@ export const profile: Record<SiteLocale, Profile> = {
       emailLabel: 'Email',
       phoneLabel: 'Phone',
       viewCvLabel: 'View CV',
-      pageContentsLabel: 'On this page',
+      underConstruction: 'Under construction, coming soon...',
     },
     content: {
       news: news['en'],
@@ -242,8 +243,9 @@ export const profile: Record<SiteLocale, Profile> = {
       location: '中国上海',
       avatarAlt: '高鼎的个人头像',
       intro: [
-        '你好，我叫高鼎，是一名常驻上海的全栈工程师与机器人研究者。我已完成东华大学智能制造工程硕士学业，目前在哔哩哔哩担任软件工程师。',
-        '我关注机器人如何在真实环境中可靠地感知、推理与执行。近期工作主要涉及 LLM 驱动的柔性制造、多模态工业拆解，以及面向机器人自动化的任务规划智能体。',
+        '你好 👋，我是高鼎，一名有机械工程与机器人研究背景的软件工程师。我在东华大学获得了智能制造工程硕士学位，目前就职于哔哩哔哩。',
+        '我做过的项目涵盖机器人控制、数字孪生、AI 智能体和全栈 Web 应用，包括用语言指令操控机械臂、自动完成网页任务，以及分析用户反馈。',
+        '我喜欢结合硬件和软件动手做东西，边做边学，也喜欢探索机器人和 AI 如何帮助人们解决实际问题。欢迎逛逛「经历」和「项目」页面，了解我一路以来做过的事。谢谢你来这里看看！',
       ],
       researchKeywords: ['物理系统', '数字模型', '智能体', '机器人执行'],
     },
@@ -279,7 +281,7 @@ export const profile: Record<SiteLocale, Profile> = {
       emailLabel: '发送邮件',
       phoneLabel: '电话',
       viewCvLabel: '预览简历',
-      pageContentsLabel: '本页目录',
+      underConstruction: '还没有内容。',
     },
     content: {
       news: news['zh'],

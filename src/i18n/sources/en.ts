@@ -28,6 +28,7 @@ export default {
   notFoundDescription: 'The page you requested could not be found.',
   backHomeLabel: 'Back to home',
   mediaFailedLabel: 'Fail to display image.',
+  pageContentsLabel: 'On this page',
   footer: {
     footerTag: '©Ding Gao 2026. All rights reserved.',
     viewsLabel: 'Site Views',
