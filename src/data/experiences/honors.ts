@@ -16,16 +16,16 @@ export const honors: Record<SiteLocale, HonorRecord[]> = {
       type: 'competition',
     },
     {
-      year: '2023',
-      title: 'National First Prize, National University Students Mathematics Competition',
-      detail: 'Provincial First Prize, 2022; Provincial Third Prize, 2020',
-      type: 'competition',
-    },
-    {
       year: '2023-2026',
       title: 'Donghua University scholarships',
       detail: 'First-Class Scholarship (Top 5%) (2x); Second-Class Scholarship (1x)',
       type: 'scholarship',
+    },
+    {
+      year: '2023',
+      title: 'National First Prize, National University Students Mathematics Competition',
+      detail: 'Provincial First Prize, 2022; Provincial Third Prize, 2020',
+      type: 'competition',
     },
     {
       year: '2022',

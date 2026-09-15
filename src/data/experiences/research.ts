@@ -7,11 +7,6 @@ export type ResearchEntry = {
   advisor: string
   summary: string
   highlights: string[]
-  media: {
-    src?: string
-    alt: string
-    label: string
-  }
 }
 
 export const research: Record<SiteLocale, ResearchEntry[]> = {
@@ -30,10 +25,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         'Connected agent reasoning to the line through event-driven tool calls and RAG-based manufacturing knowledge retrieval.',
         'Validated on a parts defect-monitoring and sorting line: 47% less changeover and recovery time and a lower false-positive rate than conventional methods.',
       ],
-      media: {
-        alt: 'Placeholder for the digital-twin production-line platform',
-        label: 'Digital-twin platform',
-      },
     },
     {
       id: 'industrial-disassembly',
@@ -49,10 +40,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         'Combined FastSAM and VLMs for scene understanding with Strategy of Mind prompting and GraspNet for grasp planning.',
         'Exposed UR robot control through MCP tool calls for collision-free tool pickup and delivery.',
       ],
-      media: {
-        alt: 'Placeholder for the embodied industrial disassembly system',
-        label: 'Embodied disassembly system',
-      },
     },
     {
       id: 'ball-screw-platform',
@@ -67,10 +54,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         'Produced 2D engineering drawings, 3D CAD/UG models, and kinematic simulations of the platform.',
         'Built an 8051 controller for stepper-driven linear and arc motion, validating circuit and control behavior in Proteus.',
       ],
-      media: {
-        alt: 'Placeholder for the 3-DOF ball screw defect detection platform',
-        label: '3-DOF inspection platform',
-      },
     },
     {
       id: 'mobile-crane-robot',
@@ -82,13 +65,10 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
       summary:
         'Led the development of a mobile crane robot that transports and places objects along designated routes, covering mechanical design, motion analysis, and system integration.',
       highlights: [
+        'Designed the mechanical structure and integrated sensing, actuation, and control.',
         'Programmed an STM32 control system for DC motors, encoder motors, servos, and robotic arms, coordinated over CAN bus.',
         'Added a dynamic shortest-path algorithm and moved to a triple-motor mechanism, cutting operation time from 4 min 32 s to 3 min 15 s.',
       ],
-      media: {
-        alt: 'Placeholder for the mobile crane robot',
-        label: 'Mobile crane robot',
-      },
     },
   ],
   zh: [
@@ -105,7 +85,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         '通过事件驱动工具调用与制造知识 RAG，把智能体推理接入真实产线。',
         '在零件缺陷监测与分拣产线上验证：换线与恢复时间降低 47%，误报率低于传统方法。',
       ],
-      media: { alt: '数字孪生产线平台占位图', label: 'Digital-twin platform' },
     },
     {
       id: 'industrial-disassembly',
@@ -120,7 +99,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         '结合 FastSAM、VLM 与 Strategy of Mind prompting 完成场景理解与抓取规划。',
         '通过 MCP 工具调用控制 UR 机器人完成无碰撞工具取送。',
       ],
-      media: { alt: '工业拆卸机器人实验占位图', label: 'Embodied disassembly system' },
     },
     {
       id: 'ball-screw-platform',
@@ -134,7 +112,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         '完成载荷与电机扭矩计算、零部件选型、二维工程图和 CAD/UG 三维模型。',
         '开发了基于 8051 的步进电机控制器，并在 Proteus 中验证直线与圆弧运动。',
       ],
-      media: { alt: '三自由度缺陷检测平台占位图', label: '3-DOF inspection platform' },
     },
     {
       id: 'mobile-crane-robot',
@@ -148,7 +125,6 @@ export const research: Record<SiteLocale, ResearchEntry[]> = {
         '负责机械设计、运动分析与系统集成，并使用 STM32、CAN 总线协调电机、舵机和机械臂。',
         '开发动态最短路径算法并将执行机构由单电机升级为三电机，总运行时间由 4 分 32 秒降至 3 分 15 秒。',
       ],
-      media: { alt: '移动起重机器人占位图', label: 'Mobile crane robot' },
     },
   ],
 }

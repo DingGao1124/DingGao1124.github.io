@@ -15,9 +15,10 @@ const ORDER_KEY = 'blogs:notebook-order'
 const { messages } = useSiteLocale()
 
 const blogSection = computed(() => messages.value.blogs)
-const published_notebooks = ref<Notebook[]>(
-  blogSection.value.notebooks.filter((notebook) => !notebook.private),
-)
+const published_notebooks = ref<Notebook[]>(blogSection.value.notebooks.slice())
+// const published_notebooks = ref<Notebook[]>(
+//   blogSection.value.notebooks.filter((notebook) => !notebook.private),
+// )
 
 const notebookId = (notebook: Notebook) => `notebook-${notebook.title.replace(/\s+/g, '-')}`
 
@@ -69,7 +70,8 @@ watch(draggingIndex, (index, previous) => {
       </p>
     </PageHeader>
 
-    <Section :title="blogSection.label.postsTitle" class="mt-6 md:mt-8">
+    <!-- Wiki -->
+    <Section :title="blogSection.label.wikiTitle" class="mt-6 md:mt-8">
       <p v-if="published_notebooks.length === 0" class="measure text-muted-foreground">
         <span class="inline-flex items-center gap-2">
           <Construction class="size-5" />

@@ -19,6 +19,7 @@ export type Blog = {
     eyebrow: string
     title: string
     postsTitle: string
+    wikiTitle: string
     emptyLabel: string
   }
   notebooks: readonly Notebook[]
@@ -105,7 +106,7 @@ const notebooks: readonly Notebook[] = [
     docs: [
       { title: 'Daily Routine', date: '2025-05-28 10:54' },
       { title: 'IELTS Words', date: '2025-05-23 11:27' },
-      { title: '刘黑眼圈子', date: '2025-05-22 20:52' },
+      { title: 'IELTS Speaking', date: '2025-05-22 20:52' },
     ],
   },
   {
@@ -192,6 +193,7 @@ export const blogs: Record<SiteLocale, Blog> = {
       eyebrow: 'Blog',
       title: 'Blog',
       postsTitle: 'Posts',
+      wikiTitle: 'Wiki',
       emptyLabel: 'Under construction, coming soon...',
     },
     notebooks,
@@ -200,7 +202,8 @@ export const blogs: Record<SiteLocale, Blog> = {
     label: {
       eyebrow: '博客',
       title: '博客',
-      postsTitle: '文章',
+      postsTitle: '帖子',
+      wikiTitle: '笔记',
       emptyLabel: '还没有内容。',
     },
     notebooks,

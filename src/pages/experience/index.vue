@@ -3,7 +3,6 @@ import { computed } from 'vue'
 
 import { Briefcase, Building2, GraduationCap, MapPin, UserRound } from '@lucide/vue'
 
-import Media from '@/components/common/Media.vue'
 import PageHeader from '@/components/common/PageHeader.vue'
 import PageShell from '@/components/layout/PageShell.vue'
 import Section from '@/components/common/Section.vue'
@@ -37,44 +36,12 @@ function educationDetails(education: (typeof experience.value.content.education)
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="experience.label.eyebrow" :title="experience.label.title" />
 
-    <!-- Research Experience -->
-    <Section id="research-experience" :title="experience.label.researchTitle" class="mt-6 md:mt-8">
-      <ExperienceEntry
-        v-for="item in experience.content.research"
-        :key="item.id"
-        :period="item.period"
-        :title="item.role"
-        :summary="item.summary"
-        :highlights="item.highlights"
-        collapsible
-        :show-more-label="experience.label.showMoreLabel"
-        :show-less-label="experience.label.showLessLabel"
-      >
-        <template #meta>
-          <div class="flex flex-col gap-0.5">
-            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-              <GraduationCap class="size-3.5 shrink-0" aria-hidden="true" />
-              <span>{{ item.organization }}</span>
-              <span aria-hidden="true">·</span>
-              <span class="inline-flex items-center gap-1">
-                <MapPin class="size-3.5 shrink-0" aria-hidden="true" />
-                {{ item.location }}
-              </span>
-            </p>
-            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-              <UserRound class="size-3.5 shrink-0" aria-hidden="true" />
-              <span>{{ experience.label.advisorLabel }}: {{ item.advisor }}</span>
-            </p>
-          </div>
-        </template>
-        <template #media>
-          <Media :media="item.media" />
-        </template>
-      </ExperienceEntry>
-    </Section>
-
     <!-- Work/Intern Experience -->
-    <Section id="professional-experience" :title="experience.label.professionalTitle" class="mt-10">
+    <Section
+      id="professional-experience"
+      :title="experience.label.professionalTitle"
+      class="mt-6 md:mt-8"
+    >
       <ExperienceEntry
         v-for="item in experience.content.professional"
         :key="item.id"
@@ -106,6 +73,39 @@ function educationDetails(education: (typeof experience.value.content.education)
             alt=""
             loading="lazy"
           />
+        </template>
+      </ExperienceEntry>
+    </Section>
+
+    <!-- Research Experience -->
+    <Section id="research-experience" :title="experience.label.researchTitle" class="mt-10">
+      <ExperienceEntry
+        v-for="item in experience.content.research"
+        :key="item.id"
+        :period="item.period"
+        :title="item.role"
+        :summary="item.summary"
+        :highlights="item.highlights"
+        collapsible
+        :show-more-label="experience.label.showMoreLabel"
+        :show-less-label="experience.label.showLessLabel"
+      >
+        <template #meta>
+          <div class="flex flex-col gap-0.5">
+            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <GraduationCap class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ item.organization }}</span>
+              <span aria-hidden="true">·</span>
+              <span class="inline-flex items-center gap-1">
+                <MapPin class="size-3.5 shrink-0" aria-hidden="true" />
+                {{ item.location }}
+              </span>
+            </p>
+            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <UserRound class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ experience.label.advisorLabel }}: {{ item.advisor }}</span>
+            </p>
+          </div>
         </template>
       </ExperienceEntry>
     </Section>
