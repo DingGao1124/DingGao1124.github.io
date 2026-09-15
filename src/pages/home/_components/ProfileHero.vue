@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
 import type { ProfileLink } from '@/data/profile'
 import type { SkillGroup } from '@/data/common/skills'
+import { useTypewriter } from '@/hooks/useTypewriter'
 import TechCarousel from '@/pages/home/_components/TechCarousel.vue'
 
-defineProps<{
+const props = defineProps<{
   eyebrow: string
   title: string
   name: string
@@ -30,6 +31,8 @@ defineProps<{
   skillTitle: string
   skillItems: readonly SkillGroup[]
 }>()
+
+const typedTitle = useTypewriter(() => props.title, { speed: 100, reserve: 1, loops: 3 })
 </script>
 
 <template>
@@ -41,7 +44,11 @@ defineProps<{
         <h1
           class="text-[clamp(2.75rem,6.5vw,4.4rem)] leading-[0.94] font-medium tracking-[-0.035em]"
         >
-          {{ title }}
+          <span class="sr-only">{{ title }}</span>
+          <span aria-hidden="true">
+            {{ typedTitle }}
+            <span class="animate-[cursor-blink_1.1s_infinite] font-light">|</span>
+          </span>
         </h1>
       </div>
 

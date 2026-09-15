@@ -61,3 +61,18 @@ html[data-magicui-theme-vt='collapse']::view-transition-new(root) {
     background-position: 200%;
   }
 }
+
+/* Blinking caret trailing the typewriter text. */
+@keyframes cursor-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

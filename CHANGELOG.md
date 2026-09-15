@@ -4,6 +4,7 @@
 
 - Publications: added a figure for every journal paper and patent, each linked to its full-size image.
 - Profile: rewrote the intro copy and re-centred the headline on software engineering.
+- Home: turned the About Me hero heading into a looping typewriter with a blinking caret.
 
 ## 2026-09-14
 
