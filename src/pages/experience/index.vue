@@ -14,8 +14,8 @@ const { messages } = useSiteLocale()
 
 const experience = computed(() => messages.value.experience)
 const tocItems = computed(() => [
-  { id: 'research-experience', label: experience.value.label.researchTitle },
   { id: 'professional-experience', label: experience.value.label.professionalTitle },
+  { id: 'research-experience', label: experience.value.label.researchTitle },
   { id: 'education', label: experience.value.label.educationTitle },
   { id: 'honors', label: experience.value.label.honorsTitle },
 ])
@@ -37,23 +37,10 @@ function educationDetails(education: (typeof experience.value.content.education)
     <PageHeader :eyebrow="experience.label.eyebrow" :title="experience.label.title" />
 
     <!-- Work/Intern Experience -->
-    <Section
-      id="professional-experience"
-      :title="experience.label.professionalTitle"
-      class="mt-6 md:mt-8"
-    >
-      <ExperienceEntry
-        v-for="item in experience.content.professional"
-        :key="item.id"
-        :period="item.period"
-        :title="item.organization"
-        :location="item.location"
-        :summary="item.summary"
-        :highlights="item.highlights"
-        collapsible
-        :show-more-label="experience.label.showMoreLabel"
-        :show-less-label="experience.label.showLessLabel"
-      >
+    <Section id="professional-experience" :title="experience.label.professionalTitle" class="mt-6 md:mt-8">
+      <ExperienceEntry v-for="item in experience.content.professional" :key="item.id" :period="item.period"
+        :title="item.organization" :location="item.location" :summary="item.summary" :highlights="item.highlights"
+        collapsible :show-more-label="experience.label.showMoreLabel" :show-less-label="experience.label.showLessLabel">
         <template #meta>
           <div class="flex w-full flex-wrap items-center justify-between gap-x-4 gap-y-0.5">
             <p v-if="item.department" class="inline-flex items-center gap-x-2">
@@ -67,29 +54,17 @@ function educationDetails(education: (typeof experience.value.content.education)
           </div>
         </template>
         <template #logo>
-          <img
-            :class="`size-${item.logo.size ?? 6} shrink-0 object-contain`"
-            :src="item.logo.src"
-            alt=""
-            loading="lazy"
-          />
+          <img :class="`size-${item.logo.size ?? 6} shrink-0 object-contain`" :src="item.logo.src" alt=""
+            loading="lazy" />
         </template>
       </ExperienceEntry>
     </Section>
 
     <!-- Research Experience -->
     <Section id="research-experience" :title="experience.label.researchTitle" class="mt-10">
-      <ExperienceEntry
-        v-for="item in experience.content.research"
-        :key="item.id"
-        :period="item.period"
-        :title="item.role"
-        :summary="item.summary"
-        :highlights="item.highlights"
-        collapsible
-        :show-more-label="experience.label.showMoreLabel"
-        :show-less-label="experience.label.showLessLabel"
-      >
+      <ExperienceEntry v-for="item in experience.content.research" :key="item.id" :period="item.period"
+        :title="item.role" :summary="item.summary" :highlights="item.highlights" collapsible
+        :show-more-label="experience.label.showMoreLabel" :show-less-label="experience.label.showLessLabel">
         <template #meta>
           <div class="flex flex-col gap-0.5">
             <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
@@ -112,25 +87,12 @@ function educationDetails(education: (typeof experience.value.content.education)
 
     <!-- Education -->
     <Section id="education" :title="experience.label.educationTitle" class="mt-10">
-      <ExperienceEntry
-        v-for="item in experience.content.education"
-        :key="item.school"
-        :period="item.period"
-        :title="item.school"
-        :location="item.location"
-        :meta="item.degree"
-        :highlights="educationDetails(item)"
-        collapsible
-        :show-more-label="experience.label.showMoreLabel"
-        :show-less-label="experience.label.showLessLabel"
-      >
+      <ExperienceEntry v-for="item in experience.content.education" :key="item.school" :period="item.period"
+        :title="item.school" :location="item.location" :meta="item.degree" :highlights="educationDetails(item)"
+        collapsible :show-more-label="experience.label.showMoreLabel" :show-less-label="experience.label.showLessLabel">
         <template #logo>
-          <img
-            :class="`size-${item.logo.size ?? 6} shrink-0 object-contain`"
-            :src="item.logo.src"
-            alt=""
-            loading="lazy"
-          />
+          <img :class="`size-${item.logo.size ?? 6} shrink-0 object-contain`" :src="item.logo.src" alt=""
+            loading="lazy" />
         </template>
       </ExperienceEntry>
     </Section>
