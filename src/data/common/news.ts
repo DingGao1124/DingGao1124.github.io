@@ -92,6 +92,8 @@ export const news: Record<SiteLocale, News> = {
       type: 'Milestone',
       date: '06/2023',
       text: "I completed my B.Eng. in Mechanical Engineering at NJIT, with my thesis named 'Development of a 3-DOF Ball Screw Defect Detection Platform' 🎓.",
+      href: 'https://drive.google.com/file/d/1uzFtR7Sr_C9FfqC-i7ctz5r5-pDKRqgO/view?usp=drive_link',
+      linkLabel: 'View My Work.',
     },
     {
       type: 'Milestone',
@@ -328,7 +330,7 @@ export const news: Record<SiteLocale, News> = {
       type: 'Milestone',
       date: '2023.06',
       text: '我完成了南京工程学院机械工程专业工学学士学位，毕业论文题目为《三自由度滚珠丝杠缺陷检测平台开发》。',
-      href: '',
+      href: 'https://drive.google.com/file/d/1uzFtR7Sr_C9FfqC-i7ctz5r5-pDKRqgO/view?usp=drive_link',
       linkLabel: '查看我的工作。',
     },
     {
