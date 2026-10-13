@@ -98,9 +98,9 @@ export const profile: Record<SiteLocale, Profile> = {
       location: 'Shanghai, China',
       avatarAlt: 'Profile avatar of Ding Gao',
       intro: [
-        "Hi there 👋, I'm Ding Gao, a software engineer with a background in mechanical engineering and robotics. I have just graduated from Donghua University and currently work at BILIBILI 🧑‍💻.",
-        'My interests range from Digital Twins and Robotics to AI-Agents powered Full-Stack web applications. I enjoy working across hardware and software, learning by building, and exploring how robots and AI can help people with practical tasks.',
-        'Feel free to explore my Experience and Projects pages to learn more about my growth, and what I’ve been working on. Thanks for stopping by!',
+        "Hi there 👋, I'm Ding Gao, a software engineer with a background in intelligent manufacturing and robotics. I recently graduated from Donghua University and currently work at BILIBILI 🧑‍💻.",
+        'My main interest is robotics, especially robot manipulation and human-robot collaboration. I also have experience with digital twin-based manufacturing systems and full-stack development of AI agent applications.',
+        'I enjoy working across hardware and software, learning by building, and exploring how robots and AI can help people with practical tasks. Please feel free to explore my experience and projects to learn more about my journey and what I’ve been working on. Thanks for stopping by!',
       ],
       researchKeywords: [
         'Digital Twin',
