@@ -14,8 +14,8 @@ const { messages } = useSiteLocale()
 
 const experience = computed(() => messages.value.experience)
 const tocItems = computed(() => [
-  { id: 'professional-experience', label: experience.value.label.professionalTitle },
   { id: 'research-experience', label: experience.value.label.researchTitle },
+  { id: 'professional-experience', label: experience.value.label.professionalTitle },
   { id: 'education', label: experience.value.label.educationTitle },
   { id: 'honors', label: experience.value.label.honorsTitle },
 ])
@@ -36,12 +36,41 @@ function educationDetails(education: (typeof experience.value.content.education)
   <PageShell :toc-items="tocItems" :toc-label="messages.pageContentsLabel">
     <PageHeader :eyebrow="experience.label.eyebrow" :title="experience.label.title" />
 
+    <!-- Research Experience -->
+    <Section id="research-experience" :title="experience.label.researchTitle" class="mt-6 md:mt-8">
+      <ExperienceEntry
+        v-for="item in experience.content.research"
+        :key="item.id"
+        :period="item.period"
+        :title="item.role"
+        :summary="item.summary"
+        :highlights="item.highlights"
+        collapsible
+        :show-more-label="experience.label.showMoreLabel"
+        :show-less-label="experience.label.showLessLabel"
+      >
+        <template #meta>
+          <div class="flex flex-col gap-0.5">
+            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <GraduationCap class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ item.organization }}</span>
+              <span aria-hidden="true">·</span>
+              <span class="inline-flex items-center gap-1">
+                <MapPin class="size-3.5 shrink-0" aria-hidden="true" />
+                {{ item.location }}
+              </span>
+            </p>
+            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+              <UserRound class="size-3.5 shrink-0" aria-hidden="true" />
+              <span>{{ experience.label.advisorLabel }}: {{ item.advisor }}</span>
+            </p>
+          </div>
+        </template>
+      </ExperienceEntry>
+    </Section>
+
     <!-- Work/Intern Experience -->
-    <Section
-      id="professional-experience"
-      :title="experience.label.professionalTitle"
-      class="mt-6 md:mt-8"
-    >
+    <Section id="professional-experience" :title="experience.label.professionalTitle" class="mt-10">
       <ExperienceEntry
         v-for="item in experience.content.professional"
         :key="item.id"
@@ -73,39 +102,6 @@ function educationDetails(education: (typeof experience.value.content.education)
             alt=""
             loading="lazy"
           />
-        </template>
-      </ExperienceEntry>
-    </Section>
-
-    <!-- Research Experience -->
-    <Section id="research-experience" :title="experience.label.researchTitle" class="mt-10">
-      <ExperienceEntry
-        v-for="item in experience.content.research"
-        :key="item.id"
-        :period="item.period"
-        :title="item.role"
-        :summary="item.summary"
-        :highlights="item.highlights"
-        collapsible
-        :show-more-label="experience.label.showMoreLabel"
-        :show-less-label="experience.label.showLessLabel"
-      >
-        <template #meta>
-          <div class="flex flex-col gap-0.5">
-            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-              <GraduationCap class="size-3.5 shrink-0" aria-hidden="true" />
-              <span>{{ item.organization }}</span>
-              <span aria-hidden="true">·</span>
-              <span class="inline-flex items-center gap-1">
-                <MapPin class="size-3.5 shrink-0" aria-hidden="true" />
-                {{ item.location }}
-              </span>
-            </p>
-            <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-              <UserRound class="size-3.5 shrink-0" aria-hidden="true" />
-              <span>{{ experience.label.advisorLabel }}: {{ item.advisor }}</span>
-            </p>
-          </div>
         </template>
       </ExperienceEntry>
     </Section>
