@@ -42,13 +42,15 @@ The signature element is the profile's research systems thread: physical systems
 
 ## Asset contract
 
-- Replace `public/Avatar.png` in place to update the portrait.
-- Add one project image under `public/projects/<project-id>/` and set the corresponding `media.src` value in `src/data/projects.ts`.
-- Add one research image under `public/research/<research-id>/` and set the corresponding `media.src` value in `src/data/experiences/research.ts`.
-- Add publication and professional-experience images under their matching public asset folders and set the corresponding `media.src` values in their data files.
-- Existing Tesla, ABB, and Bilibili marks are referenced from `public/company/`. Missing organization marks intentionally fall back to text.
-- Existing LinkedIn and GitHub marks are referenced from `public/media/`. Assets without a confirmed destination are not rendered.
+- Organize page images in `src/assets/` by their content domain. Import them into the corresponding data modules; Vite resolves their output URLs. Keep journal originals that do not need optimization in `public/` under the same content hierarchy.
+- Replace `src/assets/avatar.jpg` in place to update the portrait.
+- Store project images under `src/assets/projects/`, preserving the category folders, and assign their imports to `media.src` in `src/data/projects.ts`.
+- Store journal preview images under `src/assets/publications/journal/` and assign their imports to `media.src`. Store high-resolution originals under `public/publications/journal/original/`, use `/publications/journal/original/...` for `media.originalSrc`, and exclude that directory from image optimization.
+- Store patent images under `src/assets/publications/patent/`. Use the same imported URL for their previews and original-image links.
+- Store organization marks in `src/assets/company/` and `src/assets/university/`, and social icons in `src/assets/media/`. Assets without a confirmed destination are not rendered.
+- Keep `public/favicon.svg` at its fixed URL.
 - Replace `public/cv/Ding_Gao_CV.pdf` in place for future CV revisions.
+- Compress display images manually with TinyPNG and replace them using the same filenames and formats. Build-time optimization preserves JPEG files and applies lossless PNG/WebP compression and SVG cleanup; see [Image optimization](./image-optimization.md).
 
 Every content image must include explicit dimensions and accurate alternative text. Decorative organization and social marks use empty alternative text because adjacent text already provides the name.
 

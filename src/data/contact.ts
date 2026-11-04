@@ -1,3 +1,8 @@
+import bilibiliIcon from '@/assets/media/bilibili.svg'
+import githubIcon from '@/assets/media/github.svg'
+import linkedinIcon from '@/assets/media/linkedin.svg'
+import yuqueIcon from '@/assets/media/yuque.svg'
+
 export type Contact = {
   email: string
   phone: string
@@ -34,23 +39,23 @@ export const contact: Record<SiteLocale, Contact> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/github.svg',
+        iconSrc: githubIcon,
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/linkedin.svg',
+        iconSrc: linkedinIcon,
       },
       {
         label: 'Videos',
         href: 'https://space.bilibili.com/441110980/upload/video',
         iconSize: 7,
-        iconSrc: '/media/bilibili.svg',
+        iconSrc: bilibiliIcon,
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/yuque.svg',
+        iconSrc: yuqueIcon,
       },
     ],
     label: {
@@ -76,17 +81,17 @@ export const contact: Record<SiteLocale, Contact> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/github.svg',
+        iconSrc: githubIcon,
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/linkedin.svg',
+        iconSrc: linkedinIcon,
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/yuque.svg',
+        iconSrc: yuqueIcon,
       },
     ],
     label: {

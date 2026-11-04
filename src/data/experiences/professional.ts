@@ -1,3 +1,8 @@
+import abbLogo from '@/assets/company/abb.svg'
+import bilibiliLogo from '@/assets/company/bilibili.svg'
+import caeruleanAiLogo from '@/assets/company/caerulean-ai.svg'
+import teslaLogo from '@/assets/company/tesla.svg'
+
 export type ProfessionalEntry = {
   id: string
   organization: string
@@ -30,7 +35,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         'Integrated the results into an Angular/C# platform that helps R&D triage critical issues and reprioritize feature requests.',
       ],
       logo: {
-        src: '/company/tesla.svg',
+        src: teslaLogo,
         size: 6,
       },
     },
@@ -49,7 +54,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         'Improved Tangram recognition under variable lighting with dynamic HSV tuning, and built a RAG-based AppStudio assistant for robot-function generation and technical retrieval.',
       ],
       logo: {
-        src: '/company/abb.svg',
+        src: abbLogo,
         size: 9,
       },
     },
@@ -66,7 +71,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         'Built a RAG diagnostic agent that retrieved technical knowledge and produced structured JSON solutions for frontend visualization.',
       ],
       logo: {
-        src: '/company/bilibili.svg',
+        src: bilibiliLogo,
         size: 10,
       },
     },
@@ -83,7 +88,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         'Integrated the system into a browser-based Phaser environment so agents keep context across user interactions.',
       ],
       logo: {
-        src: '/company/caerulean-ai.svg',
+        src: caeruleanAiLogo,
         size: 6,
       },
     },
@@ -103,7 +108,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         '将结果接入 Angular/C# 内部平台，帮助研发团队定位关键问题并调整需求优先级。',
       ],
       logo: {
-        src: '/company/tesla.svg',
+        src: teslaLogo,
         size: 5,
       },
     },
@@ -121,7 +126,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         '通过动态 HSV 参数调整改善变化光照下的七巧板识别，并开发基于 RAG 的 AppStudio 助手支持功能生成与技术检索。',
       ],
       logo: {
-        src: '/company/abb.svg',
+        src: abbLogo,
         size: 6,
       },
     },
@@ -137,7 +142,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         '开发基于 RAG 的诊断智能体，检索技术知识并生成结构化 JSON 解决方案用于前端可视化。',
       ],
       logo: {
-        src: '/company/bilibili.svg',
+        src: bilibiliLogo,
         size: 7,
       },
     },
@@ -153,7 +158,7 @@ export const professional: Record<SiteLocale, ProfessionalEntry[]> = {
         '将系统集成到 Phaser 环境，使智能体在交互中保持上下文。',
       ],
       logo: {
-        src: '/company/caerulean-ai.svg',
+        src: caeruleanAiLogo,
         size: 4,
       },
     },

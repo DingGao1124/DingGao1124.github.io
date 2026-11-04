@@ -1,3 +1,14 @@
+import aiAgentsTownImage from '@/assets/projects/agents/ai_agents_town.jpg'
+import webAutomationAgentImage from '@/assets/projects/agents/web_automation_agent.jpg'
+import workstationAgentImage from '@/assets/projects/agents/workstation_agent.jpg'
+import bilibiliAudienceFeedbackImage from '@/assets/projects/full-stack/bilibili_audience_feedback.jpg'
+import llmChromeExtensionImage from '@/assets/projects/full-stack/llm_chrome_extension.jpg'
+import theThreeStoogesImage from '@/assets/projects/full-stack/the_three_stooges.jpg'
+import whatsappAiAgentImage from '@/assets/projects/full-stack/whatsapp_ai_agent.jpg'
+import abbGofaAgentImage from '@/assets/projects/robotics/abb_gofa_agent.jpg'
+import mobileCraneRobotImage from '@/assets/projects/robotics/mobile_crane_robot.jpg'
+import ur5GraspingRobotImage from '@/assets/projects/robotics/ur5_grasping_robot.jpg'
+
 type ProjectLink = {
   label: string
   href: string
@@ -67,7 +78,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'Task Planning', 'ABB GoFa'],
               media: {
-                src: '/projects/robotics/abb_gofa_agent.jpg',
+                src: abbGofaAgentImage,
                 alt: 'Placeholder for the ABB GoFa natural-language task planner',
                 label: 'ABB GoFa task planner',
               },
@@ -97,7 +108,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/robotics/ur5_grasping_robot.jpg',
+                src: ur5GraspingRobotImage,
                 alt: 'Placeholder for the voice-guided embodied AI grasping robot',
                 label: 'Embodied grasping robot',
               },
@@ -122,7 +133,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/robotics/mobile_crane_robot.jpg',
+                src: mobileCraneRobotImage,
                 alt: 'Placeholder for the STM32 autonomous mobile crane robot',
                 label: 'Mobile crane robot',
               },
@@ -152,7 +163,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/agents/web_automation_agent.jpg',
+                src: webAutomationAgentImage,
                 alt: 'Placeholder for the Deep Agents web automation interface',
                 label: 'Agent harness interface',
                 ratio: 1.939,
@@ -177,7 +188,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/agents/workstation_agent.jpg',
+                src: workstationAgentImage,
                 alt: 'Placeholder for the flexible-manufacturing LLM workstation',
                 label: 'LLM workstation',
                 ratio: 1.931,
@@ -202,7 +213,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/agents/ai_agents_town.jpg',
+                src: aiAgentsTownImage,
                 alt: 'Placeholder for the interactive AI Agents Town',
                 label: 'AI Agents Town',
                 ratio: 1.407,
@@ -227,7 +238,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Streaming', 'Data Viz', 'Bilibili', 'Evidence'],
               media: {
-                src: '/projects/full-stack/bilibili_audience_feedback.jpg',
+                src: bilibiliAudienceFeedbackImage,
                 alt: 'Placeholder for the Bilibili audience feedback analysis workspace',
                 label: 'Audience feedback workspace',
                 ratio: 1.942,
@@ -245,7 +256,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Research', 'Literature', 'Community', 'Full-Stack'],
               media: {
-                src: '/projects/full-stack/the_three_stooges.jpg',
+                src: theThreeStoogesImage,
                 alt: 'Placeholder for The Three Stooges research collaboration platform',
                 label: 'Research collaboration platform',
                 ratio: 2.192,
@@ -263,7 +274,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['WhatsApp', 'Twilio', 'Webhooks', 'WebSocket', 'AI Agent', 'Work Orders'],
               media: {
-                src: '/projects/full-stack/whatsapp_ai_agent.jpg',
+                src: whatsappAiAgentImage,
                 alt: 'Placeholder for the WhatsApp property-service agent workspace',
                 label: 'WhatsApp service agent',
                 ratio: 2.092,
@@ -281,7 +292,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['Chrome', 'LLM', 'VLM', 'Web Search', 'Knowledge', 'RAG'],
               media: {
-                src: '/projects/full-stack/llm_chrome_extension.jpg',
+                src: llmChromeExtensionImage,
                 alt: 'Placeholder for the multimodal LLM Chrome extension',
                 label: 'Browser AI assistant',
                 ratio: 2.013,
@@ -321,7 +332,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['Azure OpenAI', 'MCP', 'RAPID', 'RWS', 'Task Planning', 'ABB GoFa'],
               media: {
-                src: '/projects/robotics/abb_gofa_agent.jpg',
+                src: abbGofaAgentImage,
                 alt: 'ABB GoFa 自然语言任务规划智能体主图占位',
                 label: 'ABB GoFa 任务规划器',
               },
@@ -350,7 +361,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/robotics/ur5_grasping_robot.jpg',
+                src: ur5GraspingRobotImage,
                 alt: '语音引导具身智能抓取机器人主图占位',
                 label: '具身智能抓取机器人',
               },
@@ -373,7 +384,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/robotics/mobile_crane_robot.jpg',
+                src: mobileCraneRobotImage,
                 alt: '基于 STM32 的自主移动起重机器人主图占位',
                 label: '移动起重机器人',
               },
@@ -403,7 +414,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/agents/web_automation_agent.jpg',
+                src: webAutomationAgentImage,
                 alt: 'Deep Agents 网页自动化界面主图占位',
                 label: '智能体 Harness 界面',
                 ratio: 1.939,
@@ -428,7 +439,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/agents/workstation_agent.jpg',
+                src: workstationAgentImage,
                 alt: '面向柔性制造的 LLM 智能工作站主图占位',
                 label: 'LLM 智能工作站',
                 ratio: 1.931,
@@ -453,7 +464,7 @@ export const projects: Record<SiteLocale, Projects> = {
                 },
               ],
               media: {
-                src: '/projects/agents/ai_agents_town.jpg',
+                src: aiAgentsTownImage,
                 alt: '交互式 AI Agents Town 主图占位',
                 label: 'AI Agents Town',
                 ratio: 1.407,
@@ -477,7 +488,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Streaming', 'Data Viz', 'Bilibili', 'Evidence'],
               media: {
-                src: '/projects/full-stack/bilibili_audience_feedback.jpg',
+                src: bilibiliAudienceFeedbackImage,
                 alt: 'Bilibili 观众反馈智能分析平台主图占位',
                 label: '观众反馈复盘工作台',
                 ratio: 1.942,
@@ -495,7 +506,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['LLM Agents', 'Research', 'Literature', 'Community', 'Full-Stack'],
               media: {
-                src: '/projects/full-stack/the_three_stooges.jpg',
+                src: theThreeStoogesImage,
                 alt: '三个臭皮匠科研协作平台主图占位',
                 label: '科研协作平台',
                 ratio: 2.192,
@@ -512,7 +523,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['WhatsApp', 'Twilio', 'Webhooks', 'WebSocket', 'AI Agent', 'Work Orders'],
               media: {
-                src: '/projects/full-stack/whatsapp_ai_agent.jpg',
+                src: whatsappAiAgentImage,
                 alt: 'WhatsApp AI 物业服务智能体主图占位',
                 label: 'WhatsApp 服务智能体',
                 ratio: 2.092,
@@ -530,7 +541,7 @@ export const projects: Record<SiteLocale, Projects> = {
               ],
               tech: ['Chrome', 'LLM', 'VLM', 'Web Search', 'Knowledge', 'RAG'],
               media: {
-                src: '/projects/full-stack/llm_chrome_extension.jpg',
+                src: llmChromeExtensionImage,
                 alt: '多模态 LLM Chrome 浏览器扩展主图占位',
                 label: '浏览器 AI 助手',
                 ratio: 2.013,

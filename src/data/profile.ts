@@ -1,3 +1,13 @@
+import AVATAR_SRC from '@/assets/avatar.jpg'
+import abbLogo from '@/assets/company/abb.svg'
+import bilibiliLogo from '@/assets/company/bilibili.svg'
+import caeruleanAiLogo from '@/assets/company/caerulean-ai.svg'
+import teslaLogo from '@/assets/company/tesla.svg'
+import bilibiliIcon from '@/assets/media/bilibili.svg'
+import githubIcon from '@/assets/media/github.svg'
+import linkedinIcon from '@/assets/media/linkedin.svg'
+import yuqueIcon from '@/assets/media/yuque.svg'
+
 import { news, type NewsItem } from './common/news'
 import { techTopics, type TechTopics } from './common/skills'
 
@@ -75,7 +85,6 @@ export type Profile = {
   }
 }
 
-const AVATAR_SRC = '/avatar.jpg'
 const CV_HREF = '/cv/Ding_Gao_CV.pdf'
 
 export const profile: Record<SiteLocale, Profile> = {
@@ -93,7 +102,7 @@ export const profile: Record<SiteLocale, Profile> = {
       employer: {
         label: '@bilibili',
         href: 'https://github.com/bilibili',
-        iconSrc: '/company/bilibili.svg',
+        iconSrc: bilibiliLogo,
       },
       location: 'Shanghai, China',
       avatarAlt: 'Profile avatar of Ding Gao',
@@ -113,23 +122,23 @@ export const profile: Record<SiteLocale, Profile> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/github.svg',
+        iconSrc: githubIcon,
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/linkedin.svg',
+        iconSrc: linkedinIcon,
       },
       {
         label: 'Videos',
         href: 'https://space.bilibili.com/441110980/upload/video',
         iconSize: 7,
-        iconSrc: '/media/bilibili.svg',
+        iconSrc: bilibiliIcon,
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/yuque.svg',
+        iconSrc: yuqueIcon,
       },
     ],
     label: {
@@ -186,7 +195,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Bilibili',
           role: 'AI Agent Engineer',
           period: 'Jul 2026 - Present',
-          logoSrc: '/company/bilibili.svg',
+          logoSrc: bilibiliLogo,
           logoSize: 7,
         },
         {
@@ -194,7 +203,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Tesla Gigafactory',
           role: 'Full-Stack Development Intern · R&D Department',
           period: 'Sep 2025 - Jan 2026',
-          logoSrc: '/company/tesla.svg',
+          logoSrc: teslaLogo,
           logoSize: 5,
         },
         {
@@ -202,7 +211,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'ABB Robot Super Factory',
           role: 'Software Development Intern · Robotics Application Software · R&D Department',
           period: 'Jul 2025 - Sep 2025',
-          logoSrc: '/company/abb.svg',
+          logoSrc: abbLogo,
           logoSize: 6,
         },
         {
@@ -210,7 +219,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Bilibili',
           role: 'Software Development Intern',
           period: 'Jun 2025 - Jul 2025',
-          logoSrc: '/company/bilibili.svg',
+          logoSrc: bilibiliLogo,
           logoSize: 7,
         },
         {
@@ -218,7 +227,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Caerulean AI Inc.',
           role: 'Full-Stack Developer Intern (Remote)',
           period: 'Dec 2024 - Apr 2025',
-          logoSrc: '/company/caerulean-ai.svg',
+          logoSrc: caeruleanAiLogo,
           logoSize: 4,
         },
       ],
@@ -238,7 +247,7 @@ export const profile: Record<SiteLocale, Profile> = {
       employer: {
         label: '@哔哩哔哩',
         href: 'https://github.com/bilibili',
-        iconSrc: '/company/bilibili.svg',
+        iconSrc: bilibiliLogo,
       },
       location: '中国上海',
       avatarAlt: '高鼎的个人头像',
@@ -253,17 +262,17 @@ export const profile: Record<SiteLocale, Profile> = {
       {
         label: 'GitHub',
         href: 'https://github.com/DingGao1124',
-        iconSrc: '/media/github.svg',
+        iconSrc: githubIcon,
       },
       {
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/in/ding-gao-995147349/',
-        iconSrc: '/media/linkedin.svg',
+        iconSrc: linkedinIcon,
       },
       {
         label: 'Portfolio',
         href: 'https://www.yuque.com/einsteinding/zg7uxv/vmpbgefbiitnqrer',
-        iconSrc: '/media/yuque.svg',
+        iconSrc: yuqueIcon,
       },
     ],
     label: {
@@ -320,7 +329,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Bilibili',
           role: 'AI Agent 开发工程师',
           period: '2026.07-至今',
-          logoSrc: '/company/bilibili.svg',
+          logoSrc: bilibiliLogo,
           logoSize: 8,
         },
         {
@@ -328,14 +337,14 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Tesla Gigafactory',
           role: '全栈开发实习生 · 研发部门',
           period: '2025.09-2026.01',
-          logoSrc: '/company/tesla.svg',
+          logoSrc: teslaLogo,
         },
         {
           id: 'abb',
           organization: 'ABB Robot Super Factory',
           role: '机器人应用软件开发实习生 · 研发部门',
           period: '2025.07-2025.09',
-          logoSrc: '/company/abb.svg',
+          logoSrc: abbLogo,
           logoSize: 6,
         },
         {
@@ -343,7 +352,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Bilibili',
           role: '软件开发实习生',
           period: '2025.06-2025.07',
-          logoSrc: '/company/bilibili.svg',
+          logoSrc: bilibiliLogo,
           logoSize: 8,
         },
         {
@@ -351,7 +360,7 @@ export const profile: Record<SiteLocale, Profile> = {
           organization: 'Caerulean AI Inc.',
           role: '全栈开发实习生（远程）',
           period: '2024.12-2025.04',
-          logoSrc: '/company/caerulean-ai.svg',
+          logoSrc: caeruleanAiLogo,
           logoSize: 3,
         },
       ],

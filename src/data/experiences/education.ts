@@ -1,3 +1,6 @@
+import dhuLogo from '@/assets/university/dhu.png'
+import njitLogo from '@/assets/university/njit.png'
+
 export type EducationRecord = {
   school: string
   degree: string
@@ -22,7 +25,7 @@ export const education: Record<SiteLocale, EducationRecord[]> = {
       gpa: '3.93/4.0',
       thesis:
         'Digital Twin Modeling Method for Flexible Production Lines Based on Large Language Model Multi-Agent Systems',
-      logo: { src: '/university/dhu.png', size: 6 },
+      logo: { src: dhuLogo, size: 6 },
     },
     {
       school: 'Nanjing Institute of Technology',
@@ -32,7 +35,7 @@ export const education: Record<SiteLocale, EducationRecord[]> = {
       gpa: '3.77/4.0 (last two years)',
       rank: '4/99',
       thesis: 'Development of a 3-DOF Ball Screw Defect Detection Platform',
-      logo: { src: '/university/njit.png', size: 6 },
+      logo: { src: njitLogo, size: 6 },
     },
   ],
   zh: [
@@ -43,7 +46,7 @@ export const education: Record<SiteLocale, EducationRecord[]> = {
       location: '上海',
       gpa: '3.93 / 4.0',
       thesis: '基于大语言模型多智能体系统的柔性产线数字孪生建模方法',
-      logo: { src: '/university/dhu.png', size: 6 },
+      logo: { src: dhuLogo, size: 6 },
     },
     {
       school: '南京工程学院',
@@ -53,7 +56,7 @@ export const education: Record<SiteLocale, EducationRecord[]> = {
       gpa: '3.77 / 4.0（后两学年）',
       rank: '4 / 99',
       thesis: '三自由度滚珠丝杠缺陷检测平台开发',
-      logo: { src: '/university/njit.png', size: 6 },
+      logo: { src: njitLogo, size: 6 },
     },
   ],
 }

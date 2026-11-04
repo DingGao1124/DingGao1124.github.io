@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-04
+
+- Images: organized assets by content and added build-time optimization.
+
 ## 2026-09-15
 
 - Publications: added a figure for every journal paper and patent, each linked to its full-size image.

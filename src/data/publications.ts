@@ -1,3 +1,9 @@
+import collaborativeDisassemblyImage from '@/assets/publications/journal/collaborative-disassembly.jpg'
+import historicalVqaImage from '@/assets/publications/journal/historical-vqa.jpg'
+import selfEvolvingImage from '@/assets/publications/journal/self-evolving.png'
+import cn113702385BImage from '@/assets/publications/patent/CN113702385B.webp'
+import cn212613158UImage from '@/assets/publications/patent/CN212613158U.webp'
+
 type PublicationType = 'journal' | 'conference' | 'patent'
 
 type PublicationLink = {
@@ -95,8 +101,8 @@ export const publications: Record<SiteLocale, Publications> = {
             { label: 'CODE', href: 'https://github.com/DingGao1124/Thesis-MultiAgents' },
           ],
           media: {
-            src: '/publication/journal/self-evolving.png',
-            originalSrc: '/publication/journal/original/self-evolving.png',
+            src: selfEvolvingImage,
+            originalSrc: '/publications/journal/original/self-evolving.png',
             alt: 'Digital-twin production line figure: dynamic task decomposition across line, module, and unit agents over the production-line space',
             label: 'Digital-twin agent architecture',
             ratio: 1.392,
@@ -161,8 +167,8 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
           media: {
-            src: '/publication/journal/collaborative-disassembly.jpg',
-            originalSrc: '/publication/journal/original/collaborative-disassembly.jpg',
+            src: collaborativeDisassemblyImage,
+            originalSrc: '/publications/journal/original/collaborative-disassembly.jpg',
             alt: 'Disassembly scene graph generation, perception graph cues, and the single-robot multi-cognitive agent architecture over a knowledge graph',
             label: 'Multi-cognitive agent system',
             ratio: 1.049,
@@ -193,8 +199,8 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
           media: {
-            src: '/publication/journal/historical-vqa.jpg',
-            originalSrc: '/publication/journal/original/historical-vqa.jpg',
+            src: historicalVqaImage,
+            originalSrc: '/publications/journal/original/historical-vqa.jpg',
             alt: 'Historical VQA with LLMs for AR-assisted human-robot collaboration across the perception, reasoning, and manipulation phases',
             label: 'AR-assisted HRC workflow',
             ratio: 1.779,
@@ -225,8 +231,8 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN113702385B/en' }],
           media: {
-            src: '/publication/patent/CN113702385B.webp',
-            originalSrc: '/publication/patent/CN113702385B.webp',
+            src: cn113702385BImage,
+            originalSrc: cn113702385BImage,
             alt: 'Patent drawing of the angle-adjustable stage: the base, the angle-adjusting body with knobs, and the top platform with a circular opening',
             label: 'Angle-adjustable stage',
             ratio: 1.21,
@@ -284,8 +290,8 @@ export const publications: Record<SiteLocale, Publications> = {
           ],
           links: [{ label: 'Patent', href: 'https://patents.google.com/patent/CN212613158U/en' }],
           media: {
-            src: '/publication/patent/CN212613158U.webp',
-            originalSrc: '/publication/patent/CN212613158U.webp',
+            src: cn212613158UImage,
+            originalSrc: cn212613158UImage,
             alt: 'Patent drawing of the conductive-concrete prefabricated component system: the panel, its edge connectors, and the power and control boxes',
             label: 'Conductive concrete system',
             ratio: 1.348,
@@ -326,8 +332,8 @@ export const publications: Record<SiteLocale, Publications> = {
           keywords: ['数字孪生', '大语言模型', '多智能体系统', '柔性制造'],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.dte.2026.100099' }],
           media: {
-            src: '/publication/journal/self-evolving.png',
-            originalSrc: '/publication/journal/original/self-evolving.png',
+            src: selfEvolvingImage,
+            originalSrc: '/publications/journal/original/self-evolving.png',
             alt: '数字孪生产线任务分解图：从产线智能体到模块智能体、单元智能体，再映射到产线空间',
             label: 'Digital-twin agent architecture',
             ratio: 1.392,
@@ -380,8 +386,8 @@ export const publications: Record<SiteLocale, Publications> = {
           keywords: ['人机协作', '机器人拆解', '多认知智能体', '场景图'],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.rcim.2025.103207' }],
           media: {
-            src: '/publication/journal/collaborative-disassembly.jpg',
-            originalSrc: '/publication/journal/original/collaborative-disassembly.jpg',
+            src: collaborativeDisassemblyImage,
+            originalSrc: '/publications/journal/original/collaborative-disassembly.jpg',
             alt: '拆解场景图生成、感知图线索与单机器人多认知智能体架构及其知识图谱支撑',
             label: 'Multi-cognitive agent system',
             ratio: 1.049,
@@ -407,8 +413,8 @@ export const publications: Record<SiteLocale, Publications> = {
           keywords: ['视觉问答', '增强现实', '人机协作', '大语言模型'],
           links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.jmsy.2025.10.005' }],
           media: {
-            src: '/publication/journal/historical-vqa.jpg',
-            originalSrc: '/publication/journal/original/historical-vqa.jpg',
+            src: historicalVqaImage,
+            originalSrc: '/publications/journal/original/historical-vqa.jpg',
             alt: '面向 AR 人机协作的历史视觉问答流程：感知、推理与操作三个阶段',
             label: 'AR-assisted HRC workflow',
             ratio: 1.779,
@@ -434,8 +440,8 @@ export const publications: Record<SiteLocale, Publications> = {
           keywords: ['视觉检测', '角度调节', '精密定位', '缺陷检测'],
           links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN113702385B/zh' }],
           media: {
-            src: '/publication/patent/CN113702385B.webp',
-            originalSrc: '/publication/patent/CN113702385B.webp',
+            src: cn113702385BImage,
+            originalSrc: cn113702385BImage,
             alt: '角度可调载物台专利附图：底座、带调节旋钮的角度调节本体，以及带圆孔的载物台面',
             label: '角度可调载物台',
             ratio: 0.909,
@@ -478,8 +484,8 @@ export const publications: Record<SiteLocale, Publications> = {
           keywords: ['导电混凝土', '装配式预制构件', '建筑供暖', '温度控制'],
           links: [{ label: '查看专利', href: 'https://patents.google.com/patent/CN212613158U/zh' }],
           media: {
-            src: '/publication/patent/CN212613158U.webp',
-            originalSrc: '/publication/patent/CN212613158U.webp',
+            src: cn212613158UImage,
+            originalSrc: cn212613158UImage,
             alt: '导电混凝土装配式预制构件系统专利附图：预制构件板体、边缘连接件与电源/控制盒',
             label: '导电混凝土预制构件系统',
             ratio: 1.348,

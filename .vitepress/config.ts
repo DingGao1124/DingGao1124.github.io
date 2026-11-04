@@ -1,6 +1,7 @@
 import path from 'node:path'
 
 import tailwindcss from '@tailwindcss/vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { defineConfig } from 'vitepress'
 
 import blogs from '../src/data/blogs'
@@ -88,7 +89,27 @@ export default defineConfig({
     math: false,
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      ViteImageOptimizer({
+        // After TinyPNG, optimize PNG/WebP losslessly and clean up SVGs.
+        // Skip JPEG to avoid another lossy encode, even at quality 100.
+        test: /\.(png|webp|svg)$/i,
+        // Ignore original publication pictures.
+        exclude: /\/publications\/journal\/original\//,
+        png: { palette: false, compressionLevel: 9, adaptiveFiltering: true },
+        webp: { lossless: true },
+        svg: {
+          plugins: [
+            'removeComments',
+            'removeMetadata',
+            'removeEditorsNSData',
+            'cleanupAttrs',
+            'sortAttrs',
+          ],
+        },
+      }),
+    ],
     publicDir: path.resolve(import.meta.dirname, '../public'),
     resolve: {
       alias: {
