@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import { defineConfig } from 'vitepress'
 
-import blogs from '../src/data/blogs'
+import blogs from '../src/data/blogs.ts'
 
 // Private notebooks should not be discovered.
 const srcExclude = Object.values(blogs)
