@@ -193,7 +193,7 @@ export const profile: Record<SiteLocale, Profile> = {
         {
           id: 'bilibili-agent-engineer',
           organization: 'Bilibili',
-          role: 'AI Agent Engineer',
+          role: 'AI Agent Software Engineer',
           period: 'Jul 2026 - Present',
           logoSrc: bilibiliLogo,
           logoSize: 7,

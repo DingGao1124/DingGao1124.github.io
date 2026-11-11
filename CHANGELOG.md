@@ -28,7 +28,7 @@
 - Data: re-checked the experience and news records against the CV.
 - Home: smoothed the Recent Events expand and collapse motion for long timelines.
 - Experience: merged the Research page into the Experience page, with the record split into per-group files under `src/data/experiences/`.
-- Home: rebuilt the lower page as compact publication and work/internship lists with view-all links, company logos, venue abbreviations, and the current Bilibili AI Agent Engineer role.
+- Home: rebuilt the lower page as compact publication and work/internship lists with view-all links, company logos, venue abbreviations, and the current Bilibili AI Agent Software Engineer role.
 - Home: moved the publication and work/internship records into the profile data so the home page no longer reads other pages.
 - Structure: moved Home, Experience, Projects, and Publications into `src/pages/<page>/` with their private components under `_components/`, leaving shared blocks in `src/components/`.
 
